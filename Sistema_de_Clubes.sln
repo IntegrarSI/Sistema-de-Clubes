@@ -1,23 +1,13 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 2012
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CABW", "CABW\CABW.csproj", "{37C4C3B7-69D6-4768-A69E-ACA9B06D42CE}"
+# Visual Studio Version 18
+VisualStudioVersion = 18.4.11513.90 insiders
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sistema_de_Clubes", "CABW\Sistema_de_Clubes.csproj", "{37C4C3B7-69D6-4768-A69E-ACA9B06D42CE}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Negocio", "Negocio\Negocio.csproj", "{1795E0AF-C1EA-4486-8E81-758BA2EFBEEB}"
 EndProject
 Global
-	GlobalSection(TeamFoundationVersionControl) = preSolution
-		SccNumberOfProjects = 3
-		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
-		SccTeamFoundationServer = http://host64:8080/tfs/defaultcollection
-		SccLocalPath0 = .
-		SccProjectUniqueName1 = CABW\\CABW.csproj
-		SccProjectName1 = CABW
-		SccLocalPath1 = CABW
-		SccProjectUniqueName2 = Negocio\\Negocio.csproj
-		SccProjectName2 = Negocio
-		SccLocalPath2 = Negocio
-	EndGlobalSection
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
 		Release|Any CPU = Release|Any CPU
@@ -34,5 +24,8 @@ Global
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {D452060F-3744-4DFF-A155-4C953AFAA9C3}
 	EndGlobalSection
 EndGlobal
