@@ -1,0 +1,59 @@
+﻿<div class="row rowHeader">
+    <div class="col-lg-8 col-sm-8 h1">
+        Resúmen
+    </div>
+</div>
+
+<div class="row">
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <i class="fa fa-exchange"></i>&nbsp;&nbsp;Pases Pendientes de Aprobación
+        </div>
+        <div class="panel-body">
+            <div class="table-responsive" ng-show="pasesPendientes != null && pasesPendientes.length > 0">
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th>Fecha Solicitud</th>
+                            <th style="width:140px">Estado</th>
+                            <th>Jugador</th>
+                            <th>Categoría</th>
+                            <th>Solicitado por</th>
+                        </tr>
+                    </thead>
+                    <tbody ng-repeat="item in pasesPendientes" ng-hide="item.visible == false">
+                        <tr>
+                            <td rowspan="3">{{item.fechaSolicitud | date:'dd/MM/yyyy'}}</td>
+                            <td rowspan="3">{{item.PasesEstados.descripcion }}</td>
+                            <td>{{item.Jugadores.apellido}} {{item.Jugadores.nombre}}</td>
+                            <td>{{item.Categorias.descripcion}}</td>
+                            <td>{{item.Usuarios.nombre}}</td>
+                        </tr>
+                        <tr>
+                            <td colspan="2">
+                                <strong>Origen:</strong> Club {{item.Clubes.descripcion}} - Asociación {{item.Asociaciones.descripcion}} - Federación {{item.Federaciones.descripcion}}
+                                <br /><strong>Destino:</strong> Club {{item.Clubes1.descripcion}} - Asociación {{item.Asociaciones1.descripcion}} - Federación {{item.Federaciones1.descripcion}}
+                            </td>
+                        </tr>
+                        <tr>
+                            <td colspan="2">
+                                <button type="button" ng-disabled="item.isLoading == true" ng-show="item.rechazar != true" class="btn btn-xs btn-success" ng-click="aprobarPase(item)">Aprobado</button>
+                                <button type="button" ng-disabled="item.isLoading == true" ng-show="item.rechazar != true && item.PasesEstados.codigoInterno != 'revision'" class="btn btn-xs btn-warning" ng-click="revisarPase(item)">En Revisión</button>
+                                <button type="button" ng-disabled="item.isLoading == true" ng-show="item.rechazar != true" class="btn btn-xs btn-danger" ng-click="rechazarPase(item)">Rechazado</button>
+                                <div ng-show="item.rechazar == true">
+                                    <span style="color:red">Ingrese los motivos del rechazo y presione guardar</span>
+                                    <input type="text" class="form-control" ng-model="item.motivosRechazo" />
+                                    &nbsp;<button style="margin-top:5px" type="button" ng-disabled="item.isLoading == true" class="btn btn-xs btn-primary" ng-click="guardarRechazarPase(item)" ng-disabled="item.motivosRechazo == null || item.motivosRechazo == ''">Guardar</button>
+                                    &nbsp;<button style="margin-top:5px" type="button" class="btn btn-xs btn-default" ng-click="cancelarRechazarPase(item)">Cancelar</button>
+                                </div>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="alert alert-success text-center" ng-hide="pasesPendientes != null && pasesPendientes.length > 0">
+                No hay pases pendientes de aprobación
+            </div>
+        </div>
+    </div>
+</div>

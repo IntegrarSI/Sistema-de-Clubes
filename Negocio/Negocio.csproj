@@ -1,0 +1,289 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{1795E0AF-C1EA-4486-8E81-758BA2EFBEEB}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Negocio</RootNamespace>
+    <AssemblyName>Negocio</AssemblyName>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework">
+      <HintPath>..\packages\EntityFramework.5.0.0\lib\net40\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="Integrar">
+      <HintPath>..\CABW\bin\Integrar.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=4.5.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Newtonsoft.Json.5.0.4\lib\net40\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="RestSharp">
+      <HintPath>..\packages\RestSharp.105.2.3\lib\net4\RestSharp.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.Entity" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Asociaciones.cs">
+      <DependentUpon>CAB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="BL\CampeonesBL.cs" />
+    <Compile Include="BL\ClubesBL.cs" />
+    <Compile Include="BL\AsociacionesBL.cs" />
+    <Compile Include="BL\CategoriasBL.cs" />
+    <Compile Include="BL\InformesBL.cs" />
+    <Compile Include="BL\JugadoresPenalizacionesBL.cs" />
+    <Compile Include="BL\NoticiasBL.cs" />
+    <Compile Include="BL\PenalizacionesEstadosBL.cs" />
+    <Compile Include="BL\JugadoresPasesBL.cs" />
+    <Compile Include="BL\EnviosMailsBL.cs" />
+    <Compile Include="BL\PasesBL.cs" />
+    <Compile Include="BL\PasesEstadosBL.cs" />
+    <Compile Include="BL\JugadoresHabilitacionesBL.cs" />
+    <Compile Include="BL\JugadoresBL.cs" />
+    <Compile Include="BL\LocalidadesBL.cs" />
+    <Compile Include="BL\RolesBL.cs" />
+    <Compile Include="BL\EspecialidadesBL.cs" />
+    <Compile Include="BL\TorneosBL.cs" />
+    <Compile Include="BL\UsuariosBL.cs" />
+    <Compile Include="CAB.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CAB.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CAB.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CAB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CAB.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CAB.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="BL\FederacionesBL.cs" />
+    <Compile Include="Campeones.cs">
+      <DependentUpon>CAB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Categorias.cs">
+      <DependentUpon>CAB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Clubes.cs">
+      <DependentUpon>CAB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DAL\CambiarPassword.cs" />
+    <Compile Include="DAL\FiltroJugadores.cs" />
+    <Compile Include="DAL\TipoPase.cs" />
+    <Compile Include="DAL\Jugadores.cs" />
+    <Compile Include="DAL\InformesFiltros.cs" />
+    <Compile Include="DAL\RecaptchaResponse.cs" />
+    <Compile Include="DAL\ListaPaginada.cs" />
+    <Compile Include="DAL\LoginTicket.cs" />
+    <Compile Include="DAL\Mail.cs" />
+    <Compile Include="DNI.cs">
+      <DependentUpon>CAB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Equipos.cs">
+      <DependentUpon>CAB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Especialidades.cs">
+      <DependentUpon>CAB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ExportacionExel.cs">
+      <DependentUpon>CAB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Federaciones.cs">
+      <DependentUpon>CAB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Fixtures.cs">
+      <DependentUpon>CAB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="FixturesPartidos.cs">
+      <DependentUpon>CAB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="habilitaciones.cs">
+      <DependentUpon>CAB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Jueces.cs">
+      <DependentUpon>CAB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Jugadores.cs">
+      <DependentUpon>CAB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="JugadoresCategorias.cs">
+      <DependentUpon>CAB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="JugadoresEliminados.cs">
+      <DependentUpon>CAB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="JugadoresHabilitaciones.cs">
+      <DependentUpon>CAB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="JugadoresHistorial.cs">
+      <DependentUpon>CAB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="JugadoresPases.cs">
+      <DependentUpon>CAB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="JugadoresPasesEstados.cs">
+      <DependentUpon>CAB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="JugadoresPenalizaciones.cs">
+      <DependentUpon>CAB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="JugadoresPenalizacionesEstados.cs">
+      <DependentUpon>CAB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="JugadoresSolicitudesCarnets.cs">
+      <DependentUpon>CAB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Localidades.cs">
+      <DependentUpon>CAB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Noticias.cs">
+      <DependentUpon>CAB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PasesEstados.cs">
+      <DependentUpon>CAB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PenalizacionesEstados.cs">
+      <DependentUpon>CAB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Provincias.cs">
+      <DependentUpon>CAB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Roles.cs">
+      <DependentUpon>CAB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sysdiagrams.cs">
+      <DependentUpon>CAB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tmbcarnet.cs">
+      <DependentUpon>CAB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Torneos.cs">
+      <DependentUpon>CAB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TorneosActividades.cs">
+      <DependentUpon>CAB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TorneosEquipos.cs">
+      <DependentUpon>CAB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TorneosEspecialidades.cs">
+      <DependentUpon>CAB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TorneosPartidos.cs">
+      <DependentUpon>CAB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TorneosZonas.cs">
+      <DependentUpon>CAB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="uspInformes_CarnetsNoEntregados_Result.cs">
+      <DependentUpon>CAB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="uspInformes_JugadoresHabilitados_Result.cs">
+      <DependentUpon>CAB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="uspInformes_Pases_Result.cs">
+      <DependentUpon>CAB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Usuarios.cs">
+      <DependentUpon>CAB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="UsuariosAsociaciones.cs">
+      <DependentUpon>CAB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="UsuariosFederaciones.cs">
+      <DependentUpon>CAB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="UsuariosRoles.cs">
+      <DependentUpon>CAB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Utils\Seguridad.cs" />
+    <Compile Include="Utils\Encriptacion.cs" />
+    <Compile Include="Utils\Helper.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <EntityDeploy Include="CAB.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>CAB.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.Config" />
+    <None Include="CAB.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>CAB.edmx</DependentUpon>
+      <LastGenOutput>CAB.Context.cs</LastGenOutput>
+    </None>
+    <None Include="CAB.edmx.diagram">
+      <DependentUpon>CAB.edmx</DependentUpon>
+    </None>
+    <None Include="CAB.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>CAB.edmx</DependentUpon>
+      <LastGenOutput>CAB.cs</LastGenOutput>
+    </None>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Connected Services\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Integrar.dll" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

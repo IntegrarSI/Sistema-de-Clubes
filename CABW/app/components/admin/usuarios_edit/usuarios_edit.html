@@ -1,0 +1,124 @@
+﻿<div class="row rowHeader">
+    <div class="col-lg-8 col-sm-8 h1">
+        Usuarios - {{ title }}
+    </div>
+    <div class="col-lg-4 col-sm-4 h1-botones">
+        &nbsp;<a ui-sref="usuarios" class="btn btn-default">Volver</a>
+    </div>
+</div>
+<div class="row">
+    <div class="panel panel-default">
+        <div class="panel-body">
+            <form role="form" name="form" ng-submit="submit()" class="form-horizontal">
+
+                <div class="form-group required">
+                    <label class="col-lg-2 col-md-3 control-label">Nombre de usuario</label>
+                    <div class="col-lg-3 col-md-3">
+                        <input type="text" id="nombreUsuario" required class="form-control" ng-model="instancia.nombreUsuario" ng-readonly="!esAlta" />
+                    </div>
+                </div>
+                <div class="form-group required">
+                    <label class="col-lg-2 col-md-3 control-label">Nombre y apellido</label>
+                    <div class="col-lg-3 col-md-3">
+                        <input type="text"" id="nombre" required class="form-control" ng-model="instancia.nombre" />
+                    </div>
+                </div>
+                <div class="form-group required">
+                    <label class="col-lg-2 col-md-3 control-label">E-Mail</label>
+                    <div class="col-lg-5 col-md-5">
+                        <input type="email" required class="form-control" ng-model="instancia.mail" />
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-lg-5 col-md-5">
+                        <div class="checkbox">
+                            <label>
+                                <input type="checkbox" ng-model="instancia.activo"> Activo
+                            </label>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-lg-2 col-md-3 control-label">Roles</label>
+                    <div class="col-lg-5 col-md-5">
+                        <div ng-repeat="item in roles">
+                            <div class="checkbox">
+                                <label>
+                                    <input type="checkbox" 
+                                        value="{{item}}"
+                                        ng-disabled="item.disabled == true"
+                                        ng-model="status" 
+                                        ng-click="toggleRol(status, item)"
+                                        ng-checked="item.check == true"> {{ item.descripcion }}
+                                </label>
+                            </div>                            
+                        </div>
+                    </div>
+                </div>
+                <div class="panel panel-default" ng-show="poseeRolFederacion == true">
+                    <div class="panel-heading">
+                        <strong>Federaciones</strong>
+                    </div>
+                    <div class="panel-body">
+                        <div class="row" style="margin-bottom:15px">
+                            <div class="col-lg-5 col-md-5">
+                                <input type="text" class="form-control is-empty"
+                                   ng-model="federacion"
+                                   typeahead-loading="isLoading"
+                                   typeahead-min-length="3"
+                                   uib-typeahead="federacion as federacion.descripcion for federacion in federaciones($viewValue)"
+                                   typeahead-on-select="federacionesSelect($item, $model, $label)"
+                                   placeholder="Ingrese la Federación a buscar..." />
+                            </div>
+                            <div class="col-lg-7 col-md-7">
+                                <table class="table table-striped table-hover">
+                                    <tbody ng-repeat="item in instancia.UsuariosFederaciones">
+                                        <tr>
+                                            <td>{{ item.Federaciones.descripcion }}</td>
+                                            <td class="action"><a title="Eliminar Federación" ng-click="eliminarFederacion(item)" style="cursor:pointer"><i class="fa fa-remove" style="color:red"></i></a></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="panel panel-default" ng-show="poseeRolAsociacion == true">
+                    <div class="panel-heading">
+                        <strong>Asociaciones</strong>
+                    </div>
+                    <div class="panel-body" style="padding-bottom:15px">
+                        <div class="row" style="margin-bottom:15px">
+                            <div class="col-lg-5 col-md-5">
+                                <input type="text" class="form-control is-empty"
+                                   ng-model="asociacion"
+                                   typeahead-loading="isLoading"
+                                   typeahead-min-length="3"
+                                   uib-typeahead="asociacion as asociacion.descripcion + ' - ' + asociacion.Federaciones.descripcion for asociacion in asociaciones($viewValue)"
+                                   typeahead-on-select="asociacionesSelect($item, $model, $label)"
+                                   placeholder="Ingrese la Asociación a buscar..." />
+                            </div>
+                            <div class="col-lg-7 col-md-7">
+                                <table class="table table-striped table-hover">
+                                    <tbody ng-repeat="item in instancia.UsuariosAsociaciones">
+                                        <tr>
+                                            <td>{{ item.Asociaciones.descripcion }} - {{ item.Asociaciones.Federaciones.descripcion }}</td>
+                                            <td class="action"><a title="Eliminar Asociación" ng-click="eliminarAsociacion(item)" style="cursor:pointer"><i class="fa fa-remove" style="color:red"></i></a></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <button type="submit" class="btn btn-primary" ng-disabled="isLoading">
+                    <span ng-hide="isLoading"><i class="fa fa-save"></i>&nbsp;&nbsp;Guardar</span>
+                    <span ng-show="isLoading"><span class='glyphicon glyphicon-refresh glyphicon-refresh-animate'></span>&nbsp;Guardando...</span>
+                </button>
+                <br /><br />
+
+            </form>
+        </div>
+    </div>
+</div>

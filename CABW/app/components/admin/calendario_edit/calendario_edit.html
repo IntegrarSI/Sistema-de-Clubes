@@ -1,0 +1,569 @@
+﻿<div class="row rowHeader">
+    <div class="col-lg-8 col-sm-8 h1">
+        Calendario - {{ title }}
+    </div>
+    <div class="col-lg-4 col-sm-4 h1-botones">
+        &nbsp;<a ui-sref="calendario" class="btn btn-default">Volver</a>
+    </div>
+</div>
+<div class="row">
+    <div class="panel panel-default">
+        <div class="panel-body">
+            <form role="form" name="form" ng-submit="submit()" class="form-horizontal">
+
+                <ul class="nav nav-tabs">
+                    <li class="active"><a showtab="" href="#principal" data-toggle="tab" aria-expanded="true">Datos principales</a></li>
+                    <li ng-hide="esAlta"><a showtab="" href="#detalle" data-toggle="tab" aria-expanded="false">Detalle y Cronograma</a></li>
+                    <li ng-hide="esAlta"><a showtab="" href="#resultados" data-toggle="tab" aria-expanded="false">Resultados</a></li>
+                </ul>
+                <div id="myTabContent" class="tab-content" style="padding:25px 15px">
+                    <div class="tab-pane fade active in" id="principal">
+                        <div class="form-group required">
+                            <label class="col-lg-2 col-md-3 control-label">Tipo competición</label>
+                            <div class="col-lg-4 col-md-4">
+                                <select class="form-control" ng-model="instancia.tipoCompeticion">
+                                    <option>Campeonato Argentino</option>
+                                    <option>Encuentro Nacional</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-group required">
+                            <label class="col-lg-2 col-md-3 control-label">Fecha inicio</label>
+                            <div class="col-lg-3 col-md-3">
+                                <input type="date" required class="form-control" ng-model="instancia.fechaDesde" />
+                            </div>
+                        </div>
+                        <div class="form-group required">
+                            <label class="col-lg-2 col-md-3 control-label">Fecha fin</label>
+                            <div class="col-lg-3 col-md-3">
+                                <input type="date" required class="form-control" ng-model="instancia.fechaHasta" />
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-lg-2 col-md-3 control-label">Categoría</label>
+                            <div class="col-lg-5 col-md-5">
+                                <input type="text" class="form-control" ng-model="instancia.categoria" />
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-lg-2 col-md-3 control-label">Especialidades</label>
+                            <div class="col-lg-5 col-md-5">
+
+                                <div ng-repeat="item in especialidades">
+                                    <div class="checkbox">
+                                        <label>
+                                            <input ng-disabled="!esAlta" type="checkbox" value="{{item}}" 
+                                                ng-click="toggleEspecialidad(item)"
+                                                ng-checked="item.check == true"> {{ item.descripcion }}
+                                        </label>
+                                    </div>
+                                </div>
+                                <br />
+                                <input type="text" required class="form-control" ng-model="instancia.especialidad" readonly />
+                            </div>
+                        </div>
+                        <div class="form-group required">
+                            <label class="col-lg-2 col-md-3 control-label">Localidad</label>
+                            <div class="col-lg-3 col-md-4">
+                                <input type="text" required class="form-control" ng-model="instancia.localidad" />
+                            </div>
+                        </div>
+                        <div class="form-group required">
+                            <label class="col-lg-2 col-md-3 control-label">Provincia</label>
+                            <div class="col-lg-4 col-md-4">
+                                <select class="form-control" ng-model="instancia.provincia">
+                                    <option>Buenos Aires</option>
+                                    <option>Catamarca</option>
+                                    <option>Chaco</option>
+                                    <option>Chubut</option>
+                                    <option>Córdoba</option>
+                                    <option>Corrientes</option>
+                                    <option>Entre Ríos</option>
+                                    <option>Formosa</option>
+                                    <option>Jujuy</option>
+                                    <option>La Pampa</option>
+                                    <option>La Rioja</option>
+                                    <option>Mendoza</option>
+                                    <option>Misiones</option>
+                                    <option>Neuquén</option>
+                                    <option>Río Negro</option>
+                                    <option>Salta</option>
+                                    <option>San Juan</option>
+                                    <option>San Luis</option>
+                                    <option>Santa Cruz</option>
+                                    <option>Santa Fe</option>
+                                    <option>Santiago del Estero</option>
+                                    <option>Tierra del Fuego</option>
+                                    <option>Tucumán</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="col-lg-5 col-md-5">
+                                <div class="checkbox">
+                                    <label>
+                                        <input type="checkbox" ng-model="instancia.activo"> Visible
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="tab-pane fade" id="detalle">
+                        <div class="form-group">
+                            <div class="col-lg-5 col-md-5">
+                                <div class="checkbox">
+                                    <label>
+                                        <input type="checkbox" ng-model="instancia.detalleMostrar"> Habilitar visualización de detalle y cronograma
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-lg-2 col-md-3 control-label">Título</label>
+                            <div class="col-lg-8 col-md-8">
+                                <input type="text" class="form-control" ng-model="instancia.detalleTitulo" />
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-lg-2 col-md-3 control-label">Descripción evento</label>
+                            <div class="col-lg-8 col-md-8">
+                                <textarea class="form-control" ng-model="instancia.detalleDescripcion" rows="10"></textarea>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-lg-2 col-md-3 control-label">Jueces</label>
+                            <div class="col-lg-8 col-md-8">
+                                <textarea class="form-control" ng-model="instancia.detalleJueces" rows="3"></textarea>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="col-lg-5 col-md-5">
+                                <div class="checkbox">
+                                    <label>
+                                        <input type="checkbox" ng-model="instancia.detalleMostrarAdvertenciaDocumentacion"> Mostrar advertencia de documentación necesaria
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="col-lg-5 col-md-5">
+                                <div class="checkbox">
+                                    <label>
+                                        <input type="checkbox" ng-model="instancia.detalleMostrarPorgramaActividades"> Mostrar programa de Actividades
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="panel panel-default">
+                            <div class="panel-heading">
+                                <strong>Datos de la ubicación</strong>
+                            </div>
+                            <div class="panel-body">
+                                <div class="row">
+                                    <div class="col-lg-4 col-md-4">
+                                        <label>Lugar</label>
+                                        <input type="text" class="form-control" ng-model="instancia.lugar" />
+                                    </div>
+                                    <div class="col-lg-4 col-md-4">
+                                        <label>Dirección</label>
+                                        <input type="text" class="form-control" ng-model="instancia.direccion" />
+                                    </div>
+                                    <div class="col-lg-4 col-md-4">
+                                        <label>Teléfono</label>
+                                        <input type="text" class="form-control" ng-model="instancia.telefono" />
+                                    </div>
+                                </div>
+                                <div class="row" style="padding-bottom:15px">
+                                    <div class="col-lg-12 col-md-12">
+                                        <label>URL Google Maps</label>
+                                        <input type="text" class="form-control" ng-model="instancia.urlMaps" />
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="panel panel-default">
+                            <div class="panel-heading">
+                                <strong>Programa de actividades</strong>
+                            </div>
+                            <div class="panel-body">
+                                <div class="row">
+                                    <div class="col-lg-3 col-md-3">
+                                        <label>Fecha</label>
+                                        <input type="date" class="form-control" ng-model="actividad.fecha" />
+                                    </div>
+                                    <div class="col-lg-2 col-md-2">
+                                        <label>Hora</label>
+                                        <select class="form-control" ng-model="actividad.hora">
+                                            <option ng-repeat="h in horas track by $index">{{ $index | zeroPadding: 2 }}</option>
+                                        </select>
+                                    </div>
+                                    <div class="col-lg-2 col-md-2">
+                                        <label>Minutos</label>
+                                        <select class="form-control" ng-model="actividad.minutos">
+                                            <option ng-repeat="m in minutos">{{ m | zeroPadding: 2 }}</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="row" style="padding-top:15px">
+                                    <div class="col-lg-10 col-md-10">
+                                        <label>Descripción</label>
+                                        <input type="text" class="form-control" ng-model="actividad.descripcion" />
+                                    </div>
+                                    <div class="col-lg-2 col-md-2 col-xs-5 text-right" style="padding-top:15px">
+                                        <button type="button" class="btn btn-primary btn-block" ng-click="agregarActividad()" 
+                                            ng-disabled="actividad.fecha == null || actividad.hora == null || actividad.minutos == null || actividad.descripcion == null">
+                                            <i class="fa fa-plus"></i>&nbsp;Agregar
+                                        </button>
+                                    </div>
+                                </div>
+                                <div class="row" style="padding-top:15px">
+                                    <div class="col-lg-12">
+                                        <table class="table table-striped table-hover">
+                                            <thead>
+                                                <tr>
+                                                    <th>Fecha</th>
+                                                    <th>Hora</th>
+                                                    <th>Descripción</th>
+                                                    <th class="action"></th>
+                                                </tr>
+                                            </thead>
+                                            <tbody ng-repeat="item in instancia.TorneosActividades | orderBy : 'fecha' | orderBy : 'hora' | orderBy : 'minutos'">
+                                                <tr>
+                                                    <td>{{ item.fecha | date:'dd/MM/yyyy' }}</td>
+                                                    <td>{{ item.hora | zeroPadding: 2 }}:{{ item.minutos | zeroPadding: 2 }}</td>
+                                                    <td>{{ item.descripcion }}</td>
+                                                    <td><a title="Eliminar actividad" ng-click="eliminarActividad(item)" style="cursor:pointer"><i class="fa fa-remove" style="color:red"></i></a></td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="tab-pane fade" id="resultados">
+                        <div class="form-group">
+                            <div class="col-lg-5 col-md-5">
+                                <div class="checkbox">
+                                    <label>
+                                        <input type="checkbox" ng-model="instancia.resultadosMostrar"> Habilitar visualización de resultados
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-lg-3 col-md-3 control-label">Título</label>
+                            <div class="col-lg-8 col-md-8">
+                                <input type="text" class="form-control" ng-model="instancia.resultadosTitulo" />
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-lg-3 col-md-3 control-label">Descripción evento</label>
+                            <div class="col-lg-8 col-md-8">
+                                <textarea class="form-control" ng-model="instancia.resultadosDescripcion" rows="10"></textarea>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-lg-3 col-md-3 control-label">Url fotos de Facebook</label>
+                            <div class="col-lg-8 col-md-8">
+                                <input type="text" class="form-control" ng-model="instancia.resultadosFotosFacebook" />
+                            </div>
+                        </div>
+
+                        <uib-tabset active="activeJustified">
+                            <uib-tab ng-repeat="especialidad in instancia.TorneosEspecialidades" index="especialidad.idEspecialidad" heading="{{especialidad.Especialidades.descripcion}}" select="especalidadChange(especialidad.idEspecialidad)">
+                            </uib-tab>
+                        </uib-tabset>
+                        <br />
+                        <div class="panel panel-default">
+                            <div class="panel-heading">
+                                <strong>Zonas</strong>
+                            </div>
+                            <div class="panel-body">
+                                <div class="row">
+                                    <div class="col-lg-3 col-md-3">
+                                        <label>Nombre</label>
+                                        <input type="text" class="form-control" ng-model="zona.descripcion" />
+                                    </div>
+                                    <div class="col-lg-2 col-md-2 col-xs-5 text-right" style="padding-top:15px">
+                                        <button type="button" class="btn btn-primary btn-block" ng-click="agregarZona()" 
+                                            ng-disabled="zona.descripcion == null">
+                                            <i class="fa fa-plus"></i>&nbsp;Agregar
+                                        </button>
+                                    </div>
+                                </div>
+                                <div class="row" style="padding-top:15px">
+                                    <div class="col-lg-12">
+                                        <table class="table table-striped table-hover">
+                                            <thead>
+                                                <tr>
+                                                    <th>Descripción</th>
+                                                    <th class="action"></th>
+                                                </tr>
+                                            </thead>
+                                            <tbody ng-repeat="item in instancia.TorneosZonas | filter: {idEspecialidad: resultadosIdEspecialidad} | orderBy : 'descripcion'">
+                                                <tr>
+                                                    <td>{{ item.descripcion }}</td>
+                                                    <td><a title="Eliminar zona" ng-click="eliminarZona(item)" style="cursor:pointer"><i class="fa fa-remove" style="color:red"></i></a></td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="panel panel-default">
+                            <div class="panel-heading">
+                                <strong>Equipos</strong>
+                            </div>
+                            <div class="panel-body">
+                                <div class="row">
+                                    <div class="col-lg-7 col-md-7">
+                                        <label>Nombre equipo</label>
+                                        <input type="text" class="form-control" ng-model="equipo.nombre" />
+                                    </div>
+                                    <div class="col-lg-5 col-md-5">
+                                        <label>Nombre corto</label>
+                                        <input type="text" class="form-control" ng-model="equipo.nombreCorto" />
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-lg-5 col-md-5">
+                                        <label>Técnico</label>
+                                        <input type="text" class="form-control" ng-model="equipo.tecnico" />
+                                    </div>
+                                    <div class="col-lg-4 col-md-4">
+                                        <label>Delegado</label>
+                                        <input type="text" class="form-control" ng-model="equipo.delegado" />
+                                    </div>
+                                    <div class="col-lg-3 col-md-3">
+                                        <label>Zona</label>
+                                        <select class="form-control" ng-model="equipo.zona">
+                                            <option ng-repeat="item in instancia.TorneosZonas | filter: {idEspecialidad: resultadosIdEspecialidad}">{{ item.descripcion }}</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-lg-9 col-md-9">
+                                        <label>Jugadores</label>
+                                        <input type="text" class="form-control" ng-model="equipo.jugadores" />
+                                    </div>
+                                    <div class="col-lg-2 col-md-2 col-xs-5 text-right" style="padding-top:15px">
+                                        <button type="button" class="btn btn-primary btn-block" ng-click="agregarEquipo()" 
+                                            ng-disabled="equipo.nombre == null || equipo.jugadores == null || equipo.zona == null">
+                                            <i class="fa fa-plus"></i>&nbsp;Agregar
+                                        </button>
+                                    </div>
+                                </div>
+                                <div class="row" style="padding-top:15px">
+                                    <div class="col-lg-12">
+                                        <table class="table table-hover">
+                                            <thead>
+                                                <tr>
+                                                    <th>Nombre equipo</th>
+                                                    <th>Técnico</th>
+                                                    <th>Delegado</th>
+                                                    <th>Zona</th>
+                                                    <th class="action"></th>
+                                                </tr>
+                                            </thead>
+                                            <tbody ng-repeat="item in instancia.TorneosEquipos | filter: {idEspecialidad: resultadosIdEspecialidad} | orderBy : ['zona', 'nombre']">
+                                                <tr>
+                                                    <td>{{ item.nombre }} ({{ item.nombreCorto }})</td>
+                                                    <td>{{ item.tecnico }}</td>
+                                                    <td>{{ item.delegado }}</td>
+                                                    <td>{{ item.zona }}</td>
+                                                    <td><a title="Eliminar equipo" ng-click="eliminarEquipo(item)" style="cursor:pointer"><i class="fa fa-remove" style="color:red"></i></a></td>
+                                                </tr>
+                                                <tr>
+                                                    <td colspan="5"><strong>Jugadores: </strong>{{ item.jugadores }}</td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+
+                        <div class="panel panel-default">
+                            <div class="panel-heading">
+                                <strong>Partidos</strong>
+                            </div>
+                            <div class="panel-body">
+                                <div class="row">
+                                    <div class="col-lg-3 col-md-3">
+                                        <label>Equipo 1</label>
+                                        <select class="form-control" ng-model="partido.TorneosEquipos" ng-options="item.nombreCorto for item in instancia.TorneosEquipos | filter: {idEspecialidad: resultadosIdEspecialidad}"></select>
+                                    </div>
+                                    <div class="col-lg-2 col-md-2">
+                                        <label>Puntos</label>
+                                        <select class="form-control" ng-model="partido.puntosEquipo1">
+                                            <option ng-repeat="i in puntos track by $index">{{ $index }}</option>
+                                        </select>
+                                    </div>
+                                    <div class="col-lg-3 col-md-3">
+                                        <label>Equipo 2</label>
+                                        <select class="form-control" ng-model="partido.TorneosEquipos1" ng-options="item.nombreCorto for item in instancia.TorneosEquipos | filter: {idEspecialidad: resultadosIdEspecialidad}"></select>
+                                    </div>
+                                    <div class="col-lg-2 col-md-2">
+                                        <label>Puntos</label>
+                                        <select class="form-control" ng-model="partido.puntosEquipo2">
+                                            <option ng-repeat="i in puntos track by $index">{{ $index }}</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-lg-4 col-md-4">
+                                        <label>Fase</label>
+                                        <select class="form-control" ng-model="partido.fase">
+                                            <option>Primera Fase</option>
+                                            <option>Segunda Fase</option>
+                                            <option>Cuartos de Final</option>
+                                            <option>Semifinal</option>
+                                            <option>Final</option>
+                                        </select>
+                                    </div>
+                                    <div class="col-lg-2 col-lg-offset-6 col-md-2 col-xs-5 text-right" style="padding-top:15px">
+                                        <button type="button" class="btn btn-primary btn-block" ng-click="agregarPartido()" 
+                                            ng-disabled="partido.TorneosEquipos == null || partido.TorneosEquipos1 == null || partido.fase == null">
+                                            <i class="fa fa-plus"></i>&nbsp;Agregar
+                                        </button>
+                                    </div>
+                                </div>
+                                <div class="row" style="padding-top:15px">
+                                    <div class="col-lg-12">
+                                        <h4>Primera Fase</h4>
+                                        <table class="table table-striped table-hover">
+                                            <thead>
+                                                <tr>
+                                                    <th>Equipo 1</th>
+                                                    <th style="width:100px">Puntos</th>
+                                                    <th>Equipo 2</th>
+                                                    <th style="width:100px">Puntos</th>
+                                                    <th class="action"></th>
+                                                </tr>
+                                            </thead>
+                                            <tbody ng-repeat="item in instancia.TorneosPartidos | filter: {idEspecialidad: resultadosIdEspecialidad, fase: 'Primera Fase'}">
+                                                <tr>
+                                                    <td>{{ item.TorneosEquipos.nombreCorto }}</td>
+                                                    <!--<td><select class="form-control" ng-model="item.puntosEquipo1" ng-options="punto as punto for punto in puntos"></select></td>-->
+                                                    <td>{{ item.puntosEquipo1 }}</td>
+                                                    <td>{{ item.TorneosEquipos1.nombreCorto }}</td>
+                                                    <!--<td><select class="form-control" ng-model="item.puntosEquipo2" ng-options="punto as punto for punto in puntos"></select></td>-->
+                                                    <td>{{ item.puntosEquipo2 }}</td>
+                                                    <td><a title="Eliminar partido" ng-click="eliminarPartido(item)" style="cursor:pointer"><i class="fa fa-remove" style="color:red"></i></a></td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                        <h4>Segunda Fase</h4>
+                                        <table class="table table-striped table-hover">
+                                            <thead>
+                                                <tr>
+                                                    <th>Equipo 1</th>
+                                                    <th style="width:100px">Puntos</th>
+                                                    <th>Equipo 2</th>
+                                                    <th style="width:100px">Puntos</th>
+                                                    <th class="action"></th>
+                                                </tr>
+                                            </thead>
+                                            <tbody ng-repeat="item in instancia.TorneosPartidos | filter: {idEspecialidad: resultadosIdEspecialidad, fase: 'Segunda Fase'}">
+                                                <tr>
+                                                    <td>{{ item.TorneosEquipos.nombreCorto }}</td>
+                                                    <!--<td><select class="form-control" ng-model="item.puntosEquipo1" ng-options="punto as punto for punto in puntos"></select></td>-->
+                                                    <td>{{ item.puntosEquipo1 }}</td>
+                                                    <td>{{ item.TorneosEquipos1.nombreCorto }}</td>
+                                                    <!--<td><select class="form-control" ng-model="item.puntosEquipo2" ng-options="punto as punto for punto in puntos"></select></td>-->
+                                                    <td>{{ item.puntosEquipo2 }}</td>
+                                                    <td><a title="Eliminar partido" ng-click="eliminarPartido(item)" style="cursor:pointer"><i class="fa fa-remove" style="color:red"></i></a></td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                        <h4>Cuartos de Final</h4>
+                                        <table class="table table-striped table-hover">
+                                            <thead>
+                                                <tr>
+                                                    <th>Equipo 1</th>
+                                                    <th style="width:100px">Puntos</th>
+                                                    <th>Equipo 2</th>
+                                                    <th style="width:100px">Puntos</th>
+                                                    <th class="action"></th>
+                                                </tr>
+                                            </thead>
+                                            <tbody ng-repeat="item in instancia.TorneosPartidos | filter: {idEspecialidad: resultadosIdEspecialidad, fase: 'Cuartos de Final'}">
+                                                <tr>
+                                                    <td>{{ item.TorneosEquipos.nombreCorto }}</td>
+                                                    <!--<td><select class="form-control" ng-model="item.puntosEquipo1" ng-options="punto as punto for punto in puntos"></select></td>-->
+                                                    <td>{{ item.puntosEquipo1 }}</td>
+                                                    <td>{{ item.TorneosEquipos1.nombreCorto }}</td>
+                                                    <!--<td><select class="form-control" ng-model="item.puntosEquipo2" ng-options="punto as punto for punto in puntos"></select></td>-->
+                                                    <td>{{ item.puntosEquipo2 }}</td>
+                                                    <td><a title="Eliminar partido" ng-click="eliminarPartido(item)" style="cursor:pointer"><i class="fa fa-remove" style="color:red"></i></a></td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                        <h4>Semifinal</h4>
+                                        <table class="table table-striped table-hover">
+                                            <thead>
+                                                <tr>
+                                                    <th>Equipo 1</th>
+                                                    <th style="width:100px">Puntos</th>
+                                                    <th>Equipo 2</th>
+                                                    <th style="width:100px">Puntos</th>
+                                                    <th class="action"></th>
+                                                </tr>
+                                            </thead>
+                                            <tbody ng-repeat="item in instancia.TorneosPartidos | filter: {idEspecialidad: resultadosIdEspecialidad, fase: 'Semifinal'}">
+                                                <tr>
+                                                    <td>{{ item.TorneosEquipos.nombreCorto }}</td>
+                                                    <!--<td><select class="form-control" ng-model="item.puntosEquipo1" ng-options="punto as punto for punto in puntos"></select></td>-->
+                                                    <td>{{ item.puntosEquipo1 }}</td>
+                                                    <td>{{ item.TorneosEquipos1.nombreCorto }}</td>
+                                                    <!--<td><select class="form-control" ng-model="item.puntosEquipo2" ng-options="punto as punto for punto in puntos"></select></td>-->
+                                                    <td>{{ item.puntosEquipo2 }}</td>
+                                                    <td><a title="Eliminar partido" ng-click="eliminarPartido(item)" style="cursor:pointer"><i class="fa fa-remove" style="color:red"></i></a></td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                        <h4>Final</h4>
+                                        <table class="table table-striped table-hover">
+                                            <thead>
+                                                <tr>
+                                                    <th>Equipo 1</th>
+                                                    <th style="width:100px">Puntos</th>
+                                                    <th>Equipo 2</th>
+                                                    <th style="width:100px">Puntos</th>
+                                                    <th class="action"></th>
+                                                </tr>
+                                            </thead>
+                                            <tbody ng-repeat="item in instancia.TorneosPartidos | filter: { idEspecialidad: resultadosIdEspecialidad, fase: 'Final'} : true">
+                                                <tr>
+                                                    <td>{{ item.TorneosEquipos.nombreCorto }}</td>
+                                                    <!--<td><select class="form-control" ng-model="item.puntosEquipo1" ng-options="punto as punto for punto in puntos"></select></td>-->
+                                                    <td>{{ item.puntosEquipo1 }}</td>
+                                                    <td>{{ item.TorneosEquipos1.nombreCorto }}</td>
+                                                    <!--<td><select class="form-control" ng-model="item.puntosEquipo2" ng-options="punto as punto for punto in puntos"></select></td>-->
+                                                    <td>{{ item.puntosEquipo2 }}</td>
+                                                    <td><a title="Eliminar partido" ng-click="eliminarPartido(item)" style="cursor:pointer"><i class="fa fa-remove" style="color:red"></i></a></td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+                <button type="submit" class="btn btn-primary" ng-disabled="isLoading">
+                    <span ng-hide="isLoading"><i class="fa fa-save"></i>&nbsp;&nbsp;Guardar</span>
+                    <span ng-show="isLoading"><span class='glyphicon glyphicon-refresh glyphicon-refresh-animate'></span>&nbsp;&nbsp;Guardando...</span>
+                </button>
+                <br /><br />
+            </form>
+        </div>
+    </div>
+</div>

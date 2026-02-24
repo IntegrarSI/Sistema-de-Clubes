@@ -1,0 +1,658 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{37C4C3B7-69D6-4768-A69E-ACA9B06D42CE}</ProjectGuid>
+    <ProjectTypeGuids>{E3E379DF-F4C6-4180-9B81-6769533ABE47};{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>CABW</RootNamespace>
+    <AssemblyName>CABW</AssemblyName>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <MvcBuildViews>false</MvcBuildViews>
+    <UseIISExpress>true</UseIISExpress>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <WebGreaseLibPath>..\packages\WebGrease.1.5.2\lib</WebGreaseLibPath>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+    <Use64BitIISExpress />
+    <UseGlobalApplicationHostFile />
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Antlr3.Runtime">
+      <HintPath>..\packages\Antlr.3.4.1.9004\lib\Antlr3.Runtime.dll</HintPath>
+    </Reference>
+    <Reference Include="Integrar, Version=1.3.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\Integrar\bin\Debug\Integrar.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Newtonsoft.Json, Version=9.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Newtonsoft.Json.9.0.1\lib\net40\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Optimization">
+      <HintPath>..\packages\Microsoft.AspNet.Web.Optimization.1.1.3\lib\net40\System.Web.Optimization.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Abstractions" />
+    <Reference Include="System.Web.Routing" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.Net.Http.2.0.20710.0\lib\net40\System.Net.Http.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http.Formatting, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Client.4.0.20710.0\lib\net40\System.Net.Http.Formatting.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http.WebRequest">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.Net.Http.2.0.20710.0\lib\net40\System.Net.Http.WebRequest.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Helpers, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.2.0.20710.0\lib\net40\System.Web.Helpers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Http, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Core.4.0.20710.0\lib\net40\System.Web.Http.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Http.WebHost, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.WebHost.4.0.20710.0\lib\net40\System.Web.Http.WebHost.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Mvc, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Mvc.4.0.20710.0\lib\net40\System.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Razor, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Razor.2.0.20710.0\lib\net40\System.Web.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.2.0.20710.0\lib\net40\System.Web.WebPages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Deployment, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.2.0.20710.0\lib\net40\System.Web.WebPages.Deployment.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Razor, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.2.0.20710.0\lib\net40\System.Web.WebPages.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="WebGrease">
+      <HintPath>..\packages\WebGrease.1.5.2\lib\WebGrease.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="app\components\admin\asociaciones\asociaciones.html" />
+    <Content Include="app\components\admin\asociaciones\asociaciones.js" />
+    <Content Include="app\components\admin\asociaciones\asociacionesCtrl.js" />
+    <Content Include="app\components\admin\asociaciones_edit\asociaciones_edit.html" />
+    <Content Include="app\components\admin\asociaciones_edit\asociaciones_edit.js" />
+    <Content Include="app\components\admin\asociaciones_edit\asociaciones_editCtrl.js" />
+    <Content Include="app\components\admin\clubes\clubes.html" />
+    <Content Include="app\components\admin\clubes\clubes.js" />
+    <Content Include="app\components\admin\clubes\clubesCtrl.js" />
+    <Content Include="app\components\admin\clubes_edit\clubes_edit.html" />
+    <Content Include="app\components\admin\clubes_edit\clubes_edit.js" />
+    <Content Include="app\components\admin\clubes_edit\clubes_editCtrl.js" />
+    <Content Include="app\components\admin\confirmacion\confirmacion_eliminar.html" />
+    <Content Include="app\components\admin\confirmacion\confirmacion_eliminar.js" />
+    <Content Include="app\components\admin\confirmacion\confirmacion_eliminar_usuario.html" />
+    <Content Include="app\components\admin\confirmacion\confirmacion_eliminar_usuario.js" />
+    <Content Include="app\components\admin\informes\jugadoresCategorias.html" />
+    <Content Include="app\components\admin\informes\jugadoresCategoriasCtrl.js" />
+    <Content Include="app\components\admin\informes\pases.html" />
+    <Content Include="app\components\admin\informes\pasesCtrl.js" />
+    <Content Include="app\components\admin\informes\jugadoresHabilitados.html" />
+    <Content Include="app\components\admin\informes\carnetsNoEntregados.html" />
+    <Content Include="app\components\admin\informes\jugadoresHabilitadosCtrl.js" />
+    <Content Include="app\components\admin\informes\informes.js" />
+    <Content Include="app\components\admin\informes\carnetsNoEntregadosCtrl.js" />
+    <Content Include="app\components\admin\informes\totalJugadores.html" />
+    <Content Include="app\components\admin\informes\totalJugadoresCtrl.js" />
+    <Content Include="app\components\admin\jugadores_penalizaciones\jugadores_penalizaciones.html" />
+    <Content Include="app\components\admin\jugadores_penalizaciones\jugadores_penalizaciones.js" />
+    <Content Include="app\components\admin\jugadores_penalizaciones\jugadores_penalizacionesCtrl.js" />
+    <Content Include="app\components\admin\modal_habilitacion\modal_habilitacion.html" />
+    <Content Include="app\components\admin\modal_habilitacion\modal_habilitacion.js" />
+    <Content Include="app\components\admin\noticias\noticias.html" />
+    <Content Include="app\components\admin\noticias\noticias.js" />
+    <Content Include="app\components\admin\noticias\noticiasCtrl.js" />
+    <Content Include="app\components\admin\noticias_edit\noticias_edit.html" />
+    <Content Include="app\components\admin\noticias_edit\noticias_edit.js" />
+    <Content Include="app\components\admin\noticias_edit\noticias_editCtrl.js" />
+    <Content Include="app\components\admin\password_force_edit\password_force_edit.html" />
+    <Content Include="app\components\admin\password_force_edit\password_force_edit.js" />
+    <Content Include="app\components\admin\password_force_edit\password_force_editCtrl.js" />
+    <Content Include="app\components\admin\jugadores_detail\jugadores_detail.html" />
+    <Content Include="app\components\admin\jugadores_detail\jugadores_detail.js" />
+    <Content Include="app\components\admin\jugadores_detail\jugadores_detailCtrl.js" />
+    <Content Include="app\components\admin\jugadores_pases\jugadores_pases.html" />
+    <Content Include="app\components\admin\jugadores_pases\jugadores_pases.js" />
+    <Content Include="app\components\admin\jugadores_pases\jugadores_pasesCtrl.js" />
+    <Content Include="app\components\admin\jugadores\jugadores.html" />
+    <Content Include="app\components\admin\jugadores\jugadores.js" />
+    <Content Include="app\components\admin\jugadores\jugadoresCtrl.js" />
+    <Content Include="app\components\admin\jugadores_carnet\jugadores_carnet.html" />
+    <Content Include="app\components\admin\jugadores_carnet\jugadores_carnet.js" />
+    <Content Include="app\components\admin\jugadores_carnet\jugadores_carnetCtrl.js" />
+    <Content Include="app\components\admin\jugadores_edit\jugadores_edit.html" />
+    <Content Include="app\components\admin\jugadores_edit\jugadores_edit.js" />
+    <Content Include="app\components\admin\jugadores_edit\jugadores_editCtrl.js" />
+    <Content Include="app\components\admin\federaciones_edit\federaciones_edit.html" />
+    <Content Include="app\components\admin\federaciones_edit\federaciones_edit.js" />
+    <Content Include="app\components\admin\federaciones_edit\federaciones_editCtrl.js" />
+    <Content Include="app\components\admin\federaciones\federaciones.html" />
+    <Content Include="app\components\admin\federaciones\federaciones.js" />
+    <Content Include="app\components\admin\federaciones\federacionesCtrl.js" />
+    <Content Include="app\components\admin\usuarios_edit\usuarios_edit.html" />
+    <Content Include="app\components\admin\usuarios_edit\usuarios_edit.js" />
+    <Content Include="app\components\admin\usuarios_edit\usuarios_editCtrl.js" />
+    <Content Include="app\components\admin\roles\roles.html" />
+    <Content Include="app\components\admin\roles\roles.js" />
+    <Content Include="app\components\admin\roles\rolesCtrl.js" />
+    <Content Include="app\components\admin\usuarios\usuarios.html" />
+    <Content Include="app\components\admin\usuarios\usuarios.js" />
+    <Content Include="app\components\admin\usuarios\usuariosCtrl.js" />
+    <Content Include="app\components\admin\password_edit\password_edit.html" />
+    <Content Include="app\components\admin\password_edit\password_edit.js" />
+    <Content Include="app\components\admin\password_edit\password_editCtrl.js" />
+    <Content Include="app\components\admin\recuperar_password\recuperar_password.html" />
+    <Content Include="app\components\admin\recuperar_password\recuperar_password.js" />
+    <Content Include="app\components\admin\recuperar_password\recuperar_passwordCtrl.js" />
+    <Content Include="app\components\site\historia\historia.html" />
+    <Content Include="app\components\site\historia\historia.js" />
+    <Content Include="app\components\site\historia\historiaCtrl.js" />
+    <Content Include="app\components\site\historia_modal\historia_modal.html" />
+    <Content Include="app\components\site\historia_modal\historia_modal.js" />
+    <Content Include="app\components\site\jugadores_carnet\jugadores_carnet.html" />
+    <Content Include="app\components\site\jugadores_carnet\jugadores_carnet.js" />
+    <Content Include="app\components\site\jugadores_carnet\jugadores_carnetCtrl.js" />
+    <Content Include="app\components\site\noticias\noticias.html" />
+    <Content Include="app\components\site\noticias\noticias.js" />
+    <Content Include="app\components\site\noticias\noticiasCtrl.js" />
+    <Content Include="app\components\site\noticias_detalle\noticias_detalle.html" />
+    <Content Include="app\components\site\noticias_detalle\noticias_detalle.js" />
+    <Content Include="app\components\site\noticias_detalle\noticias_detalleCtrl.js" />
+    <Content Include="app\shared\components\admin\angular-file-upload\ngThumb.js" />
+    <Content Include="app\shared\directives\admin\header\header_Ctrl.js" />
+    <Content Include="app\shared\directives\admin\loadingLoad\loadingLoad.html" />
+    <Content Include="app\shared\directives\admin\loadingLoad\loadingLoad.js" />
+    <Content Include="app\shared\directives\site\loadingLoad\loadingLoad.html" />
+    <Content Include="app\shared\directives\site\loadingLoad\loadingLoad.js" />
+    <Content Include="app\shared\directives\site\pluginFb\pluginFb.html" />
+    <Content Include="app\shared\directives\site\pluginFb\pluginFb.js" />
+    <Content Include="app\shared\factories\admin\excel.js" />
+    <Content Include="app\shared\factories\admin\focus\focus.js" />
+    <Content Include="app\shared\filters\admin\siNo.js" />
+    <Content Include="app\shared\services\admin\asociaciones.js" />
+    <Content Include="app\shared\services\admin\clubes.js" />
+    <Content Include="app\shared\services\admin\categorias.js" />
+    <Content Include="app\shared\services\admin\informes.js" />
+    <Content Include="app\shared\services\admin\noticias.js" />
+    <Content Include="app\shared\services\admin\pases.js" />
+    <Content Include="app\shared\services\admin\jugadores.js" />
+    <Content Include="app\shared\services\admin\localidades.js" />
+    <Content Include="app\shared\services\admin\federaciones.js" />
+    <Content Include="app\shared\services\admin\usuarios.js" />
+    <Content Include="app\shared\services\admin\roles.js" />
+    <Content Include="app\shared\services\site\campeones.js" />
+    <Content Include="app\shared\services\site\jugadores.js" />
+    <Content Include="app\shared\services\site\noticias.js" />
+    <Content Include="App_Start\JsonDotNetValueProviderFactory.cs" />
+    <Compile Include="App_Start\BundleConfig.cs" />
+    <Compile Include="Controllers\AdminController.cs" />
+    <Compile Include="Controllers\AuthController.cs" />
+    <Compile Include="Controllers\AsociacionesController.cs" />
+    <Compile Include="Controllers\CampeonesController.cs" />
+    <Compile Include="Controllers\ClubesController.cs" />
+    <Compile Include="Controllers\CategoriasController.cs" />
+    <Compile Include="Controllers\InformesController.cs" />
+    <Compile Include="Controllers\NoticiasController.cs" />
+    <Compile Include="Controllers\PasesController.cs" />
+    <Compile Include="Controllers\JugadoresController.cs" />
+    <Compile Include="Controllers\LocalidadesController.cs" />
+    <Compile Include="Controllers\UsuariosController.cs" />
+    <Compile Include="Controllers\RolesController.cs" />
+    <Compile Include="Controllers\TorneosController.cs" />
+    <Compile Include="Controllers\SharedController.cs" />
+    <Compile Include="Controllers\FederacionesController.cs" />
+    <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="JsonDotNetValueProviderFactory.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App_Start\FilterConfig.cs" />
+    <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="App_Start\WebApiConfig.cs" />
+    <Content Include="app\appSite.js" />
+    <Content Include="app\components\admin\calendario\calendario.html" />
+    <Content Include="app\components\admin\calendario\calendario.js" />
+    <Content Include="app\components\admin\calendario\calendarioCtrl.js" />
+    <Content Include="app\components\admin\calendario_edit\calendario_edit.html" />
+    <Content Include="app\components\admin\calendario_edit\calendario_edit.js" />
+    <Content Include="app\components\admin\calendario_edit\calendario_editCtrl.js" />
+    <Content Include="app\components\admin\dashboard\dashboard.html" />
+    <Content Include="app\components\admin\dashboard\dashboard.js" />
+    <Content Include="app\components\admin\dashboard\dashboardCtrl.js" />
+    <Content Include="app\components\admin\login\login.html" />
+    <Content Include="app\components\admin\login\login.js" />
+    <Content Include="app\components\admin\login\loginCtrl.js" />
+    <Content Include="app\components\site\autoridades\autoridades.html" />
+    <Content Include="app\components\site\autoridades\autoridades.js" />
+    <Content Include="app\components\site\autoridades\autoridadesCtrl.js" />
+    <Content Include="app\components\site\calendario\calendario.html" />
+    <Content Include="app\components\site\calendario\calendario.js" />
+    <Content Include="app\components\site\calendario\calendarioCtrl.js" />
+    <Content Include="app\components\site\contacto\contacto.html" />
+    <Content Include="app\components\site\contacto\contacto.js" />
+    <Content Include="app\components\site\contacto\contactoCtrl.js" />
+    <Content Include="app\components\site\calendario_detalle\calendario_detalle.html" />
+    <Content Include="app\components\site\calendario_detalle\calendario_detalle.js" />
+    <Content Include="app\components\site\calendario_detalle\calendario_detalleCtrl.js" />
+    <Content Include="app\components\site\calendario_resultados\calendario_resultados.html" />
+    <Content Include="app\components\site\calendario_resultados\calendario_resultados.js" />
+    <Content Include="app\components\site\calendario_resultados\calendario_resultadosCtrl.js" />
+    <Content Include="app\components\site\reglamentos\reglamentos.html" />
+    <Content Include="app\components\site\reglamentos\reglamentos.js" />
+    <Content Include="app\components\site\reglamentos\reglamentosCtrl.js" />
+    <Content Include="app\components\site\federaciones\federaciones.html" />
+    <Content Include="app\components\site\federaciones\federaciones.js" />
+    <Content Include="app\components\site\federaciones\federacionesCtrl.js" />
+    <Content Include="app\components\site\quienesSomos\quienesSomos.html" />
+    <Content Include="app\components\site\quienesSomos\quienesSomos.js" />
+    <Content Include="app\components\site\quienesSomos\quienesSomosCtrl.js" />
+    <Content Include="app\components\site\institucional\institucional.html" />
+    <Content Include="app\components\site\institucional\institucional.js" />
+    <Content Include="app\components\site\institucional\institucionalCtrl.js" />
+    <Content Include="app\components\site\home\home.html" />
+    <Content Include="app\components\site\home\home.js" />
+    <Content Include="app\components\site\home\homeCtrl.js" />
+    <Content Include="app\appAdmin.js" />
+    <Content Include="app\shared\directives\admin\auth\authCtrl.js" />
+    <Content Include="app\shared\directives\admin\showtab\showtab.js" />
+    <Content Include="app\shared\directives\admin\header\header.html" />
+    <Content Include="app\shared\directives\admin\header\header.js" />
+    <Content Include="app\shared\directives\admin\loading\loading.html" />
+    <Content Include="app\shared\directives\admin\loading\loading.js" />
+    <Content Include="app\shared\directives\admin\notification\notification.html" />
+    <Content Include="app\shared\directives\admin\notification\notification.js" />
+    <Content Include="app\shared\directives\admin\sidebar\sidebar.html" />
+    <Content Include="app\shared\directives\admin\sidebar\sidebar.js" />
+    <Content Include="app\shared\directives\site\footer\footer.html" />
+    <Content Include="app\shared\directives\site\footer\footer.js" />
+    <Content Include="app\shared\filters\admin\zeroPadding.js" />
+    <Content Include="app\shared\filters\site\zeroPadding.js" />
+    <Content Include="app\shared\services\admin\auth.js" />
+    <Content Include="app\shared\services\admin\authInterceptor.js" />
+    <Content Include="app\shared\services\admin\especialidades.js" />
+    <Content Include="app\shared\services\admin\notification.js" />
+    <Content Include="app\shared\services\admin\torneos.js" />
+    <Content Include="app\shared\services\admin\login.js" />
+    <Content Include="app\shared\services\admin\db.js" />
+    <Content Include="app\components\site\buscar_carnet\buscar_carnet.js" />
+    <Content Include="app\components\site\buscar_carnet\buscar_carnet.html" />
+    <Content Include="app\shared\services\site\especialidades.js" />
+    <Content Include="app\shared\services\site\shared.js" />
+    <Content Include="app\shared\services\site\db.js" />
+    <Content Include="app\shared\services\site\torneos.js" />
+    <Content Include="bin\Antlr3.Runtime.dll" />
+    <Content Include="bin\Antlr3.Runtime.pdb" />
+    <Content Include="bin\es\System.Net.Http.Formatting.resources.dll" />
+    <Content Include="bin\es\System.Net.Http.resources.dll" />
+    <Content Include="bin\es\System.Net.Http.WebRequest.resources.dll" />
+    <Content Include="bin\es\System.Web.Helpers.resources.dll" />
+    <Content Include="bin\es\System.Web.Http.resources.dll" />
+    <Content Include="bin\es\System.Web.Http.WebHost.resources.dll" />
+    <Content Include="bin\es\System.Web.Mvc.resources.dll" />
+    <Content Include="bin\es\System.Web.Razor.resources.dll" />
+    <Content Include="bin\es\System.Web.WebPages.Deployment.resources.dll" />
+    <Content Include="bin\es\System.Web.WebPages.Razor.resources.dll" />
+    <Content Include="bin\es\System.Web.WebPages.resources.dll" />
+    <Content Include="bin\Integrar.dll" />
+    <Content Include="bin\Microsoft.Office.Interop.Excel.dll" />
+    <Content Include="bin\Microsoft.Office.Interop.Excel.xml" />
+    <Content Include="bin\Microsoft.Vbe.Interop.dll" />
+    <Content Include="bin\Microsoft.Web.Infrastructure.dll" />
+    <Content Include="bin\Newtonsoft.Json.dll" />
+    <Content Include="bin\Newtonsoft.Json.xml" />
+    <Content Include="bin\office.dll" />
+    <Content Include="bin\office.xml" />
+    <Content Include="bin\RestSharp.dll" />
+    <Content Include="bin\System.Net.Http.dll" />
+    <Content Include="bin\System.Net.Http.Formatting.dll" />
+    <Content Include="bin\System.Net.Http.Formatting.xml" />
+    <Content Include="bin\System.Net.Http.WebRequest.dll" />
+    <Content Include="bin\System.Net.Http.WebRequest.xml" />
+    <Content Include="bin\System.Net.Http.xml" />
+    <Content Include="bin\System.Web.Helpers.dll" />
+    <Content Include="bin\System.Web.Helpers.xml" />
+    <Content Include="bin\System.Web.Http.dll" />
+    <Content Include="bin\System.Web.Http.WebHost.dll" />
+    <Content Include="bin\System.Web.Http.WebHost.xml" />
+    <Content Include="bin\System.Web.Http.xml" />
+    <Content Include="bin\System.Web.Mvc.dll" />
+    <Content Include="bin\System.Web.Mvc.xml" />
+    <Content Include="bin\System.Web.Optimization.dll" />
+    <Content Include="bin\System.Web.Optimization.xml" />
+    <Content Include="bin\System.Web.Razor.dll" />
+    <Content Include="bin\System.Web.Razor.xml" />
+    <Content Include="bin\System.Web.WebPages.Deployment.dll" />
+    <Content Include="bin\System.Web.WebPages.Deployment.xml" />
+    <Content Include="bin\System.Web.WebPages.dll" />
+    <Content Include="bin\System.Web.WebPages.Razor.dll" />
+    <Content Include="bin\System.Web.WebPages.Razor.xml" />
+    <Content Include="bin\System.Web.WebPages.xml" />
+    <Content Include="bin\WebGrease.dll" />
+    <Content Include="Content\admin\angular.css" />
+    <Content Include="Content\admin\bootstrap-theme.css" />
+    <Content Include="Content\admin\bootstrap-theme.min.css" />
+    <Content Include="Content\admin\bootstrap.css" />
+    <Content Include="Content\admin\bootstrap.min.css" />
+    <Content Include="Content\admin\custom.css" />
+    <Content Include="Content\admin\font-awesome.css" />
+    <Content Include="Content\admin\font-awesome.min.css" />
+    <Content Include="Content\admin\loading-bar.css" />
+    <Content Include="Content\admin\sb-admin-2.css" />
+    <Content Include="Content\admin\Site.css" />
+    <Content Include="Content\admin\textAngular.css" />
+    <Content Include="Content\admin\timeline.css" />
+    <Content Include="Content\admin\ui-bootstrap-csp.css" />
+    <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\carnet\ImpresionCarnetAdm.css" />
+    <Content Include="Content\custom.css" />
+    <Content Include="Content\fonts\bariol-regular.svg" />
+    <Content Include="Content\fonts\customicon\Icons.svg" />
+    <Content Include="Content\fonts\fontawesome-webfont.svg" />
+    <Content Include="Content\fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Content\img\bg_direction_nav.png" />
+    <Content Include="Content\carnet\impresionCarnet.css" />
+    <Content Include="Content\js\google-code-prettify\prettify.css" />
+    <Content Include="Content\js\google-code-prettify\prettify.js" />
+    <Content Include="Content\modernaTheme\animate.css" />
+    <Content Include="Content\modernaTheme\blank.gif" />
+    <Content Include="Content\modernaTheme\bootstrap.min.css" />
+    <Content Include="Content\modernaTheme\custom-fonts.css" />
+    <Content Include="Content\modernaTheme\default.css" />
+    <Content Include="favicon.ico" />
+    <Content Include="Content\modernaTheme\fancybox_loading.gif" />
+    <Content Include="Content\modernaTheme\fancybox_overlay.png" />
+    <Content Include="Content\modernaTheme\fancybox_sprite.png" />
+    <Content Include="Content\modernaTheme\flexslider.css" />
+    <Content Include="Content\modernaTheme\font-awesome.css" />
+    <Content Include="Content\modernaTheme\jcarousel.css" />
+    <Content Include="Content\modernaTheme\jquery.fancybox.css" />
+    <Content Include="Content\modernaTheme\logo.jpg" />
+    <Content Include="Content\modernaTheme\overwrite.css" />
+    <Content Include="Content\modernaTheme\style.css" />
+    <Content Include="fonts\bariol-regular.svg" />
+    <Content Include="fonts\fontawesome-webfont.svg" />
+    <Content Include="fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Global.asax" />
+    <Content Include="Integrar.dll" />
+    <Content Include="js\alasql.min.js" />
+    <Content Include="app\shared\components\admin\angular-file-upload\angular-file-upload.js" />
+    <Content Include="app\shared\components\admin\angular-file-upload\angular-file-upload.min.js" />
+    <Content Include="js\angular-google-maps.min.js" />
+    <Content Include="js\angular-recaptcha.min.js" />
+    <Content Include="js\animate.js" />
+    <Content Include="js\bootstrap-datepicker.js" />
+    <Content Include="js\bootstrap-wysiwyg.js" />
+    <Content Include="js\bootstrap.min.js" />
+    <Content Include="js\arrayUtils.js" />
+    <Content Include="js\custom.js" />
+    <Content Include="js\dateUtils.js" />
+    <Content Include="js\flexslider\jquery.flexslider.js" />
+    <Content Include="js\flexslider\setting.js" />
+    <Content Include="js\google-code-prettify\prettify.css" />
+    <Content Include="js\google-code-prettify\prettify.js" />
+    <Content Include="js\html5shiv.js" />
+    <Content Include="js\jquery-ui-1.11.1.js" />
+    <Content Include="js\jquery.easing.1.3.js" />
+    <Content Include="js\jquery.fancybox-media.js" />
+    <Content Include="js\jquery.fancybox.pack.js" />
+    <Content Include="js\jquery.flexslider.js" />
+    <Content Include="js\jquery.js" />
+    <Content Include="js\jquery.min.js" />
+    <Content Include="js\loading-bar.js" />
+    <Content Include="js\lodash.js" />
+    <Content Include="js\metisMenu.js" />
+    <Content Include="js\nouislider.min.js" />
+    <Content Include="js\portfolio\jquery.quicksand.js" />
+    <Content Include="js\portfolio\setting.js" />
+    <Content Include="js\quicksand\jquery.quicksand.js" />
+    <Content Include="js\quicksand\setting.js" />
+    <Content Include="js\respond.js" />
+    <Content Include="js\sb-admin-2.js" />
+    <Content Include="js\textAngular\textAngular-rangy.min.js" />
+    <Content Include="js\textAngular\textAngular-sanitize.min.js" />
+    <Content Include="js\textAngular\textAngular.min.js" />
+    <Content Include="js\ui-bootstrap-tpls-1.3.1.js" />
+    <Content Include="js\ui-bootstrap-tpls-1.3.1.min.js" />
+    <Content Include="js\validate.js" />
+    <Content Include="libs\angular-animate.js" />
+    <Content Include="libs\angular-animate.min.js" />
+    <Content Include="libs\angular-aria.js" />
+    <Content Include="libs\angular-aria.min.js" />
+    <Content Include="libs\angular-cookies.js" />
+    <Content Include="libs\angular-cookies.min.js" />
+    <Content Include="libs\angular-csp.css" />
+    <Content Include="libs\angular-loader.js" />
+    <Content Include="libs\angular-loader.min.js" />
+    <Content Include="libs\angular-locale_es-ar.js" />
+    <Content Include="libs\angular-message-format.js" />
+    <Content Include="libs\angular-message-format.min.js" />
+    <Content Include="libs\angular-messages.js" />
+    <Content Include="libs\angular-messages.min.js" />
+    <Content Include="libs\angular-mocks.js" />
+    <Content Include="libs\angular-resource.js" />
+    <Content Include="libs\angular-resource.min.js" />
+    <Content Include="libs\angular-route.js" />
+    <Content Include="libs\angular-route.min.js" />
+    <Content Include="libs\angular-sanitize.js" />
+    <Content Include="libs\angular-sanitize.min.js" />
+    <Content Include="libs\angular-scenario.js" />
+    <Content Include="libs\angular-touch.js" />
+    <Content Include="libs\angular-touch.min.js" />
+    <Content Include="libs\angular-ui-router.min.js" />
+    <Content Include="libs\angular.js" />
+    <Content Include="libs\angular.min.js" />
+    <Content Include="libs\version.txt" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Views\Web.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="app\components\app\autoridades\" />
+    <Folder Include="app\components\app\federaciones\federaciones\" />
+    <Folder Include="app\components\app\home\home\" />
+    <Folder Include="app\components\app\institucional\institucional\" />
+    <Folder Include="app\components\app\quienesSomos\quienesSomos\" />
+    <Folder Include="app\components\app\reglamentos\reglamentos\" />
+    <Folder Include="app\shared\directives\site\header\header-notification\" />
+    <Folder Include="app\shared\directives\site\sidebar\" />
+    <Folder Include="App_Code\" />
+    <Folder Include="App_Data\" />
+    <Folder Include="Models\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Home\Index.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="fonts\bariol-regular.eot" />
+    <Content Include="fonts\bariol-regular.ttf" />
+    <Content Include="fonts\bariol-regular.woff" />
+    <Content Include="fonts\fontawesome-webfont.eot" />
+    <Content Include="fonts\fontawesome-webfont.ttf" />
+    <Content Include="fonts\fontawesome-webfont.woff" />
+    <Content Include="fonts\fontawesome-webfont.woff2" />
+    <Content Include="fonts\FontAwesome.otf" />
+    <Content Include="fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="fonts\glyphicons-halflings-regular.woff2" />
+    <Content Include="libs\angular-animate.min.js.map" />
+    <Content Include="libs\angular-aria.min.js.map" />
+    <Content Include="libs\angular-cookies.min.js.map" />
+    <Content Include="libs\angular-loader.min.js.map" />
+    <Content Include="libs\angular-message-format.min.js.map" />
+    <Content Include="libs\angular-messages.min.js.map" />
+    <Content Include="libs\angular-resource.min.js.map" />
+    <Content Include="libs\angular-route.min.js.map" />
+    <Content Include="libs\angular-sanitize.min.js.map" />
+    <Content Include="libs\angular-touch.min.js.map" />
+    <Content Include="libs\angular.min.js.map" />
+    <Content Include="libs\errors.json" />
+    <Content Include="libs\version.json" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Content\fonts\customicon\Icons.eot" />
+    <Content Include="Content\fonts\customicon\Icons.ttf" />
+    <Content Include="Content\fonts\customicon\Icons.woff" />
+    <Content Include="Content\fonts\fontawesome-webfont.eot" />
+    <Content Include="Content\fonts\fontawesome-webfont.ttf" />
+    <Content Include="Content\fonts\fontawesome-webfont.woff" />
+    <Content Include="Content\fonts\FontAwesome.otf" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Negocio\Negocio.csproj">
+      <Project>{1795e0af-c1ea-4486-8e81-758ba2efbeeb}</Project>
+      <Name>Negocio</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Content\fonts\glyphicons-halflings-regular.woff2" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Content\fonts\bariol-regular.eot" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Content\fonts\bariol-regular.ttf" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Content\fonts\bariol-regular.woff" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Content\fonts\fontawesome-webfont.woff2" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Content\fonts\glyphicons-halflings-regular.eot" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Content\fonts\glyphicons-halflings-regular.ttf" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Content\fonts\glyphicons-halflings-regular.woff" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Content\admin\bootstrap-theme.css.map" />
+    <Content Include="Content\admin\bootstrap-theme.min.css.map" />
+    <Content Include="Content\admin\bootstrap.css.map" />
+    <Content Include="Content\admin\bootstrap.min.css.map" />
+    <Content Include="app\shared\components\admin\angular-file-upload\angular-file-upload.js.map" />
+    <Content Include="app\shared\components\admin\angular-file-upload\angular-file-upload.min.js.map" />
+    <None Include="Properties\PublishProfiles\host60x.pubxml" />
+    <Content Include="Views\Admin\Index.cshtml" />
+    <Content Include="Views\Admin\dashboard.cshtml" />
+    <None Include="Properties\PublishProfiles\local.pubxml" />
+    <Content Include="Views\Home\jugadores.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <Target Name="MvcBuildViews" AfterTargets="AfterBuild" Condition="'$(MvcBuildViews)'=='true'">
+    <AspNetCompiler VirtualPath="temp" PhysicalPath="$(WebProjectOutputDir)" />
+  </Target>
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>0</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:2254/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target> -->
+</Project>

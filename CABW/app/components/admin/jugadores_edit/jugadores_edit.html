@@ -1,0 +1,355 @@
+﻿<!-- Fix for old browsers -->
+<script src="http://nervgh.github.io/js/es5-shim.min.js"></script>
+<script src="http://nervgh.github.io/js/es5-sham.min.js"></script>
+<script src="http://code.jquery.com/jquery-1.8.3.min.js"></script>
+
+<div class="row rowHeader">
+    <div class="col-lg-8 col-sm-8 h1">
+        {{ title }}
+    </div>
+    <div class="col-lg-4 col-sm-4 h1-botones">
+        <div class="dropdown">
+            <button class="btn btn-default" ng-show="botonSolicitarCarnet" type="button" data-toggle="dropdown">
+                <i class="fa fa-credit-card"></i> Solicitar Carnet
+
+            </button>
+            &nbsp;<a ui-sref="jugadores" class="btn btn-default">Volver</a>
+            <ul class="dropdown-menu">
+                <li class="dropdown-header">Motivo de solicitud</li>
+                <li><a ng-click="solicitarCarnet('Nuevo')" style="cursor:pointer">Nuevo</a></li>
+                <li><a ng-click="solicitarCarnet('Pérdida')" style="cursor:pointer">Pérdida</a></li>
+                <!--<li><a ng-click="solicitarCarnet('Cambio de categoria')" style="cursor:pointer">Cambio de categoria</a></li>-->
+                <li><a ng-click="solicitarCarnet('Pase')" style="cursor:pointer">Pase</a></li>
+            </ul>
+        </div>
+        <!--<button class="btn btn-default" ng-show="botonSolicitarCarnet" ng-click="solicitarCarnet()"><i class="fa fa-credit-card"></i> Solicitar Carnet</button>-->
+
+    </div>
+</div>
+<div class="row">
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <i class="fa fa-child"></i>&nbsp;&nbsp;Datos Generales
+        </div>
+        <div class="panel-body">
+            <form role="form" name="form1" id="form1" ng-submit="guardar()" class="form-horizontal">
+
+                <div class="form-group required">
+                    <label class="col-lg-2 col-md-3 control-label">Federación</label>
+                    <div class="col-lg-4 col-md-4">
+                        <!--<input ng-show="!esAlta" type="text" readonly class="form-control" ng-model="instancia.Clubes.Asociaciones.Federaciones.descripcion" />-->
+                        <select ng-options="federacion.id as federacion.descripcion for federacion in federaciones" ng-model="instancia.idFederacion" class="form-control" ng-required="true" ng-disabled="esModificacion">
+                            <option></option>
+                        </select>
+                    </div>
+                </div>
+                <div class="form-group required">
+                    <label class="col-lg-2 col-md-3 control-label">Asociación</label>
+                    <div class="col-lg-4 col-md-4">
+                        <!--<input ng-show="!esAlta" type="text" readonly class="form-control" ng-model="instancia.Clubes.Asociaciones.descripcion" />-->
+                        <select ng-options="asociacion.id as asociacion.descripcion for asociacion in asociaciones" ng-model="instancia.idAsociacion" class="form-control" ng-required="true" ng-disabled="esModificacion">
+                            <option></option>
+                        </select>
+                    </div>
+                </div>
+                <div class="form-group required">
+                    <label class="col-lg-2 col-md-3 control-label">Club</label>
+                    <div class="col-lg-4 col-md-4">
+                        <!--<input ng-show="!esAlta" type="text" readonly class="form-control" ng-model="instancia.Clubes.descripcion" />-->
+                        <select ng-options="club.id as club.descripcion for club in clubes" ng-model="instancia.idClub" class="form-control" ng-required="true" ng-disabled="esModificacion">
+                            <option></option>
+                        </select>
+                    </div>
+                </div>
+      <!--          <div class="form-group required">
+                <div class="form-group required">
+                    <label class="col-lg-2 col-md-3 control-label">Categoría</label>
+                    <!--<div class="col-lg-4 col-md-4">
+    <div class="col-lg-4 col-md-4">-->
+                <!--<input ng-show="!esAlta" type="text" readonly class="form-control" ng-model="instancia.Categorias.descripcion" />-->
+              <!--      <select ng-options="categoria.id as categoria.descripcion for categoria in categorias" ng-model="instancia.idCategoria" class="form-control" ng-required="true" ng-disabled="esModificacion">
+                        <option></option>
+                    </select>
+                </div>
+    </div>-->
+                <div class="form-group required">
+                    <label class="col-lg-2 col-md-3 control-label">Puntaje</label>
+                    <div class="col-lg-3 col-md-3">
+                        <input type="text" ng-repeat="item in items" ng-disabled="item.disabled" class="form-control" ng-model="instancia.Puntaje" />
+                    </div>
+                </div>
+                <div class="form-group required">
+                    <label class="col-lg-2 col-md-3 control-label">Apellido</label>
+                    <div class="col-lg-4 col-md-4">
+                        <input type="text" id="apellido" required class="form-control" ng-model="instancia.apellido" />
+                    </div>
+                </div>
+                <div class="form-group required">
+                    <label class="col-lg-2 col-md-3 control-label">Nombre</label>
+                    <div class="col-lg-4 col-md-4">
+                        <input type="text" required class="form-control" ng-model="instancia.nombre" />
+                    </div>
+                </div>
+                <div class="form-group required">
+                    <label class="col-lg-2 col-md-3 control-label">DNI</label>
+                    <div class="col-lg-3 col-md-3">
+                        <input type="text" required class="form-control" ng-model="instancia.DNI" ng-disabled="esModificacion" />
+                    </div>
+                </div>
+                <div class="form-group required">
+                    <label class="col-lg-2 col-md-3 control-label">Fecha Nacimiento</label>
+                    <div class="col-lg-3 col-md-3">
+                        <input type="date" required class="form-control" ng-model="instancia.fechaNacimiento" />
+                    </div>
+                </div>
+                <div class="form-group required">
+                    <label class="col-lg-2 col-md-3 control-label">Localidad</label>
+                    <div class="col-lg-4 col-md-4">
+                        <input type="text" class="form-control is-empty" autocomplete="off" ng-required="true"
+                               ng-model="instancia.localidad"
+                               typeahead-loading="isLoading"
+                               typeahead-min-length="3"
+                               uib-typeahead="lodalidad as localidad.descripcion + ' - ' + localidad.Provincias.descripcion for localidad in localidades($viewValue)"
+                               typeahead-on-select="localidadesSelect($item, $model, $label)" />
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-lg-2 col-md-3 control-label">Dirección</label>
+                    <div class="col-lg-3 col-md-3">
+                        <input type="text" class="form-control" ng-model="instancia.direccion" />
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-lg-2 col-md-3 control-label">Teléfono Fijo</label>
+                    <div class="col-lg-3 col-md-3">
+                        <input type="text" class="form-control" ng-model="instancia.telefonoFijo" />
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-lg-2 col-md-3 control-label">Celular</label>
+                    <div class="col-lg-3 col-md-3">
+                        <input type="text" class="form-control" ng-model="instancia.celular" />
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-lg-2 col-md-3 control-label">E-Mail</label>
+                    <div class="col-lg-5 col-md-5">
+                        <input type="email" class="form-control" ng-model="instancia.mail" />
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-lg-2 col-md-3 control-label">Sexo</label>
+                    <div class="col-lg-3 col-md-3">
+                        <select class="form-control" ng-model="instancia.sexo">
+                            <option>Masculino</option>
+                            <option>Femenino</option>
+                            <option>Otro</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="form-group required">
+                    <label class="col-lg-2 col-md-3 control-label">Fecha de Ingreso</label>
+                    <div class="col-lg-3 col-md-3">
+                        <input type="date" required class="form-control" ng-model="instancia.fechaIngreso" />
+                    </div>
+                </div>
+                <div class="form-group required">
+                    <label class="col-lg-2 col-md-3 control-label">Nro. de Carnet</label>
+                    <div class="col-lg-3 col-md-3">
+                        <input type="text"  ng-repeat="item in items" ng-disabled="item.disabled"  class="form-control" ng-model="instancia.nroCarnet" />
+                    </div>
+                  </div>
+                <div class="form-group" ng-show="esAlta">
+                    <div class="col-lg-5 col-lg-offset-2 col-md-5 col-md-5">
+                        <div class="checkbox">
+                            <label>
+                                <input type="checkbox" ng-model="instancia.solicitaCarnet">
+                                ¿Solicita Carnet?
+                            </label>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-lg-2 col-md-3 control-label">Historial</label>
+                    <div class="col-lg-3 col-md-3">
+                        <textarea type="text" class="form-control" ng-repeat="item in items" ng-disabled="item.disabled" ng-model="instancia.Historial"></textarea>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-lg-2 col-md-3 control-label">Foto Actual</label>
+                    <div class="col-lg-5 col-md-5">
+                        <img src="/Images/jugadores/{{instancia.foto}}" onError="this.onerror=null;this.src='/images/imagen-vacia.png';" style="max-width:100px; max-height:100px" />
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-lg-2 col-md-3 control-label">Cambiar Foto</label>
+                    <div class="col-lg-5 col-md-5">
+                        <div ng-show="uploader.isHTML5">
+                            <div nv-file-drop="" uploader="uploader">
+                                <div nv-file-over="" uploader="uploader" over-class="another-file-over-class" class="well my-drop-zone">
+                                    Arrastre aquí la foto o selecciónela
+                                </div>
+                            </div>
+                        </div>
+                        <input type="file" nv-file-select="" uploader="uploader" /><br />
+                    </div>
+                </div>
+
+
+
+                <button type="submit" class="btn btn-primary" ng-disabled="isLoading">
+                    <span ng-hide="isLoading"><i class="fa fa-save"></i>&nbsp;&nbsp;Guardar</span>
+                    <span ng-show="isLoading"><span class='glyphicon glyphicon-refresh glyphicon-refresh-animate'></span>&nbsp;&nbsp;Guardando...</span>
+                </button>
+                <br />
+                <br />
+            </form>
+        </div>
+    </div>
+    <div class="panel" ng-class="{'panel-danger': botonEntregarCarnet, 'panel-success': !botonEntregarCarnet}">
+        <div class="panel-heading">
+            <i class="fa fa-credit-card"></i>&nbsp;&nbsp;Solicitudes de Carnet
+        </div>
+        <div class="panel-body">
+            <div class="table-responsive">
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th>Fecha Solicitud</th>
+                            <th>Entregado el día</th>
+                            <th>Entregado por</th>
+                        </tr>
+                    </thead>
+                    <tbody ng-repeat="item in instancia.JugadoresSolicitudesCarnets">
+                        <tr>
+                            <td>{{item.fechaSolicitud | date:'dd/MM/yyyy'}}</td>
+                            <td>{{item.fechaEntrega != null ? item.fechaEntrega : 'Aún no fue entregado' | date:'dd/MM/yyyy'}}</td>
+                            <td>{{item.Usuarios.nombre}}</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <button class="btn btn-success" style="float:right; margin-bottom:15px" ng-show="botonEntregarCarnet" ng-click="entregarCarnet()">
+                    <i class="fa fa-credit-card"></i> Entregar Carnet
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <div class="panel" ng-class="{'panel-danger': instancia.habilitado != true, 'panel-success': instancia.habilitado == true}">
+        <div class="panel-heading">
+            <i class="fa fa-check"></i>&nbsp;&nbsp;Habilitaciones <span ng-show="instancia.habilitado != true"><strong>- El jugador no está habilitado</strong></span>
+        </div>
+        <div class="panel-body">
+            <div class="table-responsive">
+                <form role="form" name="formHabilitaciones" id="formHabilitaciones" ng-submit="submitHabilitacion()">
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th>Número</th>
+                                <th>Fecha Habilitación</th>
+                                <th>Fecha Vencimiento</th>
+                                <th>Usuario</th>
+                                <th>
+
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr id="numeroHabilitacion" ng-repeat="item in instancia.JugadoresHabilitaciones">
+                                <td>{{item.numero}}</td>
+                                <td>{{item.fechaHabilitacion | date:'dd/MM/yyyy'}}</td>
+                                <td>{{item.fechaInhabilitacion | date:'dd/MM/yyyy'}}</td>
+                                <td>{{item.Usuarios.nombre}}</td>
+                                <td class='editCambioNumero' ng-show="ticket.administraConfederacion && ticket.nivel == 4"><a title="Modificar Numero "><i class="fa fa-pencil" ng-click="cambiarNumero(item.id, item.numero, item.fechaHabilitacion, item.fechaInhabilitacion)"></i></a></td>
+                                <td ng-show="ticket.administraConfederacion && ticket.nivel == 4"><a title="Eliminar Habilitación "><i class="fa fa-trash" ng-click="eliminarHabilitacion(item.id)" style="cursor:pointer"></i></a></td>
+
+                            </tr>
+                            <tr id="btnHabilitaciones">
+                                <td><input type="number" class="form-control" ng-model="habilitacion.numero" ng-required="true"></td>
+                                <td><input type="date" class="form-control" ng-model="fechaHabilitacionDesde" ng-readonly="false" id="fechaDesde" ng-change="change()"></td>
+                                <td><input type="date" class="form-control" ng-model="fechaHabilitacionHasta" ng-readonly="true" id="fechaHasta"></td>
+                                <td>
+                                    <button type="submit" class="btn btn-primary" ng-disabled="isLoadingHabilitacion">
+                                        <span ng-hide="isLoadingHabilitacion"><i class="fa fa-save"></i></span>
+                                        <span ng-show="isLoadingHabilitacion"><span class='glyphicon glyphicon-refresh glyphicon-refresh-animate'></span></span>
+                                    </button>
+                                </td>
+                            </tr>
+
+                        </tbody>
+                    </table>
+                </form>
+                <form role="form" name="formHabilitacionesEdit" id="formHabilitacionesEdit" ng-submit="submitHabilitacionEdit()">
+                    <table class="table">
+                        <tr id="btnHabilitacionesModificar" style="display:none">
+                            <td><label style="margin-top:10px"><strong>Editar Número : </strong></label></td>
+                            <td><input id="editNumero" type="number" class="form-control" ng-model="habilitacionEditnumero" ng-required="true"></td>
+                            <td><input id="editFechaDesde" type="date" class="form-control" ng-model="editFechaHabilitacionDesde" ng-readonly="false" ng-change="change()"></td>
+                            <td><input id="editfechaHasta" type="date" class="form-control" ng-model="editFechaHabilitacionHasta" ng-readonly="true"></td>
+
+                            <td>
+                                <button type="submit" class="btn btn-primary" ng-disabled="isLoadingHabilitacion">
+                                    <span ng-hide="isLoadingHabilitacion"><i class="fa fa-save"></i></span>
+                                    <span ng-show="isLoadingHabilitacion"><span class='glyphicon glyphicon-refresh glyphicon-refresh-animate'></span></span>
+                                </button>
+                                <button type="button" class="btn btn-danger" ng-click="cancelarEdit()" ng-disabled="isLoadingHabilitacion">
+                                    <span ng-hide="isLoadingHabilitacion"><i class="fa fa-trash-o"></i></span>
+                                </button>
+                            </td>
+                        </tr>
+                    </table>
+                </form>
+
+            </div>
+        </div>
+    </div>
+
+  <!--  <div class="panel panel-default">
+        <div class="panel-heading">
+            <i class="fa fa-level-up"></i>&nbsp;&nbsp;Categorías
+        </div>
+        <div class="panel-body">
+            <div class="table-responsive">
+                <form role="form" name="formCategorias" id="formCategorias" ng-submit="submitCategorias()">
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th>Categoría</th>
+                                <th>Fecha Cambio Categoría</th>
+                                <th>Usuario</th>
+                                <th></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr ng-repeat="item in instancia.JugadoresCategorias">
+                                <td>{{item.Categorias.descripcion}}</td>
+                                <td>{{item.fecha | date:'dd/MM/yyyy'}}</td>
+                                <td>{{item.Usuarios.nombre}}</td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <select ng-model="categoria.idCategoria" class="form-control" ng-required="true">
+                                        <option></option>
+                                        <option ng-repeat="item in categorias" ng-disabled="item.id == instancia.Categorias.id || item.disabled == true" value="{{item.id}}">{{ item.descripcion }}</option>
+                                    </select>
+                                </td>
+                                <td><input type="date" class="form-control" ng-model="categoria.fecha" ng-required="true"></td>
+                                <td>
+                                    <button type="submit" class="btn btn-primary" ng-disabled="isLoading">
+                                        <span ng-hide="isLoading"><i class="fa fa-save"></i></span>
+                                        <span ng-show="isLoading"><span class='glyphicon glyphicon-refresh glyphicon-refresh-animate'></span></span>
+                                    </button>
+
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </form>
+            </div>
+        </div>
+    </div>-->
+
+    <br /><br /><br /><br /><br /><br />
+</div>
+
+
+

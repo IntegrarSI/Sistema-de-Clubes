@@ -1,0 +1,167 @@
+﻿<section id="inner-headline">
+    <div class="container inner-heading">
+        <div class="row">
+            <div class="col-lg-12">
+                <h2>Federaciones</h2>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="content" style="margin-bottom: 25px; margin-top: 50px; padding-top: 0px; font-size:14px !important">
+    <div class="container">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h3 class="panel-title">Federación</h3>
+            </div>
+            <div class="panel-body">
+                <div class="col-lg-4 col-md-4" style="height:200px; padding-left:0px; overflow: auto">
+                    <div class="list-group" style="padding:0px">
+                        <a style="cursor:pointer" ng-repeat="item in federaciones track by item.id" class="list-group-item" ng-click="seleccionarFederacion(item)">{{ item.descripcion }}</a>
+                    </div>
+                </div>
+                <div class="col-lg-8 col-md-8" style="padding-right:0px;">
+                    <div class="alert alert-info text-center" ng-show="federacion == null">Seleccione una Federación</div>
+                    <div ng-show="federacion != null" style="padding-top:5px">
+                        <div style="width:30%; float:left">
+                            <img src="/Images/federaciones/{{federacion.logo}}" ng-show="federacion.logo != null"  onerror="this.onerror=null;this.src='/images/imagen-vacia.png';" style="width:90%" />
+                            <img src="/images/imagen-vacia.png" ng-show="federacion.logo == null" style="width:90%" />
+                        </div>
+                        <div style="width:70%; float:left; padding-top:5px">
+                            <table class="table table-striped table-hover table-condensed" style="margin-bottom:0px">
+                                <tr>
+                                    <td style="width:160px"><strong>Federación:</strong></td>
+                                    <td>{{ federacion.descripcion }}</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Dirección:</strong></td>
+                                    <td>{{ federacion.direccion }}</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Ciudad:</strong></td>
+                                    <td>{{ federacion.localidad }}</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Teléfono:</strong></td>
+                                    <td>{{ federacion.telefono }}</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Fax:</strong></td>
+                                    <td>{{ federacion.fax }}</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Correo Electrónico:</strong></td>
+                                    <td>{{ federacion.mail }}</td>
+                                </tr>
+                                <tr>
+                                    <td colspan="2" style="padding-top:10px"><a href="http://admin.argentinabochas.com.ar/Login.aspx?ReturnUrl=/federacion/federacion.aspx?pFed={{federacion.id}}&pFed={{federacion.id}}">Ingresar a la Federación</a></td>
+                                </tr>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h3 class="panel-title">Asociación</h3>
+            </div>
+            <div class="panel-body">
+                <div class="col-lg-4 col-md-4" style="height:200px; padding-left:0px; overflow: auto">
+                    <div class="list-group" style="padding:0px">
+                        <a style="cursor:pointer" ng-repeat="item in asociaciones track by item.id" class="list-group-item" ng-click="seleccionarAsociacion(item)">{{ item.descripcion }}</a>
+                    </div>
+                </div>
+                <div class="col-lg-8 col-md-8" style="padding-right:0px;">
+                    <div class="alert alert-info text-center" ng-show="asociacion == null">Seleccione una Asociación</div>
+                    <div ng-show="asociacion != null" style="padding-top:5px">
+                        <div style="width:30%; float:left">
+                            <img src="/Images/asociaciones/{{asociacion.logo}}" ng-show="asociacion.logo != null" onerror="this.onerror=null;this.src='/images/imagen-vacia.png';" style="width:90%" />
+                            <img src="/images/imagen-vacia.png"  ng-show="asociacion.logo == null" style="width:90%" />
+                        </div>
+                        <div style="width:70%; float:left; padding-top:5px">
+                            <table class="table table-striped table-hover table-condensed" style="margin-bottom:0px">
+                                <tr>
+                                    <td style="width:160px"><strong>Federación:</strong></td>
+                                    <td>{{ asociacion.descripcion }}</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Dirección:</strong></td>
+                                    <td>{{ asociacion.direccion }}</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Ciudad:</strong></td>
+                                    <td>{{ asociacion.localidad }}</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Teléfono:</strong></td>
+                                    <td>{{ asociacion.telefono }}</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Fax:</strong></td>
+                                    <td>{{ asociacion.fax }}</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Correo Electrónico:</strong></td>
+                                    <td>{{ asociacion.mail }}</td>
+                                </tr>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h3 class="panel-title">Club</h3>
+            </div>
+            <div class="panel-body">
+                <div class="col-lg-4 col-md-4" style="height:200px; padding-left:0px; overflow: auto">
+                    <div class="list-group" style="padding:0px">
+                        <a style="cursor:pointer" ng-repeat="item in clubes track by item.id" class="list-group-item" ng-click="seleccionarClub(item)">{{ item.descripcion }}</a>
+                    </div>
+                </div>
+                <div class="col-lg-8 col-md-8" style="padding-right:0px;">
+                    <div class="alert alert-info text-center" ng-show="club == null">Seleccione un Club</div>
+                    <div ng-show="club != null" style="padding-top:5px">
+                        <div style="width:30%; float:left">
+                            <img src="/Images/clubes/{{club.logo}}" ng-show="club.logo != null"  onerror="this.onerror=null;this.src='/images/imagen-vacia.png';" style="width:90%" />
+                            <img src="/images/imagen-vacia.png" ng-show="club.logo == null" style="width:90%" />
+                        </div>
+                        <div style="width:70%; float:left; padding-top:5px">
+                            <table class="table table-striped table-hover table-condensed" style="margin-bottom:0px">
+                                <tr>
+                                    <td style="width:160px"><strong>Federación:</strong></td>
+                                    <td>{{ club.descripcion }}</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Dirección:</strong></td>
+                                    <td>{{ club.direccion }}</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Ciudad:</strong></td>
+                                    <td>{{ club.localidad }}</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Teléfono:</strong></td>
+                                    <td>{{ club.telefono }}</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Fax:</strong></td>
+                                    <td>{{ club.fax }}</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Correo Electrónico:</strong></td>
+                                    <td>{{ club.mail }}</td>
+                                </tr>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<footer></footer>
+

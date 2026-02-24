@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="2.0" xmlns:edmx="http://schemas.microsoft.com/ado/2008/10/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2008/10/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="ba56b5773d9b497c8cbf794f99fde2ac" Name="Diagrama1" ZoomLevel="62">
+        <EntityTypeShape EntityType="CABModel.Asociaciones" Width="1.5" PointX="1.5" PointY="6.5" />
+        <EntityTypeShape EntityType="CABModel.Categorias" Width="1.5" PointX="0.75" PointY="32" />
+        <EntityTypeShape EntityType="CABModel.Clubes" Width="1.5" PointX="1.5" PointY="12.5" />
+        <EntityTypeShape EntityType="CABModel.DNI" Width="1.5" PointX="3.75" PointY="2.5" />
+        <EntityTypeShape EntityType="CABModel.Equipos" Width="1.5" PointX="5.75" PointY="2.5" />
+        <EntityTypeShape EntityType="CABModel.Especialidades" Width="1.5" PointX="12" PointY="23.625" />
+        <EntityTypeShape EntityType="CABModel.Federaciones" Width="1.5" PointX="1.5" PointY="0.75" />
+        <EntityTypeShape EntityType="CABModel.Fixtures" Width="1.5" PointX="14.25" PointY="30.5" />
+        <EntityTypeShape EntityType="CABModel.FixturesPartidos" Width="1.5" PointX="16.5" PointY="29.25" />
+        <EntityTypeShape EntityType="CABModel.Jueces" Width="1.5" PointX="14.25" PointY="27.75" />
+        <EntityTypeShape EntityType="CABModel.JugadoresCategorias" Width="1.5" PointX="3" PointY="22.25" />
+        <EntityTypeShape EntityType="CABModel.JugadoresHabilitaciones" Width="1.5" PointX="6" PointY="23.25" />
+        <EntityTypeShape EntityType="CABModel.JugadoresSolicitudesCarnets" Width="1.5" PointX="9" PointY="23.25" />
+        <EntityTypeShape EntityType="CABModel.Localidades" Width="1.5" PointX="1.5" PointY="38.25" />
+        <EntityTypeShape EntityType="CABModel.Provincias" Width="1.5" PointX="1.5" PointY="42.875" />
+        <EntityTypeShape EntityType="CABModel.Roles" Width="1.5" PointX="3.75" PointY="38.25" />
+        <EntityTypeShape EntityType="CABModel.sysdiagrams" Width="1.5" PointX="5.75" PointY="5.5" />
+        <EntityTypeShape EntityType="CABModel.Torneos" Width="1.5" PointX="9" PointY="30.625" />
+        <EntityTypeShape EntityType="CABModel.TorneosActividades" Width="1.5" PointX="11.25" PointY="32.75" />
+        <EntityTypeShape EntityType="CABModel.TorneosEquipos" Width="1.5" PointX="11.25" PointY="38.75" />
+        <EntityTypeShape EntityType="CABModel.TorneosEspecialidades" Width="1.5" PointX="14.25" PointY="33.625" />
+        <EntityTypeShape EntityType="CABModel.TorneosPartidos" Width="1.5" PointX="13.5" PointY="36.75" />
+        <EntityTypeShape EntityType="CABModel.TorneosZonas" Width="1.5" PointX="11.25" PointY="43" />
+        <EntityTypeShape EntityType="CABModel.Usuarios" Width="1.5" PointX="0.75" PointY="26.25" />
+        <EntityTypeShape EntityType="CABModel.UsuariosAsociaciones" Width="1.5" PointX="8.375" PointY="27.75" />
+        <EntityTypeShape EntityType="CABModel.UsuariosFederaciones" Width="1.625" PointX="3.75" PointY="15" />
+        <EntityTypeShape EntityType="CABModel.UsuariosRoles" Width="1.5" PointX="6" PointY="30.625" />
+        <AssociationConnector Association="CABModel.FK_Asociaciones_Federaciones" />
+        <AssociationConnector Association="CABModel.FK_Asociaciones_Localidades" />
+        <AssociationConnector Association="CABModel.FK_Clubes_Asociaciones" />
+        <AssociationConnector Association="CABModel.FK_Torneos_Asociaciones" />
+        <AssociationConnector Association="CABModel.FK_UsuariosAsociaciones_Asociaciones" />
+        <AssociationConnector Association="CABModel.FK_Fixtures_Categorias" />
+        <AssociationConnector Association="CABModel.FK_JugadoresCategorias_Categorias" />
+        <AssociationConnector Association="CABModel.FK_Clubes_Localidades" />
+        <AssociationConnector Association="CABModel.FK_FixturesPartidos_Clubes" />
+        <AssociationConnector Association="CABModel.FK_FixturesPartidos_Clubes1" />
+        <AssociationConnector Association="CABModel.FK_TorneosEspecialidades_Especialidades" />
+        <AssociationConnector Association="CABModel.FK_Federaciones_Localidades" />
+        <AssociationConnector Association="CABModel.FK_Torneos_Federaciones" />
+        <AssociationConnector Association="CABModel.FK_UsuariosFederaciones_Federaciones" />
+        <AssociationConnector Association="CABModel.FK_Fixtures_Torneos" />
+        <AssociationConnector Association="CABModel.FK_FixturesPartidos_Fixtures" />
+        <AssociationConnector Association="CABModel.FK_FixturesPartidos_Jueces" />
+        <AssociationConnector Association="CABModel.FK_JugadoresCategorias_Usuarios" />
+        <AssociationConnector Association="CABModel.FK_JugadoresHabilitaciones_Usuarios" />
+        <AssociationConnector Association="CABModel.FK_JugadoresSolicitudesCarnets_Usuarios" />
+        <AssociationConnector Association="CABModel.FK_Localidades_Provincias" />
+        <AssociationConnector Association="CABModel.FK_UsuariosRoles_Roles" />
+        <AssociationConnector Association="CABModel.FK_Torneos_Usuarios" />
+        <AssociationConnector Association="CABModel.FK_TorneosActividades_Torneos" />
+        <AssociationConnector Association="CABModel.FK_TorneosEquipos_Torneos" />
+        <AssociationConnector Association="CABModel.FK_TorneosEspecialidades_Torneos" />
+        <AssociationConnector Association="CABModel.FK_TorneosPartidos_Torneos" />
+        <AssociationConnector Association="CABModel.FK_TorneosZonas_Torneos" />
+        <AssociationConnector Association="CABModel.FK_TorneosPartidos_TorneosEquipos" />
+        <AssociationConnector Association="CABModel.FK_TorneosPartidos_TorneosEquipos1" />
+        <AssociationConnector Association="CABModel.FK_UsuariosAsociaciones_Usuarios" />
+        <AssociationConnector Association="CABModel.FK_UsuariosFederaciones_Usuarios" />
+        <AssociationConnector Association="CABModel.FK_UsuariosRoles_Usuarios" />
+        <EntityTypeShape EntityType="CABModel.JugadoresPases" Width="1.5" PointX="3" PointY="25.875" />
+        <EntityTypeShape EntityType="CABModel.JugadoresPasesEstados" Width="1.5" PointX="11.25" PointY="27.125" />
+        <EntityTypeShape EntityType="CABModel.PasesEstados" Width="1.5" PointX="0.75" PointY="45.375" />
+        <AssociationConnector Association="CABModel.FK_JugadoresPases_Asociaciones" />
+        <AssociationConnector Association="CABModel.FK_JugadoresPases_Asociaciones1" />
+        <AssociationConnector Association="CABModel.FK_JugadoresPases_Clubes" />
+        <AssociationConnector Association="CABModel.FK_JugadoresPases_Clubes1" />
+        <AssociationConnector Association="CABModel.FK_JugadoresPases_Federaciones" />
+        <AssociationConnector Association="CABModel.FK_JugadoresPases_Federaciones1" />
+        <AssociationConnector Association="CABModel.FK_JugadoresPases_PasesEstados" />
+        <AssociationConnector Association="CABModel.FK_JugadoresPases_Usuarios" />
+        <AssociationConnector Association="CABModel.FK_JugadoresPasesEstados_JugadoresPases" />
+        <AssociationConnector Association="CABModel.FK_JugadoresPasesEstados_PasesEstados" />
+        <AssociationConnector Association="CABModel.FK_JugadoresPasesEstados_Usuarios" />
+        <EntityTypeShape EntityType="CABModel.JugadoresPenalizaciones" Width="1.5" PointX="3" PointY="32.625" />
+        <EntityTypeShape EntityType="CABModel.JugadoresPenalizacionesEstados" Width="1.5" PointX="5.25" PointY="33.875" />
+        <EntityTypeShape EntityType="CABModel.PenalizacionesEstados" Width="1.5" PointX="0.75" PointY="49.375" />
+        <AssociationConnector Association="CABModel.FK_JugadoresPenalizaciones_PenalizacionesEstados" />
+        <AssociationConnector Association="CABModel.FK_JugadoresPenalizaciones_Usuarios" />
+        <AssociationConnector Association="CABModel.FK_JugadoresPenalizacionesEstados_JugadoresPenalizaciones" />
+        <AssociationConnector Association="CABModel.FK_JugadoresPenalizacionesEstados_PenalizacionesEstados" />
+        <AssociationConnector Association="CABModel.FK_JugadoresPenalizacionesEstados_Usuarios" />
+        <EntityTypeShape EntityType="CABModel.Noticias" Width="1.5" PointX="18.875" PointY="24.875" />
+        <AssociationConnector Association="CABModel.FK_Noticias_Usuarios" />
+        <EntityTypeShape EntityType="CABModel.habilitaciones" Width="1.5" PointX="8.375" PointY="0.75" />
+        <EntityTypeShape EntityType="CABModel.tmbcarnet" Width="1.5" PointX="8.375" PointY="4.75" />
+        <EntityTypeShape EntityType="CABModel.ExportacionExel" Width="1.5" PointX="4.375" PointY="8.75" />
+        <EntityTypeShape EntityType="CABModel.Campeones" Width="1.5" PointX="6.375" PointY="8.75" />
+        <EntityTypeShape EntityType="CABModel.Jugadores" Width="1.5" PointX="6.75" PointY="15.5" />
+        <AssociationConnector Association="CABModel.FK_Jugadores_Categorias" />
+        <AssociationConnector Association="CABModel.FK_Jugadores_Clubes" />
+        <AssociationConnector Association="CABModel.FK_Jugadores_Localidades" />
+        <AssociationConnector Association="CABModel.FK_JugadoresCategorias_Jugadores" />
+        <AssociationConnector Association="CABModel.FK_JugadoresHabilitaciones_Jugadores" />
+        <AssociationConnector Association="CABModel.FK_JugadoresPases_Jugadores" />
+        <AssociationConnector Association="CABModel.FK_JugadoresPenalizaciones_Jugadores" />
+        <AssociationConnector Association="CABModel.FK_JugadoresSolicitudesCarnets_Jugadores" />
+        <EntityTypeShape EntityType="CABModel.JugadoresEliminados" Width="1.5" PointX="3" PointY="46" />
+        <AssociationConnector Association="CABModel.FK_JugadoresEliminados_Usuarios" />
+        <EntityTypeShape EntityType="CABModel.JugadoresHistorial" Width="1.5" PointX="9" PointY="19.375" />
+        <AssociationConnector Association="CABModel.FK_JugadoresHistorial_JugadoresHistorial" />
+        <AssociationConnector Association="CABModel.FK_JugadoresHistorial_Usuarios" />
+        <AssociationConnector Association="CABModel.FK_Categorias_Categorias" />
+        <AssociationConnector Association="CABModel.FK_JugadoresPases_Categorias" />
+        <AssociationConnector Association="CABModel.FK_JugadoresPases_Usuarios1" />
+        </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

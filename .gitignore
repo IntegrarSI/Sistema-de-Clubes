@@ -1,0 +1,29 @@
+﻿## Visual Studio / VS2022
+.vs/
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+*.cache
+*.log
+
+## Build
+**/[Bb]in/
+**/[Oo]bj/
+
+## NuGet (MVC clásico suele usar packages/)
+packages/
+*.nupkg
+*.snupkg
+
+## Publicación / deploy
+publish/
+App_Data/Logs/
+App_Data/*.log
+
+## IIS Express
+/.vs/config/applicationhost.config
+
+## OS
+Thumbs.db
+.DS_Store

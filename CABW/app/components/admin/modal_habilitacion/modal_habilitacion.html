@@ -1,0 +1,19 @@
+﻿<div class="modal-content">
+    <div class="modal-header panel-heading">
+        <button type="button" class="close" data-ng-click="modalOptions.close()" aria-hidden="true">×</button>
+        <h4 class="modal-title">Cambiar Numero de Habilitacion</h4>
+    </div>
+    <div class="modal-body text-center" style="padding:40px; font-size:1.2em">
+
+        <form id="contactform" novalidate name="contactform" role="form" class="validateform">
+            <div class="row">
+                <div class="col-lg-9 col-md-9 field">
+                    <input id="numeroHabilitacion" type="number" placeholder="* Ingrese un " ng-model="dni" required style="border: 1px solid #dadada; padding-right:0px"/>
+                </div>
+                <div class="col-lg-3 col-md-3 field">
+                    <a class="btn btn-primary" ng-disabled="dni == null || dni.length == 0" data-ng-click="modalOptions.findId()">Guardar</a>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>

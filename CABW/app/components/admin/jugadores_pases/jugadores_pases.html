@@ -1,0 +1,97 @@
+﻿<div class="row rowHeader">
+    <div class="col-lg-8 col-sm-8 h1">
+        Pase de Jugador
+    </div>
+    <div class="col-lg-4 col-sm-4 h1-botones">
+        <a ui-sref="jugadores" class="btn btn-default">Volver</a>
+    </div>
+</div>
+<div class="row">
+    <div class="panel panel-default">
+        <div class="panel-body">
+            <div style="border:solid 1px #68A4C4; overflow:auto; width:860px; margin:0px auto">
+                <div style="padding:5px; background-color:#68A4C4; font-size:12pt; color:white; text-align:center; font-weight:bolder">Confederacion Argentina de Bochas - Pase de Jugador</div>
+                <div style="padding:10px">
+                    <div style="width:720px; float:left; margin-left:10px; padding-right:20px; text-align:justify">
+                        <h4>DATOS ACTUALES</h4>
+                        <p style="line-height:180%">
+                            El que suscribe <strong>{{instancia.apellido}}, {{instancia.nombre}}</strong> con documento <span style="color:#68A4C4; font-size:14pt">{{instancia.DNI}}</span> fichado como Jugador del <strong>{{instancia.Clubes.descripcion}}</strong>, en la categoría <strong>{{instancia.Categorias.descripcion}}</strong> afiliado a la Asociación de Bochas de <strong>{{instancia.Clubes.Asociaciones.descripcion}}</strong>, de la Federación <strong>{{instancia.Clubes.Asociaciones.Federaciones.descripcion}}</strong>, al que no adeuda cuotas (3) sociales o de ingreso, distintivo o indumentaria deportiva, se dirige al Sr. Presidente con el objetivo de solicitar, se gestione ante quien corresponda, el siguiente PASE:
+                        </p>
+                        <br />
+                        <div ng-hide="isSubmitted == true || paseExistente == true">
+                            <h4>DATOS CLUB DESTINO</h4>
+                            <br />
+                            <form role="form" name="form" ng-submit="submit()" class="form-horizontal">
+                                <div class="form-group required">
+                                    <label class="col-lg-3 col-md-3 control-label">Federación</label>
+                                    <div class="col-lg-5 col-md-5">
+                                        <select ng-options="federacion.id as federacion.descripcion for federacion in federaciones" ng-model="pase.idFederacionDestino" class="form-control" ng-required="true">
+                                            <option></option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="form-group required">
+                                    <label class="col-lg-3 col-md-3 control-label">Asociación</label>
+                                    <div class="col-lg-5 col-md-5">
+                                        <select ng-options="asociacion.id as asociacion.descripcion for asociacion in asociaciones" ng-model="pase.idAsociacionDestino" class="form-control" ng-required="true">
+                                            <option></option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="form-group required">
+                                    <label class="col-lg-3 col-md-3 control-label">Club</label>
+                                    <div class="col-lg-5 col-md-5">
+                                        <select ng-options="club.id as club.descripcion for club in clubes" ng-model="pase.idClubDestino" class="form-control" ng-required="true">
+                                            <option></option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="form-group required">
+                                    <label class="col-lg-3 col-md-3 control-label">Tipo de Pase</label>
+                                    <div class="col-lg-4 col-md-4">
+                                        <input type="text" class="form-control" ng-model="pase.tipoPase" ng-readonly="true" ng-required="true" />
+                                    </div>
+                                </div>
+
+                                <div class="alert alert-warning text-center" ng-show="pase.tipoPase == 'INTER-FEDERACION' && ticket.nivel < 4">
+                                    <!-- Tipo Pase: INTER-FEDERACIÓN - Nivel < 4: El pase deberá ser aprobado por un usuario de la confederación -->
+                                    <strong>Atención!</strong> El pase deberá ser aprobado por la Confederación
+                                </div>
+                                <div class="alert alert-warning text-center" ng-show="pase.tipoPase == 'INTER-ASOCIACION' && ticket.nivel < 3">
+                                    <!-- Tipo Pase: INTER-ASOCIACION - Nivel < 3: El pase deberá ser aprobado por un usuario de la destino -->
+                                    <strong>Atención!</strong> El pase deberá ser aprobado por la Federación
+                                </div>
+
+                                <button type="submit" class="btn btn-primary" ng-disabled="isLoading">
+                                    <span ng-hide="isLoading"><i class="fa fa-save"></i>&nbsp;&nbsp;Guardar</span>
+                                    <span ng-show="isLoading"><span class='glyphicon glyphicon-refresh glyphicon-refresh-animate'></span>&nbsp;Guardando...</span>
+                                </button>
+                            </form>
+                        </div>
+                        <div ng-show="isSubmitted == true">
+                            <div class="alert alert-success text-center" ng-show="pase.PasesEstados.estadoFinal == true">
+                                <strong>Perfecto! </strong>El pase fue creado y aprobado correctamente
+                            </div>
+                            <div class="alert alert-warning text-center" ng-show="pase.PasesEstados.estadoFinal != true">
+                                <strong>Atención! </strong>El pase fue creado correctamente pero está pendiente para su aprobación
+                            </div>
+
+                            <a ui-sref="jugadores" class="btn btn-default">Continuar</a>
+                        </div>
+                        <div ng-show="paseExistente == true">
+                            <div class="alert alert-danger text-center">
+                                <strong>Atención! </strong>El jugador no puede ser transferido debido a que posee un pase Aprobado o Pendiente de Aprobación hace menos de 90 días
+                            </div>
+
+                            <a ui-sref="jugadores" class="btn btn-default">Continuar</a>
+                        </div>
+                        <br />
+                        <br />
+                    </div>
+                    <div style="width:100px; height:190px; float:left; background:url(/Images/jugadores/{{instancia.foto}}) center center no-repeat; background-size:100%;"></div>
+                </div>
+            </div>
+            <br />
+        </div>
+    </div>
+</div>

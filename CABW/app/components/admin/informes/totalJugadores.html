@@ -1,0 +1,128 @@
+﻿<div class="row rowHeader">
+    <div class="col-lg-4 col-sm-4 h1">
+        {{ titulo }}
+    </div>
+    <div class="col-lg-8 col-sm-8 h1-botones">
+        <button class="btn btn-default" ng-click="print('grilla')"><i class="fa fa-print"></i>&nbsp;&nbsp;Imprimir</button>
+        &nbsp;<button class="btn btn-default" ng-click="exportToExcel('grilla')"><i class="fa fa-file-excel-o"></i>&nbsp;&nbsp;Exportar a Excel</button>
+        &nbsp;<a ui-sref="dashboard" class="btn btn-default">Volver</a>
+    </div>
+</div>
+
+<div class="row">
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <form role="form" name="form" ng-submit="submit()">
+                <div class="row">
+                    <div class="col-lg-2 col-md-2">
+                        <label>Filtro</label>
+                        <input type="text" class="form-control" ng-model="filtro.filtro" placeholder="Nombre / Categoría / Club / Asociación / Federación">
+                    </div>
+                    <!-- <div class="col-lg-2 col-md-2">
+                        <label>Federación</label>
+                        <select ng-options="federacion as federacion.descripcion for federacion in federaciones" ng-model="filtro.federacion" class="form-control"></select>
+                    </div>-->
+                    <div class="col-lg-3 col-md-3">
+                        <label>Asociación</label>
+                        <select ng-options="asociacion as asociacion.descripcion for asociacion in asociaciones" ng-model="filtro.asociacion" class="form-control"></select>
+                    </div>
+                    <div class="col-lg-3 col-md-3">
+                        <label>Club</label>
+                        <select ng-options="club as club.descripcion for club in clubes" ng-model="filtro.club" class="form-control"></select>
+                    </div>
+                    <div class="col-lg-2 col-md-2 text-right" style="padding-top:15px">
+                        <button type="submit" class="btn btn-primary" ng-disabled="isLoading">
+                            <span ng-hide="isLoading"><i class="fa fa-search"></i>&nbsp;Buscar</span>
+                            <span ng-show="isLoading"><span class='glyphicon glyphicon-refresh glyphicon-refresh-animate'></span>&nbsp;Buscar</span>
+                        </button>
+                    </div>
+                </div>
+                <br/>
+                <div class="row">
+                    <div class="col-lg-2 col-md-2">
+                        <label><input type="checkbox" id="buscarHabilitados" ng-model="filtro.habilitado">  Buscar Habilitados</label><br />
+                    </div>
+                    <div class="col-lg-10 col-md-10"></div>
+                </div>
+        </form>
+        </div>
+        <div class="panel-body">
+            <div class="table-responsive" id="grilla">
+                <style>
+                    * {
+                        font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+                        font-size: 9.5pt;
+                    }
+
+                    .tablePrint > thead > tr > th {
+                        vertical-align: bottom;
+                        border-bottom: 2px solid #ddd;
+                    }
+
+                    .tablePrint > thead > tr > th, .tablePrint > tbody > tr > th, .tablePrint > tfoot > tr > th, .tablePrint > thead > tr > td, .tablePrint > tbody > tr > td, .tablePrint > tfoot > tr > td {
+                        padding: 8px;
+                        line-height: 1.42857143;
+                        vertical-align: top;
+                        border: 1px solid #ddd;
+                    }
+
+                    .tablePrint th {
+                        text-align: center;
+                    }
+
+                    .tablePrint td, .tablePrint th {
+                        padding: 0;
+                    }
+
+                    .tablePrint {
+                        border-spacing: 0;
+                        border-collapse: collapse;
+                        width: 100%;
+                    }
+                </style>
+
+                <div style="font-size:14pt; margin-bottom:15px">
+                    {{ titulo }}
+                </div>
+                <table class="tablePrint">
+                    <thead>
+                        <tr>
+                            <th>Nombre</th>
+                            <th>Fecha Nacimiento</th>
+                            <th>Fecha Ingreso</th>
+                            <th>NroCarnet</th>
+                            <th>Puntaje</th>
+                            <th>Club</th>
+                            <th>Asociacion</th>
+                            <th>Federacion</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr ng-repeat="item in grilla">
+                            <td>{{item.nombre}}</td>
+                            <td>{{item.fechaNacimiento}}</td>
+                            <td>{{item.fechaIngreso}}</td>
+                            <td>{{item.nroCarnet}}</td>
+                            <td>{{item.Puntaje}}</td>
+                            <td>{{item.club}}</td>
+                            <td>{{item.asociacion}}</td>
+                            <td>{{item.federacion}}</td>
+                        </tr>
+                    </tbody>
+                    <tfoot>
+                    </tfoot>
+                </table>
+                <br />
+                <div>
+                    <strong>Criterios de busqueda</strong>
+                    <br />&nbsp;&nbsp;&nbsp;&nbsp;- Filtro: {{ filtro.filtro }}
+                    <br />&nbsp;&nbsp;&nbsp;&nbsp;- Federacion: {{ filtro.federacion.descripcion }}
+                    <br />&nbsp;&nbsp;&nbsp;&nbsp;- Asociacion: {{ filtro.asociacion.descripcion }}
+                    <br />&nbsp;&nbsp;&nbsp;&nbsp;- Club: {{ filtro.club.descripcion }}
+                </div>
+                <br />
+            </div>
+        </div>
+    </div>
+
+</div>

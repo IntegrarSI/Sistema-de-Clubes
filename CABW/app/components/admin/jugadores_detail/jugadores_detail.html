@@ -1,0 +1,263 @@
+﻿<!-- Fix for old browsers -->
+<script src="http://nervgh.github.io/js/es5-shim.min.js"></script>
+<script src="http://nervgh.github.io/js/es5-sham.min.js"></script>
+<script src="http://code.jquery.com/jquery-1.8.3.min.js"></script>
+
+<div class="row rowHeader">
+    <div class="col-lg-8 col-sm-8 h1">
+        Detalle de Jugador - {{instancia.apellido}} {{instancia.nombre}}
+    </div>
+    <div class="col-lg-4 col-sm-4 h1-botones">
+        <a ui-sref="jugadores" class="btn btn-default">Volver</a>
+    </div>
+</div>
+<div class="row">
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <i class="fa fa-child"></i>&nbsp;&nbsp;Datos Generales
+        </div>
+        <div class="panel-body">
+            <div style="width:190px; height:190px; margin-bottom:15px; float:left; background:url(/Images/jugadores/{{instancia.foto}}) center center no-repeat; background-size:100%;"></div>
+            <div style="width:630px; float:left; margin-left:10px; margin-bottom:15px">
+                <table class="cellpading5">
+                    <tr>
+                        <th style="width:110px">Documento</th>
+                        <td style="width:150px;">{{ instancia.DNI }}</td>
+                        <td style="width:20px"></td>
+                        <th style="width:110px">Federación</th>
+                        <td style="width:240px">{{ instancia.Clubes.Asociaciones.Federaciones.descripcion }}</td>
+                    </tr>
+                    <tr>
+                        <th>Apellido</th>
+                        <td>{{ instancia.apellido }}</td>
+                        <td></td>
+                        <th>Asociación</th>
+                        <td>{{ instancia.Clubes.Asociaciones.descripcion }}</td>
+                    </tr>
+                    <tr>
+                        <th>Nombre</th>
+                        <td>{{ instancia.nombre }}</td>
+                        <td></td>
+                        <th>Club</th>
+                        <td>{{ instancia.Clubes.descripcion }}</td>
+                    </tr>
+                  <!--  <tr>
+                        <th>Categoría</th>
+                        <td>{{ instancia.Categorias.descripcion }}</td>
+                        <td></td>
+                        <th>Fecha Nac.</th>
+                        <td>{{ instancia.fechaNacimiento | date:'dd/MM/yyyy' }}</td>
+                    </tr>
+                      -->
+                    <tr>
+                        <th>Sexo</th>
+                        <td>{{ instancia.sexo }}</td>
+                        <td></td>
+                        <th>Habilitado</th>
+                        <td>{{ instancia.estampillaActual != null ? 'SI' : 'NO' }}</td>
+                    </tr>
+                    <tr>
+                        <th>Nro. Carnet</th>
+                        <td>{{ instancia.nroCarnet }}</td>
+                        <td></td>
+                        <th>Habilitación Nº</th>
+                        <td>{{ instancia.estampillaActual != null ? instancia.estampillaActual.numero : '' }}</td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <i class="fa fa-credit-card"></i>&nbsp;&nbsp;Solicitudes de Carnet
+        </div>
+        <div class="panel-body">
+            <div class="table-responsive">
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th>Fecha Solicitud</th>
+                            <th>Entregado el día</th>
+                            <th>Entregado por</th>
+                        </tr>
+                    </thead>
+                    <tbody ng-repeat="item in instancia.JugadoresSolicitudesCarnets">
+                        <tr>
+                            <td>{{item.fechaSolicitud | date:'dd/MM/yyyy'}}</td>
+                            <td>{{item.fechaEntrega != null ? item.fechaEntrega : 'Aún no fue entregado' | date:'dd/MM/yyyy'}}</td>
+                            <td>{{item.Usuarios.nombre}}</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <i class="fa fa-check"></i>&nbsp;&nbsp;Habilitaciones</span>
+        </div>
+        <div class="panel-body">
+            <div class="table-responsive">
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th>Número</th>
+                            <th>Fecha Habilitación</th>
+                            <th>Fecha Vencimiento</th>
+                            <th>Usuario</th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr ng-repeat="item in instancia.JugadoresHabilitaciones">
+                            <td>{{item.numero}}</td>
+                            <td>{{item.fechaHabilitacion | date:'dd/MM/yyyy'}}</td>
+                            <td>{{item.fechaInhabilitacion | date:'dd/MM/yyyy'}}</td>
+                            <td>{{item.Usuarios.nombre}}</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+   <!-- <div class="panel panel-default">
+        <div class="panel-heading">
+            <i class="fa fa-level-up"></i>&nbsp;&nbsp;Categorías
+        </div>
+        <div class="panel-body">
+            <div class="table-responsive">
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th>Categoría</th>
+                            <th>Fecha Cambio Categoría</th>
+                            <th>Usuario</th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr ng-repeat="item in instancia.JugadoresCategorias">
+                            <td>{{item.Categorias.descripcion}}</td>
+                            <td>{{item.fecha | date:'dd/MM/yyyy'}}</td>
+                            <td>{{item.Usuarios.nombre}}</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div> -->
+
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <i class="fa fa-exchange"></i>&nbsp;&nbsp;Pases
+        </div>
+        <div class="panel-body">
+            <div class="table-responsive">
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th>Fecha Solicitud</th>
+                            <th>Fecha Pase</th>
+                            <th>Tipo</th>
+                            <th>Estado</th>
+                        </tr>
+                    </thead>
+                    <tbody ng-repeat="item in instancia.JugadoresPases">
+                        <tr>
+                            <td rowspan="2">{{item.fechaSolicitud | date:'dd/MM/yyyy'}}</td>
+                            <td>{{item.fechaPase | date:'dd/MM/yyyy'}}</td>
+                            <td>{{item.tipoPase}}</td>
+                            <td>{{item.PasesEstados.descripcion}}</td>
+                        </tr>
+                        <tr>
+                            <td colspan="3">
+                                <strong>Origen:</strong> Club {{item.Clubes.descripcion}} - Asociación {{item.Asociaciones.descripcion}} - Federación {{item.Federaciones.descripcion}}
+                                <br /><strong>Destino:</strong> Club {{item.Clubes1.descripcion}} - Asociación {{item.Asociaciones1.descripcion}} - Federación {{item.Federaciones1.descripcion}}
+                                <span ng-show="item.motivosRechazo != null && item.motivosRechazo != ''" style="color:red"><br /><strong>Motivos rechazo:</strong> {{item.motivosRechazo}}</span>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+    
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <i class="fa fa-history"></i>&nbsp;&nbsp;Historial
+        </div>
+        <div class="panel-body">
+            <div ng-show="instancia.JugadoresHistorial.length >0"  class="table-responsive">
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th>Fecha</th>
+                            <th>Usuario</th>
+                            <th>Movimiento</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                    <tbody ng-repeat="item in instancia.JugadoresHistorial">
+                        <tr>
+                            <td>{{item.fecha | date:'dd/MM/yyyy'}}</td>
+                            <td>{{item.Usuarios.nombre }}</td>
+                            <td>{{item.accion}}</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div ng-show="instancia.Historial != null && instancia.Historial != ''" class="table-responsive">
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th>Descripción</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>{{instancia.Historial}}</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+        <!--
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <i class="fa fa-exclamation-circle" style="color:red"></i>&nbsp;&nbsp;Penalizaciones
+            </div>
+            <div class="panel-body">
+                <div class="table-responsive">
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th>Fecha Inicio</th>
+                                <th>Días</th>
+                                <th>Fecha Fin</th>
+                                <th>Motivos</th>
+                                <th>Usuario</th>
+                                <th>Estado</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr ng-repeat="item in instancia.JugadoresPenalizaciones">
+                                <td>{{item.fechaInicio | date:'dd/MM/yyyy'}}</td>
+                                <td>{{item.dias}}</td>
+                                <td>{{item.fechaFin | date:'dd/MM/yyyy' }}</td>
+                                <td>{{item.motivos}}</td>
+                                <td>{{item.Usuarios.nombre}}</td>
+                                <td>{{item.PenalizacionesEstados.descripcion}}</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+        -->
+        <br /><br /><br /><br /><br /><br />
+
+    </div>

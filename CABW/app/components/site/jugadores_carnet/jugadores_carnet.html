@@ -1,0 +1,85 @@
+﻿<!-- Fix for old browsers -->
+<script src="http://nervgh.github.io/js/es5-shim.min.js"></script>
+<script src="http://nervgh.github.io/js/es5-sham.min.js"></script>
+<script src="http://code.jquery.com/jquery-1.8.3.min.js"></script>
+
+<link rel="stylesheet" type="text/css" href="/Content/carnet/impresionCarnet.css" media="print" />
+<div class="row" style="overflow: hidden;">
+    <div class="panel panel-default" style="overflow-y: scroll;">
+
+        <div class="panel-body">
+            <div class="titulocarnet" style="border:solid 1px #68A4C4; overflow:auto; width:860px; margin:0px auto">
+                <div style="margin-left:3%;"><span><strong>Puntaje: {{instancia.Puntaje}}</strong></span> </div>
+
+                <div class="textotitulocarnet" style="padding:5px; background-color:#68A4C4; font-size:12pt; color:white; text-align:center; font-weight:bolder">Federación Uruguaya de Bochas - Carnet Único Nacional</div>
+                <div style="padding:10px">
+                    <div class=".col-md-4">
+                        <img class="imagencarnet" style="width: 190px; height: 190px; float: left; background-size: 100%;" src="/Images/jugadores/{{instancia.foto}}" />
+                    </div>
+                    <div class=".col-md-8 cuerpocarnet" style="width:630px; float:left; margin-left:10px;">
+                        <table class="cellpading5" style="font-size:14px">
+                            <tr>
+                                <th style="width:110px">DOCUMENTO</th>
+                                <td class="carnetDNI" style="width:195px; color:#68A4C4; font-size:14pt">{{ instancia.DNI }}</td>
+                                <td style="width:20px"></td>
+                                <th style="width:110px">Federación</th>
+                                <td style="width:195px" class="descripcionCarnet">{{ instancia.Clubes.Asociaciones.Federaciones.descripcion }}</td>
+                            </tr>
+                            <tr>
+                                <th>Apellido</th>
+                                <td class="descripcionCarnet">{{ instancia.apellido }}</td>
+                                <td></td>
+                                <th>Asociación</th>
+                                <td class="descripcionCarnet">{{ instancia.Clubes.Asociaciones.descripcion }}</td>
+                            </tr>
+                            <tr>
+                                <th>Nombre</th>
+                                <td class="descripcionCarnet">{{ instancia.nombre }}</td>
+                                <td></td>
+                                <th>Club</th>
+                                <td class="descripcionCarnet">{{ instancia.Clubes.descripcion }}</td>
+                            </tr>
+                            <tr>
+                                <th>Categoría</th>
+                                <td class="descripcionCarnet"> {{ instancia.Categorias.descripcion }}</td>
+                                <td></td>
+                                <th>Fecha Nac.</th>
+                                <td class="descripcionCarnet">{{ instancia.fechaNacimiento | date:'dd/MM/yyyy' }}</td>
+                            </tr>
+                            <tr>
+                                <th>Sexo</th>
+                                <td class="descripcionCarnet">{{ instancia.sexo }}</tdclass>
+                                <td></td>
+                                <th>Habilitado</th>
+                                <td class="descripcionCarnet">{{ instancia.estampillaActual != null ? 'SI' : 'NO' }}</td>
+                            </tr>
+                            <tr>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <th>Habilitación Nº</th>
+                                <td class="descripcionCarnet">{{ instancia.estampillaActual != null ? instancia.estampillaActual.numero : '' }}</td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+                <div class="footercarnet" style="padding:10px; clear:both; padding-bottom:25px; font-size:10pt">
+                    <div class="titulo1" style="width:50%; float:left">Fecha de Impresión: {{ fechaImpresion | date:'dd/MM/yyyy'}}</div>
+                    <div class="titulo2" style="width:50%; float:left">Carnet provisorio por 60 días</div>
+                </div>
+
+            </div>
+            <div class="titulocarnet" style="border:solid 1px #68A4C4; overflow:auto; width:860px; margin:0px auto">
+                <label style="font: bold; margin: 1px 1px 1px 4px;">Historial</label>
+                <div class="footercarnet" style="padding:10px; clear:both; padding-bottom:25px; font-size:10pt">
+                    <div class="titulo1" style="width:50%; float:left"> {{ instancia.Historial}}</div>
+
+                </div>
+            </div>
+            <br />
+        </div>
+    </div>
+</div>
+
+
+

@@ -1,0 +1,148 @@
+﻿<div class="row rowHeader">
+    <div class="col-lg-4 col-sm-4 h1">
+        {{ titulo }}
+    </div>
+    <div class="col-lg-8 col-sm-8 h1-botones">
+        <button class="btn btn-default" ng-click="print('grilla')"><i class="fa fa-print"></i>&nbsp;&nbsp;Imprimir</button>
+        &nbsp;<button class="btn btn-default" ng-click="exportToExcel('grilla')"><i class="fa fa-file-excel-o"></i>&nbsp;&nbsp;Exportar a Excel</button>
+        &nbsp;<a ui-sref="dashboard" class="btn btn-default">Volver</a>
+    </div>
+</div>
+
+<div class="row">
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <form role="form" name="form" ng-submit="submit()">
+                <div class="row">
+                    <div class="col-lg-2 col-md-2">
+                        <label>Filtro</label>
+                        <input type="text" class="form-control" ng-model="filtro.filtro" placeholder="Nombre / Categoría / Club / Asociación / Federación / Tipo">
+                    </div>
+                    <!--<div class="col-lg-2 col-md-2">
+        <label>Federación</label>
+        <select ng-options="federacion as federacion.descripcion for federacion in federaciones" ng-model="filtro.federacion" class="form-control"></select>
+    </div>-->
+                    <div class="col-lg-2 col-md-2">
+                        <label>Asociación</label>
+                        <select ng-options="asociacion as asociacion.descripcion for asociacion in asociaciones" ng-model="filtro.asociacion" class="form-control"></select>
+                    </div>
+                    <!--<div class="col-lg-2 col-md-2">
+        <label>Tipo pase</label>
+        <input type="text" class="form-control" ng-model="filtro.tipoPase" placeholder="Tipo Pase">
+     </div>-->
+                    <div class="col-lg-2 col-md-2">
+                        <label>Tipo pase</label>
+                        <select ng-options="tipoPase as tipoPase.label for tipoPase in tipoPase" ng-model="filtro.tipoPase" class="form-control"></select>
+                    </div>
+                    <div class="col-lg-2 col-md-2">
+                        <label>Fecha solicitud desde</label>
+                        <input type="date" class="form-control" ng-model="filtro.fechaDesde" ng-required="true">
+                    </div>
+                    <div class="col-lg-2 col-md-2">
+                        <label>Fecha solicitud hasta</label>
+                        <input type="date" class="form-control" ng-model="filtro.fechaHasta" ng-required="true">
+                    </div>
+                    <div class="col-lg-2 col-md-2 text-right" style="padding-top:15px">
+                        <button type="submit" class="btn btn-primary" ng-disabled="isLoading">
+                            <span ng-hide="isLoading"><i class="fa fa-search"></i>&nbsp;Buscar</span>
+                            <span ng-show="isLoading"><span class='glyphicon glyphicon-refresh glyphicon-refresh-animate'></span>&nbsp;Buscar</span>
+                        </button>
+                    </div>
+                </div>
+            </form>
+        </div>
+        <div class="panel-body">
+            <div class="table-responsive" id="grilla">
+                <style>
+                    * {
+                        font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+                        font-size:9.5pt;
+                    }
+
+                    .tablePrint > thead > tr > th {
+                        vertical-align: bottom;
+                        border-bottom: 2px solid #ddd;
+                    }
+
+                    .tablePrint > thead > tr > th, .tablePrint > tbody > tr > th, .tablePrint > tfoot > tr > th, .tablePrint > thead > tr > td, .tablePrint > tbody > tr > td, .tablePrint > tfoot > tr > td {
+                        padding: 8px;
+                        line-height: 1.42857143;
+                        vertical-align: top;
+                        border: 1px solid #ddd;
+                    }
+
+                    .tablePrint th {
+                        text-align: center;
+                    }
+
+                    .tablePrint td, .tablePrint th {
+                        padding: 0;
+                    }
+
+                    .tablePrint {
+                        border-spacing: 0;
+                        border-collapse: collapse;
+                        width:100%;
+                    }
+                </style>
+
+                <div class="col-lg-10" style="font-size:14pt; margin-bottom:15px">
+                    {{ titulo }}
+                </div>
+                <div class="col-lg-2" style="text-align:right;"> 
+                    Nro: {{numeroExp}}
+                </div>
+                <table class="tablePrint">
+                    <thead>
+                        <tr>
+                            <th>Jugador</th>
+                            <th>Categoria</th>
+                            <th>Fecha Solicitud</th>
+                            <th>Fecha Pase</th>
+                            <!--<th>Federacion Orígen</th>-->
+                            <th>Asociación Orígen</th>
+                            <th>Club Orígen</th>
+                            <!--<th>Federacion Destino</th>-->
+                            <th>Asociación Destino</th>
+                            <th>Club Destino</th>
+                            <th>Tipo</th>
+                            <th>Usuario Solicitud</th>
+                            <th>Estado</th>
+                            <th>Rechazado</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr ng-repeat="item in grilla">
+                            <td>{{item.nombre}}</td>
+                            <td>{{item.categoria}}</td>
+                            <td>{{item.fechaSolicitud | date}}</td>
+                            <td>{{item.fechaPase}}</td>
+                            <!--<td>{{item.federacionOrigen}}</td>-->
+                            <td>{{item.asociacionOrigen}}</td>
+                            <td>{{item.clubOrigen}}</td>
+                            <!-- <td>{{item.federacionDestino}}</td>-->
+                            <td>{{item.asociacionDestino}}</td>
+                            <td>{{item.clubDestino}}</td>
+                            <td>{{item.tipoPase}}</td>
+                            <td>{{item.usuarioSolicitud}}</td>
+                            <td>{{item.estado}}</td>
+                            <td>{{item.motivoRechazo}}</td>
+
+                        </tr>
+                    </tbody>
+                    <tfoot>
+                    </tfoot>
+                </table>
+                <br />
+                <div>
+                    <strong>Criterios de busqueda</strong>
+                    <br />&nbsp;&nbsp;&nbsp;&nbsp;- Fecha solicitud desde: {{ filtro.fechaDesde | date:'dd/MM/yyyy' }}
+                    <br />&nbsp;&nbsp;&nbsp;&nbsp;- Fecha solicitud hasta: {{ filtro.fechaHasta | date:'dd/MM/yyyy' }}
+                    <br />&nbsp;&nbsp;&nbsp;&nbsp;- Filtro: {{ filtro.filtro }}
+                </div>
+                <br />
+            </div>
+        </div>
+    </div>
+
+</div>

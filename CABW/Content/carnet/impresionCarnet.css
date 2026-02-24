@@ -1,0 +1,79 @@
+﻿/*Esta hoja de estilos se ejecuta a la hora de imprimir el carnet para reducir el tamaño*/
+.panel-body {
+    width: 321px !important;
+}
+.imagencarnet {
+    width: 120px !important;
+    height: 120px!important;
+    border: solid 1px green;
+
+}
+.titulocarnet {
+    width: 700px !important;
+    font-size : 10pt !important;
+    border: solid 1px green !important;
+    height: 254px;
+}
+
+.titulocarnetadmin {
+    width: 700px !important;
+    font-size : 10pt !important;
+    border: solid 1px green !important;
+    height: 254px;
+   
+}
+.textotitulocarnet {
+    border: solid 1px green;
+    font-size : 10pt !important;
+}
+.cuerpocarnet {
+    font-size: 7pt !important;
+    line-height: 19px !important;
+    width: 80% !important;
+    height: 150px !important;
+}
+cuerpocarnetadmin{
+    font-size: 7pt !important;
+    width: 540px !important;
+    height: 150px !important;
+}
+.cellpading5 {
+    font-size: 9pt !important;
+}
+.cellpading5  tr {
+    height:24px !important;
+
+}
+.cellpading5 th{
+    font: arial !important;
+    font-weight: 400 !important;
+    color: black !important;
+    visibility: visible!important;
+    display: block !Important;
+}
+
+
+.descripcionCarnet {
+    color:#68A4C4 !Important;
+    font-weight: bold !Important;
+
+}
+
+.carnetDNI {
+    font-size:9pt !important;
+    color : green !important;
+    font-weight: bold;
+}
+.footercarnet {
+    font-size: 6pt !important;
+}
+.titulo1 {
+    width: 60% !important;
+}
+.titulo2 {
+     width: 40% !important;
+}
+
+
+
+

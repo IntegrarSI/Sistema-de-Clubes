@@ -1,0 +1,67 @@
+﻿<div class="row rowHeader">
+    <div class="col-lg-4 col-sm-4 h1">
+        Calendario
+    </div>
+    <div class="col-lg-8 col-sm-8 h1-botones">
+        <a ui-sref="calendario_edit" class="btn btn-primary">Nuevo evento</a>
+        &nbsp;<a ui-sref="dashboard" class="btn btn-default">Volver</a>
+    </div>
+</div>
+
+<div class="row">
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <form role="form" name="form" ng-submit="submit()">
+                <div class="row">
+                    <div class="col-lg-4 col-sm-4 col-xs-7">
+                        <label>Filtro</label>
+                        <input type="text" class="form-control" ng-model="filter" placeholder="Buscar...">
+                    </div>
+                    <div class="col-lg-2 col-md-2 col-xs-5 text-right" style="padding-top:15px">
+                        <button type="submit" class="btn btn-primary" ng-disabled="isLoading">
+                            <span ng-hide="isLoading"><i class="fa fa-search"></i>&nbsp;Buscar</span>
+                            <span ng-show="isLoading"><span class='glyphicon glyphicon-refresh glyphicon-refresh-animate'></span>&nbsp;Buscar</span>
+                        </button>
+                    </div>
+                </div>
+            </form>
+        </div>
+        <div class="panel-body">
+            <div class="table-responsive">
+                <table class="table table-striped table-hover">
+                    <thead>
+                        <tr>
+                            <th class="action"></th>
+                            <th>Fecha desde</th>
+                            <th>Fecha hasta</th>
+                            <th>Tipo evento</th>
+                            <th>Categoría</th>
+                            <th>Especialidad</th>
+                            <th>Localidad</th>
+                            <th>Provincia</th>
+                        </tr>
+                    </thead>
+                    <tbody ng-repeat="item in grilla">
+                        <tr>
+                            <td><a title="Modificar evento" ui-sref="calendario_edit({id:item.id})"><i class="fa fa-pencil"></i></a></td>
+                            <td>{{item.fechaDesde | date: "dd/MM/yyyy"}}</td>
+                            <td>{{item.fechaHasta | date: "dd/MM/yyyy"}}</td>
+                            <td>{{item.tipoCompeticion}}</td>
+                            <td>{{item.categoria}}</td>
+                            <td>{{item.especialidad}}</td>
+                            <td>{{item.localidad}}</td>
+                            <td>{{item.provincia}}</td>
+                        </tr>
+                    </tbody>
+                    <tfoot>
+                    </tfoot>
+                </table>
+                <uib-pagination ng-show="totalItems > 0" max-size="maxSize" boundary-links="true" total-items="totalItems" ng-change="pageChanged()" ng-model="currentPage" class="pagination-sm" previous-text="&lsaquo;" next-text="&rsaquo;" first-text="&laquo;" last-text="&raquo;"></uib-pagination>
+                <div class="alert alert-info text-center" ng-hide="totalItems > 0">
+                    <span ng-hide="isLoading">No existen datos con los filtros especificados</span>
+                    <span ng-show="isLoading">Espere mientras se actualizan los datos</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

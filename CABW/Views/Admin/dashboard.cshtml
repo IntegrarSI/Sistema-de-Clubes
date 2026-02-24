@@ -1,0 +1,75 @@
+﻿<!DOCTYPE html>
+<html lang="es" ng-app="admin">
+<head>
+    <meta http-equiv="content-type" content="application/vnd.ms-excel; charset=UTF-8">
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+    <meta http-equiv="Pragma" content="no-cache" />
+    <meta http-equiv="Expires" content="0" />
+    <meta charset="ISO-8859-1">
+
+    <meta name="viewport" content="width=device-width" />
+    <meta http-equiv="X-UA-Compatible" content="IE=EmulateIE8" />
+
+    <title>Federación Uruguaya de Bochas</title>
+
+
+    <link href="/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+
+    <link href="/Content/admin/bootstrap.css" rel="stylesheet" />
+    <link href="/Content/admin/font-awesome.min.css" rel="stylesheet" />
+    <link href="/Content/admin/loading-bar.css" rel="stylesheet" />
+    <link href="/Content/admin/sb-admin-2.css" rel="stylesheet" />
+    <link href="/Content/admin/custom.css" rel="stylesheet" />
+
+    @System.Web.Optimization.Scripts.Render("~/admin/libs")
+    <script src="/libs/angular-ui-router.min.js"></script>
+
+    <script src="/js/angular-recaptcha.min.js"></script>
+
+    
+
+    
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="/js/html5shiv.js"></script>
+        <script src="/js/respond.js"></script>
+    <![endif]-->
+
+</head>
+<body>
+      
+    <div id="wrapper">
+    
+        <header></header>
+
+        <div id="page-wrapper" style="min-height:1561px;">
+            <loadingload></loadingload>
+            <div class="view" ui-view></div>
+            <notification content="{{message.content}}" type="{{message.type}}" title="{{message.title}}"></notification>
+        </div>
+    </div>
+
+    <script src="/app/appAdmin.js"></script>
+
+    @System.Web.Optimization.Scripts.Render("~/admin/js")
+    @System.Web.Optimization.Scripts.Render("~/admin/controllers")
+    @System.Web.Optimization.Scripts.Render("~/admin/services")
+    @System.Web.Optimization.Scripts.Render("~/admin/directives")
+    @System.Web.Optimization.Scripts.Render("~/admin/filters")
+    @System.Web.Optimization.Scripts.Render("~/admin/factories")
+    
+    <script src="/js/dateUtils.js"></script>
+    <script src="/js/arrayUtils.js"></script>
+    
+    <script src="/app/shared/components/admin/angular-file-upload/angular-file-upload.js"></script>
+    <script src="/app/shared/components/admin/angular-file-upload/ngThumb.js"></script>
+
+    @*<script src='http://cdnjs.cloudflare.com/ajax/libs/textAngular/1.5.0/textAngular-rangy.min.js'></script>
+    <script src='http://cdnjs.cloudflare.com/ajax/libs/textAngular/1.5.0/textAngular-sanitize.min.js'></script>
+    <script src='http://cdnjs.cloudflare.com/ajax/libs/textAngular/1.5.0/textAngular.min.js'></script>*@
+    <script src="/js/textAngular/textAngular-rangy.min.js"></script>
+    <script src="/js/textAngular/textAngular-sanitize.min.js"></script>
+    <script src="/js/textAngular/textAngular.min.js"></script>
+</body>
+</html>

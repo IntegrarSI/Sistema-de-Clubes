@@ -1,0 +1,157 @@
+﻿<div class="row rowHeader">
+    <div class="col-lg-4 col-sm-4 h1">
+        {{ titulo }}
+    </div>
+    <div class="col-lg-8 col-sm-8 h1-botones">
+        <button class="btn btn-default" ng-click="print('grilla')"><i class="fa fa-print"></i>&nbsp;&nbsp;Imprimir</button>
+        &nbsp;<button class="btn btn-default" ng-click="exportToExcel('grilla')"><i class="fa fa-file-excel-o"></i>&nbsp;&nbsp;Exportar a Excel</button>
+        &nbsp;<a ui-sref="dashboard" class="btn btn-default">Volver</a>
+    </div>
+</div>
+
+<div class="row">
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <form role="form" name="form" ng-submit="submit()">
+                <div class="row">
+                    <div class="col-lg-2 col-md-2">
+                        <label>Filtro</label>
+                        <input type="text" class="form-control" ng-model="filtro.filtro" placeholder="Nombre / Categoría / Club / Asociación / Federación">
+                    </div>
+                    <!--<div class="col-lg-2 col-md-2">
+        <label>Federación</label>
+        <select ng-options="federacion as federacion.descripcion for federacion in federaciones" ng-model="filtro.federacion" class="form-control"></select>
+    </div>-->
+                    <div class="col-lg-3 col-md-3">
+                        <label>Asociación</label>
+                        <select ng-options="asociacion as asociacion.descripcion for asociacion in asociaciones" ng-model="filtro.asociacion" class="form-control"></select>
+                    </div>
+                    <div class="col-lg-3 col-md-3">
+                        <label>Club</label>
+                        <select ng-options="club as club.descripcion for club in clubes" ng-model="filtro.club" class="form-control"></select>
+                    </div>
+                    <div class="col-lg-2 col-md-2">
+                        <label>Estampilla</label>
+                        <input type="text" class="form-control" ng-model="filtro.estampilla" placeholder="Nro.Estampilla">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-lg-1 col-md-1 text-right" style="padding-top:15px">
+                        <button type="submit" class="btn btn-primary" ng-disabled="isLoading">
+                            <span ng-hide="isLoading"><i class="fa fa-search"></i>&nbsp;Buscar</span>
+                            <span ng-show="isLoading"><span class='glyphicon glyphicon-refresh glyphicon-refresh-animate'></span>&nbsp;Buscar</span>
+                        </button>
+                    </div>
+                </div>
+            </form>
+        </div>
+        <div class="panel-body">
+            <div class="table-responsive" id="grilla">
+                <style>
+                    * {
+                        font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+                        font-size: 8.8pt;
+                    }
+
+                    .tablePrint > thead > tr > th {
+                        vertical-align: bottom;
+                        border-bottom: 2px solid #ddd;
+                    }
+
+                    .tablePrint > thead > tr > th, .tablePrint > tbody > tr > th, .tablePrint > tfoot > tr > th, .tablePrint > thead > tr > td, .tablePrint > tbody > tr > td, .tablePrint > tfoot > tr > td {
+                        padding: 8px;
+                        line-height: 1.42857143;
+                        vertical-align: top;
+                        border: 1px solid #ddd;
+                    }
+
+                    .tablePrint th {
+                        text-align: center;
+                    }
+
+                    .tablePrint td, .tablePrint th {
+                        padding: 0;
+                    }
+
+                    .tablePrint {
+                        border-spacing: 0;
+                        border-collapse: collapse;
+                        width: 100%;
+                    }
+                </style>
+                <div style="font-size:14pt; margin-bottom:15px; text-align:left;" class="col-md-6">
+                    {{ titulo }}
+                    </div>
+                    <div style="font-size:14pt; margin-bottom:15px; text-align:right;" class="col-md-6">
+                        <table class="table-condensed" align="right">
+                     
+                                  <tr>
+                                    <th> Mayores </th>
+                                    <th>Infantiles </th>
+                                    <th> Veteranos</th>
+                                    <th>Total </th>
+                                  </tr>                
+                               
+                     
+                                <tr>
+                                    <td>  {{TotalMayores}}  </td>
+                                    <td> {{TotalInfantiles}}  </td>
+                                    <td> {{TotalVeteranos}} </td>
+                                    <td>  {{TotalGrilla}} </td>
+                                   
+                                </tr>
+                         
+                        </table>
+                    </div>
+                    <table class="tablePrint">
+                        <thead>
+                            <tr>
+                                <th>Nombre</th>
+                                <th>Fecha Nac.</th>
+                                <th>Fecha Ing.</th>
+                                <th>Nro Carnet</th>
+                                <th>Puntaje</th>
+                                <th>Club</th>
+                                <th>Asociacion</th>
+                                <th>Federacion</th>
+                                <th>Estampilla</th>
+                                <th>DNI</th>
+                                <th>Sexo</th>
+                                <th>Fecha Hab.</th>
+                                <th>Tipo</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr ng-repeat="item in grilla">
+                                <td>{{item.nombre}}</td>
+                                <td>{{item.fechaNacimiento}}</td>
+                                <td>{{item.fechaIngreso}}</td>
+                                <td>{{item.nroCarnet}}</td>
+                                <td>{{item.Puntaje}}</td>
+                                <td>{{item.club}}</td>
+                                <td>{{item.asociacion}}</td>
+                                <td>{{item.federacion}}</td>
+                                <td>{{item.estampilla}}</td>
+                                <td>{{item.DNI}}</td>
+                                <td>{{item.sexo}}</td>
+                                <td>{{item.fechaHabilitacion}}</td>
+                                <td>{{item.tipo}}</td>
+                            </tr>
+                        </tbody>
+                        <tfoot>
+                        </tfoot>
+                    </table>
+                    <br />
+                    <div>
+                        <strong>Criterios de busqueda</strong>
+                        <br />&nbsp;&nbsp;&nbsp;&nbsp;- Filtro: {{ filtro.filtro }}
+                        <br />&nbsp;&nbsp;&nbsp;&nbsp;- Federacion: {{ filtro.federacion.descripcion }}
+                        <br />&nbsp;&nbsp;&nbsp;&nbsp;- Asociacion: {{ filtro.asociacion.descripcion }}
+                        <br />&nbsp;&nbsp;&nbsp;&nbsp;- Club: {{ filtro.club.descripcion }}
+                    </div>
+                    <br />
+                </div>
+        </div>
+    </div>
+
+</div>

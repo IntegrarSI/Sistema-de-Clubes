@@ -1,0 +1,57 @@
+﻿<section id="inner-headline">
+    <div class="container inner-heading">
+        <div class="row">
+            <div class="col-lg-12">
+                <h2>Noticias</h2>
+            </div>
+        </div>
+    </div>
+</section>
+</br>
+
+<div class="panel-body">
+    <div class="table-responsive">
+        <table  class="table">
+            <tbody>
+                <div class="alert alert-info text-center" ng-hide="totalItems > 0 ">
+                    <span ng-hide="isLoading" class="" style="">No existen Noticias</span>
+                </div> 
+                <div ng-repeat="noticia in listaNoticias">
+                    <section class ="sessionNoticias" >
+                        <div >
+                            <div class="row">
+              
+                                <div class="divListaNoticia">
+                        
+                                    <div class="col-md-2 center-block quitar-float text-center espacio-arriba">
+                                        <a class="fancybox-img" rel="ligthbox" href="/images/noticias/{{noticia.fotoPeque}} ">
+                                            <img id="imgListaNoticia" class="img-responsive img-thumbnail" src="/images/noticias/{{noticia.fotoPeque}}" alt=" No Tiene Imagen" />
+                                        </a>
+                                    </div>
+                                    <div class="col-md-9" id="divNoticia">
+                                            <a  ui-sref="noticias_detalle({id:noticia.id})"><h3>{{noticia.titulo}}</h3></a>
+                                            <h5>{{noticia.copete}}</h5>
+                                            <label ><span>Fecha:</span> {{noticia.fecha | date:"MM/dd/yyyy 'a las' h:mm a" }} </label>
+                                    </div>
+                                    <div class = "col-md-1"  id="verNoticia" >
+                                        </br>
+                                        </br>
+                                        </br>
+                                        <a ui-sref="noticias_detalle({id:noticia.id})"><i class="fa fa-plus-square" aria-hidden="true"> Ver</i></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+    
+                    </section>
+                    </br>
+                </div>
+                </tbody>
+         </table>
+
+         <uib-pagination id="paginacionNoticias" ng-show="totalItems > 0" max-size="maxSize" boundary-links="true" total-items="totalItems" ng-change="pageChanged()" ng-model="currentPage" items-per-page="viewby" class="pagination-sm"   previous-text="&lsaquo;" next-text="&rsaquo;" first-text="&laquo;" last-text="&raquo;"></uib-pagination>
+
+    </div>
+</div>
+
+<footer></footer>

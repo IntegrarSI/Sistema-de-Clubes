@@ -1,0 +1,64 @@
+﻿<div class="row rowHeader">
+    <div class="col-lg-10 col-sm-10 h1">
+        {{title}} Penalización a {{ instancia.nombre }} {{ instancia.apellido }}
+    </div>
+    <div class="col-lg-2 col-sm-2 h1-botones">
+        <a ui-sref="jugadores" class="btn btn-default">Volver</a>
+    </div>
+</div>
+<div class="row">
+    <div class="panel panel-default">
+        <div class="panel-body">
+            <form role="form" name="form" ng-submit="submit()" class="form-horizontal">
+                <div class="form-group required">
+                    <label class="col-lg-3 col-md-3 control-label">Fecha de Inicio</label>
+                    <div class="col-lg-3 col-md-3">
+                        <input type="date" required class="form-control" ng-model="penalizacion.fechaInicio" />
+                    </div>
+                </div>
+                <div class="form-group required">
+                    <label class="col-lg-3 col-md-3 control-label">Días de Penalización</label>
+                    <div class="col-lg-2 col-md-2">
+                        <input type="number" min="1" required class="form-control" ng-model="penalizacion.dias" />
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-lg-3 col-md-3 control-label">Fecha de Finalización</label>
+                    <div class="col-lg-3 col-md-3">
+                        <input type="date" required class="form-control" ng-model="penalizacion.fechaFin" ng-readonly="true" />
+                    </div>
+                </div>
+                <div class="form-group required">
+                    <label class="col-lg-3 col-md-3 control-label">Motivos</label>
+                    <div class="col-lg-7 col-md-7">
+                        <textarea class="form-control" rows="4" ng-required="true" ng-model="penalizacion.motivos"></textarea>
+                    </div>
+                </div>
+
+                <div class="alert alert-warning text-center">
+                    <strong>Atención!</strong> La penalización deberá ser aprobada por la Confederación
+                    <span ng-show="penalizacion.requiereAprobacionFederacion"> y por la Federación</span>
+                </div>
+
+                <button type="submit" class="btn btn-primary" ng-disabled="isLoading || !permiteModificacion">
+                    <span ng-hide="isLoading"><i class="fa fa-save"></i>&nbsp;&nbsp;Guardar</span>
+                    <span ng-show="isLoading"><span class='glyphicon glyphicon-refresh glyphicon-refresh-animate'></span>&nbsp;Guardando...</span>
+                </button>
+                &nbsp;
+                <button type="button" class="btn btn-success" ng-disabled="isLoading || !permiteModificacion">
+                    <span ng-hide="isLoading"><i class="fa fa-check"></i>&nbsp;&nbsp;Aprobar</span>
+                    <span ng-show="isLoading"><span class='glyphicon glyphicon-refresh glyphicon-refresh-animate'></span>&nbsp;Aprobando...</span>
+                </button>
+                &nbsp;
+                <button type="button" class="btn btn-danger" ng-disabled="isLoading || !permiteModificacion">
+                    <span ng-hide="isLoading"><i class="fa fa-close"></i>&nbsp;&nbsp;Rechazar</span>
+                    <span ng-show="isLoading"><span class='glyphicon glyphicon-refresh glyphicon-refresh-animate'></span>&nbsp;Rechazando...</span>
+                </button>
+
+                <br />
+                <br />
+            </form>
+        </div>
+    </div>
+
+</div>

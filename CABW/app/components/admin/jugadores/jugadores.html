@@ -1,0 +1,109 @@
+﻿<div class="row rowHeader">
+    <div class="col-lg-4 col-sm-4 h1">
+        Jugadores
+    </div>
+    <div class="col-lg-8 col-sm-8 h1-botones">
+        <a ui-sref="jugadores_edit" class="btn btn-primary">Nuevo Jugador</a>
+        &nbsp;<a ui-sref="dashboard" class="btn btn-default">Volver</a>
+    </div>
+</div>
+
+<div class="row">
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <form role="form" name="form" ng-submit="submit()">
+                <div class="row">
+                        <div class ="col-lg-5 col-md-5 filtro" >
+                            <label>Filtro</label>
+                            <input type="text" class="form-control" ng-model="filtro.buscar" placeholder="Ingrese nombre, DNI, localidad, email, etc...">
+                        </div>
+                        <div class="col-lg-7 col-md-7 col-xs-5 text-right" style="padding-top:25px; text-align : left;">
+                            <button type="submit" class="btn btn-primary" ng-disabled="isLoading">
+                                <span ng-hide="isLoading"><i class="fa fa-search"></i>&nbsp;Buscar</span>
+                                <span ng-show="isLoading"><span class='glyphicon glyphicon-refresh glyphicon-refresh-animate'></span>&nbsp;Buscar</span>
+                            </button>
+                        </div>
+                </div>
+                </br>
+                <div class="row">
+                        <div class="col-lg-4 col-md-4 filtroAvanzado">
+                            <label>Federación</label>
+
+                            <select ng-options="federacion as federacion.descripcion for federacion in federaciones" ng-model="filtro.federacion" class="form-control"></select>
+                        </div>
+                        <div class="col-lg-4 col-md-4 filtroAvanzado">
+                            <label>Asociación</label>
+                            <select ng-options="asociacion as asociacion.descripcion for asociacion in asociaciones" ng-model="filtro.asociacion" class="form-control"></select>
+                        </div>
+                        <div class="col-lg-4 col-md-4 filtroAvanzado">
+                            <label>Club</label>
+                            <select ng-options="club as club.descripcion for club in clubes" ng-model="filtro.club" class="form-control"></select>
+                        </div>
+                </div>
+                </br>
+                <div class="row">
+                    <div class ="col-lg-10 col-md-10" >
+                        <label>Busqueda Avanzada: <input id="chkBuscarTodos" type="checkbox" ng-model="filtro.checkbox"  ng-change="controlarCheckbox()"></label>
+                    </div>
+                    <div class="col-lg-2 col-md-2"></div>
+                </div>
+               
+            </form>
+        </div>
+        <div class="panel-body">
+            <div class="table-responsive">
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th class="action"></th>
+                            <th class="action"></th>
+                            <th class="action"></th>
+                            <th class="action"></th>
+                            <th ng-show="ticket.administraConfederacion && ticket.nivel == 4" class="action"></th>
+                            <!--<th class="action"></th>-->
+                            <th>Nombre</th>
+                            <th>DNI</th>
+                            <th>Localidad</th>
+                            <th>Teléfono</th>
+                            <th>Club</th>
+                            <th>Asociación</th>
+                            <th>Solicita Carnet</th>
+                            <th>Habilitado</th>
+                            <th>Puntaje</th>
+                            
+                        </tr>
+                    </thead>
+                    <tbody ng-repeat="item in grilla">
+                        <tr>
+
+                            <td><a title="Detalle" ui-sref="jugadores_detail({id:item.id})"><i class="fa fa-bars"></i></a></td>
+                            <td><a title="Modificar datos" ui-sref="jugadores_edit({id:item.id})"><i class="fa fa-pencil"></i></a></td>
+                            <td><a title="Visualizar Carnet" ui-sref="jugadores_carnet({id:item.id})"><i class="fa fa-credit-card"></i></a></td>
+                            <td><a title="Nuevo Pase" ui-sref="jugadores_pases({id:item.id})"><i class="fa fa-exchange"></i></a></td>
+                            <td ng-show="ticket.administraConfederacion && ticket.nivel == 4"><a title="Eliminar"><i class="fa fa-trash-o" ng-click="eliminarJugador(item.id)" style="cursor:pointer"></i></a></td>
+                            <!--<td><a title="Nueva Penalización" ui-sref="jugadores_penalizaciones({id:item.id})"><i class="fa fa-exclamation-circle" style="color:red"></i></a></td>-->
+                            <td>{{item.apellido}} {{item.nombre}}</td>
+                            <td>{{item.DNI}}</td>
+                            <td>{{item.localidad}}</td>
+                            <td>{{item.telefonoFijo}}</td>
+                            <td>{{item.Clubes.descripcion}}</td>
+                            <td>{{item.Clubes.Asociaciones.descripcion}}</td>
+                            <td>{{item.solicitaCarnet | siNo}}</td>
+                            <td>{{item.habilitado | siNo}}</td>
+                            <td>{{item.Puntaje}}</td>
+                            
+                        </tr>
+                    </tbody>
+                    <tfoot>
+                    </tfoot>
+                </table>
+                <uib-pagination ng-show="totalItems > 0" max-size="maxSize" boundary-links="true" total-items="totalItems" ng-change="pageChanged()" ng-model="currentPage" class="pagination-sm" previous-text="&lsaquo;" next-text="&rsaquo;" first-text="&laquo;" last-text="&raquo;"></uib-pagination>
+                <div class="alert alert-info text-center" ng-hide="totalItems > 0">
+                    <span ng-hide="isLoading">No existen datos con los filtros especificados</span>
+                    <span ng-show="isLoading">Espere mientras se actualizan los datos</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>

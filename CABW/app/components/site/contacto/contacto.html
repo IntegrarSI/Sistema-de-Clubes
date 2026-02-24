@@ -1,0 +1,62 @@
+﻿<section id="inner-headline">
+    <div class="container inner-heading">
+        <div class="row">
+            <div class="col-lg-12">
+                <h2>Contacto</h2>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="content" style="margin-bottom:0px">
+    <div class="map">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3283.7256808614056!2d-58.38672507493107!3d-34.61109757087826!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95bccadb08d2dd9f%3A0x6aedf34ad3581e80!2sAdolfo+Alsina+1450%2C+C1088AAL+CABA!5e0!3m2!1ses-419!2sar!4v1467120830188" allowfullscreen></iframe>
+	</div>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+				<h4>Si quiere hacernos una consulta o realizar una sugerencia dejenos aquí su mensaje</h4>
+                <form id="contactform" role="form" name="form" ng-submit="submit()" class="validateform">
+					<div ng-show="mensajeEnviado">
+                        <div class="alert alert-success text-center">
+						    El mensaje ha sido enviado. Muchas garcias!
+                        </div>
+					</div>
+                    <div ng-show="!mensajeEnviado">
+					    <div class="row">
+						    <div class="col-lg-8 col-md-8 field">
+							    <input type="text" ng-model="mail.asunto" placeholder="* Asunto" required>
+						    </div>
+						    <div class="col-lg-4 col-md-4 field">
+							    <input type="text" ng-model="mail.nombre" placeholder="* Nombre" required>
+						    </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-4 col-md-4 field">
+							    <input type="text" ng-model="mail.localidad" placeholder="* Localidad" required>
+						    </div>
+                            <div class="col-lg-3 col-md-3 field">
+							    <input type="text" ng-model="mail.provincia" placeholder="* Provincia" required>
+						    </div>
+                            <div class="col-lg-5 col-md-5 field">
+							    <input type="text" ng-model="mail.mail" placeholder="* Correo Electrónico" required>
+						    </div>
+                        </div>
+                        <div class="row">
+						    <div class="col-lg-12 field">
+							    <textarea rows="12" ng-model="mail.mensaje" class="input-block-level" placeholder="* Ingrese el mensaje aquí..." required></textarea>
+							    <p>
+								    <button class="btn btn-theme margintop10 pull-left" type="submit">Enviar mensaje</button>
+								    <span class="pull-right margintop20">* Por favor complete los campos obligatorios, gracias!</span>
+							    </p>
+						    </div>
+					    </div>
+                    </div>
+				</form>
+			</div>
+        </div>
+    </div>
+</section>
+
+<footer></footer>
+

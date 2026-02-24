@@ -1,0 +1,77 @@
+﻿/*Esta hoja de estilos se ejecuta a la hora de imprimir el carnet para reducir el tamaño*/
+.panel-body {
+    width: 321px !important;
+}
+#contCarnet {
+    display: initial!important;
+}
+#fotoCont {
+    padding-left: 10px;
+}
+.imagencarnet {
+    width: 120px !important;
+    height: 120px!important;
+    border: solid 1px green;
+}
+.titulocarnet {
+    width: 700px !important;
+    font-size : 10pt !important;
+    border: solid 1px green !important;
+    height: 254px;
+}
+.titulocarnetadmin {
+    width: 700px !important;
+    font-size : 10pt !important;
+    border: solid 1px green !important;
+    height: 254px!important;
+}
+.textotitulocarnet {
+    font-size : 10pt !important;
+}
+.cuerpocarnet {
+    font-size: 7pt !important;
+    line-height: 19px !important;
+    width: 80% !important;
+    height: 150px !important;
+}
+.cellpading5  tr {
+    height:24px !important;
+
+}
+.descripcionCarnet {
+    color:#68A4C4 !Important;
+    font-weight: bold !Important;
+
+}
+.cuerpocarnetadmin{
+    font-size: 7pt !important;
+    width: 518px!important;
+    height: 117px !important;
+}
+.cellpading5 {
+    font-size: 7pt !important;
+}
+.carnetDNI {
+    font-size:9pt !important;
+    color : green !important;
+    font-weight: bold;
+}
+.cellpading5 th {
+    font-weight: 200 !important;
+    color: black !important;
+}
+
+.footercarnet {
+    font-size: 6pt !important;
+    margin-top: 29px !important;
+    padding: 0 !important;
+    padding-bottom: 0 !important;
+    margin-left: 10px;
+
+}
+.titulo1 {
+    width: 60% !important;
+}
+.titulo2 {
+     width: 40% !important;
+}

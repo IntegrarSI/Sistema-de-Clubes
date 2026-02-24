@@ -1,0 +1,94 @@
+﻿<nav class="navbar navbar-default navbar-static-top" role="navigation" style="margin-bottom: 0" ng-controller="authCtrl">
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="index.html">
+            <img src="/Images/logo.png" title="CAB" style="height:100%; float:left; margin-right:12px" />
+            <span style="float:left">Administración CAB</span>
+        </a>
+    </div>
+
+    <div class="collapse navbar-collapse" style="padding-left:0px; padding-right:0px" ng-s>
+
+        <ul class="nav navbar-top-links navbar-right">
+            <li class="dropdown">
+                <a class="dropdown-toggle" data-toggle="dropdown">
+                    <i class="fa fa-user fa-fw"></i>&nbsp;{{ ticket.nombre }}&nbsp;<i class="fa fa-caret-down"></i>
+                </a>
+                <ul class="dropdown-menu dropdown-user">
+                    <li><a ui-sref="password_edit" data-toggle="{{ dataToggle }}" data-target=".navbar-collapse"><i class="fa fa-mail-forward fa-fw"></i> Cambiar contrase&ntilde;a<span></span></a></li>
+                    <li class="divider"></li>
+                    <li><a href="#" ng-click="logout()" data-toggle="{{ dataToggle }}" data-target=".navbar-collapse"><i class="fa fa-sign-out fa-fw"></i>&nbsp;Cerrar Sesión</a>
+                    </li>
+                </ul>
+            </li>
+        </ul>
+
+        <div class="navbar-default sidebar sidebar-nav" role="navigation">
+
+            <ul class="nav in" id="side-menu">
+                <li ui-sref-active="active">
+                    <a ui-sref="dashboard" data-toggle="collapse" data-target=".navbar-collapse"><i class="fa fa-dashboard fa-fw"></i> Res&uacute;men</a>
+                </li>
+
+               <!-- <li ui-sref-active="active" ng-show="ticket.administraContenido">
+                    <a ui-sref="noticias" data-toggle="collapse" data-target=".navbar-collapse"><i class="fa fa-bell"></i> Noticias</a>
+                </li>-->
+
+                <li ng-show="ticket.administraConfederacion">
+                    <a href="" ng-click="check(1)"><i class="fa fa-institution fa-fw"></i> Estructura</a>
+                    <ul class="nav nav-second-level" collapse="collapseVar!=1">
+                        <li ui-sref-active="active" ng-show="ticket.nivel > 2">
+                            <a ui-sref="federaciones" data-toggle="{{ dataToggle }}" data-target=".navbar-collapse"><i class="fa fa-bank fa-fw"></i> Federaciones<span></span></a>
+                        </li>
+                        <li ui-sref-active="active">
+                            <a ui-sref="asociaciones" data-toggle="{{ dataToggle }}" data-target=".navbar-collapse"><i class="fa fa-group fa-fw"></i> Asociaciones<span></span></a>
+                        </li>
+                        <li ui-sref-active="active">
+                            <a ui-sref="clubes" data-toggle="{{ dataToggle }}" data-target=".navbar-collapse"><i class="fa fa-flag fa-fw"></i> Clubes<span></span></a>
+                        </li>
+                        <li ui-sref-active="active">
+                            <a ui-sref="jugadores" data-toggle="{{ dataToggle }}" data-target=".navbar-collapse"><i class="fa fa-child fa-fw"></i> Jugadores<span></span></a>
+                        </li>
+                    </ul>
+                </li>
+                <li ng-show="ticket.administraContenido ||  ticket.administraConfederacion">
+                    <a href="" ng-click="check(1)"><i class="fa fa-folder-open-o fa-fw"></i> Informes</a>
+                    <ul class="nav nav-second-level" collapse="collapseVar!=1">
+                        <li ui-sref-active="active">
+                            <a ui-sref="informes_carnetsNoEntregados" data-toggle="{{ dataToggle }}" data-target=".navbar-collapse">Carnets no entregados<span></span></a>
+                            <a ui-sref="informes_jugadoresHabilitados" data-toggle="{{ dataToggle }}" data-target=".navbar-collapse">Jugadores habilitados<span></span></a>
+                            <a ui-sref="informes_totalJugadores" data-toggle="{{ dataToggle }}" data-target=".navbar-collapse">Todos los jugadores<span></span></a>
+                            <a ui-sref="informes_pases" data-toggle="{{ dataToggle }}" data-target=".navbar-collapse">Pases<span></span></a>
+                           <!-- <a ui-sref="informes_jugadoresCategorias" data-toggle="{{ dataToggle }}" data-target=".navbar-collapse">Cambios de Categorías<span></span></a>-->
+                        </li>
+                    </ul>
+                </li>
+           <!--     <li ng-show="ticket.administraContenido">
+                    <a href="" ng-click="check(1)"><i class="fa fa-globe fa-fw"></i> Sitio Web</a>
+                    <ul class="nav nav-second-level" collapse="collapseVar!=1">
+                        <li ui-sref-active="active">
+                            <a ui-sref="calendario" data-toggle="{{ dataToggle }}" data-target=".navbar-collapse"><i class="fa fa-calendar fa-fw"></i> Calendario<span></span></a>
+                        </li>
+                    </ul>
+                </li>-->
+                <li ng-show="ticket.administraSeguridad">
+                    <a href="" ng-click="check(1)"><i class="fa fa-lock fa-fw"></i> Seguridad</a>
+                    <ul class="nav nav-second-level" collapse="collapseVar!=1">
+                        <li ui-sref-active="active">
+                            <a ui-sref="usuarios" data-toggle="{{ dataToggle }}" data-target=".navbar-collapse"><i class="fa fa-user fa-fw"></i> Usuarios<span></span></a>
+                        </li>
+                        <li ui-sref-active="active">
+                            <a ui-sref="roles" data-toggle="{{ dataToggle }}" data-target=".navbar-collapse"><i class="fa fa-user-secret fa-fw"></i> Roles<span></span></a>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+</nav>

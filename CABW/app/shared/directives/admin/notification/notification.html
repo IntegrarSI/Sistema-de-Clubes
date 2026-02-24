@@ -1,0 +1,9 @@
+<div class="alert alert-{{type}} text-center fade" ng-show="content != ''" style="position:fixed; bottom:15px; right:15px; min-width:50%; padding:25px">
+    <div class="fa-stack fa-lg" style="float:left">
+        <i ng-show="type == 'green'" class="fa fa-check-circle-o fa-stack-2x"></i>
+        <i ng-show="type == 'red'" class="fa fa-times-circle-o fa-stack-2x"></i>
+    </div>
+    <div style="float:left; padding:10px; font-size:12pt">
+        &nbsp;&nbsp;{{content}}
+    </div>
+</div>

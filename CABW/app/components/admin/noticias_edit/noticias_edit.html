@@ -1,0 +1,96 @@
+﻿<!-- Fix for old browsers -->
+
+
+<script src="http://nervgh.github.io/js/es5-shim.min.js"></script>
+<script src="http://nervgh.github.io/js/es5-sham.min.js"></script>
+<script src="http://code.jquery.com/jquery-1.8.3.min.js"></script>
+
+<script src="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"></script>
+<link href="/Content/admin/textAngular.css" rel="stylesheet" />
+    <div class="row rowHeader">
+        <div class="col-lg-8 col-sm-8 h1">
+            {{ title }}
+        </div>
+        <div class="col-lg-4 col-sm-4 h1-botones">
+            &nbsp;<a ui-sref="noticias" class="btn btn-default">Volver</a>
+        </div>
+    </div>
+    <div class="row">
+        <div class="panel panel-default">
+            <div class="panel-body">
+                <form role="form" name="form" ng-submit="submit()" class="form-horizontal">
+
+
+                    <div class="form-group required">
+                        <label class="col-lg-2 col-md-3 control-label">Fecha</label>
+                        <div class="col-lg-3 col-md-3">
+                            <input type="date"  class="form-control" ng-model="instancia.fecha"  />
+                        </div>
+                    </div>
+                    <div class="form-group required">
+                        <label class="col-lg-2 col-md-3 control-label">Titulo</label>
+                        <div class="col-lg-3 col-md-3">
+                            <input type="text" required class="form-control" autofocus ng-model="instancia.titulo" />
+                        </div>
+                    </div>
+
+                    <div class="form-group required">
+                        <label class="col-lg-2 col-md-3 control-label">Copete</label>
+                        <div class="col-lg-3 col-md-3">
+                            <input type="text" required class="form-control" ng-model="instancia.copete" />
+                        </div>
+                    </div>
+
+                    <div class="form-group required">
+                        <label class="col-lg-2 col-md-3 control-label">destacada</label>
+                        <div class="col-lg-3 col-md-3" >
+                            <label>
+                                <input type="checkbox" ng-model =" instancia.destacada" />
+                                Destacada
+                            </label>
+                        </div>
+                    </div>
+
+
+
+                    <div class="form-group">
+                        <label class="col-lg-2 col-md-3 control-label">Texto</label>
+                        <div class="col-lg-10 col-md-9">
+                            <!--<textarea class="form-control" rows="10" cols="80" ng-model="instancia.texto"></textarea>-->
+                            <text-angular  ng-model="instancia.texto"></text-angular>
+                        </div>
+                    </div>
+
+
+                    <div class="form-group">
+                        <label class="col-lg-2 col-md-3 control-label">Foto Pequeña</label>
+                        <div class="col-lg-5 col-md-5">
+                            <img src="/Images/noticias/{{instancia.fotoPeque}}" onError="this.onerror=null;this.src='/images/imagen-vacia.png';" style="max-width:100px; max-height:100px" />
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-lg-2 col-md-3 control-label">Cambiar Foto Pequeña</label>
+                        <div class="col-lg-5 col-md-5">
+                            <div ng-show="uploader.isHTML5">
+                                <div nv-file-drop="" uploader="uploader">
+                                    <div nv-file-over="" uploader="uploader" over-class="another-file-over-class" class="well my-drop-zone">
+                                        Arrastre aquí la foto o selecciónela
+                                    </div>
+                                </div>
+                            </div>
+                            <input type="file" nv-file-select="" uploader="uploader" /><br/>
+                        </div>
+                    </div>
+
+
+
+                    <button type="submit" class="btn btn-primary" ng-disabled="isLoading">
+                        <span ng-hide="isLoading"><i class="fa fa-save"></i>&nbsp;&nbsp;Guardar</span>
+                        <span ng-show="isLoading"><span class='glyphicon glyphicon-refresh glyphicon-refresh-animate'></span>&nbsp;Guardando...</span>
+                    </button>
+                    <br />
+                    <br />
+                </form>
+            </div>
+        </div>
+    </div>

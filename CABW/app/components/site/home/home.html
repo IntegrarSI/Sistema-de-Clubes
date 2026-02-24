@@ -1,0 +1,233 @@
+﻿<div class="row" style="margin-bottom:0px">
+    <div class="col-lg-12">
+        <div id="main-slider" class="flexslider">
+            <ul class="slides">
+                <li>
+                    <img src="/images/slides/10.jpg" alt="" />
+                    <div class="flex-caption">
+                        <h4>5 medallas en el mundial Sub18 y Sub23 en Mónaco</h4>
+                        <!--<a href="#" class="btn btn-theme">Ver más</a>-->
+                    </div>
+                </li>
+                <li>
+                    <img src="/images/slides/2.jpg" alt="" />
+                    <div class="flex-caption">
+                        <h4>Campeonato Argentino Masculino en Ceres</h4>
+                        <!--<a href="#" class="btn btn-theme">Leer más</a>-->
+                    </div>
+                </li>
+                <li>
+                    <img src="/images/slides/9_2.jpg" alt="" />
+                    <div class="flex-caption">
+                        <h4>3 medallas de oro en Perú</h4>
+                        <!--<a href="#" class="btn btn-theme">Leer más</a>-->
+                    </div>
+                </li>
+                <li>
+                    <img src="/images/slides/11.jpg" alt="" />
+                    <div class="flex-caption">
+                        <h4>Argentina campeon del mundo en tiro de presición 2016</h4>
+                        <!--<a href="#" class="btn btn-theme">Leer más</a>-->
+                    </div>
+                </li>
+                <li>
+                    <img src="/images/slides/5.jpg" alt="" />
+                    <div class="flex-caption">
+                        <h4>Sub 23 en San Francisco</h4>
+                        <!--<a href="#" class="btn btn-theme">Leer más</a>-->
+                    </div>
+                </li>
+                <li>
+                    <img src="/images/slides/6.jpg" alt="" />
+                    <div class="flex-caption">
+                        <h4>Santa Fe campeón Argentino Femenino por Tercetos</h4>
+                        <!--<a href="#" class="btn btn-theme">Leer más</a>-->
+                    </div>
+                </li>
+                <li>
+                    <img src="/images/slides/7.jpg" alt="" />
+                    <div class="flex-caption">
+                        <h4>Campeonato Argentino Femenino en Laboulaye</h4>
+                        <!--<a href="#" class="btn btn-theme">Leer más</a>-->
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+<!--
+<section class="callaction">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="big-cta">
+                    <div class="cta-text">
+                        <h2>Próximos <span>Eventos</span></h2>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="Section1" style="margin-bottom:0px; padding-bottom:0px; margin-top:35px">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <div ng-repeat="evento in torneos | filter: { mes: mes.mes, ano: mes.ano }" class="col-lg-4 col-md-4 {{ evento.nroEvento == 1 ? 'col-lg-offset-' + mes.offset : ''}}">
+                    <div class="box">
+                        <div class="box-gray aligncenter">
+                            <h4>&nbsp;{{ evento.categoria }}&nbsp;</h4>
+                            <div class="big-cta">
+                                <div class="cta-text">
+                                    <h3><span>{{ evento.tipoCompetencia }}</span></h3>
+                                </div>
+                            </div>
+                            <div class="icon">
+                                <i class="fa fa-trophy fa-5x"></i>
+                            </div>
+                            <p>
+                                <strong>{{ evento.diaDesde }}{{ evento.mesDesde != evento.mesHasta ? " de " + evento.mesDesde : "" }} al {{ evento.diaHasta }} de {{ evento.mesHasta }}</strong>
+                                <br />{{ evento.especialidad }}
+                                <br />{{ evento.localidad }}, {{ evento.provincia }}
+                            </p>
+                            <div class="box-bottom">
+                                &nbsp;<a ng-show="evento.resultadosMostrar == true" ui-sref="calendario_resultados({id: evento.id})">Ver Resultados</a>
+                                &nbsp;<a ng-show="evento.detalleMostrar == true && evento.resultadosMostrar != true" ui-sref="calendario_detalle({id: evento.id})">Ver Detalle</a>
+							</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+-->
+
+<section class="callaction">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="big-cta">
+                    <div class="cta-text">
+                        <h2 ng-if="torneos[0].fechaDesde < hoy "> Últimos <span>Eventos</span></h2>
+                        <h2 ng-if="torneos[0].fechaDesde > hoy">Próximos <span>Eventos</span></h2>
+                </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="Section1" style="margin-bottom:0px; padding-bottom:0px; margin-top:35px">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <div ng-repeat="evento in torneos | filter: { mes: mes.mes, ano: mes.ano }" class="col-lg-4 col-md-4 {{ evento.nroEvento == 1 ? 'col-lg-offset-' + mes.offset : ''}}">
+                    <div class="box">
+                        <div class="box-gray aligncenter">
+                            <h4>&nbsp;{{ evento.categoria }}&nbsp;</h4>
+                            <div class="big-cta">
+                                <div class="cta-text">
+                                    <h3><span>{{ evento.tipoCompetencia }}</span></h3>
+                                </div>
+                            </div>
+                            <div class="icon">
+                                <i class="fa fa-trophy fa-5x"></i>
+                            </div>
+                            <p>
+                                <strong>{{ evento.diaDesde }}{{ evento.mesDesde != evento.mesHasta ? " de " + evento.mesDesde : "" }} al {{ evento.diaHasta }} de {{ evento.mesHasta }}</strong>
+                                <br />{{ evento.especialidad }}
+                                <br />{{ evento.localidad }}, {{ evento.provincia }}
+                            </p>
+                            <div class="box-bottom">
+                                &nbsp;<a ng-show="evento.resultadosMostrar == true" ui-sref="calendario_resultados({id: evento.id})">Ver Resultados</a>
+                                &nbsp;<a ng-show="evento.detalleMostrar == true && evento.resultadosMostrar != true" ui-sref="calendario_detalle({id: evento.id})">Ver Detalle</a>
+							</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="callaction" style="margin-bottom:40px">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="big-cta">
+                    <div class="cta-text">
+                        <h2><span>Noticias</span></h2>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<div class="panel-body">
+    <div class="table-responsive">
+        <table  class="table">
+            <div class="alert alert-info text-center" ng-hide="totalItems > 0 ">
+                <span  class="" style="">No existen Noticias</span>
+            </div> 
+            <div ng-repeat="noticia in grilla">
+                <section class ="sessionNoticias" >
+                    <div >
+                        <div class="row">
+                            <div class="divListaNoticia">
+                        
+                                <div class="col-md-2 center-block quitar-float text-center espacio-arriba">
+                                    <a class="fancybox-img" rel="ligthbox" href="/images/noticias/{{noticia.fotoPeque}} ">
+                                        <img id="imgListaNoticia" class="img-responsive img-thumbnail" src="/images/noticias/{{noticia.fotoPeque}}" alt=" No Tiene Imagen" />
+                                    </a>
+                                </div>
+                                <div class="col-md-9" id="divNoticia">
+                                        <a  ui-sref="noticias_detalle({id:noticia.id})"><h3>{{noticia.titulo}}</h3></a>
+                                        <h5>{{noticia.copete}}</h5>
+                                        <label ><span>Fecha:</span> {{noticia.fecha | date:"MM/dd/yyyy 'a las' h:mm a" }} </label>
+                                </div>
+                                <div class = "col-md-1"  id="verNoticia" >
+                                    </br>
+                                    </br>
+                                    </br>
+                                    <a ui-sref="noticias_detalle({id:noticia.id})"><i class="fa fa-plus-square" aria-hidden="true"> Ver</i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+    
+                </section>
+                </br>
+            </div>
+         </table>
+
+    </div>
+</div>
+
+ <!--<section>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="row">
+                    <section id="projects">
+                        <ul id="thumbs" class="portfolio">
+                            <li class="col-lg-3 col-md-3 design" data-id="id-0" data-type="web" ng-repeat=" noticia in grilla">
+                                <div class="item-thumbs">
+                                    <a class="hover-wrap fancybox" data-fancybox-group="gallery"  title="{{noticia.titulo}}" href="/images/noticias/{{noticia.fotoPeque}}" >
+                                        <span class="overlay-img"></span>
+                                        <span class="overlay-img-thumb font-icon-plus"></span>
+                                    </a>
+                                    <img src="/images/noticias/{{noticia.fotoPeque}}" onError="this.onerror=null;this.src='/images/imagen-vacia.png';"  width="260" height="260" alt="{{noticia.texto}}">
+                                    <div style="background-color:#68A4C4; text-align:center; color:white; padding:20px 15px; font-weight:bolder">{{noticia.titulo}}</div>
+                                </div>
+                            </li>       
+                        </ul>
+                    </section>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>-->
+<footer></footer>

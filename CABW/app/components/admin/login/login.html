@@ -1,0 +1,37 @@
+﻿<div class="login-page">
+    <div class="row">
+        <div class="col-md-4 col-lg-4 col-md-offset-4 col-lg-offset-4">
+            <img src="/images/logo.png" style="height:150px" />
+            <h1><small>Iniciar sesi&oacute;n</small></h1>
+            <form role="form" name="form" ng-submit="submit()">
+                <div class="form-content">
+
+                    <div class="alert alert-info text-center fade" ng-show="expired">
+                        Por seguridad la sesión ha caducado. Por favor vuelva a ingresar su nombre de usuario y contraseña
+                    </div>
+
+                    <div class="form-group" style="padding-right:0px">
+                        <input type="text" id="nombreUsuario" class="form-control input-underline input-lg" ng-model="dataLogin.nombreUsuario" id="" placeholder="Usuario" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="password" class="form-control input-underline input-lg" ng-model="dataLogin.password" id="" placeholder="Password" required>
+                    </div>
+
+                    <div class="alert alert-danger text-center fade" ng-show="ticket.passwordIncorrecta == true || ticket.nombreUsuario == '' || ticket.activo == false">
+                        <span ng-show="ticket.passwordIncorrecta == true && ticket.nombreUsuario != ''">La contraseña es incorrecta</span>
+                        <span ng-show="ticket.nombreUsuario == ''">El nombre de usuario es incorrecto</span>
+                        <span ng-show="ticket.activo == false">El Usuario no se encuentra activo</span>
+                    </div>
+
+                    
+                </div>
+
+                <button type="submit" class="btn btn-white btn-outline btn-lg">
+                    <span ng-hide="isLoading">Ingresar</span>
+                    <span ng-show="isLoading"><span class='glyphicon glyphicon-refresh glyphicon-refresh-animate'></span>&nbsp;&nbsp;Espere por favor...</span>
+                </button>
+                <br /><br /><a ui-sref="recuperar_password" class="btn btn-outline">Recuperar contraseña</a>
+            </form>
+        </div>
+    </div>
+</div>

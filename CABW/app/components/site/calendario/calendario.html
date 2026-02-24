@@ -1,0 +1,342 @@
+﻿<section id="inner-headline">
+    <div class="container inner-heading">
+        <div class="row">
+            <div class="col-lg-12">
+                <h2>Calendario</h2>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- se recorren los meses que tienen torneos -->
+<div ng-repeat="mes in meses">
+    <section class="callaction">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="big-cta">
+                        <div class="cta-text">
+                            <h2>{{ mes.nombreMes }} <span>{{ mes.ano }}</span></h2>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section style="margin-top:15px">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div ng-repeat="evento in torneos | filter: { mes: mes.mes, ano: mes.ano }" class="col-lg-4 col-md-4 {{ evento.nroEvento == 1 ||  evento.nroEvento == 3 ? 'col-lg-offset-' + mes.offset : ''}}">
+                        <div class="box margin-top-lg">
+                            <div class="box-gray aligncenter">
+                                <h4>&nbsp;{{ evento.categoria }}&nbsp;</h4>
+                                <div class="big-cta">
+                                    <div class="cta-text">
+                                        <h3><span>{{ evento.tipoCompetencia }}</span></h3>
+                                    </div>
+                                </div>
+                                <div class="icon">
+                                    <i class="fa fa-trophy fa-5x"></i>
+                                </div>
+                                <p>
+                                    <strong>{{ evento.diaDesde }}{{ evento.mesDesde != evento.mesHasta ? " de " + evento.mesDesde : "" }} al {{ evento.diaHasta }} de {{ evento.mesHasta }}</strong>
+                                    <br />{{ evento.especialidad }}
+                                    <br />{{ evento.localidad }}, {{ evento.provincia }}
+                                </p>
+                                <div class="box-bottom">
+                                    &nbsp;<a ng-show="evento.resultadosMostrar == true" ui-sref="calendario_resultados({id: evento.id})">Ver Resultados</a>
+                                    &nbsp;<a ng-show="evento.detalleMostrar == true && evento.resultadosMostrar != true" ui-sref="calendario_detalle({id: evento.id})">Ver Detalle</a>
+							    </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</div>
+<!--
+<section class="callaction">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="big-cta">
+                    <div class="cta-text">
+                        <h2>Agosto <span>2016</span></h2>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<section style="margin-top:50px">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="row">
+                    <div class="col-lg-4 col-lg-offset-4 col-md-4 col-md-offset-4">
+                        <div class="box">
+                            <div class="box-gray aligncenter">
+                                <h4>Sub 15</h4>
+                                <div class="big-cta">
+                                    <div class="cta-text">
+                                        <h3><span>Campeonato Argentino</span></h3>
+                                    </div>
+                                </div>
+                                <div class="icon">
+                                    <i class="fa fa-trophy fa-5x"></i>
+                                </div>
+                                <p>
+                                    <strong>18 al 21 de Agosto</strong>
+                                    <br />Individual, Combinado y Parejas
+                                    <br />San Juan, San Juan
+                                </p>
+                                <div class="box-bottom">
+                                    &nbsp;
+							    </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="callaction">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="big-cta">
+                    <div class="cta-text">
+                        <h2>Septiembre <span>2016</span></h2>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<section style="margin-top:50px">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="row">
+                    <div class="col-lg-4 col-md-4">
+                        <div class="box">
+                            <div class="box-gray aligncenter">
+                                <h4>2º Categoría</h4>
+                                <div class="big-cta">
+                                    <div class="cta-text">
+                                        <h3><span>Campeonato Argentino</span></h3>
+                                    </div>
+                                </div>
+                                <div class="icon">
+                                    <i class="fa fa-trophy fa-5x"></i>
+                                </div>
+                                <p>
+                                    <strong>2 al 4 de Septiembre</strong>
+                                    <br />Tercetos
+                                    <br />Gualeguaychú, Entre Ríos
+                                </p>
+                                <div class="box-bottom">
+                                    &nbsp;
+							    </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-4">
+                        <div class="box">
+                            <div class="box-gray aligncenter">
+                                <h4>Damas</h4>
+                                <div class="big-cta">
+                                    <div class="cta-text">
+                                        <h3><span>Campeonato Argentino</span></h3>
+                                    </div>
+                                </div>
+                                <div class="icon">
+                                    <i class="fa fa-trophy fa-5x"></i>
+                                </div>
+                                <p>
+                                    <strong>15 al 18 de Septiembre</strong>
+                                    <br />Individual, Combinado y Parejas
+                                    <br />Laboulaye, Córdoba
+                                </p>
+                                <div class="box-bottom">
+                                    &nbsp;
+							    </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-4">
+                        <div class="box">
+                            <div class="box-gray aligncenter">
+                                <h4>Ciegos</h4>
+                                <div class="big-cta">
+                                    <div class="cta-text">
+                                        <h3><span>Campeonato Argentino</span></h3>
+                                    </div>
+                                </div>
+                                <div class="icon">
+                                    <i class="fa fa-trophy fa-5x"></i>
+                                </div>
+                                <p>
+                                    <strong>30 al 2 de Octubre</strong>
+                                    <br />&nbsp;
+                                    <br />Zárate, Buenos Aires
+                                </p>
+                                <div class="box-bottom">
+                                    &nbsp;
+							    </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="callaction">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="big-cta">
+                    <div class="cta-text">
+                        <h2>Octubre <span>2016</span></h2>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<section style="margin-top:50px">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="row">
+                    <div class="col-lg-4 col-md-4">
+                        <div class="box">
+                            <div class="box-gray aligncenter">
+                                <h4>Sub 18</h4>
+                                <div class="big-cta">
+                                    <div class="cta-text">
+                                        <h3><span>Campeonato Argentino</span></h3>
+                                    </div>
+                                </div>
+                                <div class="icon">
+                                    <i class="fa fa-trophy fa-5x"></i>
+                                </div>
+                                <p>
+                                    <strong>6 al 9 de Octubre</strong>
+                                    <br />Individual, Combinado y Parejas
+                                    <br />San Francisco, Córdoba
+                                </p>
+                                <div class="box-bottom">
+                                    &nbsp;
+							    </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-4">
+                        <div class="box">
+                            <div class="box-gray aligncenter">
+                                <h4>Sub 12 y Mosquitos</h4>
+                                <div class="big-cta">
+                                    <div class="cta-text">
+                                        <h3><span>Encuentro Nacional</span></h3>
+                                    </div>
+                                </div>
+                                <div class="icon">
+                                    <i class="fa fa-trophy fa-5x"></i>
+                                </div>
+                                <p>
+                                    <strong>21 al 23 de Octubre</strong>
+                                    <br />&nbsp;
+                                    <br />Suardi, Santa Fe
+                                </p>
+                                <div class="box-bottom">
+                                    &nbsp;
+							    </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-4">
+                        <div class="box">
+                            <div class="box-gray aligncenter">
+                                <h4>Sub 23</h4>
+                                <div class="big-cta">
+                                    <div class="cta-text">
+                                        <h3><span>Campeonato Argentino</span></h3>
+                                    </div>
+                                </div>
+                                <div class="icon">
+                                    <i class="fa fa-trophy fa-5x"></i>
+                                </div>
+                                <p>
+                                    <strong>28 al 30 de Octubre</strong>
+                                    <br />Tercetos
+                                    <br />Gualeguay, Entre Ríos
+                                </p>
+                                <div class="box-bottom">
+                                    &nbsp;
+							    </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="callaction">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="big-cta">
+                    <div class="cta-text">
+                        <h2>Noviembre <span>2016</span></h2>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<section style="margin-top:50px">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="row">
+                    <div class="col-lg-4 col-lg-offset-4 col-md-4 col-md-offset-4">
+                        <div class="box">
+                            <div class="box-gray aligncenter">
+                                <h4>1º Categoría Caballeros</h4>
+                                <div class="big-cta">
+                                    <div class="cta-text">
+                                        <h3><span>Campeonato Argentino</span></h3>
+                                    </div>
+                                </div>
+                                <div class="icon">
+                                    <i class="fa fa-trophy fa-5x"></i>
+                                </div>
+                                <p>
+                                    <strong>17 al 20 de Noviembre</strong>
+                                    <br />Individual, Parejas y Tercetos
+                                    <br />Río Cuarto, Córdoba
+                                </p>
+                                <div class="box-bottom">
+                                    &nbsp;
+							    </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+-->
+
+<footer></footer>
+

@@ -1,0 +1,229 @@
+﻿<section id="inner-headline">
+    <div class="container inner-heading">
+        <div class="row">
+            <div class="col-lg-12">
+                <h2>Calendario - Resultados</h2>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8">
+                <article>
+	                <div class="post-image" style="margin-top:70px">
+		                <div class="post-heading">
+			                <h3>{{ instancia.resultadosTitulo }}</h3>
+		                </div>
+	                </div>
+                    <p ng-bind-html="instancia.resultadosDescripcion"></p>
+                    <br />
+                    <p>
+                        <strong>Jueces nacionales</strong>
+                        <br />
+                        {{ instancia.detalleJueces }}
+                    </p>
+                </article>
+                <uib-tabset active="activeJustified">
+                    <uib-tab ng-repeat="especialidad in instancia.TorneosEspecialidades" index="especialidad.idEspecialidad" heading="{{especialidad.Especialidades.descripcion}}" select="especalidadChange(especialidad.idEspecialidad)">
+                        <div class="box-bottom">
+                            <h4>Zonas</h4>
+                        </div>
+                        <br />
+                        <div class="table-responsive">
+                            <table class="table table-hover programaActividades">
+                                <tr ng-repeat="zona in instancia.TorneosZonas | filter: {idEspecialidad: resultadosIdEspecialidad}">
+                                    <th>Zona {{ zona.descripcion }}</th>
+                                    <td style="line-height:200%">
+                                        <ul style="margin-bottom:0px; margin-left:0px">
+                                            <li style="list-style:none" ng-repeat="equipo in instancia.TorneosEquipos | filter: { zona: zona.descripcion, idEspecialidad: resultadosIdEspecialidad }">{{ equipo.nombreCorto }}</li>
+                                        </ul>
+                                    </td>
+                                </tr>
+                            </table>
+                        </div>
+                        <div class="box-bottom">
+                            <h4>Resultados</h4>
+                        </div>
+                        <br />
+                        <div ng-show="primeraFase.length > 0">
+                            <h4>Primera Fase</h4>
+                            <br />
+                            <div class="table-responsive">
+                                <table class="table table-hover programaActividades">
+                                    <tr ng-repeat="partido in (primeraFase = (instancia.TorneosPartidos | filter: { idEspecialidad: resultadosIdEspecialidad, fase: 'Primera Fase'}))">
+                                        <td style="width:40%">{{ partido.TorneosEquipos.nombreCorto }}</td>
+                                        <th style="width:10%">{{ partido.puntosEquipo1 }}</th>
+                                        <td style="width:40%">{{ partido.TorneosEquipos1.nombreCorto }}</td>
+                                        <th style="width:10%">{{ partido.puntosEquipo2 }}</th>
+                                    </tr>
+                                </table>
+                            </div>
+                            <br />
+                        </div>
+                        <div ng-show="segundaFase.length > 0">
+                            <h4>Segunda Fase</h4>
+                            <br />
+                            <div class="table-responsive">
+                                <table class="table table-hover programaActividades">
+                                    <tr ng-repeat="partido in (segundaFase = (instancia.TorneosPartidos | filter: { idEspecialidad: resultadosIdEspecialidad, fase: 'Segunda Fase'}))">
+                                        <td style="width:40%">{{ partido.TorneosEquipos.nombreCorto }}</td>
+                                        <th style="width:10%">{{ partido.puntosEquipo1 }}</th>
+                                        <td style="width:40%">{{ partido.TorneosEquipos1.nombreCorto }}</td>
+                                        <th style="width:10%">{{ partido.puntosEquipo2 }}</th>
+                                    </tr>
+                                </table>
+                            </div>
+                            <br />
+                        </div>
+                        <div ng-show="cuartosFinal.length > 0">
+                            <h4>Cuartos de Final</h4>
+                            <br />
+                            <div class="table-responsive">
+                                <table class="table table-hover programaActividades">
+                                    <tr ng-repeat="partido in (cuartosFinal = (instancia.TorneosPartidos | filter: { idEspecialidad: resultadosIdEspecialidad, fase: 'Cuartos de Final'}))">
+                                        <td style="width:40%">{{ partido.TorneosEquipos.nombreCorto }}</td>
+                                        <th style="width:10%">{{ partido.puntosEquipo1 }}</th>
+                                        <td style="width:40%">{{ partido.TorneosEquipos1.nombreCorto }}</td>
+                                        <th style="width:10%">{{ partido.puntosEquipo2 }}</th>
+                                    </tr>
+                                </table>
+                            </div>
+                            <br />
+                        </div>
+                        <div ng-show="semifinal.length > 0">
+                            <h4>Semifinal</h4>
+                            <br />
+                            <div class="table-responsive">
+                                <table class="table table-hover programaActividades">
+                                    <tr ng-repeat="partido in (semifinal = (instancia.TorneosPartidos | filter: { idEspecialidad: resultadosIdEspecialidad, fase: 'Semifinal'}))">
+                                        <td style="width:40%">{{ partido.TorneosEquipos.nombreCorto }}</td>
+                                        <th style="width:10%">{{ partido.puntosEquipo1 }}</th>
+                                        <td style="width:40%">{{ partido.TorneosEquipos1.nombreCorto }}</td>
+                                        <th style="width:10%">{{ partido.puntosEquipo2 }}</th>
+                                    </tr>
+                                </table>
+                            </div>
+                            <br />
+                        </div>
+                        <div ng-show="final.length > 0">
+                            <h3>Final</h3>
+                            <br />
+                            <div class="table-responsive">
+                                <table class="table table-hover programaActividades">
+                                    <tr ng-repeat="partido in (final = (instancia.TorneosPartidos | filter: { idEspecialidad: resultadosIdEspecialidad, fase: 'Final'} : true))">
+                                        <td style="width:40%">{{ partido.TorneosEquipos.nombreCorto }}</td>
+                                        <th style="width:10%">{{ partido.puntosEquipo1 }}</th>
+                                        <td style="width:40%">{{ partido.TorneosEquipos1.nombreCorto }}</td>
+                                        <th style="width:10%">{{ partido.puntosEquipo2 }}</th>
+                                    </tr>
+                                </table>
+                            </div>
+                        </div>
+
+                        <div ng-show="final.length > 0">
+                            <div class="col-lg-8 col-lg-offset-2 col-md-8 col-md-offset-2" ng-repeat="partido in instancia.TorneosPartidos | filter: { idEspecialidad: resultadosIdEspecialidad, fase: 'Final' } : true">
+                                <div class="box">
+                                    <div class="box-gray aligncenter">
+                                        <h4>&nbsp;</h4>
+                                        <div class="big-cta">
+                                            <div class="cta-text">
+                                                <h3><span>{{ partido.puntosEquipo1 == 15 ? partido.TorneosEquipos.nombreCorto : (partido.puntosEquipo2 == 15 ? partido.TorneosEquipos1.nombreCorto : '') }}</span></h3>
+                                            </div>
+                                        </div>
+                                        <div class="icon">
+                                            <i class="fa fa-trophy fa-5x"></i>
+                                        </div>
+                                        <p>
+                                            <strong>Campeón!</strong>
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </uib-tab>
+                </uib-tabset>
+
+                <div class="row" ng-show="instancia.resultadosFotosFacebook != null && instancia.resultadosFotosFacebook.length > 0">
+                    <div class="col-lg-8 col-lg-offset-2 col-md-8 col-md-offset-2 text-center" style="margin-top:25px">
+                        <a href="{{ instancia.resultadosFotosFacebook }}" target="_blank">
+                            <img src="/images/fotos-facebook.png" style="width:90%" />
+                        </a>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="box-bottom">
+                        <h4>Federaciones y Asociaciones presentes</h4>
+                    </div>
+                    <br />
+                    <div ng-repeat="equipo in instancia.TorneosEquipos | filter: { idEspecialidad: resultadosIdEspecialidad } | orderBy: 'nombre'">
+                        <p><strong>{{ equipo.nombre }}</strong></p>
+                        <table class="table table-hover programaActividades">
+                            <tr>
+                                <th style="width:20%">Técnico</th>
+                                <td style="width:80%">{{ equipo.tecnico }}</td>
+                            </tr>
+                            <tr>
+                                <th style="width:20%">Delegado</th>
+                                <td style="width:80%">{{ equipo.delegado }}</td>
+                            </tr>
+                            <tr>
+                                <th style="width:20%">Jugadoras</th>
+                                <td style="width:80%">{{ equipo.jugadores }}</td>
+                            </tr>
+                        </table>
+                        <br />
+                    </div>                   
+                </div>
+            </div>
+            <div class="col-lg-4">
+                <article>
+                    <div class="post-image" style="margin-top:70px; background-color:#F5F5F5; padding:5px 15px 15px;">
+		                <div class="post-heading">
+			                <h3>Lugar</h3>
+		                </div>
+                        <div style="text-align:left;">
+                            <div>
+                                <strong>{{ instancia.lugar }}</strong>
+                                <br />{{ instancia.direccion }} - {{ instancia.localidad }} - {{ instancia.provincia }}
+                                <br />Tel: {{ instancia.telefono }}
+                                <!--<div style="margin-top:10px">
+                                    <iframe src="{{ instancia.urlMaps }}" width="100%" height="350" frameborder="0" style="border:0" allowfullscreen></iframe>
+                                </div>-->
+                            </div>
+                        </div>
+	                </div>
+                </article>
+                <!--<article style="margin-top:0px">
+                    <div class="post-image" style="margin-top:15px; background-color:#F5F5F5; padding:5px 15px 15px;">
+		                <div class="post-heading">
+			                <h3>Información Útil</h3>
+		                </div>
+                        <div style="text-align:left;">
+                            <div>
+                                <strong>Teléfonos</strong>
+                                <br /><strong>Presidente Asociación:</strong> (03435) 15454106
+                                <br /><strong>Secretario Asociación:</strong> (03435) 15412714
+                            </div>
+                        </div>
+	                </div>
+                </article>-->
+            </div>
+        </div>
+    </div>
+
+   <!--
+
+
+
+
+            </div>
+        </div>
+    </div>-->
+</section>
+
+<footer></footer>
+
