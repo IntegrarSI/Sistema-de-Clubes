@@ -1,4 +1,4 @@
-@media (max-width: 767px) {
+﻿@media (max-width: 767px) {
     .view {
         padding-left: 10px;
         padding-right: 10px;
@@ -183,28 +183,29 @@ table.cellpading5 td {
 }
 
 /* =========================
-   LOGIN SPLIT PRO - Sistema de Clubes
+   LOGIN SPLIT PRO - Sistema de Clubes (Conectar theme)
    ========================= */
 
-/* Fondo general */
-body {
-    background: #eef1f6;
-}
-
-/* Layout principal */
+/* Fondo SOLO para el login */
 .login-page.login-split {
     min-height: 100vh;
     display: flex;
     align-items: center;
     justify-content: center;
     padding: 40px;
+    /* Fondo general del login (limpio, neutro) */
+    background: #F6F7FB;
 }
 
-    /* Card contenedor principal */
+    /* Card contenedor principal (FIX pantallas chicas) */
     .login-page.login-split .login-shell {
         width: 100%;
         max-width: 1300px;
-        height: 88vh;
+        /* antes: height: 88vh; */
+        height: auto;
+        min-height: 640px; /* base */
+        max-height: calc(100vh - 80px); /* evita que se corte con padding del wrapper */
+
         display: flex;
         border-radius: 22px;
         overflow: hidden;
@@ -212,9 +213,14 @@ body {
         background: #ffffff;
     }
 
+    /* Si la notebook tiene poco alto, permití scroll interno */
+    .login-page.login-split .login-right {
+        overflow-y: auto;
+    }
+
     /* =========================
-   PANEL IZQUIERDO (AZUL)
-   ========================= */
+       PANEL IZQUIERDO (AZUL NOCHE + ACCENT NARANJA)
+       ========================= */
 
     .login-page.login-split .login-left {
         flex: 1.1;
@@ -222,19 +228,33 @@ body {
         color: #fff;
         position: relative;
         display: flex;
-        background: radial-gradient(900px 500px at 20% 20%, #2f6bff 0%, #1b2a6b 55%, #0b1e3c 100%);
+        /* Azul corporativo (combina con naranja) */
+        background: radial-gradient(900px 500px at 20% 20%, #1B2A6B 0%, #0B1E3C 70%, #07162E 100%);
     }
 
-        /* Decoraci�n sutil */
+        /* Decoración sutil */
         .login-page.login-split .login-left::after {
             content: "";
             position: absolute;
-            width: 500px;
-            height: 500px;
+            width: 520px;
+            height: 520px;
             background: rgba(255,255,255,.05);
             border-radius: 50%;
-            bottom: -150px;
-            right: -150px;
+            bottom: -160px;
+            right: -160px;
+        }
+
+        /* Halo naranja (marca Conectar, MUY sutil) */
+        .login-page.login-split .login-left::before {
+            content: "";
+            position: absolute;
+            width: 620px;
+            height: 620px;
+            border-radius: 50%;
+            left: -280px;
+            top: -280px;
+            background: radial-gradient(circle, rgba(255,122,0,.18) 0%, rgba(255,122,0,0) 60%);
+            pointer-events: none;
         }
 
     /* Contenido interno */
@@ -244,6 +264,8 @@ body {
         margin: 0 auto;
         display: flex;
         flex-direction: column;
+        position: relative; /* para quedar arriba de los overlays */
+        z-index: 1;
     }
 
     .login-page.login-split .login-left-title {
@@ -251,6 +273,7 @@ body {
         font-weight: 700;
         line-height: 1.1;
         margin: 0;
+        letter-spacing: -0.3px;
     }
 
     .login-page.login-split .login-left-text {
@@ -268,8 +291,8 @@ body {
     }
 
     /* =========================
-   PANEL DERECHO (LOGIN)
-   ========================= */
+       PANEL DERECHO (LOGIN)
+       ========================= */
 
     .login-page.login-split .login-right {
         flex: 0.9;
@@ -277,7 +300,8 @@ body {
         align-items: center;
         justify-content: center;
         padding: 60px;
-        background: #f9fafc;
+        /* neutro suave */
+        background: #F9FAFC;
     }
 
     /* Tarjeta login */
@@ -288,46 +312,49 @@ body {
         border-radius: 18px;
         background: #ffffff;
         box-shadow: 0 20px 45px rgba(0,0,0,.08);
+        /* borde casi invisible para “premium” */
+        border: 1px solid rgba(17, 24, 39, 0.06);
     }
 
-    /* T�tulos */
+    /* Títulos */
     .login-page.login-split .login-card-title {
         margin: 0;
         font-size: 24px;
         font-weight: 700;
-        color: #101828;
+        color: #111827;
         text-align: center;
     }
 
     .login-page.login-split .login-card-subtitle {
         margin: 10px 0 28px;
-        color: #667085;
+        color: #6B7280;
         font-size: 14px;
         text-align: center;
     }
 
     /* =========================
-   INPUTS
-   ========================= */
+       INPUTS
+       ========================= */
 
     .login-page.login-split .form-control {
         height: 48px;
         border-radius: 12px;
-        border: 1px solid #e4e7ec;
-        background: #f3f5f9;
+        border: 1px solid #E5E7EB;
+        background: #F3F5F9;
         box-shadow: none;
         transition: all .2s ease;
     }
 
         .login-page.login-split .form-control:focus {
             background: #fff;
-            border-color: #2f6bff;
-            box-shadow: 0 0 0 4px rgba(47,107,255,.15);
+            /* Focus color marca */
+            border-color: #FF7A00;
+            box-shadow: 0 0 0 4px rgba(255,122,0,.18);
         }
 
     /* =========================
-   BOT�N
-   ========================= */
+       BOTÓN (CON NARANJA CONECTAR)
+       ========================= */
 
     .login-page.login-split .login-btn {
         margin-top: 14px;
@@ -337,25 +364,31 @@ body {
         border: none;
         font-weight: 700;
         color: #fff;
-        background: linear-gradient(135deg, #2f6bff, #1d4ed8);
+        /* Conectar gradient */
+        background: linear-gradient(135deg, #FF7A00, #D95F00);
         transition: all .2s ease;
     }
 
         .login-page.login-split .login-btn:hover {
             transform: translateY(-2px);
-            box-shadow: 0 12px 25px rgba(47,107,255,.35);
+            background: linear-gradient(135deg, #FF7A00, #C65300);
+            box-shadow: 0 12px 25px rgba(255,122,0,.35);
+        }
+
+        .login-page.login-split .login-btn:active {
+            transform: translateY(0);
         }
 
     /* =========================
-   LINK
-   ========================= */
+       LINK (CON NARANJA CONECTAR)
+       ========================= */
 
     .login-page.login-split .login-link {
         display: block;
         text-align: center;
         margin-top: 14px;
-        color: #1d4ed8;
-        font-weight: 600;
+        color: #FF7A00;
+        font-weight: 700;
         text-decoration: none;
     }
 
