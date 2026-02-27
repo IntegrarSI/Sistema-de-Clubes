@@ -27,3 +27,4 @@ App_Data/*.log
 ## OS
 Thumbs.db
 .DS_Store
+/Sistema_de_Clubes/Content/img/logo.png
