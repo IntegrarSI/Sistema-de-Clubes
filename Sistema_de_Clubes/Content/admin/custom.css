@@ -1,0 +1,422 @@
+﻿@media (max-width: 767px) {
+    .view {
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+}
+
+.btn-white {
+    color: #fff;
+    background-color: transparent;
+    border-color: #fff;
+}
+
+.fade {
+  opacity: 1;
+}
+
+.fade.ng-hide {
+  opacity: 0;
+}
+
+.fade.ng-hide-remove,
+.fade.ng-hide-add {
+  display: block !important;
+}
+
+.fade.ng-hide-remove {
+  transition: all linear 200ms;
+}
+
+.fade.ng-hide-add {
+  transition: all linear 200ms;
+}
+
+.h1 {
+    font-size:26px;
+    padding-left:0px;
+    margin-bottom:10px;
+}
+
+.h1-botones {
+    margin-top:10px;
+    float:right;
+    text-align:right;
+    padding-right:0px;
+}
+
+.h1-botones button {
+    margin:5px;
+    margin-right:0;
+    margin-bottom:10px;
+}
+
+.h1-botones a {
+    margin:5px;
+    margin-right:0;
+    margin-bottom:10px;
+}
+
+.rowHeader {
+    border-bottom: solid 1px #eee;
+    margin-bottom: 10px;
+}
+
+
+.alert-green {
+    color: #fff;
+    background-color: #5CB85C;
+    border-color: #5CB85C;
+}
+
+.alert-red {
+    border-color: #D9534F;
+    color: #fff;
+    background-color: #D9534F;
+}
+
+th.action
+, td.action {
+    width:20px;
+}
+
+.fa-2x {
+    margin-top:5px;
+}
+
+.alert {
+    font-size:12pt;
+}
+
+.control-label {
+    text-align:left !important;
+}
+
+.form-group {
+    
+}
+
+.panel-body {
+    padding-bottom:0px !important;
+}
+
+.btn-withoutline.btn-white {
+    color:rgba(255,255,255,.8);
+}
+
+
+.huge {
+    font-size: 28px;
+}
+
+.visible {
+    visibility:visible;
+}
+
+.invisible {
+    visibility:hidden;
+}
+
+.required .control-label:after { 
+    color: #d00;
+    content: " *";
+}
+
+.control-label, .panel-body label {
+    font-weight:normal !important;
+}
+
+.glyphicon-refresh-animate {
+    -animation: spin 1s infinite linear;
+    -ms-animation: spin 1s infinite linear;
+    -webkit-animation: spinw 1s infinite linear;
+    -moz-animation: spinm 1s infinite linear;
+}
+
+@keyframes spin {
+    from { transform: scale(1) rotate(0deg);}
+    to { transform: scale(1) rotate(360deg);}
+}
+  
+@-webkit-keyframes spinw {
+    from { -webkit-transform: rotate(0deg);}
+    to { -webkit-transform: rotate(360deg);}
+}
+
+@-moz-keyframes spinm {
+    from { -moz-transform: rotate(0deg);}
+    to { -moz-transform: rotate(360deg);}
+}
+
+.recaptchaContainer div {
+    margin:0px auto;
+}
+
+.my-drop-zone { border: dashed 1px lightgray; text-align:center }
+.nv-file-over { border: dashed 1px red; } /* Default class applied to drop zones on over */
+.another-file-over-class { border: dotted 1px green; text-align:center; }
+
+
+table.cellpading5 td {
+    padding:5px;
+}
+
+.loadingLoad {
+    position:absolute; 
+    top:120px; 
+    bottom:0; 
+    right:0;
+    left:250px; 
+    z-index:100000; 
+    background-color:white; 
+    text-align:center; 
+    padding:100px;
+}
+
+.loadingLoadMobile {
+    top:120px !important; 
+    left:0px !important; 
+}
+
+.displayNone {
+    display:none;
+}
+
+/* =========================
+   LOGIN SPLIT PRO - Sistema de Clubes (Conectar theme)
+   ========================= */
+
+/* Fondo SOLO para el login */
+.login-page.login-split {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 40px;
+    /* Fondo general del login (limpio, neutro) */
+    background: #F6F7FB;
+}
+
+    /* Card contenedor principal (FIX pantallas chicas) */
+    .login-page.login-split .login-shell {
+        width: 100%;
+        max-width: 1300px;
+        /* antes: height: 88vh; */
+        height: auto;
+        min-height: 640px; /* base */
+        max-height: calc(100vh - 80px); /* evita que se corte con padding del wrapper */
+
+        display: flex;
+        border-radius: 22px;
+        overflow: hidden;
+        box-shadow: 0 30px 70px rgba(0,0,0,.12);
+        background: #ffffff;
+    }
+
+    /* Si la notebook tiene poco alto, permití scroll interno */
+    .login-page.login-split .login-right {
+        overflow-y: auto;
+    }
+
+    /* =========================
+       PANEL IZQUIERDO (AZUL NOCHE + ACCENT NARANJA)
+       ========================= */
+
+    .login-page.login-split .login-left {
+        flex: 1.1;
+        padding: 60px 60px;
+        color: #fff;
+        position: relative;
+        display: flex;
+        /* Azul corporativo (combina con naranja) */
+        background: radial-gradient(900px 500px at 20% 20%, #1B2A6B 0%, #0B1E3C 70%, #07162E 100%);
+    }
+
+        /* Decoración sutil */
+        .login-page.login-split .login-left::after {
+            content: "";
+            position: absolute;
+            width: 520px;
+            height: 520px;
+            background: rgba(255,255,255,.05);
+            border-radius: 50%;
+            bottom: -160px;
+            right: -160px;
+        }
+
+        /* Halo naranja (marca Conectar, MUY sutil) */
+        .login-page.login-split .login-left::before {
+            content: "";
+            position: absolute;
+            width: 620px;
+            height: 620px;
+            border-radius: 50%;
+            left: -280px;
+            top: -280px;
+            background: radial-gradient(circle, rgba(255,122,0,.18) 0%, rgba(255,122,0,0) 60%);
+            pointer-events: none;
+        }
+
+    /* Contenido interno */
+    .login-page.login-split .login-left-inner {
+        width: 100%;
+        max-width: 520px;
+        margin: 0 auto;
+        display: flex;
+        flex-direction: column;
+        position: relative; /* para quedar arriba de los overlays */
+        z-index: 1;
+    }
+
+    .login-page.login-split .login-left-title {
+        font-size: 36px;
+        font-weight: 700;
+        line-height: 1.1;
+        margin: 0;
+        letter-spacing: -0.3px;
+    }
+
+    .login-page.login-split .login-left-text {
+        margin-top: 18px;
+        font-size: 15px;
+        line-height: 1.7;
+        opacity: .92;
+        max-width: 420px;
+    }
+
+    .login-page.login-split .login-left-foot {
+        margin-top: auto;
+        font-size: 13px;
+        opacity: .75;
+    }
+
+    /* =========================
+       PANEL DERECHO (LOGIN)
+       ========================= */
+
+    .login-page.login-split .login-right {
+        flex: 0.9;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 60px;
+        /* neutro suave */
+        background: #F9FAFC;
+    }
+
+    /* Tarjeta login */
+    .login-page.login-split .login-card {
+        width: 100%;
+        max-width: 420px;
+        padding: 42px 38px;
+        border-radius: 18px;
+        background: #ffffff;
+        box-shadow: 0 20px 45px rgba(0,0,0,.08);
+        /* borde casi invisible para “premium” */
+        border: 1px solid rgba(17, 24, 39, 0.06);
+    }
+
+    /* Títulos */
+    .login-page.login-split .login-card-title {
+        margin: 0;
+        font-size: 24px;
+        font-weight: 700;
+        color: #111827;
+        text-align: center;
+    }
+
+    .login-page.login-split .login-card-subtitle {
+        margin: 10px 0 28px;
+        color: #6B7280;
+        font-size: 14px;
+        text-align: center;
+    }
+
+    /* =========================
+       INPUTS
+       ========================= */
+
+    .login-page.login-split .form-control {
+        height: 48px;
+        border-radius: 12px;
+        border: 1px solid #E5E7EB;
+        background: #F3F5F9;
+        box-shadow: none;
+        transition: all .2s ease;
+    }
+
+        .login-page.login-split .form-control:focus {
+            background: #fff;
+            /* Focus color marca */
+            border-color: #FF7A00;
+            box-shadow: 0 0 0 4px rgba(255,122,0,.18);
+        }
+
+    /* =========================
+       BOTÓN (CON NARANJA CONECTAR)
+       ========================= */
+
+    .login-page.login-split .login-btn {
+        margin-top: 14px;
+        height: 48px;
+        width: 100%;
+        border-radius: 12px;
+        border: none;
+        font-weight: 700;
+        color: #fff;
+        /* Conectar gradient */
+        background: linear-gradient(135deg, #FF7A00, #D95F00);
+        transition: all .2s ease;
+    }
+
+        .login-page.login-split .login-btn:hover {
+            transform: translateY(-2px);
+            background: linear-gradient(135deg, #FF7A00, #C65300);
+            box-shadow: 0 12px 25px rgba(255,122,0,.35);
+        }
+
+        .login-page.login-split .login-btn:active {
+            transform: translateY(0);
+        }
+
+    /* =========================
+       LINK (CON NARANJA CONECTAR)
+       ========================= */
+
+    .login-page.login-split .login-link {
+        display: block;
+        text-align: center;
+        margin-top: 14px;
+        color: #FF7A00;
+        font-weight: 700;
+        text-decoration: none;
+    }
+
+        .login-page.login-split .login-link:hover {
+            text-decoration: underline;
+        }
+
+/* =========================
+   RESPONSIVE
+   ========================= */
+
+@media (max-width: 1000px) {
+
+    .login-page.login-split {
+        padding: 20px;
+    }
+
+        .login-page.login-split .login-shell {
+            flex-direction: column;
+            height: auto;
+        }
+
+        .login-page.login-split .login-left,
+        .login-page.login-split .login-right {
+            padding: 40px 28px;
+        }
+
+        .login-page.login-split .login-left-title {
+            font-size: 28px;
+        }
+}

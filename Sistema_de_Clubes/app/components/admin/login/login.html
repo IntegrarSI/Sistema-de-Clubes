@@ -1,0 +1,74 @@
+﻿<div class="login-page login-split">
+    <div class="login-shell">
+
+        <!-- Panel izquierdo -->
+        <section class="login-left" aria-hidden="true">
+            <div class="login-left-inner">
+                <h1 class="login-left-title">Bienvenido a Sistema de Clubes</h1>
+                <p class="login-left-text">
+                    Administrá jugadores, afiliaciones y datos del club/empresa en un solo lugar.
+                    Generá carnets y mantené toda la gestión ordenada, simple y segura.
+                </p>
+                <p class="login-left-foot">© 2026 · Sistema de Clubes</p>
+            </div>
+        </section>
+
+        <!-- Panel derecho -->
+        <section class="login-right">
+            <div class="login-card">
+                <div class="login-card-head">
+                    <h2 class="login-card-title">Iniciar sesión</h2>
+                    <p class="login-card-subtitle">Ingresá con tu usuario y contraseña</p>
+                </div>
+
+                <form role="form" name="form" ng-submit="submit()" novalidate>
+                    <div class="form-content">
+
+                        <div class="alert alert-info text-center fade" ng-show="expired">
+                            Por seguridad la sesión ha caducado. Por favor vuelva a ingresar su nombre de usuario y contraseña
+                        </div>
+
+                        <div class="form-group">
+                            <label class="sr-only" for="nombreUsuario">Usuario</label>
+                            <input type="text"
+                                   id="nombreUsuario"
+                                   class="form-control input-lg"
+                                   ng-model="dataLogin.nombreUsuario"
+                                   placeholder="Usuario"
+                                   required
+                                   autocomplete="username" />
+                        </div>
+
+                        <div class="form-group">
+                            <label class="sr-only" for="password">Password</label>
+                            <input type="password"
+                                   id="password"
+                                   class="form-control input-lg"
+                                   ng-model="dataLogin.password"
+                                   placeholder="Password"
+                                   required
+                                   autocomplete="current-password" />
+                        </div>
+
+                        <div class="alert alert-danger text-center fade"
+                             ng-show="ticket.passwordIncorrecta == true || ticket.nombreUsuario == '' || ticket.activo == false">
+                            <span ng-show="ticket.passwordIncorrecta == true && ticket.nombreUsuario != ''">La contraseña es incorrecta</span>
+                            <span ng-show="ticket.nombreUsuario == ''">El nombre de usuario es incorrecto</span>
+                            <span ng-show="ticket.activo == false">El Usuario no se encuentra activo</span>
+                        </div>
+                    </div>
+
+                    <button type="submit" class="btn btn-primary btn-block btn-lg login-btn">
+                        <span ng-hide="isLoading">Ingresar</span>
+                        <span ng-show="isLoading">
+                            <span class="glyphicon glyphicon-refresh glyphicon-refresh-animate"></span>&nbsp;&nbsp;Espere por favor...
+                        </span>
+                    </button>
+
+                    <a ui-sref="recuperar_password" class="login-link">Recuperar contraseña</a>
+                </form>
+            </div>
+        </section>
+
+    </div>
+</div>
