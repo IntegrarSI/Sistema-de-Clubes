@@ -9,7 +9,7 @@ namespace Negocio
     {
         public static Negocio.JugadoresPenalizaciones obtener(int id)
         {
-            using (CABEntities db = new CABEntities())
+            using (DeportesEntities db = new DeportesEntities())
             {
                 var instancia = db.JugadoresPenalizaciones
                                 .Include("Usuarios")

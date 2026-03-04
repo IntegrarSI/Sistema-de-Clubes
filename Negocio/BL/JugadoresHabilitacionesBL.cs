@@ -9,7 +9,7 @@ namespace Negocio
     {
         public static bool existeEstampilla(int numero, DateTime fechaHabilitacion, DateTime fechaVencimiento, string categoria, int idJugador)
         {
-            using (CABEntities db = new CABEntities())
+            using (DeportesEntities db = new DeportesEntities())
             {
                 var habilitacion = db.JugadoresHabilitaciones.Count(x => x.numero == numero && x.idJugador == idJugador);           
                 if(habilitacion > 0){
@@ -23,7 +23,7 @@ namespace Negocio
 
         public static bool existeEstampilla(int numero, DateTime fechaHabilitacion, DateTime fechaVencimiento, string categoria)
         {
-            using (CABEntities db = new CABEntities())
+            using (DeportesEntities db = new DeportesEntities())
             {
                 return db.JugadoresHabilitaciones.Count(x => x.numero == numero && x.fechaHabilitacion.Year >= fechaHabilitacion.Year && x.fechaInhabilitacion.Year <= fechaVencimiento.Year && x.categoria == categoria) > 0;
             }
@@ -31,7 +31,7 @@ namespace Negocio
 
         public static bool eliminar(int pId, int idUsuario)
         {
-            using (CABEntities db = new CABEntities())
+            using (DeportesEntities db = new DeportesEntities())
             {
                 var entity = db.JugadoresHabilitaciones.FirstOrDefault(p => p.id == pId);
                 db.JugadoresHabilitaciones.Remove(entity);

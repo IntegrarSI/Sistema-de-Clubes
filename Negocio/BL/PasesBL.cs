@@ -9,7 +9,7 @@ namespace Negocio
     {
         public static ListaPaginada obtenerListadoPendientes(int idUsuario, int pageIndex = 1, int pageSize = 10)
         {
-            using (CABEntities db = new CABEntities())
+            using (DeportesEntities db = new DeportesEntities())
             {
                 Negocio.Usuarios usuario = UsuariosBL.obtener(idUsuario);
 
@@ -70,7 +70,7 @@ namespace Negocio
 
         public static bool aprobarPase(int idJugadorPase, int idUsuario)
         {
-            using (CABEntities db = new CABEntities())
+            using (DeportesEntities db = new DeportesEntities())
             {
                 var objeto = from u in db.JugadoresPases
                              where u.id == idJugadorPase
@@ -114,7 +114,7 @@ namespace Negocio
 
         public static bool revisarPase(int idJugadorPase, int idUsuario)
         {
-            using (CABEntities db = new CABEntities())
+            using (DeportesEntities db = new DeportesEntities())
             {
                 var objeto = from u in db.JugadoresPases
                              where u.id == idJugadorPase
@@ -152,7 +152,7 @@ namespace Negocio
 
         public static bool rechazarPase(int idJugadorPase, string motivosRechazo, int idUsuario)
         {
-            using (CABEntities db = new CABEntities())
+            using (DeportesEntities db = new DeportesEntities())
             {
                 var objeto = from u in db.JugadoresPases
                              where u.id == idJugadorPase

@@ -9,7 +9,7 @@ namespace Negocio
     {
         public static Negocio.Jugadores obtener(int id)
         {
-            using (CABEntities db = new CABEntities())
+            using (DeportesEntities db = new DeportesEntities())
             {
                 var jugador = db.Jugadores
                                 .Include("Clubes")
@@ -63,7 +63,7 @@ namespace Negocio
 
         public static Negocio.Jugadores obtenerPorDni(int dni)
         {
-            using (CABEntities db = new CABEntities())
+            using (DeportesEntities db = new DeportesEntities())
             {
                 var jugador = db.Jugadores
                                 .Include("JugadoresSolicitudesCarnets")
@@ -81,7 +81,7 @@ namespace Negocio
 
         public static ListaPaginada obtenerListado(string busqueda, string busquedaFederacion, string busquedaAsociado, string busquedaClub, int idUsuario, int pageIndex = 1, int pageSize = 10)
         {
-            using (CABEntities db = new CABEntities())
+            using (DeportesEntities db = new DeportesEntities())
             {
                 Negocio.Usuarios usuario = UsuariosBL.obtener(idUsuario);
 
@@ -159,7 +159,7 @@ namespace Negocio
 
         public static int crear(Negocio.Jugadores instancia)
         {
-            using (CABEntities db = new CABEntities())
+            using (DeportesEntities db = new DeportesEntities())
             {
                 if (instancia.solicitaCarnet == true)
                 {
@@ -189,7 +189,7 @@ namespace Negocio
 
         public static bool actualizar(Negocio.Jugadores instancia)
         {
-            using (CABEntities db = new CABEntities())
+            using (DeportesEntities db = new DeportesEntities())
             {
                 var objeto = from u in db.Jugadores
                              where u.id == instancia.id
@@ -242,7 +242,7 @@ namespace Negocio
 
         public static bool comprobarImagen(Negocio.Jugadores instancia)
         {
-            using (CABEntities db = new CABEntities())
+            using (DeportesEntities db = new DeportesEntities())
             {
                 var objeto = from u in db.Jugadores
                              where u.id == instancia.id
@@ -261,7 +261,7 @@ namespace Negocio
 
         public static JugadoresSolicitudesCarnets entregarCarnet(Negocio.JugadoresSolicitudesCarnets instancia)
         {
-            using (CABEntities db = new CABEntities())
+            using (DeportesEntities db = new DeportesEntities())
             {
                 var objeto = from u in db.JugadoresSolicitudesCarnets
                              where u.id == instancia.id
@@ -293,7 +293,7 @@ namespace Negocio
 
         public static JugadoresHabilitaciones crearHabilitacion(Negocio.JugadoresHabilitaciones instancia)
         {
-            using (CABEntities db = new CABEntities())
+            using (DeportesEntities db = new DeportesEntities())
             {
                 
                 db.JugadoresHabilitaciones.Add(instancia);
@@ -320,7 +320,7 @@ namespace Negocio
 
         public static JugadoresPases crearPase(Negocio.JugadoresPases instancia, bool paseAprobado)
         {
-            using (CABEntities db = new CABEntities())
+            using (DeportesEntities db = new DeportesEntities())
             {
                 db.JugadoresPases.Add(instancia);
 
@@ -347,7 +347,7 @@ namespace Negocio
 
         public static JugadoresPenalizaciones crearPenalizacion(Negocio.JugadoresPenalizaciones instancia)
         {
-            using (CABEntities db = new CABEntities())
+            using (DeportesEntities db = new DeportesEntities())
             {
                 db.JugadoresPenalizaciones.Add(instancia);
 
@@ -367,7 +367,7 @@ namespace Negocio
 
         public static JugadoresSolicitudesCarnets modificarPenalizacion(Negocio.JugadoresPenalizaciones instancia, Negocio.JugadoresPenalizacionesEstados estado)
         {
-            using (CABEntities db = new CABEntities())
+            using (DeportesEntities db = new DeportesEntities())
             {
                 var objeto = from u in db.JugadoresPenalizaciones
                              where u.id == instancia.id
@@ -400,7 +400,7 @@ namespace Negocio
 
         public static JugadoresCategorias cambiarCategoria(Negocio.JugadoresCategorias instancia)
         {
-            using (CABEntities db = new CABEntities())
+            using (DeportesEntities db = new DeportesEntities())
             {
                 db.JugadoresCategorias.Add(instancia);
 
@@ -423,7 +423,7 @@ namespace Negocio
 
         public static JugadoresSolicitudesCarnets solicitarCarnet(Negocio.JugadoresSolicitudesCarnets instancia)
         {
-            using (CABEntities db = new CABEntities())
+            using (DeportesEntities db = new DeportesEntities())
             {
                 db.JugadoresSolicitudesCarnets.Add(instancia);
 
@@ -445,7 +445,7 @@ namespace Negocio
 
         public static Negocio.JugadoresHabilitaciones obtenerEstampilla(int id)
         {
-            using (CABEntities db = new CABEntities())
+            using (DeportesEntities db = new DeportesEntities())
             {
                 var lista = from l in db.JugadoresHabilitaciones
                             select l;
@@ -461,7 +461,7 @@ namespace Negocio
             
         public static List<Negocio.JugadoresHabilitaciones> actualizarHabilitaciones(int id)
         {
-            using (CABEntities db = new CABEntities())
+            using (DeportesEntities db = new DeportesEntities())
             {
                 var lista = from l in db.JugadoresHabilitaciones
                             select l;
@@ -475,7 +475,7 @@ namespace Negocio
 
         public static JugadoresHabilitaciones editarHabilitacion(Negocio.JugadoresHabilitaciones instancia)
         {
-            using (CABEntities db = new CABEntities())
+            using (DeportesEntities db = new DeportesEntities())
             {
                  var objeto = from u in db.JugadoresHabilitaciones
                              where u.id == instancia.id
@@ -519,7 +519,7 @@ namespace Negocio
 
         public static bool eliminar(int id, int idUsuario)
         {
-            using (CABEntities db = new CABEntities())
+            using (DeportesEntities db = new DeportesEntities())
             {
                     var objeto = from u in db.Jugadores
                              where u.id == id
@@ -550,7 +550,7 @@ namespace Negocio
 
         public static string obtenerEdad(int id)
         {
-            using (CABEntities db = new CABEntities())
+            using (DeportesEntities db = new DeportesEntities())
             {
                 //se consulta el jugador para saber si pertenece a la categoria juveniles o mayores
                 var jugadores = from j in db.Jugadores
@@ -586,7 +586,7 @@ namespace Negocio
 
         public static bool existeJugador(int dni)
         {
-            using (CABEntities db = new CABEntities())
+            using (DeportesEntities db = new DeportesEntities())
             {
                 return db.Jugadores.Count(x => x.DNI == dni) > 0;
             }

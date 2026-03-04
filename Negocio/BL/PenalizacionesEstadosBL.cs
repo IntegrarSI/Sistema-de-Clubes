@@ -10,7 +10,7 @@ namespace Negocio
     {
         public static Negocio.PenalizacionesEstados obtener(string codigoInterno)
         {
-            using (CABEntities db = new CABEntities())
+            using (DeportesEntities db = new DeportesEntities())
             {
                 return db.PenalizacionesEstados.FirstOrDefault(x => x.codigoInterno == codigoInterno);
             }

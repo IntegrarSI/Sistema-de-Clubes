@@ -168,7 +168,7 @@ namespace Negocio
       
         public static int guardar()
         {
-            using (CABEntities db = new CABEntities())
+            using (DeportesEntities db = new DeportesEntities())
             {
                 var instanciaaux = new ExportacionExel();
                 var exp = from l in db.ExportacionExel
@@ -198,7 +198,7 @@ namespace Negocio
         }
         public static int obtenerNroExportacion()
         {
-            using (CABEntities db = new CABEntities())
+            using (DeportesEntities db = new DeportesEntities())
             {
                 var instanciaaux = new ExportacionExel();
                 var exp = from l in db.ExportacionExel

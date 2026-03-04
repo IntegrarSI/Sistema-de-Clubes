@@ -9,7 +9,7 @@ namespace Negocio
     {
         public static IEnumerable<Negocio.Localidades> obtenerListaAutocompletar(string filtro)
         {
-            using (CABEntities db = new CABEntities())
+            using (DeportesEntities db = new DeportesEntities())
             {
                 var lista = from l in db.Localidades
                                 .Include("Provincias")

@@ -9,7 +9,7 @@ namespace Negocio
     {
         public static Negocio.Federaciones obtener(int id)
         {
-            using (CABEntities db = new CABEntities())
+            using (DeportesEntities db = new DeportesEntities())
             {
                 return db.Federaciones
                     .Include("Localidades")
@@ -20,7 +20,7 @@ namespace Negocio
 
         public static ListaPaginada obtenerListado(string busqueda, int idUsuario, int pageIndex = 1, int pageSize = 10)
         {
-            using (CABEntities db = new CABEntities())
+            using (DeportesEntities db = new DeportesEntities())
             {
                 Negocio.Usuarios usuario = UsuariosBL.obtener(idUsuario);
 
@@ -65,7 +65,7 @@ namespace Negocio
 
         public static IEnumerable<Negocio.Federaciones> obtenerListaAutocompletar(string filtro)
         {
-            using (CABEntities db = new CABEntities())
+            using (DeportesEntities db = new DeportesEntities())
             {
                 var lista = from l in db.Federaciones
                             where l.descripcion.Contains(filtro)
@@ -77,7 +77,7 @@ namespace Negocio
 
         public static IEnumerable<Negocio.Federaciones> obtenerListaPorUsuario(int idUsuario)
         {
-            using (CABEntities db = new CABEntities())
+            using (DeportesEntities db = new DeportesEntities())
             {
                 //esto estaba antes
                 var lista = from l in db.Federaciones
@@ -116,7 +116,7 @@ namespace Negocio
 
         public static IEnumerable<Negocio.Federaciones> obtenerLista()
         {
-            using (CABEntities db = new CABEntities())
+            using (DeportesEntities db = new DeportesEntities())
             {
                 var lista = from l in db.Federaciones
                             where l.activo == true
@@ -127,7 +127,7 @@ namespace Negocio
 
         public static IEnumerable<Negocio.Federaciones> obtenerFederaciones()
         {
-            using (CABEntities db = new CABEntities())
+            using (DeportesEntities db = new DeportesEntities())
             {
                 var lista = from l in db.Federaciones
                             select l;
@@ -138,7 +138,7 @@ namespace Negocio
 
         public static IEnumerable<Negocio.Asociaciones> obtenerAsociaciones(int idFederacion)
         {
-            using (CABEntities db = new CABEntities())
+            using (DeportesEntities db = new DeportesEntities())
             {
                 var lista = from l in db.Asociaciones
                             where l.idFederacion == idFederacion
@@ -150,7 +150,7 @@ namespace Negocio
 
         public static IEnumerable<Negocio.Clubes> obtenerClubes(int idAsociacion)
         {
-            using (CABEntities db = new CABEntities())
+            using (DeportesEntities db = new DeportesEntities())
             {
                 var lista = from l in db.Clubes
                             where l.idAsociacion == idAsociacion
@@ -162,7 +162,7 @@ namespace Negocio
 
         public static int crear(Negocio.Federaciones instancia)
         {
-            using (CABEntities db = new CABEntities())
+            using (DeportesEntities db = new DeportesEntities())
             {
                 db.Federaciones.Add(instancia);
 
@@ -183,7 +183,7 @@ namespace Negocio
 
         public static bool actualizar(Negocio.Federaciones instancia)
         {
-            using (CABEntities db = new CABEntities())
+            using (DeportesEntities db = new DeportesEntities())
             {
                 var objeto = from u in db.Federaciones
                              where u.id == instancia.id

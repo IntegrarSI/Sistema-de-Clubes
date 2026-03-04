@@ -9,7 +9,7 @@ namespace Negocio
     {
         public static ListaPaginada obtenerListado(int pageIndex = 1, int pageSize = 1, string pTorneo = "")
          {
-             using (CABEntities db = new CABEntities())
+             using (DeportesEntities db = new DeportesEntities())
              {
                 ListaPaginada resultado = new ListaPaginada();
                 var lista = from l in db.Campeones
@@ -28,7 +28,7 @@ namespace Negocio
 
          public static List<Campeones> obtenerUltimos()
          {
-             using (CABEntities db = new CABEntities())
+             using (DeportesEntities db = new DeportesEntities())
              {
                  return db.Campeones
                         .OrderByDescending(x => x.fecha).Take(3).ToList();

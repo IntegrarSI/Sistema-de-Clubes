@@ -9,7 +9,7 @@ namespace Negocio
     {
         public static IEnumerable<Negocio.Clubes> obtenerListado(int idAsociacion)
         {
-            using (CABEntities db = new CABEntities())
+            using (DeportesEntities db = new DeportesEntities())
             {
                 var lista = from l in db.Clubes
                             where l.idAsociacion == idAsociacion
@@ -21,7 +21,7 @@ namespace Negocio
 
         public static IEnumerable<Negocio.Clubes> obtenerListaAutocompletar(string filtro)
         {
-            using (CABEntities db = new CABEntities())
+            using (DeportesEntities db = new DeportesEntities())
             {
                 var lista = from l in db.Clubes
                             where l.descripcion.Contains(filtro)
@@ -33,7 +33,7 @@ namespace Negocio
 
         public static Negocio.Clubes obtener(int id)
         {
-            using (CABEntities db = new CABEntities())
+            using (DeportesEntities db = new DeportesEntities())
             {
                 return db.Clubes
                     .Include("Asociaciones")
@@ -46,7 +46,7 @@ namespace Negocio
 
         public static ListaPaginada obtenerListado(string busqueda, int idAsociacion, int idUsuario, int pageIndex = 1, int pageSize = 10)
         {
-            using (CABEntities db = new CABEntities())
+            using (DeportesEntities db = new DeportesEntities())
             {
                 Negocio.Usuarios usuario = UsuariosBL.obtener(idUsuario);
 
@@ -99,7 +99,7 @@ namespace Negocio
 
         public static int crear(Negocio.Clubes instancia)
         {
-            using (CABEntities db = new CABEntities())
+            using (DeportesEntities db = new DeportesEntities())
             {
                 db.Clubes.Add(instancia);
 
@@ -120,7 +120,7 @@ namespace Negocio
 
         public static bool actualizar(Negocio.Clubes instancia)
         {
-            using (CABEntities db = new CABEntities())
+            using (DeportesEntities db = new DeportesEntities())
             {
                 var objeto = from u in db.Clubes
                              where u.id == instancia.id

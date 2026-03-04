@@ -10,7 +10,7 @@ namespace Negocio
     {
         public static IEnumerable<Negocio.Especialidades> obtenerListado()
         {
-            using (CABEntities db = new CABEntities())
+            using (DeportesEntities db = new DeportesEntities())
             {
                 var lista = from l in db.Especialidades
                             where l.activo == true

@@ -9,7 +9,7 @@ namespace Negocio
     {
         public static IEnumerable<Negocio.Asociaciones> obtenerListado(int idFederacion)
         {
-            using (CABEntities db = new CABEntities())
+            using (DeportesEntities db = new DeportesEntities())
             {
                 var lista = from l in db.Asociaciones
                             where l.idFederacion == idFederacion
@@ -21,7 +21,7 @@ namespace Negocio
 
         public static IEnumerable<Negocio.Asociaciones> obtenerListaAutocompletar(string filtro)
         {
-            using (CABEntities db = new CABEntities())
+            using (DeportesEntities db = new DeportesEntities())
             {
                 var lista = from l in db.Asociaciones.Include("Federaciones")
                             where l.descripcion.Contains(filtro)
@@ -33,7 +33,7 @@ namespace Negocio
 
         public static Negocio.Asociaciones obtener(int id)
         {
-            using (CABEntities db = new CABEntities())
+            using (DeportesEntities db = new DeportesEntities())
             {
                 return db.Asociaciones
                     .Include("Federaciones")
@@ -45,7 +45,7 @@ namespace Negocio
 
         public static ListaPaginada obtenerListado(string busqueda, int idFederacion, int idUsuario, int pageIndex = 1, int pageSize = 10)
         {
-            using (CABEntities db = new CABEntities())
+            using (DeportesEntities db = new DeportesEntities())
             {
                 ListaPaginada resultado = new ListaPaginada();
                 
@@ -96,7 +96,7 @@ namespace Negocio
 
         public static IEnumerable<Asociaciones> obtenerListaPorUsuario(int idUsuario, string filter)
         {
-            using (CABEntities db = new CABEntities())
+            using (DeportesEntities db = new DeportesEntities())
             {
                 Negocio.Usuarios usuario = UsuariosBL.obtener(idUsuario);
 
@@ -139,7 +139,7 @@ namespace Negocio
 
         public static int crear(Negocio.Asociaciones instancia)
         {
-            using (CABEntities db = new CABEntities())
+            using (DeportesEntities db = new DeportesEntities())
             {
                 db.Asociaciones.Add(instancia);
 
@@ -160,7 +160,7 @@ namespace Negocio
 
         public static bool actualizar(Negocio.Asociaciones instancia)
         {
-            using (CABEntities db = new CABEntities())
+            using (DeportesEntities db = new DeportesEntities())
             {
                 var objeto = from u in db.Asociaciones
                              where u.id == instancia.id

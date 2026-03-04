@@ -1,19 +1,20 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Data;
+using System.Data.Entity;
 using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Data.Entity.Infrastructure;
+using System.Data;
 namespace Negocio
 {
     public partial class UsuariosBL
     {
-        static CABEntities db2 = new CABEntities();
+        static DeportesEntities db2 = new DeportesEntities();
 
         public static Negocio.Usuarios verificarLogin(string nombreUsuario, string password, out bool esPasswordCorrecta)
         {
-            using (CABEntities db = new CABEntities())
+            using (DeportesEntities db = new DeportesEntities())
             {
                 nombreUsuario = nombreUsuario.ToLower();
                 Negocio.Usuarios usuarioaux = db.Usuarios.Where(x => x.nombreUsuario.Equals(nombreUsuario)).FirstOrDefault();
@@ -25,7 +26,7 @@ namespace Negocio
 
         public static bool cambiarPassword(string nombreUsuario, string nuevaPassword)
         {
-            using (CABEntities db = new CABEntities())
+            using (DeportesEntities db = new DeportesEntities())
             {
                 nombreUsuario = nombreUsuario.ToLower();
 
@@ -128,7 +129,7 @@ namespace Negocio
 
         public static Negocio.Usuarios obtener(int id)
         {
-            using (CABEntities db = new CABEntities())
+            using (DeportesEntities db = new DeportesEntities())
             {
                 return db.Usuarios
                     .Include("UsuariosRoles")
@@ -145,7 +146,7 @@ namespace Negocio
 
         public static List<string> obtenerRol(int id)
         {
-            using (CABEntities db = new CABEntities())
+            using (DeportesEntities db = new DeportesEntities())
             {
                 var aux = from l in db.UsuariosRoles
                          .Include("Roles")
@@ -158,7 +159,7 @@ namespace Negocio
         }
         public static int crear(Negocio.Usuarios instancia)
         {
-            using (CABEntities db = new CABEntities())
+            using (DeportesEntities db = new DeportesEntities())
             {
                 if (instancia.UsuariosRoles != null && instancia.UsuariosRoles.Count > 0)
                 {
@@ -197,7 +198,7 @@ namespace Negocio
 
         public static bool actualizar(Negocio.Usuarios instancia)
         {
-            using (CABEntities db = new CABEntities())
+            using (DeportesEntities db = new DeportesEntities())
             {
                 var objeto = from u in db.Usuarios
                              where u.id == instancia.id
@@ -211,7 +212,7 @@ namespace Negocio
                     nuevoObjeto.activo = instancia.activo;
 
                     foreach (var clon in db.UsuariosRoles.Where(x => x.idUsuario == instancia.id).ToList())
-                        db.Entry(clon).State = EntityState.Deleted;
+                        db.Entry(clon).State = System.Data.Entity.EntityState.Deleted;
 
                     if (instancia.UsuariosRoles != null && instancia.UsuariosRoles.Count > 0)
                     {
@@ -226,7 +227,7 @@ namespace Negocio
                     }
 
                     foreach (var clon in db.UsuariosAsociaciones.Where(x => x.idUsuario == instancia.id).ToList())
-                        db.Entry(clon).State = EntityState.Deleted;
+                        db.Entry(clon).State = System.Data.Entity.EntityState.Deleted;
 
                     if (instancia.UsuariosAsociaciones != null && instancia.UsuariosAsociaciones.Count > 0)
                     {
@@ -241,7 +242,7 @@ namespace Negocio
                     }
 
                     foreach (var clon in db.UsuariosFederaciones.Where(x => x.idUsuario == instancia.id).ToList())
-                        db.Entry(clon).State = EntityState.Deleted;
+                        db.Entry(clon).State = System.Data.Entity.EntityState.Deleted;
 
                     if (instancia.UsuariosFederaciones != null && instancia.UsuariosFederaciones.Count > 0)
                     {
@@ -272,7 +273,7 @@ namespace Negocio
 
         public static string resetPassword(int id)
         {
-            using (CABEntities db = new CABEntities())
+            using (DeportesEntities db = new DeportesEntities())
             {
                 var objeto = from u in db.Usuarios
                              where u.id == id
@@ -302,7 +303,7 @@ namespace Negocio
 
         public static List<Usuarios> obtenerUsuariosPorRol(string codigoRol, int idUsuarioExceptuado = 0, int idFederacion = 0, int idAsociacion = 0)
         {
-            using (CABEntities db = new CABEntities())
+            using (DeportesEntities db = new DeportesEntities())
             {
                 int idRol = RolesBL.obtener(codigoRol).id;
 
@@ -332,7 +333,7 @@ namespace Negocio
 
         public static List<Usuarios> obtenerUsuairoSinRelaciones(int idUsuario)
         {
-            using (CABEntities db = new CABEntities())
+            using (DeportesEntities db = new DeportesEntities())
             {
 
 
@@ -360,7 +361,7 @@ namespace Negocio
 
         public static bool borrarUsuario(int idUsuario)
         {
-            using (CABEntities db = new CABEntities())
+            using (DeportesEntities db = new DeportesEntities())
             {
                 var usr = obtenerUsuairoSinRelaciones(idUsuario);
 

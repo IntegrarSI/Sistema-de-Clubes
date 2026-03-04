@@ -1,8 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Data;
 using System.Linq;
 using System.Text;
+using System.Data.Entity;
 
 namespace Negocio
 {
@@ -10,7 +10,7 @@ namespace Negocio
     {
         public static IEnumerable<Negocio.Torneos> obtenerListado()
         {
-            using (CABEntities db = new CABEntities())
+            using (DeportesEntities db = new DeportesEntities())
             {
                 var lista = from l in db.Torneos
                             where l.activo == true
@@ -22,7 +22,7 @@ namespace Negocio
 
         public static IEnumerable<Negocio.Torneos> proximosEventos()
         {
-            using (CABEntities db = new CABEntities())
+            using (DeportesEntities db = new DeportesEntities())
             {
                 DateTime fechaActual = DateTime.Now.Date;
                 var lista = from l in db.Torneos
@@ -35,7 +35,7 @@ namespace Negocio
 
         public static IEnumerable<Negocio.Torneos> ultimosEventos()
         {
-            using (CABEntities db = new CABEntities())
+            using (DeportesEntities db = new DeportesEntities())
             {
                 DateTime fechaActual = DateTime.Now.Date;
                 var lista = from l in db.Torneos
@@ -57,7 +57,7 @@ namespace Negocio
 
         public static ListaPaginada obtenerListadoAdmin(string busqueda, int pageIndex = 1, int pageSize = 10)
         {
-            using (CABEntities db = new CABEntities())
+            using (DeportesEntities db = new DeportesEntities())
             {
                 var lista = from l in db.Torneos
                             select l;
@@ -75,7 +75,7 @@ namespace Negocio
 
         public static Negocio.Torneos obtener(int id)
         {
-            using (CABEntities db = new CABEntities())
+            using (DeportesEntities db = new DeportesEntities())
             {
                 return db.Torneos
                     .Include("TorneosActividades")
@@ -91,7 +91,7 @@ namespace Negocio
 
         public static int crear(Negocio.Torneos instancia)
         {
-            using (CABEntities db = new CABEntities())
+            using (DeportesEntities db = new DeportesEntities())
             {
                 db.Torneos.Add(instancia);
 
@@ -111,7 +111,7 @@ namespace Negocio
 
         public static bool actualizar(Negocio.Torneos instancia)
         {
-            using (CABEntities db = new CABEntities())
+            using (DeportesEntities db = new DeportesEntities())
             {
                 var objeto = from u in db.Torneos
                              where u.id == instancia.id

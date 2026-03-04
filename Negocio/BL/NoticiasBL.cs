@@ -10,7 +10,7 @@ namespace Negocio
 
         public static ListaPaginada obtenerListado(string busqueda, int idUsuario, int pageIndex = 1, int pageSize = 10)
         {
-            using (CABEntities db = new CABEntities())
+            using (DeportesEntities db = new DeportesEntities())
             {
                 Negocio.Usuarios usuario = UsuariosBL.obtener(idUsuario);
 
@@ -37,7 +37,7 @@ namespace Negocio
         public static ListaPaginada obtenerTodas(int pageIndex = 1, int pageSize = 3)
         {
 
-            using (CABEntities db = new CABEntities())
+            using (DeportesEntities db = new DeportesEntities())
             {
                 ListaPaginada resultado = new ListaPaginada();
 
@@ -55,7 +55,7 @@ namespace Negocio
 
         public static Negocio.Noticias obtener(int id)
         {
-            using (CABEntities db = new CABEntities())
+            using (DeportesEntities db = new DeportesEntities())
             {
                 return db.Noticias
                     .Include("Usuarios")
@@ -66,7 +66,7 @@ namespace Negocio
 
         public static int crear(Negocio.Noticias instancia)
         {
-            using (CABEntities db = new CABEntities())
+            using (DeportesEntities db = new DeportesEntities())
             {
                 db.Noticias.Add(instancia);
 
@@ -89,7 +89,7 @@ namespace Negocio
 
         public static bool actualizar(Negocio.Noticias instancia)
         {
-            using (CABEntities db = new CABEntities())
+            using (DeportesEntities db = new DeportesEntities())
             {
                 var objeto = from u in db.Noticias
                              where u.id == instancia.id
@@ -124,7 +124,7 @@ namespace Negocio
 
         public static ListaPaginada obtenerDestacadas()
         {
-            using (CABEntities db = new CABEntities())
+            using (DeportesEntities db = new DeportesEntities())
             {
 
                 ListaPaginada resultado = new ListaPaginada();

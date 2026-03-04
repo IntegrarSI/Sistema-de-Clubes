@@ -1,10 +1,10 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<edmx:Edmx Version="2.0" xmlns:edmx="http://schemas.microsoft.com/ado/2008/10/edmx">
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
   <!-- EF Runtime content -->
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-    <Schema Namespace="CABModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
+    <Schema Namespace="CABModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="Asociaciones">
           <Key>
             <PropertyRef Name="id" />
@@ -1356,44 +1356,44 @@ advertencia 6002: La tabla o vista 'TestFUB.dbo.tmbcarnet' no tiene definida nin
           <Parameter Name="idAsociacion" Type="int" Mode="In" />
         </Function>
         <EntityContainer Name="CABModelStoreContainer">
-          <EntitySet Name="Asociaciones" EntityType="Self.Asociaciones" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="Categorias" EntityType="Self.Categorias" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="Clubes" EntityType="Self.Clubes" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="Equipos" EntityType="Self.Equipos" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="Especialidades" EntityType="Self.Especialidades" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="ExportacionExel" EntityType="Self.ExportacionExel" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="Federaciones" EntityType="Self.Federaciones" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="Fixtures" EntityType="Self.Fixtures" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="FixturesPartidos" EntityType="Self.FixturesPartidos" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="Jueces" EntityType="Self.Jueces" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="Jugadores" EntityType="Self.Jugadores" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="JugadoresCategorias" EntityType="Self.JugadoresCategorias" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="JugadoresEliminados" EntityType="Self.JugadoresEliminados" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="JugadoresHabilitaciones" EntityType="Self.JugadoresHabilitaciones" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="JugadoresHistorial" EntityType="Self.JugadoresHistorial" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="JugadoresPases" EntityType="Self.JugadoresPases" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="JugadoresPasesEstados" EntityType="Self.JugadoresPasesEstados" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="JugadoresPenalizaciones" EntityType="Self.JugadoresPenalizaciones" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="JugadoresPenalizacionesEstados" EntityType="Self.JugadoresPenalizacionesEstados" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="JugadoresSolicitudesCarnets" EntityType="Self.JugadoresSolicitudesCarnets" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="Localidades" EntityType="Self.Localidades" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="Noticias" EntityType="Self.Noticias" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="PasesEstados" EntityType="Self.PasesEstados" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="PenalizacionesEstados" EntityType="Self.PenalizacionesEstados" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="Provincias" EntityType="Self.Provincias" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="Roles" EntityType="Self.Roles" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="Torneos" EntityType="Self.Torneos" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="TorneosActividades" EntityType="Self.TorneosActividades" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="TorneosEquipos" EntityType="Self.TorneosEquipos" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="TorneosEspecialidades" EntityType="Self.TorneosEspecialidades" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="TorneosPartidos" EntityType="Self.TorneosPartidos" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="TorneosZonas" EntityType="Self.TorneosZonas" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="Usuarios" EntityType="Self.Usuarios" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="UsuariosAsociaciones" EntityType="Self.UsuariosAsociaciones" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="UsuariosFederaciones" EntityType="Self.UsuariosFederaciones" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="UsuariosRoles" EntityType="Self.UsuariosRoles" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="Campeones" EntityType="Self.Campeones" store:Type="Tables" store:Schema="dbo">
+          <EntitySet Name="Asociaciones" EntityType="Self.Asociaciones" Schema="dbo" store:Type="Tables" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
+          <EntitySet Name="Categorias" EntityType="Self.Categorias" Schema="dbo" store:Type="Tables" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
+          <EntitySet Name="Clubes" EntityType="Self.Clubes" Schema="dbo" store:Type="Tables" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
+          <EntitySet Name="Equipos" EntityType="Self.Equipos" Schema="dbo" store:Type="Tables" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
+          <EntitySet Name="Especialidades" EntityType="Self.Especialidades" Schema="dbo" store:Type="Tables" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
+          <EntitySet Name="ExportacionExel" EntityType="Self.ExportacionExel" Schema="dbo" store:Type="Tables" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
+          <EntitySet Name="Federaciones" EntityType="Self.Federaciones" Schema="dbo" store:Type="Tables" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
+          <EntitySet Name="Fixtures" EntityType="Self.Fixtures" Schema="dbo" store:Type="Tables" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
+          <EntitySet Name="FixturesPartidos" EntityType="Self.FixturesPartidos" Schema="dbo" store:Type="Tables" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
+          <EntitySet Name="Jueces" EntityType="Self.Jueces" Schema="dbo" store:Type="Tables" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
+          <EntitySet Name="Jugadores" EntityType="Self.Jugadores" Schema="dbo" store:Type="Tables" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
+          <EntitySet Name="JugadoresCategorias" EntityType="Self.JugadoresCategorias" Schema="dbo" store:Type="Tables" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
+          <EntitySet Name="JugadoresEliminados" EntityType="Self.JugadoresEliminados" Schema="dbo" store:Type="Tables" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
+          <EntitySet Name="JugadoresHabilitaciones" EntityType="Self.JugadoresHabilitaciones" Schema="dbo" store:Type="Tables" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
+          <EntitySet Name="JugadoresHistorial" EntityType="Self.JugadoresHistorial" Schema="dbo" store:Type="Tables" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
+          <EntitySet Name="JugadoresPases" EntityType="Self.JugadoresPases" Schema="dbo" store:Type="Tables" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
+          <EntitySet Name="JugadoresPasesEstados" EntityType="Self.JugadoresPasesEstados" Schema="dbo" store:Type="Tables" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
+          <EntitySet Name="JugadoresPenalizaciones" EntityType="Self.JugadoresPenalizaciones" Schema="dbo" store:Type="Tables" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
+          <EntitySet Name="JugadoresPenalizacionesEstados" EntityType="Self.JugadoresPenalizacionesEstados" Schema="dbo" store:Type="Tables" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
+          <EntitySet Name="JugadoresSolicitudesCarnets" EntityType="Self.JugadoresSolicitudesCarnets" Schema="dbo" store:Type="Tables" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
+          <EntitySet Name="Localidades" EntityType="Self.Localidades" Schema="dbo" store:Type="Tables" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
+          <EntitySet Name="Noticias" EntityType="Self.Noticias" Schema="dbo" store:Type="Tables" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
+          <EntitySet Name="PasesEstados" EntityType="Self.PasesEstados" Schema="dbo" store:Type="Tables" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
+          <EntitySet Name="PenalizacionesEstados" EntityType="Self.PenalizacionesEstados" Schema="dbo" store:Type="Tables" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
+          <EntitySet Name="Provincias" EntityType="Self.Provincias" Schema="dbo" store:Type="Tables" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
+          <EntitySet Name="Roles" EntityType="Self.Roles" Schema="dbo" store:Type="Tables" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
+          <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
+          <EntitySet Name="Torneos" EntityType="Self.Torneos" Schema="dbo" store:Type="Tables" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
+          <EntitySet Name="TorneosActividades" EntityType="Self.TorneosActividades" Schema="dbo" store:Type="Tables" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
+          <EntitySet Name="TorneosEquipos" EntityType="Self.TorneosEquipos" Schema="dbo" store:Type="Tables" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
+          <EntitySet Name="TorneosEspecialidades" EntityType="Self.TorneosEspecialidades" Schema="dbo" store:Type="Tables" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
+          <EntitySet Name="TorneosPartidos" EntityType="Self.TorneosPartidos" Schema="dbo" store:Type="Tables" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
+          <EntitySet Name="TorneosZonas" EntityType="Self.TorneosZonas" Schema="dbo" store:Type="Tables" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
+          <EntitySet Name="Usuarios" EntityType="Self.Usuarios" Schema="dbo" store:Type="Tables" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
+          <EntitySet Name="UsuariosAsociaciones" EntityType="Self.UsuariosAsociaciones" Schema="dbo" store:Type="Tables" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
+          <EntitySet Name="UsuariosFederaciones" EntityType="Self.UsuariosFederaciones" Schema="dbo" store:Type="Tables" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
+          <EntitySet Name="UsuariosRoles" EntityType="Self.UsuariosRoles" Schema="dbo" store:Type="Tables" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
+          <EntitySet Name="Campeones" EntityType="Self.Campeones" store:Type="Tables" store:Schema="dbo" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator">
             <DefiningQuery>SELECT 
 [Campeones].[Id] AS [Id], 
 [Campeones].[fecha] AS [fecha], 
@@ -1402,7 +1402,7 @@ advertencia 6002: La tabla o vista 'TestFUB.dbo.tmbcarnet' no tiene definida nin
 [Campeones].[torneo] AS [torneo]
 FROM [dbo].[Campeones] AS [Campeones]</DefiningQuery>
           </EntitySet>
-          <EntitySet Name="DNI" EntityType="Self.DNI" store:Type="Tables" store:Schema="dbo">
+          <EntitySet Name="DNI" EntityType="Self.DNI" store:Type="Tables" store:Schema="dbo" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator">
             <DefiningQuery>SELECT 
 [DNI].[dni] AS [dni], 
 [DNI].[apellido] AS [apellido], 
@@ -1427,7 +1427,7 @@ FROM [dbo].[Campeones] AS [Campeones]</DefiningQuery>
 [DNI].[fechaInHabilitacion] AS [fechaInHabilitacion]
 FROM [dbo].[DNI] AS [DNI]</DefiningQuery>
           </EntitySet>
-          <EntitySet Name="habilitaciones" EntityType="Self.habilitaciones" store:Type="Tables" store:Schema="dbo">
+          <EntitySet Name="habilitaciones" EntityType="Self.habilitaciones" store:Type="Tables" store:Schema="dbo" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator">
             <DefiningQuery>SELECT 
 [habilitaciones].[id] AS [id], 
 [habilitaciones].[numero] AS [numero], 
@@ -1438,7 +1438,7 @@ FROM [dbo].[DNI] AS [DNI]</DefiningQuery>
 [habilitaciones].[idJugador] AS [idJugador]
 FROM [dbo].[habilitaciones] AS [habilitaciones]</DefiningQuery>
           </EntitySet>
-          <EntitySet Name="tmbcarnet" EntityType="Self.tmbcarnet" store:Type="Tables" store:Schema="dbo">
+          <EntitySet Name="tmbcarnet" EntityType="Self.tmbcarnet" store:Type="Tables" store:Schema="dbo" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator">
             <DefiningQuery>SELECT 
 [tmbcarnet].[id] AS [id], 
 [tmbcarnet].[idJugador] AS [idJugador], 
@@ -1697,312 +1697,312 @@ FROM [dbo].[tmbcarnet] AS [tmbcarnet]</DefiningQuery>
       </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
-      <Schema Namespace="CABModel" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
-        <EntityContainer Name="CABEntities" annotation:LazyLoadingEnabled="true">
-          <EntitySet Name="Asociaciones" EntityType="CABModel.Asociaciones" />
-          <EntitySet Name="Categorias" EntityType="CABModel.Categorias" />
-          <EntitySet Name="Clubes" EntityType="CABModel.Clubes" />
-          <EntitySet Name="DNI" EntityType="CABModel.DNI" />
-          <EntitySet Name="Equipos" EntityType="CABModel.Equipos" />
-          <EntitySet Name="Especialidades" EntityType="CABModel.Especialidades" />
-          <EntitySet Name="Federaciones" EntityType="CABModel.Federaciones" />
-          <EntitySet Name="Fixtures" EntityType="CABModel.Fixtures" />
-          <EntitySet Name="FixturesPartidos" EntityType="CABModel.FixturesPartidos" />
-          <EntitySet Name="Jueces" EntityType="CABModel.Jueces" />
-          <EntitySet Name="JugadoresCategorias" EntityType="CABModel.JugadoresCategorias" />
-          <EntitySet Name="JugadoresHabilitaciones" EntityType="CABModel.JugadoresHabilitaciones" />
-          <EntitySet Name="JugadoresSolicitudesCarnets" EntityType="CABModel.JugadoresSolicitudesCarnets" />
-          <EntitySet Name="Localidades" EntityType="CABModel.Localidades" />
-          <EntitySet Name="Provincias" EntityType="CABModel.Provincias" />
-          <EntitySet Name="Roles" EntityType="CABModel.Roles" />
-          <EntitySet Name="sysdiagrams" EntityType="CABModel.sysdiagrams" />
-          <EntitySet Name="Torneos" EntityType="CABModel.Torneos" />
-          <EntitySet Name="TorneosActividades" EntityType="CABModel.TorneosActividades" />
-          <EntitySet Name="TorneosEquipos" EntityType="CABModel.TorneosEquipos" />
-          <EntitySet Name="TorneosEspecialidades" EntityType="CABModel.TorneosEspecialidades" />
-          <EntitySet Name="TorneosPartidos" EntityType="CABModel.TorneosPartidos" />
-          <EntitySet Name="TorneosZonas" EntityType="CABModel.TorneosZonas" />
-          <EntitySet Name="Usuarios" EntityType="CABModel.Usuarios" />
-          <EntitySet Name="UsuariosAsociaciones" EntityType="CABModel.UsuariosAsociaciones" />
-          <EntitySet Name="UsuariosFederaciones" EntityType="CABModel.UsuariosFederaciones" />
-          <EntitySet Name="UsuariosRoles" EntityType="CABModel.UsuariosRoles" />
-          <AssociationSet Name="FK_Asociaciones_Federaciones" Association="CABModel.FK_Asociaciones_Federaciones">
+      <Schema Namespace="DeportesModel" Alias="Self" xmlns="http://schemas.microsoft.com/ado/2009/11/edm" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation">
+        <EntityContainer Name="DeportesEntities" annotation:LazyLoadingEnabled="true" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation">
+          <EntitySet Name="Asociaciones" EntityType="DeportesModel.Asociaciones" />
+          <EntitySet Name="Categorias" EntityType="DeportesModel.Categorias" />
+          <EntitySet Name="Clubes" EntityType="DeportesModel.Clubes" />
+          <EntitySet Name="DNI" EntityType="DeportesModel.DNI" />
+          <EntitySet Name="Equipos" EntityType="DeportesModel.Equipos" />
+          <EntitySet Name="Especialidades" EntityType="DeportesModel.Especialidades" />
+          <EntitySet Name="Federaciones" EntityType="DeportesModel.Federaciones" />
+          <EntitySet Name="Fixtures" EntityType="DeportesModel.Fixtures" />
+          <EntitySet Name="FixturesPartidos" EntityType="DeportesModel.FixturesPartidos" />
+          <EntitySet Name="Jueces" EntityType="DeportesModel.Jueces" />
+          <EntitySet Name="JugadoresCategorias" EntityType="DeportesModel.JugadoresCategorias" />
+          <EntitySet Name="JugadoresHabilitaciones" EntityType="DeportesModel.JugadoresHabilitaciones" />
+          <EntitySet Name="JugadoresSolicitudesCarnets" EntityType="DeportesModel.JugadoresSolicitudesCarnets" />
+          <EntitySet Name="Localidades" EntityType="DeportesModel.Localidades" />
+          <EntitySet Name="Provincias" EntityType="DeportesModel.Provincias" />
+          <EntitySet Name="Roles" EntityType="DeportesModel.Roles" />
+          <EntitySet Name="sysdiagrams" EntityType="DeportesModel.sysdiagrams" />
+          <EntitySet Name="Torneos" EntityType="DeportesModel.Torneos" />
+          <EntitySet Name="TorneosActividades" EntityType="DeportesModel.TorneosActividades" />
+          <EntitySet Name="TorneosEquipos" EntityType="DeportesModel.TorneosEquipos" />
+          <EntitySet Name="TorneosEspecialidades" EntityType="DeportesModel.TorneosEspecialidades" />
+          <EntitySet Name="TorneosPartidos" EntityType="DeportesModel.TorneosPartidos" />
+          <EntitySet Name="TorneosZonas" EntityType="DeportesModel.TorneosZonas" />
+          <EntitySet Name="Usuarios" EntityType="DeportesModel.Usuarios" />
+          <EntitySet Name="UsuariosAsociaciones" EntityType="DeportesModel.UsuariosAsociaciones" />
+          <EntitySet Name="UsuariosFederaciones" EntityType="DeportesModel.UsuariosFederaciones" />
+          <EntitySet Name="UsuariosRoles" EntityType="DeportesModel.UsuariosRoles" />
+          <AssociationSet Name="FK_Asociaciones_Federaciones" Association="DeportesModel.FK_Asociaciones_Federaciones">
             <End Role="Federaciones" EntitySet="Federaciones" />
             <End Role="Asociaciones" EntitySet="Asociaciones" />
           </AssociationSet>
-          <AssociationSet Name="FK_Asociaciones_Localidades" Association="CABModel.FK_Asociaciones_Localidades">
+          <AssociationSet Name="FK_Asociaciones_Localidades" Association="DeportesModel.FK_Asociaciones_Localidades">
             <End Role="Localidades" EntitySet="Localidades" />
             <End Role="Asociaciones" EntitySet="Asociaciones" />
           </AssociationSet>
-          <AssociationSet Name="FK_Clubes_Asociaciones" Association="CABModel.FK_Clubes_Asociaciones">
+          <AssociationSet Name="FK_Clubes_Asociaciones" Association="DeportesModel.FK_Clubes_Asociaciones">
             <End Role="Asociaciones" EntitySet="Asociaciones" />
             <End Role="Clubes" EntitySet="Clubes" />
           </AssociationSet>
-          <AssociationSet Name="FK_Torneos_Asociaciones" Association="CABModel.FK_Torneos_Asociaciones">
+          <AssociationSet Name="FK_Torneos_Asociaciones" Association="DeportesModel.FK_Torneos_Asociaciones">
             <End Role="Asociaciones" EntitySet="Asociaciones" />
             <End Role="Torneos" EntitySet="Torneos" />
           </AssociationSet>
-          <AssociationSet Name="FK_UsuariosAsociaciones_Asociaciones" Association="CABModel.FK_UsuariosAsociaciones_Asociaciones">
+          <AssociationSet Name="FK_UsuariosAsociaciones_Asociaciones" Association="DeportesModel.FK_UsuariosAsociaciones_Asociaciones">
             <End Role="Asociaciones" EntitySet="Asociaciones" />
             <End Role="UsuariosAsociaciones" EntitySet="UsuariosAsociaciones" />
           </AssociationSet>
-          <AssociationSet Name="FK_Fixtures_Categorias" Association="CABModel.FK_Fixtures_Categorias">
+          <AssociationSet Name="FK_Fixtures_Categorias" Association="DeportesModel.FK_Fixtures_Categorias">
             <End Role="Categorias" EntitySet="Categorias" />
             <End Role="Fixtures" EntitySet="Fixtures" />
           </AssociationSet>
-          <AssociationSet Name="FK_JugadoresCategorias_Categorias" Association="CABModel.FK_JugadoresCategorias_Categorias">
+          <AssociationSet Name="FK_JugadoresCategorias_Categorias" Association="DeportesModel.FK_JugadoresCategorias_Categorias">
             <End Role="Categorias" EntitySet="Categorias" />
             <End Role="JugadoresCategorias" EntitySet="JugadoresCategorias" />
           </AssociationSet>
-          <AssociationSet Name="FK_Clubes_Localidades" Association="CABModel.FK_Clubes_Localidades">
+          <AssociationSet Name="FK_Clubes_Localidades" Association="DeportesModel.FK_Clubes_Localidades">
             <End Role="Localidades" EntitySet="Localidades" />
             <End Role="Clubes" EntitySet="Clubes" />
           </AssociationSet>
-          <AssociationSet Name="FK_FixturesPartidos_Clubes" Association="CABModel.FK_FixturesPartidos_Clubes">
+          <AssociationSet Name="FK_FixturesPartidos_Clubes" Association="DeportesModel.FK_FixturesPartidos_Clubes">
             <End Role="Clubes" EntitySet="Clubes" />
             <End Role="FixturesPartidos" EntitySet="FixturesPartidos" />
           </AssociationSet>
-          <AssociationSet Name="FK_FixturesPartidos_Clubes1" Association="CABModel.FK_FixturesPartidos_Clubes1">
+          <AssociationSet Name="FK_FixturesPartidos_Clubes1" Association="DeportesModel.FK_FixturesPartidos_Clubes1">
             <End Role="Clubes" EntitySet="Clubes" />
             <End Role="FixturesPartidos" EntitySet="FixturesPartidos" />
           </AssociationSet>
-          <AssociationSet Name="FK_TorneosEspecialidades_Especialidades" Association="CABModel.FK_TorneosEspecialidades_Especialidades">
+          <AssociationSet Name="FK_TorneosEspecialidades_Especialidades" Association="DeportesModel.FK_TorneosEspecialidades_Especialidades">
             <End Role="Especialidades" EntitySet="Especialidades" />
             <End Role="TorneosEspecialidades" EntitySet="TorneosEspecialidades" />
           </AssociationSet>
-          <AssociationSet Name="FK_Federaciones_Localidades" Association="CABModel.FK_Federaciones_Localidades">
+          <AssociationSet Name="FK_Federaciones_Localidades" Association="DeportesModel.FK_Federaciones_Localidades">
             <End Role="Localidades" EntitySet="Localidades" />
             <End Role="Federaciones" EntitySet="Federaciones" />
           </AssociationSet>
-          <AssociationSet Name="FK_Torneos_Federaciones" Association="CABModel.FK_Torneos_Federaciones">
+          <AssociationSet Name="FK_Torneos_Federaciones" Association="DeportesModel.FK_Torneos_Federaciones">
             <End Role="Federaciones" EntitySet="Federaciones" />
             <End Role="Torneos" EntitySet="Torneos" />
           </AssociationSet>
-          <AssociationSet Name="FK_UsuariosFederaciones_Federaciones" Association="CABModel.FK_UsuariosFederaciones_Federaciones">
+          <AssociationSet Name="FK_UsuariosFederaciones_Federaciones" Association="DeportesModel.FK_UsuariosFederaciones_Federaciones">
             <End Role="Federaciones" EntitySet="Federaciones" />
             <End Role="UsuariosFederaciones" EntitySet="UsuariosFederaciones" />
           </AssociationSet>
-          <AssociationSet Name="FK_Fixtures_Torneos" Association="CABModel.FK_Fixtures_Torneos">
+          <AssociationSet Name="FK_Fixtures_Torneos" Association="DeportesModel.FK_Fixtures_Torneos">
             <End Role="Torneos" EntitySet="Torneos" />
             <End Role="Fixtures" EntitySet="Fixtures" />
           </AssociationSet>
-          <AssociationSet Name="FK_FixturesPartidos_Fixtures" Association="CABModel.FK_FixturesPartidos_Fixtures">
+          <AssociationSet Name="FK_FixturesPartidos_Fixtures" Association="DeportesModel.FK_FixturesPartidos_Fixtures">
             <End Role="Fixtures" EntitySet="Fixtures" />
             <End Role="FixturesPartidos" EntitySet="FixturesPartidos" />
           </AssociationSet>
-          <AssociationSet Name="FK_FixturesPartidos_Jueces" Association="CABModel.FK_FixturesPartidos_Jueces">
+          <AssociationSet Name="FK_FixturesPartidos_Jueces" Association="DeportesModel.FK_FixturesPartidos_Jueces">
             <End Role="Jueces" EntitySet="Jueces" />
             <End Role="FixturesPartidos" EntitySet="FixturesPartidos" />
           </AssociationSet>
-          <AssociationSet Name="FK_JugadoresCategorias_Usuarios" Association="CABModel.FK_JugadoresCategorias_Usuarios">
+          <AssociationSet Name="FK_JugadoresCategorias_Usuarios" Association="DeportesModel.FK_JugadoresCategorias_Usuarios">
             <End Role="Usuarios" EntitySet="Usuarios" />
             <End Role="JugadoresCategorias" EntitySet="JugadoresCategorias" />
           </AssociationSet>
-          <AssociationSet Name="FK_JugadoresHabilitaciones_Usuarios" Association="CABModel.FK_JugadoresHabilitaciones_Usuarios">
+          <AssociationSet Name="FK_JugadoresHabilitaciones_Usuarios" Association="DeportesModel.FK_JugadoresHabilitaciones_Usuarios">
             <End Role="Usuarios" EntitySet="Usuarios" />
             <End Role="JugadoresHabilitaciones" EntitySet="JugadoresHabilitaciones" />
           </AssociationSet>
-          <AssociationSet Name="FK_JugadoresSolicitudesCarnets_Usuarios" Association="CABModel.FK_JugadoresSolicitudesCarnets_Usuarios">
+          <AssociationSet Name="FK_JugadoresSolicitudesCarnets_Usuarios" Association="DeportesModel.FK_JugadoresSolicitudesCarnets_Usuarios">
             <End Role="Usuarios" EntitySet="Usuarios" />
             <End Role="JugadoresSolicitudesCarnets" EntitySet="JugadoresSolicitudesCarnets" />
           </AssociationSet>
-          <AssociationSet Name="FK_Localidades_Provincias" Association="CABModel.FK_Localidades_Provincias">
+          <AssociationSet Name="FK_Localidades_Provincias" Association="DeportesModel.FK_Localidades_Provincias">
             <End Role="Provincias" EntitySet="Provincias" />
             <End Role="Localidades" EntitySet="Localidades" />
           </AssociationSet>
-          <AssociationSet Name="FK_UsuariosRoles_Roles" Association="CABModel.FK_UsuariosRoles_Roles">
+          <AssociationSet Name="FK_UsuariosRoles_Roles" Association="DeportesModel.FK_UsuariosRoles_Roles">
             <End Role="Roles" EntitySet="Roles" />
             <End Role="UsuariosRoles" EntitySet="UsuariosRoles" />
           </AssociationSet>
-          <AssociationSet Name="FK_Torneos_Usuarios" Association="CABModel.FK_Torneos_Usuarios">
+          <AssociationSet Name="FK_Torneos_Usuarios" Association="DeportesModel.FK_Torneos_Usuarios">
             <End Role="Usuarios" EntitySet="Usuarios" />
             <End Role="Torneos" EntitySet="Torneos" />
           </AssociationSet>
-          <AssociationSet Name="FK_TorneosActividades_Torneos" Association="CABModel.FK_TorneosActividades_Torneos">
+          <AssociationSet Name="FK_TorneosActividades_Torneos" Association="DeportesModel.FK_TorneosActividades_Torneos">
             <End Role="Torneos" EntitySet="Torneos" />
             <End Role="TorneosActividades" EntitySet="TorneosActividades" />
           </AssociationSet>
-          <AssociationSet Name="FK_TorneosEquipos_Torneos" Association="CABModel.FK_TorneosEquipos_Torneos">
+          <AssociationSet Name="FK_TorneosEquipos_Torneos" Association="DeportesModel.FK_TorneosEquipos_Torneos">
             <End Role="Torneos" EntitySet="Torneos" />
             <End Role="TorneosEquipos" EntitySet="TorneosEquipos" />
           </AssociationSet>
-          <AssociationSet Name="FK_TorneosEspecialidades_Torneos" Association="CABModel.FK_TorneosEspecialidades_Torneos">
+          <AssociationSet Name="FK_TorneosEspecialidades_Torneos" Association="DeportesModel.FK_TorneosEspecialidades_Torneos">
             <End Role="Torneos" EntitySet="Torneos" />
             <End Role="TorneosEspecialidades" EntitySet="TorneosEspecialidades" />
           </AssociationSet>
-          <AssociationSet Name="FK_TorneosPartidos_Torneos" Association="CABModel.FK_TorneosPartidos_Torneos">
+          <AssociationSet Name="FK_TorneosPartidos_Torneos" Association="DeportesModel.FK_TorneosPartidos_Torneos">
             <End Role="Torneos" EntitySet="Torneos" />
             <End Role="TorneosPartidos" EntitySet="TorneosPartidos" />
           </AssociationSet>
-          <AssociationSet Name="FK_TorneosZonas_Torneos" Association="CABModel.FK_TorneosZonas_Torneos">
+          <AssociationSet Name="FK_TorneosZonas_Torneos" Association="DeportesModel.FK_TorneosZonas_Torneos">
             <End Role="Torneos" EntitySet="Torneos" />
             <End Role="TorneosZonas" EntitySet="TorneosZonas" />
           </AssociationSet>
-          <AssociationSet Name="FK_TorneosPartidos_TorneosEquipos" Association="CABModel.FK_TorneosPartidos_TorneosEquipos">
+          <AssociationSet Name="FK_TorneosPartidos_TorneosEquipos" Association="DeportesModel.FK_TorneosPartidos_TorneosEquipos">
             <End Role="TorneosEquipos" EntitySet="TorneosEquipos" />
             <End Role="TorneosPartidos" EntitySet="TorneosPartidos" />
           </AssociationSet>
-          <AssociationSet Name="FK_TorneosPartidos_TorneosEquipos1" Association="CABModel.FK_TorneosPartidos_TorneosEquipos1">
+          <AssociationSet Name="FK_TorneosPartidos_TorneosEquipos1" Association="DeportesModel.FK_TorneosPartidos_TorneosEquipos1">
             <End Role="TorneosEquipos" EntitySet="TorneosEquipos" />
             <End Role="TorneosPartidos" EntitySet="TorneosPartidos" />
           </AssociationSet>
-          <AssociationSet Name="FK_UsuariosAsociaciones_Usuarios" Association="CABModel.FK_UsuariosAsociaciones_Usuarios">
+          <AssociationSet Name="FK_UsuariosAsociaciones_Usuarios" Association="DeportesModel.FK_UsuariosAsociaciones_Usuarios">
             <End Role="Usuarios" EntitySet="Usuarios" />
             <End Role="UsuariosAsociaciones" EntitySet="UsuariosAsociaciones" />
           </AssociationSet>
-          <AssociationSet Name="FK_UsuariosFederaciones_Usuarios" Association="CABModel.FK_UsuariosFederaciones_Usuarios">
+          <AssociationSet Name="FK_UsuariosFederaciones_Usuarios" Association="DeportesModel.FK_UsuariosFederaciones_Usuarios">
             <End Role="Usuarios" EntitySet="Usuarios" />
             <End Role="UsuariosFederaciones" EntitySet="UsuariosFederaciones" />
           </AssociationSet>
-          <AssociationSet Name="FK_UsuariosRoles_Usuarios" Association="CABModel.FK_UsuariosRoles_Usuarios">
+          <AssociationSet Name="FK_UsuariosRoles_Usuarios" Association="DeportesModel.FK_UsuariosRoles_Usuarios">
             <End Role="Usuarios" EntitySet="Usuarios" />
             <End Role="UsuariosRoles" EntitySet="UsuariosRoles" />
           </AssociationSet>
-          <EntitySet Name="JugadoresPases" EntityType="CABModel.JugadoresPases" />
-          <EntitySet Name="JugadoresPasesEstados" EntityType="CABModel.JugadoresPasesEstados" />
-          <EntitySet Name="PasesEstados" EntityType="CABModel.PasesEstados" />
-          <AssociationSet Name="FK_JugadoresPases_Asociaciones" Association="CABModel.FK_JugadoresPases_Asociaciones">
+          <EntitySet Name="JugadoresPases" EntityType="DeportesModel.JugadoresPases" />
+          <EntitySet Name="JugadoresPasesEstados" EntityType="DeportesModel.JugadoresPasesEstados" />
+          <EntitySet Name="PasesEstados" EntityType="DeportesModel.PasesEstados" />
+          <AssociationSet Name="FK_JugadoresPases_Asociaciones" Association="DeportesModel.FK_JugadoresPases_Asociaciones">
             <End Role="Asociaciones" EntitySet="Asociaciones" />
             <End Role="JugadoresPases" EntitySet="JugadoresPases" />
           </AssociationSet>
-          <AssociationSet Name="FK_JugadoresPases_Asociaciones1" Association="CABModel.FK_JugadoresPases_Asociaciones1">
+          <AssociationSet Name="FK_JugadoresPases_Asociaciones1" Association="DeportesModel.FK_JugadoresPases_Asociaciones1">
             <End Role="Asociaciones" EntitySet="Asociaciones" />
             <End Role="JugadoresPases" EntitySet="JugadoresPases" />
           </AssociationSet>
-          <AssociationSet Name="FK_JugadoresPases_Clubes" Association="CABModel.FK_JugadoresPases_Clubes">
+          <AssociationSet Name="FK_JugadoresPases_Clubes" Association="DeportesModel.FK_JugadoresPases_Clubes">
             <End Role="Clubes" EntitySet="Clubes" />
             <End Role="JugadoresPases" EntitySet="JugadoresPases" />
           </AssociationSet>
-          <AssociationSet Name="FK_JugadoresPases_Clubes1" Association="CABModel.FK_JugadoresPases_Clubes1">
+          <AssociationSet Name="FK_JugadoresPases_Clubes1" Association="DeportesModel.FK_JugadoresPases_Clubes1">
             <End Role="Clubes" EntitySet="Clubes" />
             <End Role="JugadoresPases" EntitySet="JugadoresPases" />
           </AssociationSet>
-          <AssociationSet Name="FK_JugadoresPases_Federaciones" Association="CABModel.FK_JugadoresPases_Federaciones">
+          <AssociationSet Name="FK_JugadoresPases_Federaciones" Association="DeportesModel.FK_JugadoresPases_Federaciones">
             <End Role="Federaciones" EntitySet="Federaciones" />
             <End Role="JugadoresPases" EntitySet="JugadoresPases" />
           </AssociationSet>
-          <AssociationSet Name="FK_JugadoresPases_Federaciones1" Association="CABModel.FK_JugadoresPases_Federaciones1">
+          <AssociationSet Name="FK_JugadoresPases_Federaciones1" Association="DeportesModel.FK_JugadoresPases_Federaciones1">
             <End Role="Federaciones" EntitySet="Federaciones" />
             <End Role="JugadoresPases" EntitySet="JugadoresPases" />
           </AssociationSet>
-          <AssociationSet Name="FK_JugadoresPases_PasesEstados" Association="CABModel.FK_JugadoresPases_PasesEstados">
+          <AssociationSet Name="FK_JugadoresPases_PasesEstados" Association="DeportesModel.FK_JugadoresPases_PasesEstados">
             <End Role="PasesEstados" EntitySet="PasesEstados" />
             <End Role="JugadoresPases" EntitySet="JugadoresPases" />
           </AssociationSet>
-          <AssociationSet Name="FK_JugadoresPases_Usuarios" Association="CABModel.FK_JugadoresPases_Usuarios">
+          <AssociationSet Name="FK_JugadoresPases_Usuarios" Association="DeportesModel.FK_JugadoresPases_Usuarios">
             <End Role="Usuarios" EntitySet="Usuarios" />
             <End Role="JugadoresPases" EntitySet="JugadoresPases" />
           </AssociationSet>
-          <AssociationSet Name="FK_JugadoresPasesEstados_JugadoresPases" Association="CABModel.FK_JugadoresPasesEstados_JugadoresPases">
+          <AssociationSet Name="FK_JugadoresPasesEstados_JugadoresPases" Association="DeportesModel.FK_JugadoresPasesEstados_JugadoresPases">
             <End Role="JugadoresPases" EntitySet="JugadoresPases" />
             <End Role="JugadoresPasesEstados" EntitySet="JugadoresPasesEstados" />
           </AssociationSet>
-          <AssociationSet Name="FK_JugadoresPasesEstados_PasesEstados" Association="CABModel.FK_JugadoresPasesEstados_PasesEstados">
+          <AssociationSet Name="FK_JugadoresPasesEstados_PasesEstados" Association="DeportesModel.FK_JugadoresPasesEstados_PasesEstados">
             <End Role="PasesEstados" EntitySet="PasesEstados" />
             <End Role="JugadoresPasesEstados" EntitySet="JugadoresPasesEstados" />
           </AssociationSet>
-          <AssociationSet Name="FK_JugadoresPasesEstados_Usuarios" Association="CABModel.FK_JugadoresPasesEstados_Usuarios">
+          <AssociationSet Name="FK_JugadoresPasesEstados_Usuarios" Association="DeportesModel.FK_JugadoresPasesEstados_Usuarios">
             <End Role="Usuarios" EntitySet="Usuarios" />
             <End Role="JugadoresPasesEstados" EntitySet="JugadoresPasesEstados" />
           </AssociationSet>
-          <EntitySet Name="JugadoresPenalizaciones" EntityType="CABModel.JugadoresPenalizaciones" />
-          <EntitySet Name="JugadoresPenalizacionesEstados" EntityType="CABModel.JugadoresPenalizacionesEstados" />
-          <EntitySet Name="PenalizacionesEstados" EntityType="CABModel.PenalizacionesEstados" />
-          <AssociationSet Name="FK_JugadoresPenalizaciones_PenalizacionesEstados" Association="CABModel.FK_JugadoresPenalizaciones_PenalizacionesEstados">
+          <EntitySet Name="JugadoresPenalizaciones" EntityType="DeportesModel.JugadoresPenalizaciones" />
+          <EntitySet Name="JugadoresPenalizacionesEstados" EntityType="DeportesModel.JugadoresPenalizacionesEstados" />
+          <EntitySet Name="PenalizacionesEstados" EntityType="DeportesModel.PenalizacionesEstados" />
+          <AssociationSet Name="FK_JugadoresPenalizaciones_PenalizacionesEstados" Association="DeportesModel.FK_JugadoresPenalizaciones_PenalizacionesEstados">
             <End Role="PenalizacionesEstados" EntitySet="PenalizacionesEstados" />
             <End Role="JugadoresPenalizaciones" EntitySet="JugadoresPenalizaciones" />
           </AssociationSet>
-          <AssociationSet Name="FK_JugadoresPenalizaciones_Usuarios" Association="CABModel.FK_JugadoresPenalizaciones_Usuarios">
+          <AssociationSet Name="FK_JugadoresPenalizaciones_Usuarios" Association="DeportesModel.FK_JugadoresPenalizaciones_Usuarios">
             <End Role="Usuarios" EntitySet="Usuarios" />
             <End Role="JugadoresPenalizaciones" EntitySet="JugadoresPenalizaciones" />
           </AssociationSet>
-          <AssociationSet Name="FK_JugadoresPenalizacionesEstados_JugadoresPenalizaciones" Association="CABModel.FK_JugadoresPenalizacionesEstados_JugadoresPenalizaciones">
+          <AssociationSet Name="FK_JugadoresPenalizacionesEstados_JugadoresPenalizaciones" Association="DeportesModel.FK_JugadoresPenalizacionesEstados_JugadoresPenalizaciones">
             <End Role="JugadoresPenalizaciones" EntitySet="JugadoresPenalizaciones" />
             <End Role="JugadoresPenalizacionesEstados" EntitySet="JugadoresPenalizacionesEstados" />
           </AssociationSet>
-          <AssociationSet Name="FK_JugadoresPenalizacionesEstados_PenalizacionesEstados" Association="CABModel.FK_JugadoresPenalizacionesEstados_PenalizacionesEstados">
+          <AssociationSet Name="FK_JugadoresPenalizacionesEstados_PenalizacionesEstados" Association="DeportesModel.FK_JugadoresPenalizacionesEstados_PenalizacionesEstados">
             <End Role="PenalizacionesEstados" EntitySet="PenalizacionesEstados" />
             <End Role="JugadoresPenalizacionesEstados" EntitySet="JugadoresPenalizacionesEstados" />
           </AssociationSet>
-          <AssociationSet Name="FK_JugadoresPenalizacionesEstados_Usuarios" Association="CABModel.FK_JugadoresPenalizacionesEstados_Usuarios">
+          <AssociationSet Name="FK_JugadoresPenalizacionesEstados_Usuarios" Association="DeportesModel.FK_JugadoresPenalizacionesEstados_Usuarios">
             <End Role="Usuarios" EntitySet="Usuarios" />
             <End Role="JugadoresPenalizacionesEstados" EntitySet="JugadoresPenalizacionesEstados" />
           </AssociationSet>
-          <EntitySet Name="Noticias" EntityType="CABModel.Noticias" />
-          <AssociationSet Name="FK_Noticias_Usuarios" Association="CABModel.FK_Noticias_Usuarios">
+          <EntitySet Name="Noticias" EntityType="DeportesModel.Noticias" />
+          <AssociationSet Name="FK_Noticias_Usuarios" Association="DeportesModel.FK_Noticias_Usuarios">
             <End Role="Usuarios" EntitySet="Usuarios" />
             <End Role="Noticias" EntitySet="Noticias" />
           </AssociationSet>
-          <EntitySet Name="habilitaciones" EntityType="CABModel.habilitaciones" />
-          <EntitySet Name="tmbcarnet" EntityType="CABModel.tmbcarnet" />
-          <EntitySet Name="ExportacionExel" EntityType="CABModel.ExportacionExel" />
-          <FunctionImport Name="uspInformes_CarnetsNoEntregados" ReturnType="Collection(CABModel.uspInformes_CarnetsNoEntregados_Result)">
+          <EntitySet Name="habilitaciones" EntityType="DeportesModel.habilitaciones" />
+          <EntitySet Name="tmbcarnet" EntityType="DeportesModel.tmbcarnet" />
+          <EntitySet Name="ExportacionExel" EntityType="DeportesModel.ExportacionExel" />
+          <FunctionImport Name="uspInformes_CarnetsNoEntregados" ReturnType="Collection(DeportesModel.uspInformes_CarnetsNoEntregados_Result)">
             <Parameter Name="fechaSolicitudDesde" Mode="In" Type="DateTime" />
             <Parameter Name="fechaSolicitudHasta" Mode="In" Type="DateTime" />
             <Parameter Name="filtro" Mode="In" Type="String" />
             <Parameter Name="idUsuario" Mode="In" Type="Int32" />
           </FunctionImport>
-          <EntitySet Name="Campeones" EntityType="CABModel.Campeones" />
-          <EntitySet Name="Jugadores" EntityType="CABModel.Jugadores" />
-          <AssociationSet Name="FK_Jugadores_Categorias" Association="CABModel.FK_Jugadores_Categorias">
+          <EntitySet Name="Campeones" EntityType="DeportesModel.Campeones" />
+          <EntitySet Name="Jugadores" EntityType="DeportesModel.Jugadores" />
+          <AssociationSet Name="FK_Jugadores_Categorias" Association="DeportesModel.FK_Jugadores_Categorias">
             <End Role="Categorias" EntitySet="Categorias" />
             <End Role="Jugadores" EntitySet="Jugadores" />
           </AssociationSet>
-          <AssociationSet Name="FK_Jugadores_Clubes" Association="CABModel.FK_Jugadores_Clubes">
+          <AssociationSet Name="FK_Jugadores_Clubes" Association="DeportesModel.FK_Jugadores_Clubes">
             <End Role="Clubes" EntitySet="Clubes" />
             <End Role="Jugadores" EntitySet="Jugadores" />
           </AssociationSet>
-          <AssociationSet Name="FK_Jugadores_Localidades" Association="CABModel.FK_Jugadores_Localidades">
+          <AssociationSet Name="FK_Jugadores_Localidades" Association="DeportesModel.FK_Jugadores_Localidades">
             <End Role="Localidades" EntitySet="Localidades" />
             <End Role="Jugadores" EntitySet="Jugadores" />
           </AssociationSet>
-          <AssociationSet Name="FK_JugadoresCategorias_Jugadores" Association="CABModel.FK_JugadoresCategorias_Jugadores">
+          <AssociationSet Name="FK_JugadoresCategorias_Jugadores" Association="DeportesModel.FK_JugadoresCategorias_Jugadores">
             <End Role="Jugadores" EntitySet="Jugadores" />
             <End Role="JugadoresCategorias" EntitySet="JugadoresCategorias" />
           </AssociationSet>
-          <AssociationSet Name="FK_JugadoresHabilitaciones_Jugadores" Association="CABModel.FK_JugadoresHabilitaciones_Jugadores">
+          <AssociationSet Name="FK_JugadoresHabilitaciones_Jugadores" Association="DeportesModel.FK_JugadoresHabilitaciones_Jugadores">
             <End Role="Jugadores" EntitySet="Jugadores" />
             <End Role="JugadoresHabilitaciones" EntitySet="JugadoresHabilitaciones" />
           </AssociationSet>
-          <AssociationSet Name="FK_JugadoresPases_Jugadores" Association="CABModel.FK_JugadoresPases_Jugadores">
+          <AssociationSet Name="FK_JugadoresPases_Jugadores" Association="DeportesModel.FK_JugadoresPases_Jugadores">
             <End Role="Jugadores" EntitySet="Jugadores" />
             <End Role="JugadoresPases" EntitySet="JugadoresPases" />
           </AssociationSet>
-          <AssociationSet Name="FK_JugadoresPenalizaciones_Jugadores" Association="CABModel.FK_JugadoresPenalizaciones_Jugadores">
+          <AssociationSet Name="FK_JugadoresPenalizaciones_Jugadores" Association="DeportesModel.FK_JugadoresPenalizaciones_Jugadores">
             <End Role="Jugadores" EntitySet="Jugadores" />
             <End Role="JugadoresPenalizaciones" EntitySet="JugadoresPenalizaciones" />
           </AssociationSet>
-          <AssociationSet Name="FK_JugadoresSolicitudesCarnets_Jugadores" Association="CABModel.FK_JugadoresSolicitudesCarnets_Jugadores">
+          <AssociationSet Name="FK_JugadoresSolicitudesCarnets_Jugadores" Association="DeportesModel.FK_JugadoresSolicitudesCarnets_Jugadores">
             <End Role="Jugadores" EntitySet="Jugadores" />
             <End Role="JugadoresSolicitudesCarnets" EntitySet="JugadoresSolicitudesCarnets" />
           </AssociationSet>
-          <EntitySet Name="JugadoresEliminados" EntityType="CABModel.JugadoresEliminados" />
-          <AssociationSet Name="FK_JugadoresEliminados_Usuarios" Association="CABModel.FK_JugadoresEliminados_Usuarios">
+          <EntitySet Name="JugadoresEliminados" EntityType="DeportesModel.JugadoresEliminados" />
+          <AssociationSet Name="FK_JugadoresEliminados_Usuarios" Association="DeportesModel.FK_JugadoresEliminados_Usuarios">
             <End Role="Usuarios" EntitySet="Usuarios" />
             <End Role="JugadoresEliminados" EntitySet="JugadoresEliminados" />
           </AssociationSet>
-          <EntitySet Name="JugadoresHistorial" EntityType="CABModel.JugadoresHistorial" />
-          <AssociationSet Name="FK_JugadoresHistorial_JugadoresHistorial" Association="CABModel.FK_JugadoresHistorial_JugadoresHistorial">
+          <EntitySet Name="JugadoresHistorial" EntityType="DeportesModel.JugadoresHistorial" />
+          <AssociationSet Name="FK_JugadoresHistorial_JugadoresHistorial" Association="DeportesModel.FK_JugadoresHistorial_JugadoresHistorial">
             <End Role="Jugadores" EntitySet="Jugadores" />
             <End Role="JugadoresHistorial" EntitySet="JugadoresHistorial" />
           </AssociationSet>
-          <AssociationSet Name="FK_JugadoresHistorial_Usuarios" Association="CABModel.FK_JugadoresHistorial_Usuarios">
+          <AssociationSet Name="FK_JugadoresHistorial_Usuarios" Association="DeportesModel.FK_JugadoresHistorial_Usuarios">
             <End Role="Usuarios" EntitySet="Usuarios" />
             <End Role="JugadoresHistorial" EntitySet="JugadoresHistorial" />
           </AssociationSet>
-          <AssociationSet Name="FK_Categorias_Categorias" Association="CABModel.FK_Categorias_Categorias">
+          <AssociationSet Name="FK_Categorias_Categorias" Association="DeportesModel.FK_Categorias_Categorias">
             <End Role="Categorias" EntitySet="Categorias" />
             <End Role="Categorias1" EntitySet="Categorias" />
           </AssociationSet>
-          <AssociationSet Name="FK_JugadoresPases_Categorias" Association="CABModel.FK_JugadoresPases_Categorias">
+          <AssociationSet Name="FK_JugadoresPases_Categorias" Association="DeportesModel.FK_JugadoresPases_Categorias">
             <End Role="Categorias" EntitySet="Categorias" />
             <End Role="JugadoresPases" EntitySet="JugadoresPases" />
           </AssociationSet>
-          <AssociationSet Name="FK_JugadoresPases_Usuarios1" Association="CABModel.FK_JugadoresPases_Usuarios1">
+          <AssociationSet Name="FK_JugadoresPases_Usuarios1" Association="DeportesModel.FK_JugadoresPases_Usuarios1">
             <End Role="Categorias" EntitySet="Categorias" />
             <End Role="JugadoresPases" EntitySet="JugadoresPases" />
           </AssociationSet>
-          <FunctionImport Name="uspInformes_Pases" ReturnType="Collection(CABModel.uspInformes_Pases_Result)">
+          <FunctionImport Name="uspInformes_Pases" ReturnType="Collection(DeportesModel.uspInformes_Pases_Result)">
             <Parameter Name="idUsuario" Mode="In" Type="Int32" />
             <Parameter Name="filtro" Mode="In" Type="String" />
             <Parameter Name="fechaDesde" Mode="In" Type="DateTime" />
@@ -2010,7 +2010,7 @@ FROM [dbo].[tmbcarnet] AS [tmbcarnet]</DefiningQuery>
             <Parameter Name="idFederacion" Mode="In" Type="Int32" />
             <Parameter Name="idAsociacion" Mode="In" Type="Int32" />
           </FunctionImport>
-          <FunctionImport Name="uspInformes_JugadoresHabilitados" ReturnType="Collection(CABModel.uspInformes_JugadoresHabilitados_Result)">
+          <FunctionImport Name="uspInformes_JugadoresHabilitados" ReturnType="Collection(DeportesModel.uspInformes_JugadoresHabilitados_Result)">
             <Parameter Name="filtro" Mode="In" Type="String" />
             <Parameter Name="idUsuario" Mode="In" Type="Int32" />
             <Parameter Name="idFederacion" Mode="In" Type="Int32" />
@@ -2023,7 +2023,7 @@ FROM [dbo].[tmbcarnet] AS [tmbcarnet]</DefiningQuery>
           <Key>
             <PropertyRef Name="id" />
           </Key>
-          <Property Type="Int32" Name="id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="Int32" Name="id" Nullable="false" annotation:StoreGeneratedPattern="Identity" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
           <Property Type="String" Name="descripcion" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
           <Property Type="String" Name="direccion" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Type="String" Name="localidad" MaxLength="100" FixedLength="false" Unicode="false" />
@@ -2037,35 +2037,35 @@ FROM [dbo].[tmbcarnet] AS [tmbcarnet]</DefiningQuery>
           <Property Type="String" Name="coordenadas" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Type="Boolean" Name="activo" Nullable="false" />
           <Property Type="String" Name="logo" MaxLength="500" FixedLength="false" Unicode="false" />
-          <NavigationProperty Name="Federaciones" Relationship="CABModel.FK_Asociaciones_Federaciones" FromRole="Asociaciones" ToRole="Federaciones" />
-          <NavigationProperty Name="Localidades" Relationship="CABModel.FK_Asociaciones_Localidades" FromRole="Asociaciones" ToRole="Localidades" />
-          <NavigationProperty Name="Clubes" Relationship="CABModel.FK_Clubes_Asociaciones" FromRole="Asociaciones" ToRole="Clubes" />
-          <NavigationProperty Name="Torneos" Relationship="CABModel.FK_Torneos_Asociaciones" FromRole="Asociaciones" ToRole="Torneos" />
-          <NavigationProperty Name="UsuariosAsociaciones" Relationship="CABModel.FK_UsuariosAsociaciones_Asociaciones" FromRole="Asociaciones" ToRole="UsuariosAsociaciones" />
-          <NavigationProperty Name="JugadoresPases" Relationship="CABModel.FK_JugadoresPases_Asociaciones" FromRole="Asociaciones" ToRole="JugadoresPases" />
-          <NavigationProperty Name="JugadoresPases1" Relationship="CABModel.FK_JugadoresPases_Asociaciones1" FromRole="Asociaciones" ToRole="JugadoresPases" />
+          <NavigationProperty Name="Federaciones" Relationship="DeportesModel.FK_Asociaciones_Federaciones" FromRole="Asociaciones" ToRole="Federaciones" />
+          <NavigationProperty Name="Localidades" Relationship="DeportesModel.FK_Asociaciones_Localidades" FromRole="Asociaciones" ToRole="Localidades" />
+          <NavigationProperty Name="Clubes" Relationship="DeportesModel.FK_Clubes_Asociaciones" FromRole="Asociaciones" ToRole="Clubes" />
+          <NavigationProperty Name="Torneos" Relationship="DeportesModel.FK_Torneos_Asociaciones" FromRole="Asociaciones" ToRole="Torneos" />
+          <NavigationProperty Name="UsuariosAsociaciones" Relationship="DeportesModel.FK_UsuariosAsociaciones_Asociaciones" FromRole="Asociaciones" ToRole="UsuariosAsociaciones" />
+          <NavigationProperty Name="JugadoresPases" Relationship="DeportesModel.FK_JugadoresPases_Asociaciones" FromRole="Asociaciones" ToRole="JugadoresPases" />
+          <NavigationProperty Name="JugadoresPases1" Relationship="DeportesModel.FK_JugadoresPases_Asociaciones1" FromRole="Asociaciones" ToRole="JugadoresPases" />
         </EntityType>
         <EntityType Name="Categorias">
           <Key>
             <PropertyRef Name="id" />
           </Key>
-          <Property Type="Int32" Name="id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="Int32" Name="id" Nullable="false" annotation:StoreGeneratedPattern="Identity" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
           <Property Type="String" Name="descripcion" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Type="Boolean" Name="activa" Nullable="false" />
           <Property Type="Int32" Name="nivel" Nullable="false" />
-          <NavigationProperty Name="Fixtures" Relationship="CABModel.FK_Fixtures_Categorias" FromRole="Categorias" ToRole="Fixtures" />
-          <NavigationProperty Name="JugadoresCategorias" Relationship="CABModel.FK_JugadoresCategorias_Categorias" FromRole="Categorias" ToRole="JugadoresCategorias" />
-          <NavigationProperty Name="Jugadores" Relationship="CABModel.FK_Jugadores_Categorias" FromRole="Categorias" ToRole="Jugadores" />
-          <NavigationProperty Name="Categorias1" Relationship="CABModel.FK_Categorias_Categorias" FromRole="Categorias" ToRole="Categorias1" />
-          <NavigationProperty Name="Categorias2" Relationship="CABModel.FK_Categorias_Categorias" FromRole="Categorias1" ToRole="Categorias" />
-          <NavigationProperty Name="JugadoresPases" Relationship="CABModel.FK_JugadoresPases_Categorias" FromRole="Categorias" ToRole="JugadoresPases" />
-          <NavigationProperty Name="JugadoresPases1" Relationship="CABModel.FK_JugadoresPases_Usuarios1" FromRole="Categorias" ToRole="JugadoresPases" />
+          <NavigationProperty Name="Fixtures" Relationship="DeportesModel.FK_Fixtures_Categorias" FromRole="Categorias" ToRole="Fixtures" />
+          <NavigationProperty Name="JugadoresCategorias" Relationship="DeportesModel.FK_JugadoresCategorias_Categorias" FromRole="Categorias" ToRole="JugadoresCategorias" />
+          <NavigationProperty Name="Jugadores" Relationship="DeportesModel.FK_Jugadores_Categorias" FromRole="Categorias" ToRole="Jugadores" />
+          <NavigationProperty Name="Categorias1" Relationship="DeportesModel.FK_Categorias_Categorias" FromRole="Categorias" ToRole="Categorias1" />
+          <NavigationProperty Name="Categorias2" Relationship="DeportesModel.FK_Categorias_Categorias" FromRole="Categorias1" ToRole="Categorias" />
+          <NavigationProperty Name="JugadoresPases" Relationship="DeportesModel.FK_JugadoresPases_Categorias" FromRole="Categorias" ToRole="JugadoresPases" />
+          <NavigationProperty Name="JugadoresPases1" Relationship="DeportesModel.FK_JugadoresPases_Usuarios1" FromRole="Categorias" ToRole="JugadoresPases" />
         </EntityType>
         <EntityType Name="Clubes">
           <Key>
             <PropertyRef Name="id" />
           </Key>
-          <Property Type="Int32" Name="id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="Int32" Name="id" Nullable="false" annotation:StoreGeneratedPattern="Identity" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
           <Property Type="Int32" Name="idAsociacion" Nullable="false" />
           <Property Type="String" Name="descripcion" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
           <Property Type="String" Name="direccion" MaxLength="50" FixedLength="false" Unicode="false" />
@@ -2079,13 +2079,13 @@ FROM [dbo].[tmbcarnet] AS [tmbcarnet]</DefiningQuery>
           <Property Type="String" Name="coordenadas" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Type="Boolean" Name="activo" Nullable="false" />
           <Property Type="String" Name="logo" MaxLength="500" FixedLength="false" Unicode="false" />
-          <NavigationProperty Name="Asociaciones" Relationship="CABModel.FK_Clubes_Asociaciones" FromRole="Clubes" ToRole="Asociaciones" />
-          <NavigationProperty Name="Localidades" Relationship="CABModel.FK_Clubes_Localidades" FromRole="Clubes" ToRole="Localidades" />
-          <NavigationProperty Name="FixturesPartidos" Relationship="CABModel.FK_FixturesPartidos_Clubes" FromRole="Clubes" ToRole="FixturesPartidos" />
-          <NavigationProperty Name="FixturesPartidos1" Relationship="CABModel.FK_FixturesPartidos_Clubes1" FromRole="Clubes" ToRole="FixturesPartidos" />
-          <NavigationProperty Name="JugadoresPases" Relationship="CABModel.FK_JugadoresPases_Clubes" FromRole="Clubes" ToRole="JugadoresPases" />
-          <NavigationProperty Name="JugadoresPases1" Relationship="CABModel.FK_JugadoresPases_Clubes1" FromRole="Clubes" ToRole="JugadoresPases" />
-          <NavigationProperty Name="Jugadores" Relationship="CABModel.FK_Jugadores_Clubes" FromRole="Clubes" ToRole="Jugadores" />
+          <NavigationProperty Name="Asociaciones" Relationship="DeportesModel.FK_Clubes_Asociaciones" FromRole="Clubes" ToRole="Asociaciones" />
+          <NavigationProperty Name="Localidades" Relationship="DeportesModel.FK_Clubes_Localidades" FromRole="Clubes" ToRole="Localidades" />
+          <NavigationProperty Name="FixturesPartidos" Relationship="DeportesModel.FK_FixturesPartidos_Clubes" FromRole="Clubes" ToRole="FixturesPartidos" />
+          <NavigationProperty Name="FixturesPartidos1" Relationship="DeportesModel.FK_FixturesPartidos_Clubes1" FromRole="Clubes" ToRole="FixturesPartidos" />
+          <NavigationProperty Name="JugadoresPases" Relationship="DeportesModel.FK_JugadoresPases_Clubes" FromRole="Clubes" ToRole="JugadoresPases" />
+          <NavigationProperty Name="JugadoresPases1" Relationship="DeportesModel.FK_JugadoresPases_Clubes1" FromRole="Clubes" ToRole="JugadoresPases" />
+          <NavigationProperty Name="Jugadores" Relationship="DeportesModel.FK_Jugadores_Clubes" FromRole="Clubes" ToRole="Jugadores" />
         </EntityType>
         <EntityType Name="DNI">
           <Key>
@@ -2122,7 +2122,7 @@ FROM [dbo].[tmbcarnet] AS [tmbcarnet]</DefiningQuery>
           <Key>
             <PropertyRef Name="id" />
           </Key>
-          <Property Type="Int32" Name="id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="Int32" Name="id" Nullable="false" annotation:StoreGeneratedPattern="Identity" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
           <Property Type="String" Name="nombre" MaxLength="500" FixedLength="false" Unicode="false" />
           <Property Type="String" Name="tecnico" MaxLength="500" FixedLength="false" Unicode="false" />
           <Property Type="String" Name="delegado" MaxLength="500" FixedLength="false" Unicode="false" />
@@ -2132,17 +2132,17 @@ FROM [dbo].[tmbcarnet] AS [tmbcarnet]</DefiningQuery>
           <Key>
             <PropertyRef Name="id" />
           </Key>
-          <Property Type="Int32" Name="id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="Int32" Name="id" Nullable="false" annotation:StoreGeneratedPattern="Identity" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
           <Property Type="String" Name="descripcion" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Type="Int32" Name="orden" Nullable="false" />
           <Property Type="Boolean" Name="activo" Nullable="false" />
-          <NavigationProperty Name="TorneosEspecialidades" Relationship="CABModel.FK_TorneosEspecialidades_Especialidades" FromRole="Especialidades" ToRole="TorneosEspecialidades" />
+          <NavigationProperty Name="TorneosEspecialidades" Relationship="DeportesModel.FK_TorneosEspecialidades_Especialidades" FromRole="Especialidades" ToRole="TorneosEspecialidades" />
         </EntityType>
         <EntityType Name="Federaciones">
           <Key>
             <PropertyRef Name="id" />
           </Key>
-          <Property Type="Int32" Name="id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="Int32" Name="id" Nullable="false" annotation:StoreGeneratedPattern="Identity" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
           <Property Type="String" Name="descripcion" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
           <Property Type="String" Name="direccion" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Type="String" Name="localidad" MaxLength="100" FixedLength="false" Unicode="false" />
@@ -2155,29 +2155,29 @@ FROM [dbo].[tmbcarnet] AS [tmbcarnet]</DefiningQuery>
           <Property Type="String" Name="coordenadas" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Type="Boolean" Name="activo" Nullable="false" />
           <Property Type="String" Name="logo" MaxLength="500" FixedLength="false" Unicode="false" />
-          <NavigationProperty Name="Asociaciones" Relationship="CABModel.FK_Asociaciones_Federaciones" FromRole="Federaciones" ToRole="Asociaciones" />
-          <NavigationProperty Name="Localidades" Relationship="CABModel.FK_Federaciones_Localidades" FromRole="Federaciones" ToRole="Localidades" />
-          <NavigationProperty Name="Torneos" Relationship="CABModel.FK_Torneos_Federaciones" FromRole="Federaciones" ToRole="Torneos" />
-          <NavigationProperty Name="UsuariosFederaciones" Relationship="CABModel.FK_UsuariosFederaciones_Federaciones" FromRole="Federaciones" ToRole="UsuariosFederaciones" />
-          <NavigationProperty Name="JugadoresPases" Relationship="CABModel.FK_JugadoresPases_Federaciones" FromRole="Federaciones" ToRole="JugadoresPases" />
-          <NavigationProperty Name="JugadoresPases1" Relationship="CABModel.FK_JugadoresPases_Federaciones1" FromRole="Federaciones" ToRole="JugadoresPases" />
+          <NavigationProperty Name="Asociaciones" Relationship="DeportesModel.FK_Asociaciones_Federaciones" FromRole="Federaciones" ToRole="Asociaciones" />
+          <NavigationProperty Name="Localidades" Relationship="DeportesModel.FK_Federaciones_Localidades" FromRole="Federaciones" ToRole="Localidades" />
+          <NavigationProperty Name="Torneos" Relationship="DeportesModel.FK_Torneos_Federaciones" FromRole="Federaciones" ToRole="Torneos" />
+          <NavigationProperty Name="UsuariosFederaciones" Relationship="DeportesModel.FK_UsuariosFederaciones_Federaciones" FromRole="Federaciones" ToRole="UsuariosFederaciones" />
+          <NavigationProperty Name="JugadoresPases" Relationship="DeportesModel.FK_JugadoresPases_Federaciones" FromRole="Federaciones" ToRole="JugadoresPases" />
+          <NavigationProperty Name="JugadoresPases1" Relationship="DeportesModel.FK_JugadoresPases_Federaciones1" FromRole="Federaciones" ToRole="JugadoresPases" />
         </EntityType>
         <EntityType Name="Fixtures">
           <Key>
             <PropertyRef Name="id" />
           </Key>
-          <Property Type="Int32" Name="id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="Int32" Name="id" Nullable="false" annotation:StoreGeneratedPattern="Identity" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
           <Property Type="Int32" Name="idCategoria" Nullable="false" />
           <Property Type="Int32" Name="idTorneo" Nullable="false" />
-          <NavigationProperty Name="Categorias" Relationship="CABModel.FK_Fixtures_Categorias" FromRole="Fixtures" ToRole="Categorias" />
-          <NavigationProperty Name="Torneos" Relationship="CABModel.FK_Fixtures_Torneos" FromRole="Fixtures" ToRole="Torneos" />
-          <NavigationProperty Name="FixturesPartidos" Relationship="CABModel.FK_FixturesPartidos_Fixtures" FromRole="Fixtures" ToRole="FixturesPartidos" />
+          <NavigationProperty Name="Categorias" Relationship="DeportesModel.FK_Fixtures_Categorias" FromRole="Fixtures" ToRole="Categorias" />
+          <NavigationProperty Name="Torneos" Relationship="DeportesModel.FK_Fixtures_Torneos" FromRole="Fixtures" ToRole="Torneos" />
+          <NavigationProperty Name="FixturesPartidos" Relationship="DeportesModel.FK_FixturesPartidos_Fixtures" FromRole="Fixtures" ToRole="FixturesPartidos" />
         </EntityType>
         <EntityType Name="FixturesPartidos">
           <Key>
             <PropertyRef Name="id" />
           </Key>
-          <Property Type="Int32" Name="id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="Int32" Name="id" Nullable="false" annotation:StoreGeneratedPattern="Identity" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
           <Property Type="Int32" Name="idFixture" Nullable="false" />
           <Property Type="DateTime" Name="fechaHora" Precision="3" />
           <Property Type="Int32" Name="nroPartido" Nullable="false" />
@@ -2193,92 +2193,92 @@ FROM [dbo].[tmbcarnet] AS [tmbcarnet]</DefiningQuery>
           <Property Type="Int32" Name="idClub2NroPartido" />
           <Property Type="Int32" Name="idRonda" />
           <Property Type="String" Name="ronda" MaxLength="50" FixedLength="false" Unicode="false" />
-          <NavigationProperty Name="Clubes" Relationship="CABModel.FK_FixturesPartidos_Clubes" FromRole="FixturesPartidos" ToRole="Clubes" />
-          <NavigationProperty Name="Clubes1" Relationship="CABModel.FK_FixturesPartidos_Clubes1" FromRole="FixturesPartidos" ToRole="Clubes" />
-          <NavigationProperty Name="Fixtures" Relationship="CABModel.FK_FixturesPartidos_Fixtures" FromRole="FixturesPartidos" ToRole="Fixtures" />
-          <NavigationProperty Name="Jueces" Relationship="CABModel.FK_FixturesPartidos_Jueces" FromRole="FixturesPartidos" ToRole="Jueces" />
+          <NavigationProperty Name="Clubes" Relationship="DeportesModel.FK_FixturesPartidos_Clubes" FromRole="FixturesPartidos" ToRole="Clubes" />
+          <NavigationProperty Name="Clubes1" Relationship="DeportesModel.FK_FixturesPartidos_Clubes1" FromRole="FixturesPartidos" ToRole="Clubes" />
+          <NavigationProperty Name="Fixtures" Relationship="DeportesModel.FK_FixturesPartidos_Fixtures" FromRole="FixturesPartidos" ToRole="Fixtures" />
+          <NavigationProperty Name="Jueces" Relationship="DeportesModel.FK_FixturesPartidos_Jueces" FromRole="FixturesPartidos" ToRole="Jueces" />
         </EntityType>
         <EntityType Name="Jueces">
           <Key>
             <PropertyRef Name="id" />
           </Key>
-          <Property Type="Int32" Name="id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="Int32" Name="id" Nullable="false" annotation:StoreGeneratedPattern="Identity" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
           <Property Type="String" Name="nombre" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Type="Boolean" Name="activo" Nullable="false" />
-          <NavigationProperty Name="FixturesPartidos" Relationship="CABModel.FK_FixturesPartidos_Jueces" FromRole="Jueces" ToRole="FixturesPartidos" />
+          <NavigationProperty Name="FixturesPartidos" Relationship="DeportesModel.FK_FixturesPartidos_Jueces" FromRole="Jueces" ToRole="FixturesPartidos" />
         </EntityType>
         <EntityType Name="JugadoresCategorias">
           <Key>
             <PropertyRef Name="id" />
           </Key>
-          <Property Type="Int32" Name="id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="Int32" Name="id" Nullable="false" annotation:StoreGeneratedPattern="Identity" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
           <Property Type="Int32" Name="idJugador" Nullable="false" />
           <Property Type="Int32" Name="idCategoria" Nullable="false" />
           <Property Type="DateTime" Name="fecha" Nullable="false" Precision="0" />
           <Property Type="Int32" Name="idUsuario" Nullable="false" />
           <Property Type="DateTime" Name="fechaCreacion" Nullable="false" Precision="3" />
-          <NavigationProperty Name="Categorias" Relationship="CABModel.FK_JugadoresCategorias_Categorias" FromRole="JugadoresCategorias" ToRole="Categorias" />
-          <NavigationProperty Name="Usuarios" Relationship="CABModel.FK_JugadoresCategorias_Usuarios" FromRole="JugadoresCategorias" ToRole="Usuarios" />
-          <NavigationProperty Name="Jugadores" Relationship="CABModel.FK_JugadoresCategorias_Jugadores" FromRole="JugadoresCategorias" ToRole="Jugadores" />
+          <NavigationProperty Name="Categorias" Relationship="DeportesModel.FK_JugadoresCategorias_Categorias" FromRole="JugadoresCategorias" ToRole="Categorias" />
+          <NavigationProperty Name="Usuarios" Relationship="DeportesModel.FK_JugadoresCategorias_Usuarios" FromRole="JugadoresCategorias" ToRole="Usuarios" />
+          <NavigationProperty Name="Jugadores" Relationship="DeportesModel.FK_JugadoresCategorias_Jugadores" FromRole="JugadoresCategorias" ToRole="Jugadores" />
         </EntityType>
         <EntityType Name="JugadoresHabilitaciones">
           <Key>
             <PropertyRef Name="id" />
           </Key>
-          <Property Type="Int32" Name="id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="Int32" Name="id" Nullable="false" annotation:StoreGeneratedPattern="Identity" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
           <Property Type="Int32" Name="numero" Nullable="false" />
           <Property Type="DateTime" Name="fechaHabilitacion" Nullable="false" Precision="0" />
           <Property Type="DateTime" Name="fechaInhabilitacion" Nullable="false" Precision="0" />
           <Property Type="Int32" Name="idUsuario" Nullable="false" />
           <Property Type="DateTime" Name="fechaCreacion" Nullable="false" Precision="3" />
           <Property Type="Int32" Name="idJugador" Nullable="false" />
-          <NavigationProperty Name="Usuarios" Relationship="CABModel.FK_JugadoresHabilitaciones_Usuarios" FromRole="JugadoresHabilitaciones" ToRole="Usuarios" />
+          <NavigationProperty Name="Usuarios" Relationship="DeportesModel.FK_JugadoresHabilitaciones_Usuarios" FromRole="JugadoresHabilitaciones" ToRole="Usuarios" />
           <Property Name="categoria" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
-          <NavigationProperty Name="Jugadores" Relationship="CABModel.FK_JugadoresHabilitaciones_Jugadores" FromRole="JugadoresHabilitaciones" ToRole="Jugadores" />
+          <NavigationProperty Name="Jugadores" Relationship="DeportesModel.FK_JugadoresHabilitaciones_Jugadores" FromRole="JugadoresHabilitaciones" ToRole="Jugadores" />
         </EntityType>
         <EntityType Name="JugadoresSolicitudesCarnets">
           <Key>
             <PropertyRef Name="id" />
           </Key>
-          <Property Type="Int32" Name="id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="Int32" Name="id" Nullable="false" annotation:StoreGeneratedPattern="Identity" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
           <Property Type="Int32" Name="idJugador" Nullable="false" />
           <Property Type="DateTime" Name="fechaSolicitud" Nullable="false" Precision="0" />
           <Property Type="DateTime" Name="fechaEntrega" Precision="0" />
           <Property Type="Int32" Name="idUsuarioEntrega" />
           <Property Type="Int32" Name="idUsuario" />
           <Property Type="DateTime" Name="fechaCreacion" Precision="3" />
-          <NavigationProperty Name="Usuarios" Relationship="CABModel.FK_JugadoresSolicitudesCarnets_Usuarios" FromRole="JugadoresSolicitudesCarnets" ToRole="Usuarios" />
+          <NavigationProperty Name="Usuarios" Relationship="DeportesModel.FK_JugadoresSolicitudesCarnets_Usuarios" FromRole="JugadoresSolicitudesCarnets" ToRole="Usuarios" />
           <Property Name="motivo" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-          <NavigationProperty Name="Jugadores" Relationship="CABModel.FK_JugadoresSolicitudesCarnets_Jugadores" FromRole="JugadoresSolicitudesCarnets" ToRole="Jugadores" />
+          <NavigationProperty Name="Jugadores" Relationship="DeportesModel.FK_JugadoresSolicitudesCarnets_Jugadores" FromRole="JugadoresSolicitudesCarnets" ToRole="Jugadores" />
         </EntityType>
         <EntityType Name="Localidades">
           <Key>
             <PropertyRef Name="id" />
           </Key>
-          <Property Type="Int32" Name="id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="Int32" Name="id" Nullable="false" annotation:StoreGeneratedPattern="Identity" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
           <Property Type="String" Name="descripcion" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
           <Property Type="String" Name="codigoPostal" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Type="Int32" Name="idProvincia" Nullable="false" />
           <Property Type="Boolean" Name="activa" Nullable="false" />
-          <NavigationProperty Name="Asociaciones" Relationship="CABModel.FK_Asociaciones_Localidades" FromRole="Localidades" ToRole="Asociaciones" />
-          <NavigationProperty Name="Clubes" Relationship="CABModel.FK_Clubes_Localidades" FromRole="Localidades" ToRole="Clubes" />
-          <NavigationProperty Name="Federaciones" Relationship="CABModel.FK_Federaciones_Localidades" FromRole="Localidades" ToRole="Federaciones" />
-          <NavigationProperty Name="Provincias" Relationship="CABModel.FK_Localidades_Provincias" FromRole="Localidades" ToRole="Provincias" />
-          <NavigationProperty Name="Jugadores" Relationship="CABModel.FK_Jugadores_Localidades" FromRole="Localidades" ToRole="Jugadores" />
+          <NavigationProperty Name="Asociaciones" Relationship="DeportesModel.FK_Asociaciones_Localidades" FromRole="Localidades" ToRole="Asociaciones" />
+          <NavigationProperty Name="Clubes" Relationship="DeportesModel.FK_Clubes_Localidades" FromRole="Localidades" ToRole="Clubes" />
+          <NavigationProperty Name="Federaciones" Relationship="DeportesModel.FK_Federaciones_Localidades" FromRole="Localidades" ToRole="Federaciones" />
+          <NavigationProperty Name="Provincias" Relationship="DeportesModel.FK_Localidades_Provincias" FromRole="Localidades" ToRole="Provincias" />
+          <NavigationProperty Name="Jugadores" Relationship="DeportesModel.FK_Jugadores_Localidades" FromRole="Localidades" ToRole="Jugadores" />
         </EntityType>
         <EntityType Name="Provincias">
           <Key>
             <PropertyRef Name="id" />
           </Key>
-          <Property Type="Int32" Name="id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="Int32" Name="id" Nullable="false" annotation:StoreGeneratedPattern="Identity" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
           <Property Type="String" Name="descripcion" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
-          <NavigationProperty Name="Localidades" Relationship="CABModel.FK_Localidades_Provincias" FromRole="Provincias" ToRole="Localidades" />
+          <NavigationProperty Name="Localidades" Relationship="DeportesModel.FK_Localidades_Provincias" FromRole="Provincias" ToRole="Localidades" />
         </EntityType>
         <EntityType Name="Roles">
           <Key>
             <PropertyRef Name="id" />
           </Key>
-          <Property Type="Int32" Name="id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="Int32" Name="id" Nullable="false" annotation:StoreGeneratedPattern="Identity" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
           <Property Type="String" Name="descripcion" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
           <Property Type="String" Name="descripcionAmpliada" MaxLength="1000" FixedLength="false" Unicode="false" />
           <Property Type="String" Name="codigoInterno" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
@@ -2286,7 +2286,7 @@ FROM [dbo].[tmbcarnet] AS [tmbcarnet]</DefiningQuery>
           <Property Type="Boolean" Name="administraContenido" Nullable="false" />
           <Property Type="Boolean" Name="administraSeguridad" Nullable="false" />
           <Property Type="Boolean" Name="administraConfederacion" Nullable="false" />
-          <NavigationProperty Name="UsuariosRoles" Relationship="CABModel.FK_UsuariosRoles_Roles" FromRole="Roles" ToRole="UsuariosRoles" />
+          <NavigationProperty Name="UsuariosRoles" Relationship="DeportesModel.FK_UsuariosRoles_Roles" FromRole="Roles" ToRole="UsuariosRoles" />
         </EntityType>
         <EntityType Name="sysdiagrams">
           <Key>
@@ -2294,7 +2294,7 @@ FROM [dbo].[tmbcarnet] AS [tmbcarnet]</DefiningQuery>
           </Key>
           <Property Type="String" Name="name" Nullable="false" MaxLength="128" FixedLength="false" Unicode="true" />
           <Property Type="Int32" Name="principal_id" Nullable="false" />
-          <Property Type="Int32" Name="diagram_id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="Int32" Name="diagram_id" Nullable="false" annotation:StoreGeneratedPattern="Identity" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
           <Property Type="Int32" Name="version" />
           <Property Type="Binary" Name="definition" MaxLength="Max" FixedLength="false" />
         </EntityType>
@@ -2302,7 +2302,7 @@ FROM [dbo].[tmbcarnet] AS [tmbcarnet]</DefiningQuery>
           <Key>
             <PropertyRef Name="id" />
           </Key>
-          <Property Type="Int32" Name="id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="Int32" Name="id" Nullable="false" annotation:StoreGeneratedPattern="Identity" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
           <Property Type="String" Name="tipoCompeticion" Nullable="false" MaxLength="200" FixedLength="false" Unicode="false" />
           <Property Type="DateTime" Name="fechaDesde" Nullable="false" Precision="3" />
           <Property Type="DateTime" Name="fechaHasta" Nullable="false" Precision="3" />
@@ -2330,33 +2330,33 @@ FROM [dbo].[tmbcarnet] AS [tmbcarnet]</DefiningQuery>
           <Property Type="String" Name="urlMaps" MaxLength="Max" FixedLength="false" Unicode="false" />
           <Property Type="String" Name="resultadosTitulo" MaxLength="300" FixedLength="false" Unicode="false" />
           <Property Type="String" Name="resultadosDescripcion" MaxLength="Max" FixedLength="false" Unicode="false" />
-          <NavigationProperty Name="Asociaciones" Relationship="CABModel.FK_Torneos_Asociaciones" FromRole="Torneos" ToRole="Asociaciones" />
-          <NavigationProperty Name="Federaciones" Relationship="CABModel.FK_Torneos_Federaciones" FromRole="Torneos" ToRole="Federaciones" />
-          <NavigationProperty Name="Fixtures" Relationship="CABModel.FK_Fixtures_Torneos" FromRole="Torneos" ToRole="Fixtures" />
-          <NavigationProperty Name="Usuarios" Relationship="CABModel.FK_Torneos_Usuarios" FromRole="Torneos" ToRole="Usuarios" />
-          <NavigationProperty Name="TorneosActividades" Relationship="CABModel.FK_TorneosActividades_Torneos" FromRole="Torneos" ToRole="TorneosActividades" />
-          <NavigationProperty Name="TorneosEquipos" Relationship="CABModel.FK_TorneosEquipos_Torneos" FromRole="Torneos" ToRole="TorneosEquipos" />
-          <NavigationProperty Name="TorneosEspecialidades" Relationship="CABModel.FK_TorneosEspecialidades_Torneos" FromRole="Torneos" ToRole="TorneosEspecialidades" />
-          <NavigationProperty Name="TorneosPartidos" Relationship="CABModel.FK_TorneosPartidos_Torneos" FromRole="Torneos" ToRole="TorneosPartidos" />
-          <NavigationProperty Name="TorneosZonas" Relationship="CABModel.FK_TorneosZonas_Torneos" FromRole="Torneos" ToRole="TorneosZonas" />
+          <NavigationProperty Name="Asociaciones" Relationship="DeportesModel.FK_Torneos_Asociaciones" FromRole="Torneos" ToRole="Asociaciones" />
+          <NavigationProperty Name="Federaciones" Relationship="DeportesModel.FK_Torneos_Federaciones" FromRole="Torneos" ToRole="Federaciones" />
+          <NavigationProperty Name="Fixtures" Relationship="DeportesModel.FK_Fixtures_Torneos" FromRole="Torneos" ToRole="Fixtures" />
+          <NavigationProperty Name="Usuarios" Relationship="DeportesModel.FK_Torneos_Usuarios" FromRole="Torneos" ToRole="Usuarios" />
+          <NavigationProperty Name="TorneosActividades" Relationship="DeportesModel.FK_TorneosActividades_Torneos" FromRole="Torneos" ToRole="TorneosActividades" />
+          <NavigationProperty Name="TorneosEquipos" Relationship="DeportesModel.FK_TorneosEquipos_Torneos" FromRole="Torneos" ToRole="TorneosEquipos" />
+          <NavigationProperty Name="TorneosEspecialidades" Relationship="DeportesModel.FK_TorneosEspecialidades_Torneos" FromRole="Torneos" ToRole="TorneosEspecialidades" />
+          <NavigationProperty Name="TorneosPartidos" Relationship="DeportesModel.FK_TorneosPartidos_Torneos" FromRole="Torneos" ToRole="TorneosPartidos" />
+          <NavigationProperty Name="TorneosZonas" Relationship="DeportesModel.FK_TorneosZonas_Torneos" FromRole="Torneos" ToRole="TorneosZonas" />
         </EntityType>
         <EntityType Name="TorneosActividades">
           <Key>
             <PropertyRef Name="id" />
           </Key>
-          <Property Type="Int32" Name="id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="Int32" Name="id" Nullable="false" annotation:StoreGeneratedPattern="Identity" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
           <Property Type="Int32" Name="idTorneo" Nullable="false" />
           <Property Type="DateTime" Name="fecha" Nullable="false" Precision="0" />
           <Property Type="Int32" Name="hora" Nullable="false" />
           <Property Type="Int32" Name="minutos" Nullable="false" />
           <Property Type="String" Name="descripcion" Nullable="false" MaxLength="500" FixedLength="false" Unicode="false" />
-          <NavigationProperty Name="Torneos" Relationship="CABModel.FK_TorneosActividades_Torneos" FromRole="TorneosActividades" ToRole="Torneos" />
+          <NavigationProperty Name="Torneos" Relationship="DeportesModel.FK_TorneosActividades_Torneos" FromRole="TorneosActividades" ToRole="Torneos" />
         </EntityType>
         <EntityType Name="TorneosEquipos">
           <Key>
             <PropertyRef Name="id" />
           </Key>
-          <Property Type="Int32" Name="id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="Int32" Name="id" Nullable="false" annotation:StoreGeneratedPattern="Identity" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
           <Property Type="Int32" Name="idTorneo" Nullable="false" />
           <Property Type="Int32" Name="idEquipo" />
           <Property Type="String" Name="nombre" MaxLength="500" FixedLength="false" Unicode="false" />
@@ -2366,25 +2366,25 @@ FROM [dbo].[tmbcarnet] AS [tmbcarnet]</DefiningQuery>
           <Property Type="String" Name="zona" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Type="String" Name="nombreCorto" MaxLength="100" FixedLength="false" Unicode="false" />
           <Property Type="Int32" Name="idEspecialidad" />
-          <NavigationProperty Name="Torneos" Relationship="CABModel.FK_TorneosEquipos_Torneos" FromRole="TorneosEquipos" ToRole="Torneos" />
-          <NavigationProperty Name="TorneosPartidos" Relationship="CABModel.FK_TorneosPartidos_TorneosEquipos" FromRole="TorneosEquipos" ToRole="TorneosPartidos" />
-          <NavigationProperty Name="TorneosPartidos1" Relationship="CABModel.FK_TorneosPartidos_TorneosEquipos1" FromRole="TorneosEquipos" ToRole="TorneosPartidos" />
+          <NavigationProperty Name="Torneos" Relationship="DeportesModel.FK_TorneosEquipos_Torneos" FromRole="TorneosEquipos" ToRole="Torneos" />
+          <NavigationProperty Name="TorneosPartidos" Relationship="DeportesModel.FK_TorneosPartidos_TorneosEquipos" FromRole="TorneosEquipos" ToRole="TorneosPartidos" />
+          <NavigationProperty Name="TorneosPartidos1" Relationship="DeportesModel.FK_TorneosPartidos_TorneosEquipos1" FromRole="TorneosEquipos" ToRole="TorneosPartidos" />
         </EntityType>
         <EntityType Name="TorneosEspecialidades">
           <Key>
             <PropertyRef Name="id" />
           </Key>
-          <Property Type="Int32" Name="id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="Int32" Name="id" Nullable="false" annotation:StoreGeneratedPattern="Identity" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
           <Property Type="Int32" Name="idTorneo" Nullable="false" />
           <Property Type="Int32" Name="idEspecialidad" Nullable="false" />
-          <NavigationProperty Name="Especialidades" Relationship="CABModel.FK_TorneosEspecialidades_Especialidades" FromRole="TorneosEspecialidades" ToRole="Especialidades" />
-          <NavigationProperty Name="Torneos" Relationship="CABModel.FK_TorneosEspecialidades_Torneos" FromRole="TorneosEspecialidades" ToRole="Torneos" />
+          <NavigationProperty Name="Especialidades" Relationship="DeportesModel.FK_TorneosEspecialidades_Especialidades" FromRole="TorneosEspecialidades" ToRole="Especialidades" />
+          <NavigationProperty Name="Torneos" Relationship="DeportesModel.FK_TorneosEspecialidades_Torneos" FromRole="TorneosEspecialidades" ToRole="Torneos" />
         </EntityType>
         <EntityType Name="TorneosPartidos">
           <Key>
             <PropertyRef Name="id" />
           </Key>
-          <Property Type="Int32" Name="id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="Int32" Name="id" Nullable="false" annotation:StoreGeneratedPattern="Identity" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
           <Property Type="Int32" Name="idTorneo" Nullable="false" />
           <Property Type="Int32" Name="nroPartido" Nullable="false" />
           <Property Type="Int32" Name="idTorneoEquipo1" Nullable="false" />
@@ -2393,25 +2393,25 @@ FROM [dbo].[tmbcarnet] AS [tmbcarnet]</DefiningQuery>
           <Property Type="Int32" Name="puntosEquipo2" />
           <Property Type="String" Name="fase" MaxLength="100" FixedLength="false" Unicode="false" />
           <Property Type="Int32" Name="idEspecialidad" />
-          <NavigationProperty Name="Torneos" Relationship="CABModel.FK_TorneosPartidos_Torneos" FromRole="TorneosPartidos" ToRole="Torneos" />
-          <NavigationProperty Name="TorneosEquipos" Relationship="CABModel.FK_TorneosPartidos_TorneosEquipos" FromRole="TorneosPartidos" ToRole="TorneosEquipos" />
-          <NavigationProperty Name="TorneosEquipos1" Relationship="CABModel.FK_TorneosPartidos_TorneosEquipos1" FromRole="TorneosPartidos" ToRole="TorneosEquipos" />
+          <NavigationProperty Name="Torneos" Relationship="DeportesModel.FK_TorneosPartidos_Torneos" FromRole="TorneosPartidos" ToRole="Torneos" />
+          <NavigationProperty Name="TorneosEquipos" Relationship="DeportesModel.FK_TorneosPartidos_TorneosEquipos" FromRole="TorneosPartidos" ToRole="TorneosEquipos" />
+          <NavigationProperty Name="TorneosEquipos1" Relationship="DeportesModel.FK_TorneosPartidos_TorneosEquipos1" FromRole="TorneosPartidos" ToRole="TorneosEquipos" />
         </EntityType>
         <EntityType Name="TorneosZonas">
           <Key>
             <PropertyRef Name="id" />
           </Key>
-          <Property Type="Int32" Name="id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="Int32" Name="id" Nullable="false" annotation:StoreGeneratedPattern="Identity" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
           <Property Type="Int32" Name="idTorneo" Nullable="false" />
           <Property Type="String" Name="descripcion" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Type="Int32" Name="idEspecialidad" />
-          <NavigationProperty Name="Torneos" Relationship="CABModel.FK_TorneosZonas_Torneos" FromRole="TorneosZonas" ToRole="Torneos" />
+          <NavigationProperty Name="Torneos" Relationship="DeportesModel.FK_TorneosZonas_Torneos" FromRole="TorneosZonas" ToRole="Torneos" />
         </EntityType>
         <EntityType Name="Usuarios">
           <Key>
             <PropertyRef Name="id" />
           </Key>
-          <Property Type="Int32" Name="id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="Int32" Name="id" Nullable="false" annotation:StoreGeneratedPattern="Identity" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
           <Property Type="String" Name="nombreUsuario" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
           <Property Type="String" Name="password" Nullable="false" MaxLength="500" FixedLength="false" Unicode="false" />
           <Property Type="String" Name="nombre" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
@@ -2419,54 +2419,54 @@ FROM [dbo].[tmbcarnet] AS [tmbcarnet]</DefiningQuery>
           <Property Type="DateTime" Name="fechaAlta" Nullable="false" Precision="3" />
           <Property Type="Boolean" Name="activo" Nullable="false" />
           <Property Type="Int32" Name="idUsuarioCreador" />
-          <NavigationProperty Name="JugadoresCategorias" Relationship="CABModel.FK_JugadoresCategorias_Usuarios" FromRole="Usuarios" ToRole="JugadoresCategorias" />
-          <NavigationProperty Name="JugadoresHabilitaciones" Relationship="CABModel.FK_JugadoresHabilitaciones_Usuarios" FromRole="Usuarios" ToRole="JugadoresHabilitaciones" />
-          <NavigationProperty Name="JugadoresSolicitudesCarnets" Relationship="CABModel.FK_JugadoresSolicitudesCarnets_Usuarios" FromRole="Usuarios" ToRole="JugadoresSolicitudesCarnets" />
-          <NavigationProperty Name="Torneos" Relationship="CABModel.FK_Torneos_Usuarios" FromRole="Usuarios" ToRole="Torneos" />
-          <NavigationProperty Name="UsuariosAsociaciones" Relationship="CABModel.FK_UsuariosAsociaciones_Usuarios" FromRole="Usuarios" ToRole="UsuariosAsociaciones" />
-          <NavigationProperty Name="UsuariosFederaciones" Relationship="CABModel.FK_UsuariosFederaciones_Usuarios" FromRole="Usuarios" ToRole="UsuariosFederaciones" />
-          <NavigationProperty Name="UsuariosRoles" Relationship="CABModel.FK_UsuariosRoles_Usuarios" FromRole="Usuarios" ToRole="UsuariosRoles" />
-          <NavigationProperty Name="JugadoresPases" Relationship="CABModel.FK_JugadoresPases_Usuarios" FromRole="Usuarios" ToRole="JugadoresPases" />
-          <NavigationProperty Name="JugadoresPasesEstados" Relationship="CABModel.FK_JugadoresPasesEstados_Usuarios" FromRole="Usuarios" ToRole="JugadoresPasesEstados" />
-          <NavigationProperty Name="JugadoresPenalizaciones" Relationship="CABModel.FK_JugadoresPenalizaciones_Usuarios" FromRole="Usuarios" ToRole="JugadoresPenalizaciones" />
-          <NavigationProperty Name="JugadoresPenalizacionesEstados" Relationship="CABModel.FK_JugadoresPenalizacionesEstados_Usuarios" FromRole="Usuarios" ToRole="JugadoresPenalizacionesEstados" />
-          <NavigationProperty Name="Noticias" Relationship="CABModel.FK_Noticias_Usuarios" FromRole="Usuarios" ToRole="Noticias" />
-          <NavigationProperty Name="JugadoresEliminados" Relationship="CABModel.FK_JugadoresEliminados_Usuarios" FromRole="Usuarios" ToRole="JugadoresEliminados" />
-          <NavigationProperty Name="JugadoresHistorial" Relationship="CABModel.FK_JugadoresHistorial_Usuarios" FromRole="Usuarios" ToRole="JugadoresHistorial" />
+          <NavigationProperty Name="JugadoresCategorias" Relationship="DeportesModel.FK_JugadoresCategorias_Usuarios" FromRole="Usuarios" ToRole="JugadoresCategorias" />
+          <NavigationProperty Name="JugadoresHabilitaciones" Relationship="DeportesModel.FK_JugadoresHabilitaciones_Usuarios" FromRole="Usuarios" ToRole="JugadoresHabilitaciones" />
+          <NavigationProperty Name="JugadoresSolicitudesCarnets" Relationship="DeportesModel.FK_JugadoresSolicitudesCarnets_Usuarios" FromRole="Usuarios" ToRole="JugadoresSolicitudesCarnets" />
+          <NavigationProperty Name="Torneos" Relationship="DeportesModel.FK_Torneos_Usuarios" FromRole="Usuarios" ToRole="Torneos" />
+          <NavigationProperty Name="UsuariosAsociaciones" Relationship="DeportesModel.FK_UsuariosAsociaciones_Usuarios" FromRole="Usuarios" ToRole="UsuariosAsociaciones" />
+          <NavigationProperty Name="UsuariosFederaciones" Relationship="DeportesModel.FK_UsuariosFederaciones_Usuarios" FromRole="Usuarios" ToRole="UsuariosFederaciones" />
+          <NavigationProperty Name="UsuariosRoles" Relationship="DeportesModel.FK_UsuariosRoles_Usuarios" FromRole="Usuarios" ToRole="UsuariosRoles" />
+          <NavigationProperty Name="JugadoresPases" Relationship="DeportesModel.FK_JugadoresPases_Usuarios" FromRole="Usuarios" ToRole="JugadoresPases" />
+          <NavigationProperty Name="JugadoresPasesEstados" Relationship="DeportesModel.FK_JugadoresPasesEstados_Usuarios" FromRole="Usuarios" ToRole="JugadoresPasesEstados" />
+          <NavigationProperty Name="JugadoresPenalizaciones" Relationship="DeportesModel.FK_JugadoresPenalizaciones_Usuarios" FromRole="Usuarios" ToRole="JugadoresPenalizaciones" />
+          <NavigationProperty Name="JugadoresPenalizacionesEstados" Relationship="DeportesModel.FK_JugadoresPenalizacionesEstados_Usuarios" FromRole="Usuarios" ToRole="JugadoresPenalizacionesEstados" />
+          <NavigationProperty Name="Noticias" Relationship="DeportesModel.FK_Noticias_Usuarios" FromRole="Usuarios" ToRole="Noticias" />
+          <NavigationProperty Name="JugadoresEliminados" Relationship="DeportesModel.FK_JugadoresEliminados_Usuarios" FromRole="Usuarios" ToRole="JugadoresEliminados" />
+          <NavigationProperty Name="JugadoresHistorial" Relationship="DeportesModel.FK_JugadoresHistorial_Usuarios" FromRole="Usuarios" ToRole="JugadoresHistorial" />
         </EntityType>
         <EntityType Name="UsuariosAsociaciones">
           <Key>
             <PropertyRef Name="id" />
           </Key>
-          <Property Type="Int32" Name="id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="Int32" Name="id" Nullable="false" annotation:StoreGeneratedPattern="Identity" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
           <Property Type="Int32" Name="idUsuario" Nullable="false" />
           <Property Type="Int32" Name="idAsociacion" Nullable="false" />
-          <NavigationProperty Name="Asociaciones" Relationship="CABModel.FK_UsuariosAsociaciones_Asociaciones" FromRole="UsuariosAsociaciones" ToRole="Asociaciones" />
-          <NavigationProperty Name="Usuarios" Relationship="CABModel.FK_UsuariosAsociaciones_Usuarios" FromRole="UsuariosAsociaciones" ToRole="Usuarios" />
+          <NavigationProperty Name="Asociaciones" Relationship="DeportesModel.FK_UsuariosAsociaciones_Asociaciones" FromRole="UsuariosAsociaciones" ToRole="Asociaciones" />
+          <NavigationProperty Name="Usuarios" Relationship="DeportesModel.FK_UsuariosAsociaciones_Usuarios" FromRole="UsuariosAsociaciones" ToRole="Usuarios" />
         </EntityType>
         <EntityType Name="UsuariosFederaciones">
           <Key>
             <PropertyRef Name="id" />
           </Key>
-          <Property Type="Int32" Name="id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="Int32" Name="id" Nullable="false" annotation:StoreGeneratedPattern="Identity" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
           <Property Type="Int32" Name="idUsuario" Nullable="false" />
           <Property Type="Int32" Name="idFederacion" Nullable="false" />
-          <NavigationProperty Name="Federaciones" Relationship="CABModel.FK_UsuariosFederaciones_Federaciones" FromRole="UsuariosFederaciones" ToRole="Federaciones" />
-          <NavigationProperty Name="Usuarios" Relationship="CABModel.FK_UsuariosFederaciones_Usuarios" FromRole="UsuariosFederaciones" ToRole="Usuarios" />
+          <NavigationProperty Name="Federaciones" Relationship="DeportesModel.FK_UsuariosFederaciones_Federaciones" FromRole="UsuariosFederaciones" ToRole="Federaciones" />
+          <NavigationProperty Name="Usuarios" Relationship="DeportesModel.FK_UsuariosFederaciones_Usuarios" FromRole="UsuariosFederaciones" ToRole="Usuarios" />
         </EntityType>
         <EntityType Name="UsuariosRoles">
           <Key>
             <PropertyRef Name="id" />
           </Key>
-          <Property Type="Int32" Name="id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="Int32" Name="id" Nullable="false" annotation:StoreGeneratedPattern="Identity" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
           <Property Type="Int32" Name="idUsuario" Nullable="false" />
           <Property Type="Int32" Name="idRol" Nullable="false" />
-          <NavigationProperty Name="Roles" Relationship="CABModel.FK_UsuariosRoles_Roles" FromRole="UsuariosRoles" ToRole="Roles" />
-          <NavigationProperty Name="Usuarios" Relationship="CABModel.FK_UsuariosRoles_Usuarios" FromRole="UsuariosRoles" ToRole="Usuarios" />
+          <NavigationProperty Name="Roles" Relationship="DeportesModel.FK_UsuariosRoles_Roles" FromRole="UsuariosRoles" ToRole="Roles" />
+          <NavigationProperty Name="Usuarios" Relationship="DeportesModel.FK_UsuariosRoles_Usuarios" FromRole="UsuariosRoles" ToRole="Usuarios" />
         </EntityType>
         <Association Name="FK_Asociaciones_Federaciones">
-          <End Type="CABModel.Federaciones" Role="Federaciones" Multiplicity="1" />
-          <End Type="CABModel.Asociaciones" Role="Asociaciones" Multiplicity="*" />
+          <End Type="DeportesModel.Federaciones" Role="Federaciones" Multiplicity="1" />
+          <End Type="DeportesModel.Asociaciones" Role="Asociaciones" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Federaciones">
               <PropertyRef Name="id" />
@@ -2477,8 +2477,8 @@ FROM [dbo].[tmbcarnet] AS [tmbcarnet]</DefiningQuery>
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_Asociaciones_Localidades">
-          <End Type="CABModel.Localidades" Role="Localidades" Multiplicity="0..1" />
-          <End Type="CABModel.Asociaciones" Role="Asociaciones" Multiplicity="*" />
+          <End Type="DeportesModel.Localidades" Role="Localidades" Multiplicity="0..1" />
+          <End Type="DeportesModel.Asociaciones" Role="Asociaciones" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Localidades">
               <PropertyRef Name="id" />
@@ -2489,8 +2489,8 @@ FROM [dbo].[tmbcarnet] AS [tmbcarnet]</DefiningQuery>
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_Clubes_Asociaciones">
-          <End Type="CABModel.Asociaciones" Role="Asociaciones" Multiplicity="1" />
-          <End Type="CABModel.Clubes" Role="Clubes" Multiplicity="*" />
+          <End Type="DeportesModel.Asociaciones" Role="Asociaciones" Multiplicity="1" />
+          <End Type="DeportesModel.Clubes" Role="Clubes" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Asociaciones">
               <PropertyRef Name="id" />
@@ -2501,8 +2501,8 @@ FROM [dbo].[tmbcarnet] AS [tmbcarnet]</DefiningQuery>
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_Torneos_Asociaciones">
-          <End Type="CABModel.Asociaciones" Role="Asociaciones" Multiplicity="0..1" />
-          <End Type="CABModel.Torneos" Role="Torneos" Multiplicity="*" />
+          <End Type="DeportesModel.Asociaciones" Role="Asociaciones" Multiplicity="0..1" />
+          <End Type="DeportesModel.Torneos" Role="Torneos" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Asociaciones">
               <PropertyRef Name="id" />
@@ -2513,8 +2513,8 @@ FROM [dbo].[tmbcarnet] AS [tmbcarnet]</DefiningQuery>
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_UsuariosAsociaciones_Asociaciones">
-          <End Type="CABModel.Asociaciones" Role="Asociaciones" Multiplicity="1" />
-          <End Type="CABModel.UsuariosAsociaciones" Role="UsuariosAsociaciones" Multiplicity="*" />
+          <End Type="DeportesModel.Asociaciones" Role="Asociaciones" Multiplicity="1" />
+          <End Type="DeportesModel.UsuariosAsociaciones" Role="UsuariosAsociaciones" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Asociaciones">
               <PropertyRef Name="id" />
@@ -2525,8 +2525,8 @@ FROM [dbo].[tmbcarnet] AS [tmbcarnet]</DefiningQuery>
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_Fixtures_Categorias">
-          <End Type="CABModel.Categorias" Role="Categorias" Multiplicity="1" />
-          <End Type="CABModel.Fixtures" Role="Fixtures" Multiplicity="*" />
+          <End Type="DeportesModel.Categorias" Role="Categorias" Multiplicity="1" />
+          <End Type="DeportesModel.Fixtures" Role="Fixtures" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Categorias">
               <PropertyRef Name="id" />
@@ -2537,8 +2537,8 @@ FROM [dbo].[tmbcarnet] AS [tmbcarnet]</DefiningQuery>
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_JugadoresCategorias_Categorias">
-          <End Type="CABModel.Categorias" Role="Categorias" Multiplicity="1" />
-          <End Type="CABModel.JugadoresCategorias" Role="JugadoresCategorias" Multiplicity="*" />
+          <End Type="DeportesModel.Categorias" Role="Categorias" Multiplicity="1" />
+          <End Type="DeportesModel.JugadoresCategorias" Role="JugadoresCategorias" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Categorias">
               <PropertyRef Name="id" />
@@ -2549,8 +2549,8 @@ FROM [dbo].[tmbcarnet] AS [tmbcarnet]</DefiningQuery>
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_Clubes_Localidades">
-          <End Type="CABModel.Localidades" Role="Localidades" Multiplicity="0..1" />
-          <End Type="CABModel.Clubes" Role="Clubes" Multiplicity="*" />
+          <End Type="DeportesModel.Localidades" Role="Localidades" Multiplicity="0..1" />
+          <End Type="DeportesModel.Clubes" Role="Clubes" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Localidades">
               <PropertyRef Name="id" />
@@ -2561,8 +2561,8 @@ FROM [dbo].[tmbcarnet] AS [tmbcarnet]</DefiningQuery>
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_FixturesPartidos_Clubes">
-          <End Type="CABModel.Clubes" Role="Clubes" Multiplicity="0..1" />
-          <End Type="CABModel.FixturesPartidos" Role="FixturesPartidos" Multiplicity="*" />
+          <End Type="DeportesModel.Clubes" Role="Clubes" Multiplicity="0..1" />
+          <End Type="DeportesModel.FixturesPartidos" Role="FixturesPartidos" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Clubes">
               <PropertyRef Name="id" />
@@ -2573,8 +2573,8 @@ FROM [dbo].[tmbcarnet] AS [tmbcarnet]</DefiningQuery>
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_FixturesPartidos_Clubes1">
-          <End Type="CABModel.Clubes" Role="Clubes" Multiplicity="0..1" />
-          <End Type="CABModel.FixturesPartidos" Role="FixturesPartidos" Multiplicity="*" />
+          <End Type="DeportesModel.Clubes" Role="Clubes" Multiplicity="0..1" />
+          <End Type="DeportesModel.FixturesPartidos" Role="FixturesPartidos" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Clubes">
               <PropertyRef Name="id" />
@@ -2585,8 +2585,8 @@ FROM [dbo].[tmbcarnet] AS [tmbcarnet]</DefiningQuery>
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_TorneosEspecialidades_Especialidades">
-          <End Type="CABModel.Especialidades" Role="Especialidades" Multiplicity="1" />
-          <End Type="CABModel.TorneosEspecialidades" Role="TorneosEspecialidades" Multiplicity="*" />
+          <End Type="DeportesModel.Especialidades" Role="Especialidades" Multiplicity="1" />
+          <End Type="DeportesModel.TorneosEspecialidades" Role="TorneosEspecialidades" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Especialidades">
               <PropertyRef Name="id" />
@@ -2597,8 +2597,8 @@ FROM [dbo].[tmbcarnet] AS [tmbcarnet]</DefiningQuery>
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_Federaciones_Localidades">
-          <End Type="CABModel.Localidades" Role="Localidades" Multiplicity="0..1" />
-          <End Type="CABModel.Federaciones" Role="Federaciones" Multiplicity="*" />
+          <End Type="DeportesModel.Localidades" Role="Localidades" Multiplicity="0..1" />
+          <End Type="DeportesModel.Federaciones" Role="Federaciones" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Localidades">
               <PropertyRef Name="id" />
@@ -2609,8 +2609,8 @@ FROM [dbo].[tmbcarnet] AS [tmbcarnet]</DefiningQuery>
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_Torneos_Federaciones">
-          <End Type="CABModel.Federaciones" Role="Federaciones" Multiplicity="0..1" />
-          <End Type="CABModel.Torneos" Role="Torneos" Multiplicity="*" />
+          <End Type="DeportesModel.Federaciones" Role="Federaciones" Multiplicity="0..1" />
+          <End Type="DeportesModel.Torneos" Role="Torneos" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Federaciones">
               <PropertyRef Name="id" />
@@ -2621,8 +2621,8 @@ FROM [dbo].[tmbcarnet] AS [tmbcarnet]</DefiningQuery>
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_UsuariosFederaciones_Federaciones">
-          <End Type="CABModel.Federaciones" Role="Federaciones" Multiplicity="1" />
-          <End Type="CABModel.UsuariosFederaciones" Role="UsuariosFederaciones" Multiplicity="*" />
+          <End Type="DeportesModel.Federaciones" Role="Federaciones" Multiplicity="1" />
+          <End Type="DeportesModel.UsuariosFederaciones" Role="UsuariosFederaciones" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Federaciones">
               <PropertyRef Name="id" />
@@ -2633,8 +2633,8 @@ FROM [dbo].[tmbcarnet] AS [tmbcarnet]</DefiningQuery>
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_Fixtures_Torneos">
-          <End Type="CABModel.Torneos" Role="Torneos" Multiplicity="1" />
-          <End Type="CABModel.Fixtures" Role="Fixtures" Multiplicity="*" />
+          <End Type="DeportesModel.Torneos" Role="Torneos" Multiplicity="1" />
+          <End Type="DeportesModel.Fixtures" Role="Fixtures" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Torneos">
               <PropertyRef Name="id" />
@@ -2645,8 +2645,8 @@ FROM [dbo].[tmbcarnet] AS [tmbcarnet]</DefiningQuery>
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_FixturesPartidos_Fixtures">
-          <End Type="CABModel.Fixtures" Role="Fixtures" Multiplicity="1" />
-          <End Type="CABModel.FixturesPartidos" Role="FixturesPartidos" Multiplicity="*" />
+          <End Type="DeportesModel.Fixtures" Role="Fixtures" Multiplicity="1" />
+          <End Type="DeportesModel.FixturesPartidos" Role="FixturesPartidos" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Fixtures">
               <PropertyRef Name="id" />
@@ -2657,8 +2657,8 @@ FROM [dbo].[tmbcarnet] AS [tmbcarnet]</DefiningQuery>
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_FixturesPartidos_Jueces">
-          <End Type="CABModel.Jueces" Role="Jueces" Multiplicity="0..1" />
-          <End Type="CABModel.FixturesPartidos" Role="FixturesPartidos" Multiplicity="*" />
+          <End Type="DeportesModel.Jueces" Role="Jueces" Multiplicity="0..1" />
+          <End Type="DeportesModel.FixturesPartidos" Role="FixturesPartidos" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Jueces">
               <PropertyRef Name="id" />
@@ -2669,8 +2669,8 @@ FROM [dbo].[tmbcarnet] AS [tmbcarnet]</DefiningQuery>
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_JugadoresCategorias_Usuarios">
-          <End Type="CABModel.Usuarios" Role="Usuarios" Multiplicity="1" />
-          <End Type="CABModel.JugadoresCategorias" Role="JugadoresCategorias" Multiplicity="*" />
+          <End Type="DeportesModel.Usuarios" Role="Usuarios" Multiplicity="1" />
+          <End Type="DeportesModel.JugadoresCategorias" Role="JugadoresCategorias" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Usuarios">
               <PropertyRef Name="id" />
@@ -2681,8 +2681,8 @@ FROM [dbo].[tmbcarnet] AS [tmbcarnet]</DefiningQuery>
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_JugadoresHabilitaciones_Usuarios">
-          <End Type="CABModel.Usuarios" Role="Usuarios" Multiplicity="1" />
-          <End Type="CABModel.JugadoresHabilitaciones" Role="JugadoresHabilitaciones" Multiplicity="*" />
+          <End Type="DeportesModel.Usuarios" Role="Usuarios" Multiplicity="1" />
+          <End Type="DeportesModel.JugadoresHabilitaciones" Role="JugadoresHabilitaciones" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Usuarios">
               <PropertyRef Name="id" />
@@ -2693,8 +2693,8 @@ FROM [dbo].[tmbcarnet] AS [tmbcarnet]</DefiningQuery>
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_JugadoresSolicitudesCarnets_Usuarios">
-          <End Type="CABModel.Usuarios" Role="Usuarios" Multiplicity="0..1" />
-          <End Type="CABModel.JugadoresSolicitudesCarnets" Role="JugadoresSolicitudesCarnets" Multiplicity="*" />
+          <End Type="DeportesModel.Usuarios" Role="Usuarios" Multiplicity="0..1" />
+          <End Type="DeportesModel.JugadoresSolicitudesCarnets" Role="JugadoresSolicitudesCarnets" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Usuarios">
               <PropertyRef Name="id" />
@@ -2705,8 +2705,8 @@ FROM [dbo].[tmbcarnet] AS [tmbcarnet]</DefiningQuery>
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_Localidades_Provincias">
-          <End Type="CABModel.Provincias" Role="Provincias" Multiplicity="1" />
-          <End Type="CABModel.Localidades" Role="Localidades" Multiplicity="*" />
+          <End Type="DeportesModel.Provincias" Role="Provincias" Multiplicity="1" />
+          <End Type="DeportesModel.Localidades" Role="Localidades" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Provincias">
               <PropertyRef Name="id" />
@@ -2717,8 +2717,8 @@ FROM [dbo].[tmbcarnet] AS [tmbcarnet]</DefiningQuery>
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_UsuariosRoles_Roles">
-          <End Type="CABModel.Roles" Role="Roles" Multiplicity="1" />
-          <End Type="CABModel.UsuariosRoles" Role="UsuariosRoles" Multiplicity="*" />
+          <End Type="DeportesModel.Roles" Role="Roles" Multiplicity="1" />
+          <End Type="DeportesModel.UsuariosRoles" Role="UsuariosRoles" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Roles">
               <PropertyRef Name="id" />
@@ -2729,8 +2729,8 @@ FROM [dbo].[tmbcarnet] AS [tmbcarnet]</DefiningQuery>
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_Torneos_Usuarios">
-          <End Type="CABModel.Usuarios" Role="Usuarios" Multiplicity="0..1" />
-          <End Type="CABModel.Torneos" Role="Torneos" Multiplicity="*" />
+          <End Type="DeportesModel.Usuarios" Role="Usuarios" Multiplicity="0..1" />
+          <End Type="DeportesModel.Torneos" Role="Torneos" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Usuarios">
               <PropertyRef Name="id" />
@@ -2741,8 +2741,8 @@ FROM [dbo].[tmbcarnet] AS [tmbcarnet]</DefiningQuery>
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_TorneosActividades_Torneos">
-          <End Type="CABModel.Torneos" Role="Torneos" Multiplicity="1" />
-          <End Type="CABModel.TorneosActividades" Role="TorneosActividades" Multiplicity="*" />
+          <End Type="DeportesModel.Torneos" Role="Torneos" Multiplicity="1" />
+          <End Type="DeportesModel.TorneosActividades" Role="TorneosActividades" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Torneos">
               <PropertyRef Name="id" />
@@ -2753,8 +2753,8 @@ FROM [dbo].[tmbcarnet] AS [tmbcarnet]</DefiningQuery>
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_TorneosEquipos_Torneos">
-          <End Type="CABModel.Torneos" Role="Torneos" Multiplicity="1" />
-          <End Type="CABModel.TorneosEquipos" Role="TorneosEquipos" Multiplicity="*" />
+          <End Type="DeportesModel.Torneos" Role="Torneos" Multiplicity="1" />
+          <End Type="DeportesModel.TorneosEquipos" Role="TorneosEquipos" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Torneos">
               <PropertyRef Name="id" />
@@ -2765,8 +2765,8 @@ FROM [dbo].[tmbcarnet] AS [tmbcarnet]</DefiningQuery>
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_TorneosEspecialidades_Torneos">
-          <End Type="CABModel.Torneos" Role="Torneos" Multiplicity="1" />
-          <End Type="CABModel.TorneosEspecialidades" Role="TorneosEspecialidades" Multiplicity="*" />
+          <End Type="DeportesModel.Torneos" Role="Torneos" Multiplicity="1" />
+          <End Type="DeportesModel.TorneosEspecialidades" Role="TorneosEspecialidades" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Torneos">
               <PropertyRef Name="id" />
@@ -2777,8 +2777,8 @@ FROM [dbo].[tmbcarnet] AS [tmbcarnet]</DefiningQuery>
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_TorneosPartidos_Torneos">
-          <End Type="CABModel.Torneos" Role="Torneos" Multiplicity="1" />
-          <End Type="CABModel.TorneosPartidos" Role="TorneosPartidos" Multiplicity="*" />
+          <End Type="DeportesModel.Torneos" Role="Torneos" Multiplicity="1" />
+          <End Type="DeportesModel.TorneosPartidos" Role="TorneosPartidos" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Torneos">
               <PropertyRef Name="id" />
@@ -2789,8 +2789,8 @@ FROM [dbo].[tmbcarnet] AS [tmbcarnet]</DefiningQuery>
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_TorneosZonas_Torneos">
-          <End Type="CABModel.Torneos" Role="Torneos" Multiplicity="1" />
-          <End Type="CABModel.TorneosZonas" Role="TorneosZonas" Multiplicity="*" />
+          <End Type="DeportesModel.Torneos" Role="Torneos" Multiplicity="1" />
+          <End Type="DeportesModel.TorneosZonas" Role="TorneosZonas" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Torneos">
               <PropertyRef Name="id" />
@@ -2801,8 +2801,8 @@ FROM [dbo].[tmbcarnet] AS [tmbcarnet]</DefiningQuery>
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_TorneosPartidos_TorneosEquipos">
-          <End Type="CABModel.TorneosEquipos" Role="TorneosEquipos" Multiplicity="1" />
-          <End Type="CABModel.TorneosPartidos" Role="TorneosPartidos" Multiplicity="*" />
+          <End Type="DeportesModel.TorneosEquipos" Role="TorneosEquipos" Multiplicity="1" />
+          <End Type="DeportesModel.TorneosPartidos" Role="TorneosPartidos" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="TorneosEquipos">
               <PropertyRef Name="id" />
@@ -2813,8 +2813,8 @@ FROM [dbo].[tmbcarnet] AS [tmbcarnet]</DefiningQuery>
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_TorneosPartidos_TorneosEquipos1">
-          <End Type="CABModel.TorneosEquipos" Role="TorneosEquipos" Multiplicity="1" />
-          <End Type="CABModel.TorneosPartidos" Role="TorneosPartidos" Multiplicity="*" />
+          <End Type="DeportesModel.TorneosEquipos" Role="TorneosEquipos" Multiplicity="1" />
+          <End Type="DeportesModel.TorneosPartidos" Role="TorneosPartidos" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="TorneosEquipos">
               <PropertyRef Name="id" />
@@ -2825,8 +2825,8 @@ FROM [dbo].[tmbcarnet] AS [tmbcarnet]</DefiningQuery>
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_UsuariosAsociaciones_Usuarios">
-          <End Type="CABModel.Usuarios" Role="Usuarios" Multiplicity="1" />
-          <End Type="CABModel.UsuariosAsociaciones" Role="UsuariosAsociaciones" Multiplicity="*" />
+          <End Type="DeportesModel.Usuarios" Role="Usuarios" Multiplicity="1" />
+          <End Type="DeportesModel.UsuariosAsociaciones" Role="UsuariosAsociaciones" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Usuarios">
               <PropertyRef Name="id" />
@@ -2837,8 +2837,8 @@ FROM [dbo].[tmbcarnet] AS [tmbcarnet]</DefiningQuery>
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_UsuariosFederaciones_Usuarios">
-          <End Type="CABModel.Usuarios" Role="Usuarios" Multiplicity="1" />
-          <End Type="CABModel.UsuariosFederaciones" Role="UsuariosFederaciones" Multiplicity="*" />
+          <End Type="DeportesModel.Usuarios" Role="Usuarios" Multiplicity="1" />
+          <End Type="DeportesModel.UsuariosFederaciones" Role="UsuariosFederaciones" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Usuarios">
               <PropertyRef Name="id" />
@@ -2849,8 +2849,8 @@ FROM [dbo].[tmbcarnet] AS [tmbcarnet]</DefiningQuery>
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_UsuariosRoles_Usuarios">
-          <End Type="CABModel.Usuarios" Role="Usuarios" Multiplicity="1" />
-          <End Type="CABModel.UsuariosRoles" Role="UsuariosRoles" Multiplicity="*" />
+          <End Type="DeportesModel.Usuarios" Role="Usuarios" Multiplicity="1" />
+          <End Type="DeportesModel.UsuariosRoles" Role="UsuariosRoles" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Usuarios">
               <PropertyRef Name="id" />
@@ -2864,7 +2864,7 @@ FROM [dbo].[tmbcarnet] AS [tmbcarnet]</DefiningQuery>
           <Key>
             <PropertyRef Name="id" />
           </Key>
-          <Property Type="Int32" Name="id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="Int32" Name="id" Nullable="false" annotation:StoreGeneratedPattern="Identity" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
           <Property Type="Int32" Name="idJugador" Nullable="false" />
           <Property Type="DateTime" Name="fechaSolicitud" Nullable="false" Precision="0" />
           <Property Type="DateTime" Name="fechaPase" Precision="0" />
@@ -2877,26 +2877,26 @@ FROM [dbo].[tmbcarnet] AS [tmbcarnet]</DefiningQuery>
           <Property Type="Int32" Name="idFederacionDestino" Nullable="false" />
           <Property Type="String" Name="tipoPase" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Type="Int32" Name="idPaseEstado" Nullable="false" />
-          <NavigationProperty Name="Asociaciones" Relationship="CABModel.FK_JugadoresPases_Asociaciones" FromRole="JugadoresPases" ToRole="Asociaciones" />
-          <NavigationProperty Name="Asociaciones1" Relationship="CABModel.FK_JugadoresPases_Asociaciones1" FromRole="JugadoresPases" ToRole="Asociaciones" />
-          <NavigationProperty Name="Clubes" Relationship="CABModel.FK_JugadoresPases_Clubes" FromRole="JugadoresPases" ToRole="Clubes" />
-          <NavigationProperty Name="Clubes1" Relationship="CABModel.FK_JugadoresPases_Clubes1" FromRole="JugadoresPases" ToRole="Clubes" />
-          <NavigationProperty Name="Federaciones" Relationship="CABModel.FK_JugadoresPases_Federaciones" FromRole="JugadoresPases" ToRole="Federaciones" />
-          <NavigationProperty Name="Federaciones1" Relationship="CABModel.FK_JugadoresPases_Federaciones1" FromRole="JugadoresPases" ToRole="Federaciones" />
-          <NavigationProperty Name="PasesEstados" Relationship="CABModel.FK_JugadoresPases_PasesEstados" FromRole="JugadoresPases" ToRole="PasesEstados" />
-          <NavigationProperty Name="Usuarios" Relationship="CABModel.FK_JugadoresPases_Usuarios" FromRole="JugadoresPases" ToRole="Usuarios" />
-          <NavigationProperty Name="JugadoresPasesEstados" Relationship="CABModel.FK_JugadoresPasesEstados_JugadoresPases" FromRole="JugadoresPases" ToRole="JugadoresPasesEstados" />
+          <NavigationProperty Name="Asociaciones" Relationship="DeportesModel.FK_JugadoresPases_Asociaciones" FromRole="JugadoresPases" ToRole="Asociaciones" />
+          <NavigationProperty Name="Asociaciones1" Relationship="DeportesModel.FK_JugadoresPases_Asociaciones1" FromRole="JugadoresPases" ToRole="Asociaciones" />
+          <NavigationProperty Name="Clubes" Relationship="DeportesModel.FK_JugadoresPases_Clubes" FromRole="JugadoresPases" ToRole="Clubes" />
+          <NavigationProperty Name="Clubes1" Relationship="DeportesModel.FK_JugadoresPases_Clubes1" FromRole="JugadoresPases" ToRole="Clubes" />
+          <NavigationProperty Name="Federaciones" Relationship="DeportesModel.FK_JugadoresPases_Federaciones" FromRole="JugadoresPases" ToRole="Federaciones" />
+          <NavigationProperty Name="Federaciones1" Relationship="DeportesModel.FK_JugadoresPases_Federaciones1" FromRole="JugadoresPases" ToRole="Federaciones" />
+          <NavigationProperty Name="PasesEstados" Relationship="DeportesModel.FK_JugadoresPases_PasesEstados" FromRole="JugadoresPases" ToRole="PasesEstados" />
+          <NavigationProperty Name="Usuarios" Relationship="DeportesModel.FK_JugadoresPases_Usuarios" FromRole="JugadoresPases" ToRole="Usuarios" />
+          <NavigationProperty Name="JugadoresPasesEstados" Relationship="DeportesModel.FK_JugadoresPasesEstados_JugadoresPases" FromRole="JugadoresPases" ToRole="JugadoresPasesEstados" />
           <Property Name="motivosRechazo" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
-          <NavigationProperty Name="Jugadores" Relationship="CABModel.FK_JugadoresPases_Jugadores" FromRole="JugadoresPases" ToRole="Jugadores" />
+          <NavigationProperty Name="Jugadores" Relationship="DeportesModel.FK_JugadoresPases_Jugadores" FromRole="JugadoresPases" ToRole="Jugadores" />
           <Property Name="idCategoria" Type="Int32" />
-          <NavigationProperty Name="Categorias" Relationship="CABModel.FK_JugadoresPases_Categorias" FromRole="JugadoresPases" ToRole="Categorias" />
-          <NavigationProperty Name="Categorias1" Relationship="CABModel.FK_JugadoresPases_Usuarios1" FromRole="JugadoresPases" ToRole="Categorias" />
+          <NavigationProperty Name="Categorias" Relationship="DeportesModel.FK_JugadoresPases_Categorias" FromRole="JugadoresPases" ToRole="Categorias" />
+          <NavigationProperty Name="Categorias1" Relationship="DeportesModel.FK_JugadoresPases_Usuarios1" FromRole="JugadoresPases" ToRole="Categorias" />
         </EntityType>
         <EntityType Name="JugadoresPasesEstados">
           <Key>
             <PropertyRef Name="id" />
           </Key>
-          <Property Type="Int32" Name="id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="Int32" Name="id" Nullable="false" annotation:StoreGeneratedPattern="Identity" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
           <Property Type="Int32" Name="idJugadorPase" Nullable="false" />
           <Property Type="DateTime" Name="fecha" Nullable="false" Precision="3" />
           <Property Type="Int32" Name="idPaseEstado" Nullable="false" />
@@ -2904,26 +2904,26 @@ FROM [dbo].[tmbcarnet] AS [tmbcarnet]</DefiningQuery>
           <Property Type="Int32" Name="idAsociacion" />
           <Property Type="Int32" Name="idFederacion" />
           <Property Type="String" Name="comentarios" MaxLength="500" FixedLength="false" Unicode="false" />
-          <NavigationProperty Name="JugadoresPases" Relationship="CABModel.FK_JugadoresPasesEstados_JugadoresPases" FromRole="JugadoresPasesEstados" ToRole="JugadoresPases" />
-          <NavigationProperty Name="PasesEstados" Relationship="CABModel.FK_JugadoresPasesEstados_PasesEstados" FromRole="JugadoresPasesEstados" ToRole="PasesEstados" />
-          <NavigationProperty Name="Usuarios" Relationship="CABModel.FK_JugadoresPasesEstados_Usuarios" FromRole="JugadoresPasesEstados" ToRole="Usuarios" />
+          <NavigationProperty Name="JugadoresPases" Relationship="DeportesModel.FK_JugadoresPasesEstados_JugadoresPases" FromRole="JugadoresPasesEstados" ToRole="JugadoresPases" />
+          <NavigationProperty Name="PasesEstados" Relationship="DeportesModel.FK_JugadoresPasesEstados_PasesEstados" FromRole="JugadoresPasesEstados" ToRole="PasesEstados" />
+          <NavigationProperty Name="Usuarios" Relationship="DeportesModel.FK_JugadoresPasesEstados_Usuarios" FromRole="JugadoresPasesEstados" ToRole="Usuarios" />
         </EntityType>
         <EntityType Name="PasesEstados">
           <Key>
             <PropertyRef Name="id" />
           </Key>
-          <Property Type="Int32" Name="id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="Int32" Name="id" Nullable="false" annotation:StoreGeneratedPattern="Identity" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
           <Property Type="String" Name="descripcion" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Type="Boolean" Name="estadoInicial" Nullable="false" />
           <Property Type="Boolean" Name="estadoIntermedio" Nullable="false" />
           <Property Type="Boolean" Name="estadoFinal" Nullable="false" />
-          <NavigationProperty Name="JugadoresPases" Relationship="CABModel.FK_JugadoresPases_PasesEstados" FromRole="PasesEstados" ToRole="JugadoresPases" />
-          <NavigationProperty Name="JugadoresPasesEstados" Relationship="CABModel.FK_JugadoresPasesEstados_PasesEstados" FromRole="PasesEstados" ToRole="JugadoresPasesEstados" />
+          <NavigationProperty Name="JugadoresPases" Relationship="DeportesModel.FK_JugadoresPases_PasesEstados" FromRole="PasesEstados" ToRole="JugadoresPases" />
+          <NavigationProperty Name="JugadoresPasesEstados" Relationship="DeportesModel.FK_JugadoresPasesEstados_PasesEstados" FromRole="PasesEstados" ToRole="JugadoresPasesEstados" />
           <Property Type="String" Name="codigoInterno" MaxLength="50" FixedLength="false" Unicode="false" />
         </EntityType>
         <Association Name="FK_JugadoresPases_Asociaciones">
-          <End Type="CABModel.Asociaciones" Role="Asociaciones" Multiplicity="1" />
-          <End Type="CABModel.JugadoresPases" Role="JugadoresPases" Multiplicity="*" />
+          <End Type="DeportesModel.Asociaciones" Role="Asociaciones" Multiplicity="1" />
+          <End Type="DeportesModel.JugadoresPases" Role="JugadoresPases" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Asociaciones">
               <PropertyRef Name="id" />
@@ -2934,8 +2934,8 @@ FROM [dbo].[tmbcarnet] AS [tmbcarnet]</DefiningQuery>
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_JugadoresPases_Asociaciones1">
-          <End Type="CABModel.Asociaciones" Role="Asociaciones" Multiplicity="1" />
-          <End Type="CABModel.JugadoresPases" Role="JugadoresPases" Multiplicity="*" />
+          <End Type="DeportesModel.Asociaciones" Role="Asociaciones" Multiplicity="1" />
+          <End Type="DeportesModel.JugadoresPases" Role="JugadoresPases" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Asociaciones">
               <PropertyRef Name="id" />
@@ -2946,8 +2946,8 @@ FROM [dbo].[tmbcarnet] AS [tmbcarnet]</DefiningQuery>
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_JugadoresPases_Clubes">
-          <End Type="CABModel.Clubes" Role="Clubes" Multiplicity="1" />
-          <End Type="CABModel.JugadoresPases" Role="JugadoresPases" Multiplicity="*" />
+          <End Type="DeportesModel.Clubes" Role="Clubes" Multiplicity="1" />
+          <End Type="DeportesModel.JugadoresPases" Role="JugadoresPases" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Clubes">
               <PropertyRef Name="id" />
@@ -2958,8 +2958,8 @@ FROM [dbo].[tmbcarnet] AS [tmbcarnet]</DefiningQuery>
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_JugadoresPases_Clubes1">
-          <End Type="CABModel.Clubes" Role="Clubes" Multiplicity="1" />
-          <End Type="CABModel.JugadoresPases" Role="JugadoresPases" Multiplicity="*" />
+          <End Type="DeportesModel.Clubes" Role="Clubes" Multiplicity="1" />
+          <End Type="DeportesModel.JugadoresPases" Role="JugadoresPases" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Clubes">
               <PropertyRef Name="id" />
@@ -2970,8 +2970,8 @@ FROM [dbo].[tmbcarnet] AS [tmbcarnet]</DefiningQuery>
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_JugadoresPases_Federaciones">
-          <End Type="CABModel.Federaciones" Role="Federaciones" Multiplicity="1" />
-          <End Type="CABModel.JugadoresPases" Role="JugadoresPases" Multiplicity="*" />
+          <End Type="DeportesModel.Federaciones" Role="Federaciones" Multiplicity="1" />
+          <End Type="DeportesModel.JugadoresPases" Role="JugadoresPases" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Federaciones">
               <PropertyRef Name="id" />
@@ -2982,8 +2982,8 @@ FROM [dbo].[tmbcarnet] AS [tmbcarnet]</DefiningQuery>
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_JugadoresPases_Federaciones1">
-          <End Type="CABModel.Federaciones" Role="Federaciones" Multiplicity="1" />
-          <End Type="CABModel.JugadoresPases" Role="JugadoresPases" Multiplicity="*" />
+          <End Type="DeportesModel.Federaciones" Role="Federaciones" Multiplicity="1" />
+          <End Type="DeportesModel.JugadoresPases" Role="JugadoresPases" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Federaciones">
               <PropertyRef Name="id" />
@@ -2994,8 +2994,8 @@ FROM [dbo].[tmbcarnet] AS [tmbcarnet]</DefiningQuery>
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_JugadoresPases_PasesEstados">
-          <End Type="CABModel.PasesEstados" Role="PasesEstados" Multiplicity="1" />
-          <End Type="CABModel.JugadoresPases" Role="JugadoresPases" Multiplicity="*" />
+          <End Type="DeportesModel.PasesEstados" Role="PasesEstados" Multiplicity="1" />
+          <End Type="DeportesModel.JugadoresPases" Role="JugadoresPases" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="PasesEstados">
               <PropertyRef Name="id" />
@@ -3006,8 +3006,8 @@ FROM [dbo].[tmbcarnet] AS [tmbcarnet]</DefiningQuery>
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_JugadoresPases_Usuarios">
-          <End Type="CABModel.Usuarios" Role="Usuarios" Multiplicity="1" />
-          <End Type="CABModel.JugadoresPases" Role="JugadoresPases" Multiplicity="*" />
+          <End Type="DeportesModel.Usuarios" Role="Usuarios" Multiplicity="1" />
+          <End Type="DeportesModel.JugadoresPases" Role="JugadoresPases" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Usuarios">
               <PropertyRef Name="id" />
@@ -3018,8 +3018,8 @@ FROM [dbo].[tmbcarnet] AS [tmbcarnet]</DefiningQuery>
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_JugadoresPasesEstados_JugadoresPases">
-          <End Type="CABModel.JugadoresPases" Role="JugadoresPases" Multiplicity="1" />
-          <End Type="CABModel.JugadoresPasesEstados" Role="JugadoresPasesEstados" Multiplicity="*" />
+          <End Type="DeportesModel.JugadoresPases" Role="JugadoresPases" Multiplicity="1" />
+          <End Type="DeportesModel.JugadoresPasesEstados" Role="JugadoresPasesEstados" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="JugadoresPases">
               <PropertyRef Name="id" />
@@ -3030,8 +3030,8 @@ FROM [dbo].[tmbcarnet] AS [tmbcarnet]</DefiningQuery>
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_JugadoresPasesEstados_PasesEstados">
-          <End Type="CABModel.PasesEstados" Role="PasesEstados" Multiplicity="1" />
-          <End Type="CABModel.JugadoresPasesEstados" Role="JugadoresPasesEstados" Multiplicity="*" />
+          <End Type="DeportesModel.PasesEstados" Role="PasesEstados" Multiplicity="1" />
+          <End Type="DeportesModel.JugadoresPasesEstados" Role="JugadoresPasesEstados" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="PasesEstados">
               <PropertyRef Name="id" />
@@ -3042,8 +3042,8 @@ FROM [dbo].[tmbcarnet] AS [tmbcarnet]</DefiningQuery>
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_JugadoresPasesEstados_Usuarios">
-          <End Type="CABModel.Usuarios" Role="Usuarios" Multiplicity="1" />
-          <End Type="CABModel.JugadoresPasesEstados" Role="JugadoresPasesEstados" Multiplicity="*" />
+          <End Type="DeportesModel.Usuarios" Role="Usuarios" Multiplicity="1" />
+          <End Type="DeportesModel.JugadoresPasesEstados" Role="JugadoresPasesEstados" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Usuarios">
               <PropertyRef Name="id" />
@@ -3057,7 +3057,7 @@ FROM [dbo].[tmbcarnet] AS [tmbcarnet]</DefiningQuery>
           <Key>
             <PropertyRef Name="id" />
           </Key>
-          <Property Type="Int32" Name="id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="Int32" Name="id" Nullable="false" annotation:StoreGeneratedPattern="Identity" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
           <Property Type="Int32" Name="idJugador" Nullable="false" />
           <Property Type="DateTime" Name="fechaInicio" Nullable="false" Precision="0" />
           <Property Type="Int32" Name="dias" Nullable="false" />
@@ -3067,27 +3067,27 @@ FROM [dbo].[tmbcarnet] AS [tmbcarnet]</DefiningQuery>
           <Property Type="String" Name="motivos" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="false" />
           <Property Type="DateTime" Name="fechaCreacion" Nullable="false" Precision="3" />
           <Property Type="Int32" Name="idPenalizacionEstado" Nullable="false" />
-          <NavigationProperty Name="PenalizacionesEstados" Relationship="CABModel.FK_JugadoresPenalizaciones_PenalizacionesEstados" FromRole="JugadoresPenalizaciones" ToRole="PenalizacionesEstados" />
-          <NavigationProperty Name="Usuarios" Relationship="CABModel.FK_JugadoresPenalizaciones_Usuarios" FromRole="JugadoresPenalizaciones" ToRole="Usuarios" />
-          <NavigationProperty Name="JugadoresPenalizacionesEstados" Relationship="CABModel.FK_JugadoresPenalizacionesEstados_JugadoresPenalizaciones" FromRole="JugadoresPenalizaciones" ToRole="JugadoresPenalizacionesEstados" />
+          <NavigationProperty Name="PenalizacionesEstados" Relationship="DeportesModel.FK_JugadoresPenalizaciones_PenalizacionesEstados" FromRole="JugadoresPenalizaciones" ToRole="PenalizacionesEstados" />
+          <NavigationProperty Name="Usuarios" Relationship="DeportesModel.FK_JugadoresPenalizaciones_Usuarios" FromRole="JugadoresPenalizaciones" ToRole="Usuarios" />
+          <NavigationProperty Name="JugadoresPenalizacionesEstados" Relationship="DeportesModel.FK_JugadoresPenalizacionesEstados_JugadoresPenalizaciones" FromRole="JugadoresPenalizaciones" ToRole="JugadoresPenalizacionesEstados" />
           <Property Type="DateTime" Name="fechaFin" Nullable="false" Precision="0" />
           <Property Type="Boolean" Name="requiereAprobacionFederacion" Nullable="false" />
-          <NavigationProperty Name="Jugadores" Relationship="CABModel.FK_JugadoresPenalizaciones_Jugadores" FromRole="JugadoresPenalizaciones" ToRole="Jugadores" />
+          <NavigationProperty Name="Jugadores" Relationship="DeportesModel.FK_JugadoresPenalizaciones_Jugadores" FromRole="JugadoresPenalizaciones" ToRole="Jugadores" />
         </EntityType>
         <EntityType Name="JugadoresPenalizacionesEstados">
           <Key>
             <PropertyRef Name="id" />
           </Key>
-          <Property Type="Int32" Name="id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="Int32" Name="id" Nullable="false" annotation:StoreGeneratedPattern="Identity" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
           <Property Type="Int32" Name="idJugadorPenalizacion" Nullable="false" />
           <Property Type="Int32" Name="idPenalizacionEstado" Nullable="false" />
           <Property Type="DateTime" Name="fecha" Nullable="false" Precision="0" />
           <Property Type="DateTime" Name="fechaInicio" Nullable="false" Precision="0" />
           <Property Type="Int32" Name="dias" Nullable="false" />
           <Property Type="Int32" Name="idUsuario" Nullable="false" />
-          <NavigationProperty Name="JugadoresPenalizaciones" Relationship="CABModel.FK_JugadoresPenalizacionesEstados_JugadoresPenalizaciones" FromRole="JugadoresPenalizacionesEstados" ToRole="JugadoresPenalizaciones" />
-          <NavigationProperty Name="PenalizacionesEstados" Relationship="CABModel.FK_JugadoresPenalizacionesEstados_PenalizacionesEstados" FromRole="JugadoresPenalizacionesEstados" ToRole="PenalizacionesEstados" />
-          <NavigationProperty Name="Usuarios" Relationship="CABModel.FK_JugadoresPenalizacionesEstados_Usuarios" FromRole="JugadoresPenalizacionesEstados" ToRole="Usuarios" />
+          <NavigationProperty Name="JugadoresPenalizaciones" Relationship="DeportesModel.FK_JugadoresPenalizacionesEstados_JugadoresPenalizaciones" FromRole="JugadoresPenalizacionesEstados" ToRole="JugadoresPenalizaciones" />
+          <NavigationProperty Name="PenalizacionesEstados" Relationship="DeportesModel.FK_JugadoresPenalizacionesEstados_PenalizacionesEstados" FromRole="JugadoresPenalizacionesEstados" ToRole="PenalizacionesEstados" />
+          <NavigationProperty Name="Usuarios" Relationship="DeportesModel.FK_JugadoresPenalizacionesEstados_Usuarios" FromRole="JugadoresPenalizacionesEstados" ToRole="Usuarios" />
           <Property Type="DateTime" Name="fechaFin" Nullable="false" Precision="0" />
           <Property Type="String" Name="observaciones" MaxLength="50" FixedLength="false" Unicode="false" />
         </EntityType>
@@ -3095,18 +3095,18 @@ FROM [dbo].[tmbcarnet] AS [tmbcarnet]</DefiningQuery>
           <Key>
             <PropertyRef Name="id" />
           </Key>
-          <Property Type="Int32" Name="id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="Int32" Name="id" Nullable="false" annotation:StoreGeneratedPattern="Identity" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
           <Property Type="String" Name="descripcion" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Type="String" Name="codigoInterno" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Type="Boolean" Name="estadoInicial" Nullable="false" />
           <Property Type="Boolean" Name="estadoIntermedio" Nullable="false" />
           <Property Type="Boolean" Name="estadoFinal" Nullable="false" />
-          <NavigationProperty Name="JugadoresPenalizaciones" Relationship="CABModel.FK_JugadoresPenalizaciones_PenalizacionesEstados" FromRole="PenalizacionesEstados" ToRole="JugadoresPenalizaciones" />
-          <NavigationProperty Name="JugadoresPenalizacionesEstados" Relationship="CABModel.FK_JugadoresPenalizacionesEstados_PenalizacionesEstados" FromRole="PenalizacionesEstados" ToRole="JugadoresPenalizacionesEstados" />
+          <NavigationProperty Name="JugadoresPenalizaciones" Relationship="DeportesModel.FK_JugadoresPenalizaciones_PenalizacionesEstados" FromRole="PenalizacionesEstados" ToRole="JugadoresPenalizaciones" />
+          <NavigationProperty Name="JugadoresPenalizacionesEstados" Relationship="DeportesModel.FK_JugadoresPenalizacionesEstados_PenalizacionesEstados" FromRole="PenalizacionesEstados" ToRole="JugadoresPenalizacionesEstados" />
         </EntityType>
         <Association Name="FK_JugadoresPenalizaciones_PenalizacionesEstados">
-          <End Type="CABModel.PenalizacionesEstados" Role="PenalizacionesEstados" Multiplicity="1" />
-          <End Type="CABModel.JugadoresPenalizaciones" Role="JugadoresPenalizaciones" Multiplicity="*" />
+          <End Type="DeportesModel.PenalizacionesEstados" Role="PenalizacionesEstados" Multiplicity="1" />
+          <End Type="DeportesModel.JugadoresPenalizaciones" Role="JugadoresPenalizaciones" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="PenalizacionesEstados">
               <PropertyRef Name="id" />
@@ -3117,8 +3117,8 @@ FROM [dbo].[tmbcarnet] AS [tmbcarnet]</DefiningQuery>
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_JugadoresPenalizaciones_Usuarios">
-          <End Type="CABModel.Usuarios" Role="Usuarios" Multiplicity="1" />
-          <End Type="CABModel.JugadoresPenalizaciones" Role="JugadoresPenalizaciones" Multiplicity="*" />
+          <End Type="DeportesModel.Usuarios" Role="Usuarios" Multiplicity="1" />
+          <End Type="DeportesModel.JugadoresPenalizaciones" Role="JugadoresPenalizaciones" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Usuarios">
               <PropertyRef Name="id" />
@@ -3129,8 +3129,8 @@ FROM [dbo].[tmbcarnet] AS [tmbcarnet]</DefiningQuery>
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_JugadoresPenalizacionesEstados_JugadoresPenalizaciones">
-          <End Type="CABModel.JugadoresPenalizaciones" Role="JugadoresPenalizaciones" Multiplicity="1" />
-          <End Type="CABModel.JugadoresPenalizacionesEstados" Role="JugadoresPenalizacionesEstados" Multiplicity="*" />
+          <End Type="DeportesModel.JugadoresPenalizaciones" Role="JugadoresPenalizaciones" Multiplicity="1" />
+          <End Type="DeportesModel.JugadoresPenalizacionesEstados" Role="JugadoresPenalizacionesEstados" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="JugadoresPenalizaciones">
               <PropertyRef Name="id" />
@@ -3141,8 +3141,8 @@ FROM [dbo].[tmbcarnet] AS [tmbcarnet]</DefiningQuery>
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_JugadoresPenalizacionesEstados_PenalizacionesEstados">
-          <End Type="CABModel.PenalizacionesEstados" Role="PenalizacionesEstados" Multiplicity="1" />
-          <End Type="CABModel.JugadoresPenalizacionesEstados" Role="JugadoresPenalizacionesEstados" Multiplicity="*" />
+          <End Type="DeportesModel.PenalizacionesEstados" Role="PenalizacionesEstados" Multiplicity="1" />
+          <End Type="DeportesModel.JugadoresPenalizacionesEstados" Role="JugadoresPenalizacionesEstados" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="PenalizacionesEstados">
               <PropertyRef Name="id" />
@@ -3153,8 +3153,8 @@ FROM [dbo].[tmbcarnet] AS [tmbcarnet]</DefiningQuery>
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_JugadoresPenalizacionesEstados_Usuarios">
-          <End Type="CABModel.Usuarios" Role="Usuarios" Multiplicity="1" />
-          <End Type="CABModel.JugadoresPenalizacionesEstados" Role="JugadoresPenalizacionesEstados" Multiplicity="*" />
+          <End Type="DeportesModel.Usuarios" Role="Usuarios" Multiplicity="1" />
+          <End Type="DeportesModel.JugadoresPenalizacionesEstados" Role="JugadoresPenalizacionesEstados" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Usuarios">
               <PropertyRef Name="id" />
@@ -3168,7 +3168,7 @@ FROM [dbo].[tmbcarnet] AS [tmbcarnet]</DefiningQuery>
           <Key>
             <PropertyRef Name="id" />
           </Key>
-          <Property Type="Int32" Name="id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="Int32" Name="id" Nullable="false" annotation:StoreGeneratedPattern="Identity" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
           <Property Type="DateTime" Name="fecha" Precision="3" />
           <Property Type="String" Name="titulo" MaxLength="500" FixedLength="false" Unicode="false" />
           <Property Type="String" Name="copete" MaxLength="Max" FixedLength="false" Unicode="false" />
@@ -3178,11 +3178,11 @@ FROM [dbo].[tmbcarnet] AS [tmbcarnet]</DefiningQuery>
           <Property Type="String" Name="fotoAmplia" MaxLength="500" FixedLength="false" Unicode="false" />
           <Property Type="DateTime" Name="fechaCreacion" Precision="3" />
           <Property Type="Int32" Name="idUsuario" />
-          <NavigationProperty Name="Usuarios" Relationship="CABModel.FK_Noticias_Usuarios" FromRole="Noticias" ToRole="Usuarios" />
+          <NavigationProperty Name="Usuarios" Relationship="DeportesModel.FK_Noticias_Usuarios" FromRole="Noticias" ToRole="Usuarios" />
         </EntityType>
         <Association Name="FK_Noticias_Usuarios">
-          <End Type="CABModel.Usuarios" Role="Usuarios" Multiplicity="0..1" />
-          <End Type="CABModel.Noticias" Role="Noticias" Multiplicity="*" />
+          <End Type="DeportesModel.Usuarios" Role="Usuarios" Multiplicity="0..1" />
+          <End Type="DeportesModel.Noticias" Role="Noticias" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Usuarios">
               <PropertyRef Name="id" />
@@ -3202,7 +3202,7 @@ FROM [dbo].[tmbcarnet] AS [tmbcarnet]</DefiningQuery>
             <PropertyRef Name="fechaCreacion" />
             <PropertyRef Name="idJugador" />
           </Key>
-          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
           <Property Name="numero" Type="Int32" Nullable="false" />
           <Property Name="fechaHabilitacion" Type="DateTime" Nullable="false" Precision="0" />
           <Property Name="fechaInhabilitacion" Type="DateTime" Nullable="false" Precision="0" />
@@ -3216,7 +3216,7 @@ FROM [dbo].[tmbcarnet] AS [tmbcarnet]</DefiningQuery>
             <PropertyRef Name="idJugador" />
             <PropertyRef Name="fechaSolicitud" />
           </Key>
-          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
           <Property Name="idJugador" Type="Int32" Nullable="false" />
           <Property Name="fechaSolicitud" Type="DateTime" Nullable="false" Precision="0" />
           <Property Name="fechaEntrega" Type="DateTime" Precision="0" />
@@ -3249,7 +3249,7 @@ FROM [dbo].[tmbcarnet] AS [tmbcarnet]</DefiningQuery>
           <Key>
             <PropertyRef Name="Id" />
           </Key>
-          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
           <Property Name="fecha" Type="Int32" Nullable="false" />
           <Property Name="sede" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
           <Property Name="campeon" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
@@ -3259,7 +3259,7 @@ FROM [dbo].[tmbcarnet] AS [tmbcarnet]</DefiningQuery>
           <Key>
             <PropertyRef Name="id" />
           </Key>
-          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
           <Property Name="DNI" Type="Int64" Nullable="false" />
           <Property Name="apellido" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
           <Property Name="nombre" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
@@ -3280,20 +3280,20 @@ FROM [dbo].[tmbcarnet] AS [tmbcarnet]</DefiningQuery>
           <Property Name="habilitado" Type="Boolean" />
           <Property Name="Puntaje" Type="Int32" />
           <Property Name="Historial" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
-          <NavigationProperty Name="Categorias" Relationship="CABModel.FK_Jugadores_Categorias" FromRole="Jugadores" ToRole="Categorias" />
-          <NavigationProperty Name="Clubes" Relationship="CABModel.FK_Jugadores_Clubes" FromRole="Jugadores" ToRole="Clubes" />
-          <NavigationProperty Name="Localidades" Relationship="CABModel.FK_Jugadores_Localidades" FromRole="Jugadores" ToRole="Localidades" />
-          <NavigationProperty Name="JugadoresCategorias" Relationship="CABModel.FK_JugadoresCategorias_Jugadores" FromRole="Jugadores" ToRole="JugadoresCategorias" />
-          <NavigationProperty Name="JugadoresHabilitaciones" Relationship="CABModel.FK_JugadoresHabilitaciones_Jugadores" FromRole="Jugadores" ToRole="JugadoresHabilitaciones" />
-          <NavigationProperty Name="JugadoresPases" Relationship="CABModel.FK_JugadoresPases_Jugadores" FromRole="Jugadores" ToRole="JugadoresPases" />
-          <NavigationProperty Name="JugadoresPenalizaciones" Relationship="CABModel.FK_JugadoresPenalizaciones_Jugadores" FromRole="Jugadores" ToRole="JugadoresPenalizaciones" />
-          <NavigationProperty Name="JugadoresSolicitudesCarnets" Relationship="CABModel.FK_JugadoresSolicitudesCarnets_Jugadores" FromRole="Jugadores" ToRole="JugadoresSolicitudesCarnets" />
-          <NavigationProperty Name="JugadoresHistorial" Relationship="CABModel.FK_JugadoresHistorial_JugadoresHistorial" FromRole="Jugadores" ToRole="JugadoresHistorial" />
+          <NavigationProperty Name="Categorias" Relationship="DeportesModel.FK_Jugadores_Categorias" FromRole="Jugadores" ToRole="Categorias" />
+          <NavigationProperty Name="Clubes" Relationship="DeportesModel.FK_Jugadores_Clubes" FromRole="Jugadores" ToRole="Clubes" />
+          <NavigationProperty Name="Localidades" Relationship="DeportesModel.FK_Jugadores_Localidades" FromRole="Jugadores" ToRole="Localidades" />
+          <NavigationProperty Name="JugadoresCategorias" Relationship="DeportesModel.FK_JugadoresCategorias_Jugadores" FromRole="Jugadores" ToRole="JugadoresCategorias" />
+          <NavigationProperty Name="JugadoresHabilitaciones" Relationship="DeportesModel.FK_JugadoresHabilitaciones_Jugadores" FromRole="Jugadores" ToRole="JugadoresHabilitaciones" />
+          <NavigationProperty Name="JugadoresPases" Relationship="DeportesModel.FK_JugadoresPases_Jugadores" FromRole="Jugadores" ToRole="JugadoresPases" />
+          <NavigationProperty Name="JugadoresPenalizaciones" Relationship="DeportesModel.FK_JugadoresPenalizaciones_Jugadores" FromRole="Jugadores" ToRole="JugadoresPenalizaciones" />
+          <NavigationProperty Name="JugadoresSolicitudesCarnets" Relationship="DeportesModel.FK_JugadoresSolicitudesCarnets_Jugadores" FromRole="Jugadores" ToRole="JugadoresSolicitudesCarnets" />
+          <NavigationProperty Name="JugadoresHistorial" Relationship="DeportesModel.FK_JugadoresHistorial_JugadoresHistorial" FromRole="Jugadores" ToRole="JugadoresHistorial" />
           <Property Name="nroCarnet" Type="String" MaxLength="10" Unicode="false" FixedLength="false" />
         </EntityType>
         <Association Name="FK_Jugadores_Categorias">
-          <End Type="CABModel.Categorias" Role="Categorias" Multiplicity="1" />
-          <End Type="CABModel.Jugadores" Role="Jugadores" Multiplicity="*" />
+          <End Type="DeportesModel.Categorias" Role="Categorias" Multiplicity="1" />
+          <End Type="DeportesModel.Jugadores" Role="Jugadores" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Categorias">
               <PropertyRef Name="id" />
@@ -3304,8 +3304,8 @@ FROM [dbo].[tmbcarnet] AS [tmbcarnet]</DefiningQuery>
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_Jugadores_Clubes">
-          <End Type="CABModel.Clubes" Role="Clubes" Multiplicity="1" />
-          <End Type="CABModel.Jugadores" Role="Jugadores" Multiplicity="*" />
+          <End Type="DeportesModel.Clubes" Role="Clubes" Multiplicity="1" />
+          <End Type="DeportesModel.Jugadores" Role="Jugadores" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Clubes">
               <PropertyRef Name="id" />
@@ -3316,8 +3316,8 @@ FROM [dbo].[tmbcarnet] AS [tmbcarnet]</DefiningQuery>
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_Jugadores_Localidades">
-          <End Type="CABModel.Localidades" Role="Localidades" Multiplicity="0..1" />
-          <End Type="CABModel.Jugadores" Role="Jugadores" Multiplicity="*" />
+          <End Type="DeportesModel.Localidades" Role="Localidades" Multiplicity="0..1" />
+          <End Type="DeportesModel.Jugadores" Role="Jugadores" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Localidades">
               <PropertyRef Name="id" />
@@ -3328,10 +3328,10 @@ FROM [dbo].[tmbcarnet] AS [tmbcarnet]</DefiningQuery>
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_JugadoresCategorias_Jugadores">
-          <End Type="CABModel.Jugadores" Role="Jugadores" Multiplicity="1">
+          <End Type="DeportesModel.Jugadores" Role="Jugadores" Multiplicity="1">
             <OnDelete Action="Cascade" />
           </End>
-          <End Type="CABModel.JugadoresCategorias" Role="JugadoresCategorias" Multiplicity="*" />
+          <End Type="DeportesModel.JugadoresCategorias" Role="JugadoresCategorias" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Jugadores">
               <PropertyRef Name="id" />
@@ -3342,10 +3342,10 @@ FROM [dbo].[tmbcarnet] AS [tmbcarnet]</DefiningQuery>
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_JugadoresHabilitaciones_Jugadores">
-          <End Type="CABModel.Jugadores" Role="Jugadores" Multiplicity="1">
+          <End Type="DeportesModel.Jugadores" Role="Jugadores" Multiplicity="1">
             <OnDelete Action="Cascade" />
           </End>
-          <End Type="CABModel.JugadoresHabilitaciones" Role="JugadoresHabilitaciones" Multiplicity="*" />
+          <End Type="DeportesModel.JugadoresHabilitaciones" Role="JugadoresHabilitaciones" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Jugadores">
               <PropertyRef Name="id" />
@@ -3356,10 +3356,10 @@ FROM [dbo].[tmbcarnet] AS [tmbcarnet]</DefiningQuery>
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_JugadoresPases_Jugadores">
-          <End Type="CABModel.Jugadores" Role="Jugadores" Multiplicity="1">
+          <End Type="DeportesModel.Jugadores" Role="Jugadores" Multiplicity="1">
             <OnDelete Action="Cascade" />
           </End>
-          <End Type="CABModel.JugadoresPases" Role="JugadoresPases" Multiplicity="*" />
+          <End Type="DeportesModel.JugadoresPases" Role="JugadoresPases" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Jugadores">
               <PropertyRef Name="id" />
@@ -3370,10 +3370,10 @@ FROM [dbo].[tmbcarnet] AS [tmbcarnet]</DefiningQuery>
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_JugadoresPenalizaciones_Jugadores">
-          <End Type="CABModel.Jugadores" Role="Jugadores" Multiplicity="1">
+          <End Type="DeportesModel.Jugadores" Role="Jugadores" Multiplicity="1">
             <OnDelete Action="Cascade" />
           </End>
-          <End Type="CABModel.JugadoresPenalizaciones" Role="JugadoresPenalizaciones" Multiplicity="*" />
+          <End Type="DeportesModel.JugadoresPenalizaciones" Role="JugadoresPenalizaciones" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Jugadores">
               <PropertyRef Name="id" />
@@ -3384,10 +3384,10 @@ FROM [dbo].[tmbcarnet] AS [tmbcarnet]</DefiningQuery>
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_JugadoresSolicitudesCarnets_Jugadores">
-          <End Type="CABModel.Jugadores" Role="Jugadores" Multiplicity="1">
+          <End Type="DeportesModel.Jugadores" Role="Jugadores" Multiplicity="1">
             <OnDelete Action="Cascade" />
           </End>
-          <End Type="CABModel.JugadoresSolicitudesCarnets" Role="JugadoresSolicitudesCarnets" Multiplicity="*" />
+          <End Type="DeportesModel.JugadoresSolicitudesCarnets" Role="JugadoresSolicitudesCarnets" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Jugadores">
               <PropertyRef Name="id" />
@@ -3401,7 +3401,7 @@ FROM [dbo].[tmbcarnet] AS [tmbcarnet]</DefiningQuery>
           <Key>
             <PropertyRef Name="codigo" />
           </Key>
-          <Property Name="codigo" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="codigo" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
           <Property Name="id" Type="Int32" Nullable="false" />
           <Property Name="DNI" Type="Int64" Nullable="false" />
           <Property Name="apellido" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
@@ -3424,11 +3424,11 @@ FROM [dbo].[tmbcarnet] AS [tmbcarnet]</DefiningQuery>
           <Property Name="Puntaje" Type="Int32" />
           <Property Name="fechaEliminacion" Type="DateTime" Precision="3" />
           <Property Name="usuarioEliminacion" Type="Int32" />
-          <NavigationProperty Name="Usuarios" Relationship="CABModel.FK_JugadoresEliminados_Usuarios" FromRole="JugadoresEliminados" ToRole="Usuarios" />
+          <NavigationProperty Name="Usuarios" Relationship="DeportesModel.FK_JugadoresEliminados_Usuarios" FromRole="JugadoresEliminados" ToRole="Usuarios" />
         </EntityType>
         <Association Name="FK_JugadoresEliminados_Usuarios">
-          <End Type="CABModel.Usuarios" Role="Usuarios" Multiplicity="0..1" />
-          <End Type="CABModel.JugadoresEliminados" Role="JugadoresEliminados" Multiplicity="*" />
+          <End Type="DeportesModel.Usuarios" Role="Usuarios" Multiplicity="0..1" />
+          <End Type="DeportesModel.JugadoresEliminados" Role="JugadoresEliminados" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Usuarios">
               <PropertyRef Name="id" />
@@ -3442,17 +3442,17 @@ FROM [dbo].[tmbcarnet] AS [tmbcarnet]</DefiningQuery>
           <Key>
             <PropertyRef Name="id" />
           </Key>
-          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
           <Property Name="idJugador" Type="Int32" />
           <Property Name="accion" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Name="fecha" Type="DateTime" Precision="3" />
           <Property Name="idUsuario" Type="Int32" />
-          <NavigationProperty Name="Jugadores" Relationship="CABModel.FK_JugadoresHistorial_JugadoresHistorial" FromRole="JugadoresHistorial" ToRole="Jugadores" />
-          <NavigationProperty Name="Usuarios" Relationship="CABModel.FK_JugadoresHistorial_Usuarios" FromRole="JugadoresHistorial" ToRole="Usuarios" />
+          <NavigationProperty Name="Jugadores" Relationship="DeportesModel.FK_JugadoresHistorial_JugadoresHistorial" FromRole="JugadoresHistorial" ToRole="Jugadores" />
+          <NavigationProperty Name="Usuarios" Relationship="DeportesModel.FK_JugadoresHistorial_Usuarios" FromRole="JugadoresHistorial" ToRole="Usuarios" />
         </EntityType>
         <Association Name="FK_JugadoresHistorial_JugadoresHistorial">
-          <End Type="CABModel.Jugadores" Role="Jugadores" Multiplicity="0..1" />
-          <End Type="CABModel.JugadoresHistorial" Role="JugadoresHistorial" Multiplicity="*" />
+          <End Type="DeportesModel.Jugadores" Role="Jugadores" Multiplicity="0..1" />
+          <End Type="DeportesModel.JugadoresHistorial" Role="JugadoresHistorial" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Jugadores">
               <PropertyRef Name="id" />
@@ -3463,8 +3463,8 @@ FROM [dbo].[tmbcarnet] AS [tmbcarnet]</DefiningQuery>
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_JugadoresHistorial_Usuarios">
-          <End Type="CABModel.Usuarios" Role="Usuarios" Multiplicity="0..1" />
-          <End Type="CABModel.JugadoresHistorial" Role="JugadoresHistorial" Multiplicity="*" />
+          <End Type="DeportesModel.Usuarios" Role="Usuarios" Multiplicity="0..1" />
+          <End Type="DeportesModel.JugadoresHistorial" Role="JugadoresHistorial" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Usuarios">
               <PropertyRef Name="id" />
@@ -3475,8 +3475,8 @@ FROM [dbo].[tmbcarnet] AS [tmbcarnet]</DefiningQuery>
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_Categorias_Categorias">
-          <End Type="CABModel.Categorias" Role="Categorias" Multiplicity="1" />
-          <End Type="CABModel.Categorias" Role="Categorias1" Multiplicity="0..1" />
+          <End Type="DeportesModel.Categorias" Role="Categorias" Multiplicity="1" />
+          <End Type="DeportesModel.Categorias" Role="Categorias1" Multiplicity="0..1" />
           <ReferentialConstraint>
             <Principal Role="Categorias">
               <PropertyRef Name="id" />
@@ -3487,8 +3487,8 @@ FROM [dbo].[tmbcarnet] AS [tmbcarnet]</DefiningQuery>
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_JugadoresPases_Categorias">
-          <End Type="CABModel.Categorias" Role="Categorias" Multiplicity="0..1" />
-          <End Type="CABModel.JugadoresPases" Role="JugadoresPases" Multiplicity="*" />
+          <End Type="DeportesModel.Categorias" Role="Categorias" Multiplicity="0..1" />
+          <End Type="DeportesModel.JugadoresPases" Role="JugadoresPases" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Categorias">
               <PropertyRef Name="id" />
@@ -3499,8 +3499,8 @@ FROM [dbo].[tmbcarnet] AS [tmbcarnet]</DefiningQuery>
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_JugadoresPases_Usuarios1">
-          <End Type="CABModel.Categorias" Role="Categorias" Multiplicity="0..1" />
-          <End Type="CABModel.JugadoresPases" Role="JugadoresPases" Multiplicity="*" />
+          <End Type="DeportesModel.Categorias" Role="Categorias" Multiplicity="0..1" />
+          <End Type="DeportesModel.JugadoresPases" Role="JugadoresPases" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Categorias">
               <PropertyRef Name="id" />
@@ -3547,10 +3547,10 @@ FROM [dbo].[tmbcarnet] AS [tmbcarnet]</DefiningQuery>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
     <edmx:Mappings>
-      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2008/09/mapping/cs">
-        <EntityContainerMapping StorageEntityContainer="CABModelStoreContainer" CdmEntityContainer="CABEntities">
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="CABModelStoreContainer" CdmEntityContainer="DeportesEntities">
           <EntitySetMapping Name="Asociaciones">
-            <EntityTypeMapping TypeName="CABModel.Asociaciones">
+            <EntityTypeMapping TypeName="DeportesModel.Asociaciones">
               <MappingFragment StoreEntitySet="Asociaciones">
                 <ScalarProperty Name="logo" ColumnName="logo" />
                 <ScalarProperty Name="activo" ColumnName="activo" />
@@ -3570,7 +3570,7 @@ FROM [dbo].[tmbcarnet] AS [tmbcarnet]</DefiningQuery>
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Categorias">
-            <EntityTypeMapping TypeName="CABModel.Categorias">
+            <EntityTypeMapping TypeName="DeportesModel.Categorias">
               <MappingFragment StoreEntitySet="Categorias">
                 <ScalarProperty Name="nivel" ColumnName="nivel" />
                 <ScalarProperty Name="activa" ColumnName="activa" />
@@ -3580,7 +3580,7 @@ FROM [dbo].[tmbcarnet] AS [tmbcarnet]</DefiningQuery>
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Clubes">
-            <EntityTypeMapping TypeName="CABModel.Clubes">
+            <EntityTypeMapping TypeName="DeportesModel.Clubes">
               <MappingFragment StoreEntitySet="Clubes">
                 <ScalarProperty Name="logo" ColumnName="logo" />
                 <ScalarProperty Name="activo" ColumnName="activo" />
@@ -3600,7 +3600,7 @@ FROM [dbo].[tmbcarnet] AS [tmbcarnet]</DefiningQuery>
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="DNI">
-            <EntityTypeMapping TypeName="CABModel.DNI">
+            <EntityTypeMapping TypeName="DeportesModel.DNI">
               <MappingFragment StoreEntitySet="DNI">
                 <ScalarProperty Name="fechaInHabilitacion" ColumnName="fechaInHabilitacion" />
                 <ScalarProperty Name="fechaHabilitacion" ColumnName="fechaHabilitacion" />
@@ -3627,7 +3627,7 @@ FROM [dbo].[tmbcarnet] AS [tmbcarnet]</DefiningQuery>
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Equipos">
-            <EntityTypeMapping TypeName="CABModel.Equipos">
+            <EntityTypeMapping TypeName="DeportesModel.Equipos">
               <MappingFragment StoreEntitySet="Equipos">
                 <ScalarProperty Name="jugadores" ColumnName="jugadores" />
                 <ScalarProperty Name="delegado" ColumnName="delegado" />
@@ -3638,7 +3638,7 @@ FROM [dbo].[tmbcarnet] AS [tmbcarnet]</DefiningQuery>
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Especialidades">
-            <EntityTypeMapping TypeName="CABModel.Especialidades">
+            <EntityTypeMapping TypeName="DeportesModel.Especialidades">
               <MappingFragment StoreEntitySet="Especialidades">
                 <ScalarProperty Name="activo" ColumnName="activo" />
                 <ScalarProperty Name="orden" ColumnName="orden" />
@@ -3648,7 +3648,7 @@ FROM [dbo].[tmbcarnet] AS [tmbcarnet]</DefiningQuery>
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Federaciones">
-            <EntityTypeMapping TypeName="CABModel.Federaciones">
+            <EntityTypeMapping TypeName="DeportesModel.Federaciones">
               <MappingFragment StoreEntitySet="Federaciones">
                 <ScalarProperty Name="logo" ColumnName="logo" />
                 <ScalarProperty Name="activo" ColumnName="activo" />
@@ -3667,7 +3667,7 @@ FROM [dbo].[tmbcarnet] AS [tmbcarnet]</DefiningQuery>
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Fixtures">
-            <EntityTypeMapping TypeName="CABModel.Fixtures">
+            <EntityTypeMapping TypeName="DeportesModel.Fixtures">
               <MappingFragment StoreEntitySet="Fixtures">
                 <ScalarProperty Name="idTorneo" ColumnName="idTorneo" />
                 <ScalarProperty Name="idCategoria" ColumnName="idCategoria" />
@@ -3676,7 +3676,7 @@ FROM [dbo].[tmbcarnet] AS [tmbcarnet]</DefiningQuery>
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="FixturesPartidos">
-            <EntityTypeMapping TypeName="CABModel.FixturesPartidos">
+            <EntityTypeMapping TypeName="DeportesModel.FixturesPartidos">
               <MappingFragment StoreEntitySet="FixturesPartidos">
                 <ScalarProperty Name="ronda" ColumnName="ronda" />
                 <ScalarProperty Name="idRonda" ColumnName="idRonda" />
@@ -3698,7 +3698,7 @@ FROM [dbo].[tmbcarnet] AS [tmbcarnet]</DefiningQuery>
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Jueces">
-            <EntityTypeMapping TypeName="CABModel.Jueces">
+            <EntityTypeMapping TypeName="DeportesModel.Jueces">
               <MappingFragment StoreEntitySet="Jueces">
                 <ScalarProperty Name="activo" ColumnName="activo" />
                 <ScalarProperty Name="nombre" ColumnName="nombre" />
@@ -3707,7 +3707,7 @@ FROM [dbo].[tmbcarnet] AS [tmbcarnet]</DefiningQuery>
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="JugadoresCategorias">
-            <EntityTypeMapping TypeName="CABModel.JugadoresCategorias">
+            <EntityTypeMapping TypeName="DeportesModel.JugadoresCategorias">
               <MappingFragment StoreEntitySet="JugadoresCategorias">
                 <ScalarProperty Name="fechaCreacion" ColumnName="fechaCreacion" />
                 <ScalarProperty Name="idUsuario" ColumnName="idUsuario" />
@@ -3719,7 +3719,7 @@ FROM [dbo].[tmbcarnet] AS [tmbcarnet]</DefiningQuery>
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="JugadoresHabilitaciones">
-            <EntityTypeMapping TypeName="CABModel.JugadoresHabilitaciones">
+            <EntityTypeMapping TypeName="DeportesModel.JugadoresHabilitaciones">
               <MappingFragment StoreEntitySet="JugadoresHabilitaciones">
                 <ScalarProperty Name="categoria" ColumnName="categoria" />
                 <ScalarProperty Name="idJugador" ColumnName="idJugador" />
@@ -3733,7 +3733,7 @@ FROM [dbo].[tmbcarnet] AS [tmbcarnet]</DefiningQuery>
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="JugadoresSolicitudesCarnets">
-            <EntityTypeMapping TypeName="CABModel.JugadoresSolicitudesCarnets">
+            <EntityTypeMapping TypeName="DeportesModel.JugadoresSolicitudesCarnets">
               <MappingFragment StoreEntitySet="JugadoresSolicitudesCarnets">
                 <ScalarProperty Name="motivo" ColumnName="motivo" />
                 <ScalarProperty Name="fechaCreacion" ColumnName="fechaCreacion" />
@@ -3747,7 +3747,7 @@ FROM [dbo].[tmbcarnet] AS [tmbcarnet]</DefiningQuery>
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Localidades">
-            <EntityTypeMapping TypeName="CABModel.Localidades">
+            <EntityTypeMapping TypeName="DeportesModel.Localidades">
               <MappingFragment StoreEntitySet="Localidades">
                 <ScalarProperty Name="activa" ColumnName="activa" />
                 <ScalarProperty Name="idProvincia" ColumnName="idProvincia" />
@@ -3758,7 +3758,7 @@ FROM [dbo].[tmbcarnet] AS [tmbcarnet]</DefiningQuery>
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Provincias">
-            <EntityTypeMapping TypeName="CABModel.Provincias">
+            <EntityTypeMapping TypeName="DeportesModel.Provincias">
               <MappingFragment StoreEntitySet="Provincias">
                 <ScalarProperty Name="descripcion" ColumnName="descripcion" />
                 <ScalarProperty Name="id" ColumnName="id" />
@@ -3766,7 +3766,7 @@ FROM [dbo].[tmbcarnet] AS [tmbcarnet]</DefiningQuery>
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Roles">
-            <EntityTypeMapping TypeName="CABModel.Roles">
+            <EntityTypeMapping TypeName="DeportesModel.Roles">
               <MappingFragment StoreEntitySet="Roles">
                 <ScalarProperty Name="administraConfederacion" ColumnName="administraConfederacion" />
                 <ScalarProperty Name="administraSeguridad" ColumnName="administraSeguridad" />
@@ -3780,7 +3780,7 @@ FROM [dbo].[tmbcarnet] AS [tmbcarnet]</DefiningQuery>
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="sysdiagrams">
-            <EntityTypeMapping TypeName="CABModel.sysdiagrams">
+            <EntityTypeMapping TypeName="DeportesModel.sysdiagrams">
               <MappingFragment StoreEntitySet="sysdiagrams">
                 <ScalarProperty Name="definition" ColumnName="definition" />
                 <ScalarProperty Name="version" ColumnName="version" />
@@ -3791,7 +3791,7 @@ FROM [dbo].[tmbcarnet] AS [tmbcarnet]</DefiningQuery>
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Torneos">
-            <EntityTypeMapping TypeName="CABModel.Torneos">
+            <EntityTypeMapping TypeName="DeportesModel.Torneos">
               <MappingFragment StoreEntitySet="Torneos">
                 <ScalarProperty Name="resultadosDescripcion" ColumnName="resultadosDescripcion" />
                 <ScalarProperty Name="resultadosTitulo" ColumnName="resultadosTitulo" />
@@ -3825,7 +3825,7 @@ FROM [dbo].[tmbcarnet] AS [tmbcarnet]</DefiningQuery>
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="TorneosActividades">
-            <EntityTypeMapping TypeName="CABModel.TorneosActividades">
+            <EntityTypeMapping TypeName="DeportesModel.TorneosActividades">
               <MappingFragment StoreEntitySet="TorneosActividades">
                 <ScalarProperty Name="descripcion" ColumnName="descripcion" />
                 <ScalarProperty Name="minutos" ColumnName="minutos" />
@@ -3837,7 +3837,7 @@ FROM [dbo].[tmbcarnet] AS [tmbcarnet]</DefiningQuery>
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="TorneosEquipos">
-            <EntityTypeMapping TypeName="CABModel.TorneosEquipos">
+            <EntityTypeMapping TypeName="DeportesModel.TorneosEquipos">
               <MappingFragment StoreEntitySet="TorneosEquipos">
                 <ScalarProperty Name="idEspecialidad" ColumnName="idEspecialidad" />
                 <ScalarProperty Name="nombreCorto" ColumnName="nombreCorto" />
@@ -3853,7 +3853,7 @@ FROM [dbo].[tmbcarnet] AS [tmbcarnet]</DefiningQuery>
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="TorneosEspecialidades">
-            <EntityTypeMapping TypeName="CABModel.TorneosEspecialidades">
+            <EntityTypeMapping TypeName="DeportesModel.TorneosEspecialidades">
               <MappingFragment StoreEntitySet="TorneosEspecialidades">
                 <ScalarProperty Name="idEspecialidad" ColumnName="idEspecialidad" />
                 <ScalarProperty Name="idTorneo" ColumnName="idTorneo" />
@@ -3862,7 +3862,7 @@ FROM [dbo].[tmbcarnet] AS [tmbcarnet]</DefiningQuery>
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="TorneosPartidos">
-            <EntityTypeMapping TypeName="CABModel.TorneosPartidos">
+            <EntityTypeMapping TypeName="DeportesModel.TorneosPartidos">
               <MappingFragment StoreEntitySet="TorneosPartidos">
                 <ScalarProperty Name="idEspecialidad" ColumnName="idEspecialidad" />
                 <ScalarProperty Name="fase" ColumnName="fase" />
@@ -3877,7 +3877,7 @@ FROM [dbo].[tmbcarnet] AS [tmbcarnet]</DefiningQuery>
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="TorneosZonas">
-            <EntityTypeMapping TypeName="CABModel.TorneosZonas">
+            <EntityTypeMapping TypeName="DeportesModel.TorneosZonas">
               <MappingFragment StoreEntitySet="TorneosZonas">
                 <ScalarProperty Name="idEspecialidad" ColumnName="idEspecialidad" />
                 <ScalarProperty Name="descripcion" ColumnName="descripcion" />
@@ -3887,7 +3887,7 @@ FROM [dbo].[tmbcarnet] AS [tmbcarnet]</DefiningQuery>
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Usuarios">
-            <EntityTypeMapping TypeName="CABModel.Usuarios">
+            <EntityTypeMapping TypeName="DeportesModel.Usuarios">
               <MappingFragment StoreEntitySet="Usuarios">
                 <ScalarProperty Name="idUsuarioCreador" ColumnName="idUsuarioCreador" />
                 <ScalarProperty Name="activo" ColumnName="activo" />
@@ -3901,7 +3901,7 @@ FROM [dbo].[tmbcarnet] AS [tmbcarnet]</DefiningQuery>
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="UsuariosAsociaciones">
-            <EntityTypeMapping TypeName="CABModel.UsuariosAsociaciones">
+            <EntityTypeMapping TypeName="DeportesModel.UsuariosAsociaciones">
               <MappingFragment StoreEntitySet="UsuariosAsociaciones">
                 <ScalarProperty Name="idAsociacion" ColumnName="idAsociacion" />
                 <ScalarProperty Name="idUsuario" ColumnName="idUsuario" />
@@ -3910,7 +3910,7 @@ FROM [dbo].[tmbcarnet] AS [tmbcarnet]</DefiningQuery>
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="UsuariosFederaciones">
-            <EntityTypeMapping TypeName="CABModel.UsuariosFederaciones">
+            <EntityTypeMapping TypeName="DeportesModel.UsuariosFederaciones">
               <MappingFragment StoreEntitySet="UsuariosFederaciones">
                 <ScalarProperty Name="idFederacion" ColumnName="idFederacion" />
                 <ScalarProperty Name="idUsuario" ColumnName="idUsuario" />
@@ -3919,7 +3919,7 @@ FROM [dbo].[tmbcarnet] AS [tmbcarnet]</DefiningQuery>
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="UsuariosRoles">
-            <EntityTypeMapping TypeName="CABModel.UsuariosRoles">
+            <EntityTypeMapping TypeName="DeportesModel.UsuariosRoles">
               <MappingFragment StoreEntitySet="UsuariosRoles">
                 <ScalarProperty Name="idRol" ColumnName="idRol" />
                 <ScalarProperty Name="idUsuario" ColumnName="idUsuario" />
@@ -3928,7 +3928,7 @@ FROM [dbo].[tmbcarnet] AS [tmbcarnet]</DefiningQuery>
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="JugadoresPases">
-            <EntityTypeMapping TypeName="CABModel.JugadoresPases">
+            <EntityTypeMapping TypeName="DeportesModel.JugadoresPases">
               <MappingFragment StoreEntitySet="JugadoresPases">
                 <ScalarProperty Name="idCategoria" ColumnName="idCategoria" />
                 <ScalarProperty Name="motivosRechazo" ColumnName="motivosRechazo" />
@@ -3949,7 +3949,7 @@ FROM [dbo].[tmbcarnet] AS [tmbcarnet]</DefiningQuery>
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="JugadoresPasesEstados">
-            <EntityTypeMapping TypeName="CABModel.JugadoresPasesEstados">
+            <EntityTypeMapping TypeName="DeportesModel.JugadoresPasesEstados">
               <MappingFragment StoreEntitySet="JugadoresPasesEstados">
                 <ScalarProperty Name="comentarios" ColumnName="comentarios" />
                 <ScalarProperty Name="idFederacion" ColumnName="idFederacion" />
@@ -3963,7 +3963,7 @@ FROM [dbo].[tmbcarnet] AS [tmbcarnet]</DefiningQuery>
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="PasesEstados">
-            <EntityTypeMapping TypeName="CABModel.PasesEstados">
+            <EntityTypeMapping TypeName="DeportesModel.PasesEstados">
               <MappingFragment StoreEntitySet="PasesEstados">
                 <ScalarProperty Name="codigoInterno" ColumnName="codigoInterno" />
                 <ScalarProperty Name="estadoFinal" ColumnName="estadoFinal" />
@@ -3975,7 +3975,7 @@ FROM [dbo].[tmbcarnet] AS [tmbcarnet]</DefiningQuery>
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="JugadoresPenalizaciones">
-            <EntityTypeMapping TypeName="CABModel.JugadoresPenalizaciones">
+            <EntityTypeMapping TypeName="DeportesModel.JugadoresPenalizaciones">
               <MappingFragment StoreEntitySet="JugadoresPenalizaciones">
                 <ScalarProperty Name="requiereAprobacionFederacion" ColumnName="requiereAprobacionFederacion" />
                 <ScalarProperty Name="fechaFin" ColumnName="fechaFin" />
@@ -3993,7 +3993,7 @@ FROM [dbo].[tmbcarnet] AS [tmbcarnet]</DefiningQuery>
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="JugadoresPenalizacionesEstados">
-            <EntityTypeMapping TypeName="CABModel.JugadoresPenalizacionesEstados">
+            <EntityTypeMapping TypeName="DeportesModel.JugadoresPenalizacionesEstados">
               <MappingFragment StoreEntitySet="JugadoresPenalizacionesEstados">
                 <ScalarProperty Name="observaciones" ColumnName="observaciones" />
                 <ScalarProperty Name="fechaFin" ColumnName="fechaFin" />
@@ -4008,7 +4008,7 @@ FROM [dbo].[tmbcarnet] AS [tmbcarnet]</DefiningQuery>
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="PenalizacionesEstados">
-            <EntityTypeMapping TypeName="CABModel.PenalizacionesEstados">
+            <EntityTypeMapping TypeName="DeportesModel.PenalizacionesEstados">
               <MappingFragment StoreEntitySet="PenalizacionesEstados">
                 <ScalarProperty Name="estadoFinal" ColumnName="estadoFinal" />
                 <ScalarProperty Name="estadoIntermedio" ColumnName="estadoIntermedio" />
@@ -4020,7 +4020,7 @@ FROM [dbo].[tmbcarnet] AS [tmbcarnet]</DefiningQuery>
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Noticias">
-            <EntityTypeMapping TypeName="CABModel.Noticias">
+            <EntityTypeMapping TypeName="DeportesModel.Noticias">
               <MappingFragment StoreEntitySet="Noticias">
                 <ScalarProperty Name="idUsuario" ColumnName="idUsuario" />
                 <ScalarProperty Name="fechaCreacion" ColumnName="fechaCreacion" />
@@ -4036,7 +4036,7 @@ FROM [dbo].[tmbcarnet] AS [tmbcarnet]</DefiningQuery>
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="habilitaciones">
-            <EntityTypeMapping TypeName="CABModel.habilitaciones">
+            <EntityTypeMapping TypeName="DeportesModel.habilitaciones">
               <MappingFragment StoreEntitySet="habilitaciones">
                 <ScalarProperty Name="idJugador" ColumnName="idJugador" />
                 <ScalarProperty Name="fechaCreacion" ColumnName="fechaCreacion" />
@@ -4049,7 +4049,7 @@ FROM [dbo].[tmbcarnet] AS [tmbcarnet]</DefiningQuery>
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="tmbcarnet">
-            <EntityTypeMapping TypeName="CABModel.tmbcarnet">
+            <EntityTypeMapping TypeName="DeportesModel.tmbcarnet">
               <MappingFragment StoreEntitySet="tmbcarnet">
                 <ScalarProperty Name="fechaCreacion" ColumnName="fechaCreacion" />
                 <ScalarProperty Name="idUsuario" ColumnName="idUsuario" />
@@ -4062,7 +4062,7 @@ FROM [dbo].[tmbcarnet] AS [tmbcarnet]</DefiningQuery>
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="ExportacionExel">
-            <EntityTypeMapping TypeName="CABModel.ExportacionExel">
+            <EntityTypeMapping TypeName="DeportesModel.ExportacionExel">
               <MappingFragment StoreEntitySet="ExportacionExel">
                 <ScalarProperty Name="fechaImpresion" ColumnName="fechaImpresion" />
                 <ScalarProperty Name="id" ColumnName="id" />
@@ -4071,7 +4071,7 @@ FROM [dbo].[tmbcarnet] AS [tmbcarnet]</DefiningQuery>
           </EntitySetMapping>
           <FunctionImportMapping FunctionImportName="uspInformes_CarnetsNoEntregados" FunctionName="CABModel.Store.uspInformes_CarnetsNoEntregados">
             <ResultMapping>
-              <ComplexTypeMapping TypeName="CABModel.uspInformes_CarnetsNoEntregados_Result">
+              <ComplexTypeMapping TypeName="DeportesModel.uspInformes_CarnetsNoEntregados_Result">
                 <ScalarProperty Name="fechaSolicitud" ColumnName="fechaSolicitud" />
                 <ScalarProperty Name="DNI" ColumnName="DNI" />
                 <ScalarProperty Name="apellido" ColumnName="apellido" />
@@ -4088,7 +4088,7 @@ FROM [dbo].[tmbcarnet] AS [tmbcarnet]</DefiningQuery>
             </ResultMapping>
           </FunctionImportMapping>
           <EntitySetMapping Name="Campeones">
-            <EntityTypeMapping TypeName="CABModel.Campeones">
+            <EntityTypeMapping TypeName="DeportesModel.Campeones">
               <MappingFragment StoreEntitySet="Campeones">
                 <ScalarProperty Name="torneo" ColumnName="torneo" />
                 <ScalarProperty Name="campeon" ColumnName="campeon" />
@@ -4099,7 +4099,7 @@ FROM [dbo].[tmbcarnet] AS [tmbcarnet]</DefiningQuery>
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Jugadores">
-            <EntityTypeMapping TypeName="CABModel.Jugadores">
+            <EntityTypeMapping TypeName="DeportesModel.Jugadores">
               <MappingFragment StoreEntitySet="Jugadores">
                 <ScalarProperty Name="nroCarnet" ColumnName="nroCarnet" />
                 <ScalarProperty Name="Historial" ColumnName="Historial" />
@@ -4127,7 +4127,7 @@ FROM [dbo].[tmbcarnet] AS [tmbcarnet]</DefiningQuery>
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="JugadoresEliminados">
-            <EntityTypeMapping TypeName="CABModel.JugadoresEliminados">
+            <EntityTypeMapping TypeName="DeportesModel.JugadoresEliminados">
               <MappingFragment StoreEntitySet="JugadoresEliminados">
                 <ScalarProperty Name="usuarioEliminacion" ColumnName="usuarioEliminacion" />
                 <ScalarProperty Name="fechaEliminacion" ColumnName="fechaEliminacion" />
@@ -4156,7 +4156,7 @@ FROM [dbo].[tmbcarnet] AS [tmbcarnet]</DefiningQuery>
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="JugadoresHistorial">
-            <EntityTypeMapping TypeName="CABModel.JugadoresHistorial">
+            <EntityTypeMapping TypeName="DeportesModel.JugadoresHistorial">
               <MappingFragment StoreEntitySet="JugadoresHistorial">
                 <ScalarProperty Name="idUsuario" ColumnName="idUsuario" />
                 <ScalarProperty Name="fecha" ColumnName="fecha" />
@@ -4168,7 +4168,7 @@ FROM [dbo].[tmbcarnet] AS [tmbcarnet]</DefiningQuery>
           </EntitySetMapping>
           <FunctionImportMapping FunctionImportName="uspInformes_Pases" FunctionName="CABModel.Store.uspInformes_Pases">
             <ResultMapping>
-              <ComplexTypeMapping TypeName="CABModel.uspInformes_Pases_Result">
+              <ComplexTypeMapping TypeName="DeportesModel.uspInformes_Pases_Result">
                 <ScalarProperty Name="DNI" ColumnName="DNI" />
                 <ScalarProperty Name="nombre" ColumnName="nombre" />
                 <ScalarProperty Name="categoria" ColumnName="categoria" />
@@ -4189,7 +4189,7 @@ FROM [dbo].[tmbcarnet] AS [tmbcarnet]</DefiningQuery>
           </FunctionImportMapping>
           <FunctionImportMapping FunctionImportName="uspInformes_JugadoresHabilitados" FunctionName="CABModel.Store.uspInformes_JugadoresHabilitados">
             <ResultMapping>
-              <ComplexTypeMapping TypeName="CABModel.uspInformes_JugadoresHabilitados_Result">
+              <ComplexTypeMapping TypeName="DeportesModel.uspInformes_JugadoresHabilitados_Result">
                 <ScalarProperty Name="DNI" ColumnName="DNI" />
                 <ScalarProperty Name="nombre" ColumnName="nombre" />
                 <ScalarProperty Name="fechaNacimiento" ColumnName="fechaNacimiento" />
@@ -4212,22 +4212,22 @@ FROM [dbo].[tmbcarnet] AS [tmbcarnet]</DefiningQuery>
     </edmx:Mappings>
   </edmx:Runtime>
   <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
-  <Designer xmlns="http://schemas.microsoft.com/ado/2008/10/edmx">
-    <Connection>
-      <DesignerInfoPropertySet>
-        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
-      </DesignerInfoPropertySet>
-    </Connection>
-    <Options>
-      <DesignerInfoPropertySet>
-        <DesignerProperty Name="ValidateOnBuild" Value="true" />
-        <DesignerProperty Name="EnablePluralization" Value="False" />
-        <DesignerProperty Name="IncludeForeignKeysInModel" Value="True" />
-        <DesignerProperty Name="CodeGenerationStrategy" Value="Ninguno" />
-        <DesignerProperty Name="UseLegacyProvider" Value="True" />
-      </DesignerInfoPropertySet>
-    </Options>
+  <edmx:Designer>
+    <edmx:Connection>
+      <edmx:DesignerInfoPropertySet>
+        <edmx:DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </edmx:DesignerInfoPropertySet>
+    </edmx:Connection>
+    <edmx:Options>
+      <edmx:DesignerInfoPropertySet>
+        <edmx:DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <edmx:DesignerProperty Name="EnablePluralization" Value="False" />
+        <edmx:DesignerProperty Name="IncludeForeignKeysInModel" Value="True" />
+        <edmx:DesignerProperty Name="CodeGenerationStrategy" Value="Ninguno" />
+        <edmx:DesignerProperty Name="UseLegacyProvider" Value="True" />
+      </edmx:DesignerInfoPropertySet>
+    </edmx:Options>
     <!-- Diagram content (shape and connector positions) -->
-    <Diagrams></Diagrams>
-  </Designer>
+    <edmx:Diagrams />
+  </edmx:Designer>
 </edmx:Edmx>

@@ -10,7 +10,7 @@ namespace Negocio
     {
         public static ListaPaginada obtenerListado(string busqueda, int pageIndex = 1, int pageSize = 10)
         {
-            using (CABEntities db = new CABEntities())
+            using (DeportesEntities db = new DeportesEntities())
             {
                 var lista = from l in db.Roles
                             select l;
@@ -28,7 +28,7 @@ namespace Negocio
 
         public static IEnumerable<Roles> obtenerLista()
         {
-            using (CABEntities db = new CABEntities())
+            using (DeportesEntities db = new DeportesEntities())
             {
                 var lista = from l in db.Roles
                             orderby l.id
@@ -40,7 +40,7 @@ namespace Negocio
 
         public static IEnumerable<Roles> obtenerFederacion()
         {
-            using (CABEntities db = new CABEntities())
+            using (DeportesEntities db = new DeportesEntities())
             {
                 var lista = from l in db.Roles
                             where l.codigoInterno=="asociacion"
@@ -51,7 +51,7 @@ namespace Negocio
         }
         public static Negocio.Roles obtener(int id)
         {
-            using (CABEntities db = new CABEntities())
+            using (DeportesEntities db = new DeportesEntities())
             {
                 return db.Roles.FirstOrDefault(x => x.id == id);
             }
@@ -59,7 +59,7 @@ namespace Negocio
 
         public static Negocio.Roles obtener(string codigoInterno)
         {
-            using (CABEntities db = new CABEntities())
+            using (DeportesEntities db = new DeportesEntities())
             {
                 return db.Roles.FirstOrDefault(x => x.codigoInterno == codigoInterno);
             }

@@ -10,7 +10,7 @@ namespace Negocio
     {
         public static Negocio.PasesEstados obtener(string codigoInterno)
         {
-            using (CABEntities db = new CABEntities())
+            using (DeportesEntities db = new DeportesEntities())
             {
                 return db.PasesEstados.FirstOrDefault(x => x.codigoInterno == codigoInterno);
             }

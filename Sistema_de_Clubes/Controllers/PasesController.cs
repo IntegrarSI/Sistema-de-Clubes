@@ -7,7 +7,7 @@ using System.Net;
 using System.Web;
 using System.Web.Mvc;
 
-namespace CABW.Controllers
+namespace Sistema_de_Clubes
 {
     public class PasesController : Controller
     {
