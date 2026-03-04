@@ -1,422 +1,425 @@
-﻿@media (max-width: 767px) {
-    .view {
-        padding-left: 10px;
-        padding-right: 10px;
-    }
+﻿/* =========================
+   LOGIN (CSS COMPLETO) — Versión PRO con TODOS los cambios
+   ✅ Oculta header del admin SOLO en login
+   ✅ Fondo degradé premium + luces + grain (textura)
+   ✅ Card oscuro con borde luminoso + shine superior
+   ✅ Animación suave de entrada
+   ✅ Inputs con lift en focus + focus ring azul
+   ✅ Ojo SVG pro
+   ✅ Checkbox recordar más visible
+   ✅ Botón azul con glow moderno + halo interno
+   ✅ Botón disabled cuando loading
+   ✅ Card un poco más grande (mejor presencia)
+   ========================= */
+
+:root {
+    /* Fondo general */
+    --bg-a: #0B1220;
+    --bg-b: #111B2E;
+    --bg-c: #0A0F1C;
+    /* Card */
+    --card-bg: rgba(10, 14, 22, 0.92);
+    --card-border: rgba(255, 255, 255, 0.10);
+    /* Texto */
+    --text: #E5E7EB;
+    --muted: rgba(229, 231, 235, 0.70);
+    /* Azul botón */
+    --blue: #2F7BFF;
+    --blue-2: #1E5BFF;
+    /* Inputs */
+    --input-bg: rgba(255, 255, 255, 0.06);
+    --input-border: rgba(255, 255, 255, 0.10);
+    --focus-ring: rgba(47, 123, 255, 0.28);
+    --radius: 18px;
+    --shadow: 0 30px 70px rgba(0,0,0,.45);
 }
 
-.btn-white {
-    color: #fff;
-    background-color: transparent;
-    border-color: #fff;
+html, body {
+    height: 100%;
 }
 
-.fade {
-  opacity: 1;
-}
-
-.fade.ng-hide {
-  opacity: 0;
-}
-
-.fade.ng-hide-remove,
-.fade.ng-hide-add {
-  display: block !important;
-}
-
-.fade.ng-hide-remove {
-  transition: all linear 200ms;
-}
-
-.fade.ng-hide-add {
-  transition: all linear 200ms;
-}
-
-.h1 {
-    font-size:26px;
-    padding-left:0px;
-    margin-bottom:10px;
-}
-
-.h1-botones {
-    margin-top:10px;
-    float:right;
-    text-align:right;
-    padding-right:0px;
-}
-
-.h1-botones button {
-    margin:5px;
-    margin-right:0;
-    margin-bottom:10px;
-}
-
-.h1-botones a {
-    margin:5px;
-    margin-right:0;
-    margin-bottom:10px;
-}
-
-.rowHeader {
-    border-bottom: solid 1px #eee;
-    margin-bottom: 10px;
-}
-
-
-.alert-green {
-    color: #fff;
-    background-color: #5CB85C;
-    border-color: #5CB85C;
-}
-
-.alert-red {
-    border-color: #D9534F;
-    color: #fff;
-    background-color: #D9534F;
-}
-
-th.action
-, td.action {
-    width:20px;
-}
-
-.fa-2x {
-    margin-top:5px;
-}
-
-.alert {
-    font-size:12pt;
-}
-
-.control-label {
-    text-align:left !important;
-}
-
-.form-group {
-    
-}
-
-.panel-body {
-    padding-bottom:0px !important;
-}
-
-.btn-withoutline.btn-white {
-    color:rgba(255,255,255,.8);
-}
-
-
-.huge {
-    font-size: 28px;
-}
-
-.visible {
-    visibility:visible;
-}
-
-.invisible {
-    visibility:hidden;
-}
-
-.required .control-label:after { 
-    color: #d00;
-    content: " *";
-}
-
-.control-label, .panel-body label {
-    font-weight:normal !important;
-}
-
-.glyphicon-refresh-animate {
-    -animation: spin 1s infinite linear;
-    -ms-animation: spin 1s infinite linear;
-    -webkit-animation: spinw 1s infinite linear;
-    -moz-animation: spinm 1s infinite linear;
-}
-
-@keyframes spin {
-    from { transform: scale(1) rotate(0deg);}
-    to { transform: scale(1) rotate(360deg);}
-}
-  
-@-webkit-keyframes spinw {
-    from { -webkit-transform: rotate(0deg);}
-    to { -webkit-transform: rotate(360deg);}
-}
-
-@-moz-keyframes spinm {
-    from { -moz-transform: rotate(0deg);}
-    to { -moz-transform: rotate(360deg);}
-}
-
-.recaptchaContainer div {
-    margin:0px auto;
-}
-
-.my-drop-zone { border: dashed 1px lightgray; text-align:center }
-.nv-file-over { border: dashed 1px red; } /* Default class applied to drop zones on over */
-.another-file-over-class { border: dotted 1px green; text-align:center; }
-
-
-table.cellpading5 td {
-    padding:5px;
-}
-
-.loadingLoad {
-    position:absolute; 
-    top:120px; 
-    bottom:0; 
-    right:0;
-    left:250px; 
-    z-index:100000; 
-    background-color:white; 
-    text-align:center; 
-    padding:100px;
-}
-
-.loadingLoadMobile {
-    top:120px !important; 
-    left:0px !important; 
-}
-
-.displayNone {
-    display:none;
+body {
+    margin: 0;
 }
 
 /* =========================
-   LOGIN SPLIT PRO - Sistema de Clubes (Conectar theme)
+   1) OCULTAR HEADER/NAV DEL ADMIN SOLO EN LOGIN
+   (Esto sacaba “Administración CAB” y “Resumen”)
    ========================= */
+.login-page header,
+.login-page .navbar,
+.login-page .navbar-default,
+.login-page .nav,
+.login-page .topbar,
+.login-page .page-header,
+.login-page .breadcrumb,
+.login-page .tabs,
+.login-page .nav-tabs {
+    display: none !important;
+}
 
-/* Fondo SOLO para el login */
+/* =========================
+   Fondo del login (degradé premium + luces)
+   ========================= */
 .login-page.login-split {
     min-height: 100vh;
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 40px;
-    /* Fondo general del login (limpio, neutro) */
-    background: #F6F7FB;
+    padding: 28px;
+    background: radial-gradient(900px 520px at 15% 15%, rgba(47,123,255,0.28) 0%, rgba(47,123,255,0) 60%), radial-gradient(850px 520px at 90% 20%, rgba(255,255,255,0.07) 0%, rgba(255,255,255,0) 55%), radial-gradient(700px 520px at 50% 100%, rgba(47,123,255,0.12) 0%, rgba(47,123,255,0) 55%), linear-gradient(135deg, var(--bg-a) 0%, var(--bg-b) 55%, var(--bg-c) 100%);
+    overflow: hidden;
+    position: relative;
 }
 
-    /* Card contenedor principal (FIX pantallas chicas) */
-    .login-page.login-split .login-shell {
-        width: 100%;
-        max-width: 1300px;
-        /* antes: height: 88vh; */
-        height: auto;
-        min-height: 640px; /* base */
-        max-height: calc(100vh - 80px); /* evita que se corte con padding del wrapper */
-
-        display: flex;
-        border-radius: 22px;
-        overflow: hidden;
-        box-shadow: 0 30px 70px rgba(0,0,0,.12);
-        background: #ffffff;
+    /* =========================
+   2) Grain / textura sutil del fondo (premium)
+   ========================= */
+    .login-page.login-split::after {
+        content: "";
+        position: fixed;
+        inset: 0;
+        pointer-events: none;
+        opacity: .08;
+        background-image: radial-gradient(circle at 10% 10%, rgba(255,255,255,.08) 0 1px, transparent 2px), radial-gradient(circle at 70% 30%, rgba(255,255,255,.06) 0 1px, transparent 2px), radial-gradient(circle at 40% 80%, rgba(255,255,255,.05) 0 1px, transparent 2px);
+        background-size: 120px 120px;
     }
 
-    /* Si la notebook tiene poco alto, permití scroll interno */
-    .login-page.login-split .login-right {
-        overflow-y: auto;
+    /* Contenedor (card un poco más grande) */
+    .login-page.login-split .login-shell {
+        width: 100%;
+        max-width: 520px; /* ✅ más presencia visual */
+        display: flex;
+        justify-content: center;
+        position: relative;
+        z-index: 1; /* por encima del grain */
     }
 
     /* =========================
-       PANEL IZQUIERDO (AZUL NOCHE + ACCENT NARANJA)
-       ========================= */
-
-    .login-page.login-split .login-left {
-        flex: 1.1;
-        padding: 60px 60px;
-        color: #fff;
-        position: relative;
-        display: flex;
-        /* Azul corporativo (combina con naranja) */
-        background: radial-gradient(900px 500px at 20% 20%, #1B2A6B 0%, #0B1E3C 70%, #07162E 100%);
+   Card oscuro + borde luminoso + shine
+   ========================= */
+    .login-page.login-split .login-card.login-card--dark {
+        width: 100%;
+        padding: 28px;
+        border-radius: calc(var(--radius) + 6px);
+        background: var(--card-bg);
+        border: 1px solid var(--card-border);
+        box-shadow: 0 30px 70px rgba(0,0,0,.50), 0 0 0 1px rgba(47,123,255,.08) inset;
+        backdrop-filter: blur(10px);
+        position: relative; /* necesario para ::before y glow */
     }
 
-        /* Decoración sutil */
-        .login-page.login-split .login-left::after {
+        /* Shine suave arriba del card */
+        .login-page.login-split .login-card.login-card--dark::before {
             content: "";
             position: absolute;
-            width: 520px;
-            height: 520px;
-            background: rgba(255,255,255,.05);
-            border-radius: 50%;
-            bottom: -160px;
-            right: -160px;
-        }
-
-        /* Halo naranja (marca Conectar, MUY sutil) */
-        .login-page.login-split .login-left::before {
-            content: "";
-            position: absolute;
-            width: 620px;
-            height: 620px;
-            border-radius: 50%;
-            left: -280px;
-            top: -280px;
-            background: radial-gradient(circle, rgba(255,122,0,.18) 0%, rgba(255,122,0,0) 60%);
+            inset: 0;
+            border-radius: inherit;
+            background: radial-gradient(circle at 20% 0%, rgba(255,255,255,.10), rgba(255,255,255,0) 45%);
             pointer-events: none;
         }
 
-    /* Contenido interno */
-    .login-page.login-split .login-left-inner {
-        width: 100%;
-        max-width: 520px;
-        margin: 0 auto;
-        display: flex;
-        flex-direction: column;
-        position: relative; /* para quedar arriba de los overlays */
-        z-index: 1;
+/* =========================
+   3) Animación suave al aparecer
+   ========================= */
+.login-animate {
+    animation: loginFadeUp .55s cubic-bezier(.2,.9,.2,1) both;
+}
+
+@keyframes loginFadeUp {
+    from {
+        opacity: 0;
+        transform: translateY(14px) scale(.985);
+        filter: blur(6px);
     }
 
-    .login-page.login-split .login-left-title {
-        font-size: 36px;
-        font-weight: 700;
-        line-height: 1.1;
-        margin: 0;
-        letter-spacing: -0.3px;
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+        filter: blur(0);
     }
+}
 
-    .login-page.login-split .login-left-text {
-        margin-top: 18px;
-        font-size: 15px;
-        line-height: 1.7;
-        opacity: .92;
-        max-width: 420px;
-    }
+/* Head */
+.login-page.login-split .login-card-head {
+    text-align: center;
+    margin-bottom: 18px;
+}
 
-    .login-page.login-split .login-left-foot {
-        margin-top: auto;
-        font-size: 13px;
-        opacity: .75;
-    }
+.login-page.login-split .login-card-title {
+    margin: 0;
+    color: var(--text);
+    font-weight: 800;
+    font-size: 24px;
+    letter-spacing: -0.2px;
+}
 
-    /* =========================
-       PANEL DERECHO (LOGIN)
-       ========================= */
-
-    .login-page.login-split .login-right {
-        flex: 0.9;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        padding: 60px;
-        /* neutro suave */
-        background: #F9FAFC;
-    }
-
-    /* Tarjeta login */
-    .login-page.login-split .login-card {
-        width: 100%;
-        max-width: 420px;
-        padding: 42px 38px;
-        border-radius: 18px;
-        background: #ffffff;
-        box-shadow: 0 20px 45px rgba(0,0,0,.08);
-        /* borde casi invisible para “premium” */
-        border: 1px solid rgba(17, 24, 39, 0.06);
-    }
-
-    /* Títulos */
-    .login-page.login-split .login-card-title {
-        margin: 0;
-        font-size: 24px;
-        font-weight: 700;
-        color: #111827;
-        text-align: center;
-    }
-
-    .login-page.login-split .login-card-subtitle {
-        margin: 10px 0 28px;
-        color: #6B7280;
-        font-size: 14px;
-        text-align: center;
-    }
-
-    /* =========================
-       INPUTS
-       ========================= */
-
-    .login-page.login-split .form-control {
-        height: 48px;
-        border-radius: 12px;
-        border: 1px solid #E5E7EB;
-        background: #F3F5F9;
-        box-shadow: none;
-        transition: all .2s ease;
-    }
-
-        .login-page.login-split .form-control:focus {
-            background: #fff;
-            /* Focus color marca */
-            border-color: #FF7A00;
-            box-shadow: 0 0 0 4px rgba(255,122,0,.18);
-        }
-
-    /* =========================
-       BOTÓN (CON NARANJA CONECTAR)
-       ========================= */
-
-    .login-page.login-split .login-btn {
-        margin-top: 14px;
-        height: 48px;
-        width: 100%;
-        border-radius: 12px;
-        border: none;
-        font-weight: 700;
-        color: #fff;
-        /* Conectar gradient */
-        background: linear-gradient(135deg, #FF7A00, #D95F00);
-        transition: all .2s ease;
-    }
-
-        .login-page.login-split .login-btn:hover {
-            transform: translateY(-2px);
-            background: linear-gradient(135deg, #FF7A00, #C65300);
-            box-shadow: 0 12px 25px rgba(255,122,0,.35);
-        }
-
-        .login-page.login-split .login-btn:active {
-            transform: translateY(0);
-        }
-
-    /* =========================
-       LINK (CON NARANJA CONECTAR)
-       ========================= */
-
-    .login-page.login-split .login-link {
-        display: block;
-        text-align: center;
-        margin-top: 14px;
-        color: #FF7A00;
-        font-weight: 700;
-        text-decoration: none;
-    }
-
-        .login-page.login-split .login-link:hover {
-            text-decoration: underline;
-        }
+.login-page.login-split .login-card-subtitle {
+    margin: 8px 0 0;
+    color: var(--muted);
+    font-size: 14px;
+}
 
 /* =========================
-   RESPONSIVE
+   LOGO LOGIN
    ========================= */
 
-@media (max-width: 1000px) {
+.login-logo {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 16px;
+}
 
-    .login-page.login-split {
-        padding: 20px;
+    .login-logo img {
+        height: 52px;
+        width: auto;
+        opacity: .95;
     }
 
-        .login-page.login-split .login-shell {
+/* Alerts */
+.login-page.login-split .alert {
+    border-radius: 14px;
+    padding: 10px 12px;
+    margin: 12px 0 14px;
+    font-size: 12.5px;
+}
+
+/* Fields */
+.login-page.login-split .field {
+    margin-bottom: 14px;
+}
+
+/* Labels más “clean” a la izquierda */
+.login-page.login-split .field-label {
+    display: block;
+    margin: 0 0 8px;
+    text-align: left; /* ✅ más pro */
+    font-size: 12px; /* ✅ más fino */
+    letter-spacing: .2px;
+    color: rgba(229,231,235,.90);
+    font-weight: 700;
+    opacity: .95;
+}
+
+.login-page.login-split .field-control {
+    position: relative;
+    display: flex;
+    align-items: center;
+    transition: transform .18s ease;
+}
+
+    /* =========================
+   4) Lift al enfocar (micro-interacción)
+   ========================= */
+    .login-page.login-split .field-control:focus-within {
+        transform: translateY(-1px);
+    }
+
+/* Icon */
+.login-page.login-split .field-icon {
+    position: absolute;
+    left: 12px;
+    font-size: 14px;
+    opacity: .85;
+    pointer-events: none;
+}
+
+/* Input */
+.login-page.login-split .field-input.form-control {
+    height: 46px;
+    border-radius: 14px;
+    background: var(--input-bg);
+    border: 1px solid var(--input-border);
+    color: var(--text);
+    box-shadow: none;
+    padding-left: 40px;
+    padding-right: 52px;
+    transition: border-color .2s ease, box-shadow .2s ease, background .2s ease;
+}
+
+    .login-page.login-split .field-input.form-control::placeholder {
+        color: rgba(229,231,235,.55);
+    }
+
+    .login-page.login-split .field-input.form-control:focus {
+        background: rgba(255,255,255,0.08);
+        border-color: rgba(47,123,255,0.75);
+        box-shadow: 0 0 0 4px var(--focus-ring);
+        outline: none;
+    }
+
+/* Ojo SVG */
+.eye-icon {
+    display: block;
+}
+
+/* Botón ojo */
+.login-page.login-split .field-action {
+    position: absolute;
+    right: 10px;
+    height: 34px;
+    width: 38px;
+    border-radius: 12px;
+    border: 1px solid rgba(255,255,255,.12);
+    background: rgba(255,255,255,.06);
+    color: var(--text);
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform .15s ease, background .2s ease, border-color .2s ease;
+}
+
+    .login-page.login-split .field-action:hover {
+        background: rgba(255,255,255,.10);
+        border-color: rgba(47,123,255,.40);
+        transform: translateY(-1px);
+    }
+
+    .login-page.login-split .field-action:active {
+        transform: translateY(0);
+    }
+
+/* Row */
+.login-page.login-split .login-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 14px;
+    margin: 8px 0 12px;
+}
+
+/* =========================
+   5) Checkbox recordar más visible
+   ========================= */
+.login-page.login-split .remember {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    margin: 0;
+    cursor: pointer;
+    user-select: none;
+}
+
+.login-page.login-split .remember-input {
+    position: absolute;
+    opacity: 0;
+    pointer-events: none;
+}
+
+.login-page.login-split .remember-box {
+    width: 20px; /* ✅ más visible */
+    height: 20px; /* ✅ más visible */
+    border-radius: 6px;
+    border: 1px solid rgba(255,255,255,.18);
+    background: rgba(255,255,255,.06);
+    display: inline-block;
+    position: relative;
+}
+
+.login-page.login-split .remember-input:checked + .remember-box::after {
+    content: "";
+    position: absolute;
+    left: 6px;
+    top: 3px;
+    width: 5px;
+    height: 10px;
+    border: solid rgba(255,255,255,.95);
+    border-width: 0 2px 2px 0;
+    transform: rotate(45deg);
+}
+
+.login-page.login-split .remember-text {
+    color: rgba(229,231,235,.85);
+    font-size: 13.5px; /* ✅ un poco mayor */
+    font-weight: 600;
+}
+
+/* Link recuperar */
+.login-page.login-split .login-link {
+    color: rgba(229,231,235,.85);
+    font-weight: 700;
+    text-decoration: none;
+    font-size: 13px;
+}
+
+    .login-page.login-split .login-link:hover {
+        text-decoration: underline;
+        color: #fff;
+    }
+
+/* =========================
+   6) Botón azul + glow moderno (halo interno + externo)
+   ========================= */
+.login-page.login-split .login-btn.login-btn--blue {
+    position: relative;
+    height: 46px;
+    border-radius: 14px;
+    border: none;
+    font-weight: 800;
+    letter-spacing: .2px;
+    color: #fff;
+    background: linear-gradient(135deg, var(--blue), var(--blue-2));
+    box-shadow: 0 16px 28px rgba(47,123,255,.28);
+    transition: transform .2s ease, box-shadow .2s ease, filter .2s ease;
+    overflow: hidden;
+}
+
+    /* Halo interno */
+    .login-page.login-split .login-btn.login-btn--blue::after {
+        content: "";
+        position: absolute;
+        inset: -40px;
+        background: radial-gradient(circle at 30% 30%, rgba(255,255,255,.30) 0%, rgba(255,255,255,0) 55%);
+        opacity: 0;
+        transition: opacity .25s ease;
+    }
+
+    .login-page.login-split .login-btn.login-btn--blue:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 24px 44px rgba(47,123,255,.38), 0 0 0 6px rgba(47,123,255,.14);
+        filter: saturate(1.05);
+    }
+
+        .login-page.login-split .login-btn.login-btn--blue:hover::after {
+            opacity: 1;
+        }
+
+    .login-page.login-split .login-btn.login-btn--blue:active {
+        transform: translateY(0);
+    }
+
+/* =========================
+   7) Estado disabled cuando loading (ng-disabled)
+   ========================= */
+.login-page.login-split .login-btn[disabled],
+.login-page.login-split .login-btn:disabled {
+    opacity: .75;
+    cursor: not-allowed;
+    transform: none !important;
+    box-shadow: 0 10px 20px rgba(0,0,0,.25) !important;
+}
+
+/* Footnote */
+.login-page.login-split .login-footnote {
+    margin-top: 14px;
+    text-align: center;
+    font-size: 12px;
+    color: rgba(229,231,235,.55);
+}
+
+/* Responsive */
+@media (max-width: 420px) {
+    .login-page.login-split {
+        padding: 16px;
+    }
+
+        .login-page.login-split .login-card.login-card--dark {
+            padding: 22px;
+        }
+
+        .login-page.login-split .login-row {
             flex-direction: column;
-            height: auto;
-        }
-
-        .login-page.login-split .login-left,
-        .login-page.login-split .login-right {
-            padding: 40px 28px;
-        }
-
-        .login-page.login-split .login-left-title {
-            font-size: 28px;
+            align-items: flex-start;
         }
 }
