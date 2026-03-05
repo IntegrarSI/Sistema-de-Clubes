@@ -28,3 +28,7 @@ App_Data/*.log
 Thumbs.db
 .DS_Store
 /Sistema_de_Clubes/Content/img/logo.png
+# Archivos de configuración con datos sensibles
+Sistema_de_Clubes/Web.config
+Sistema_de_Clubes/Web.Debug.config
+Sistema_de_Clubes/Web.Release.config
