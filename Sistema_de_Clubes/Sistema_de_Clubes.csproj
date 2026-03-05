@@ -427,6 +427,7 @@
     <Content Include="Content\fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Content\img\bg_direction_nav.png" />
     <Content Include="Content\carnet\impresionCarnet.css" />
+    <Content Include="Content\img\logo.png" />
     <Content Include="Content\js\google-code-prettify\prettify.css" />
     <Content Include="Content\js\google-code-prettify\prettify.js" />
     <Content Include="Content\modernaTheme\animate.css" />
@@ -434,7 +435,6 @@
     <Content Include="Content\modernaTheme\bootstrap.min.css" />
     <Content Include="Content\modernaTheme\custom-fonts.css" />
     <Content Include="Content\modernaTheme\default.css" />
-    <Content Include="favicon.ico" />
     <Content Include="Content\modernaTheme\fancybox_loading.gif" />
     <Content Include="Content\modernaTheme\fancybox_overlay.png" />
     <Content Include="Content\modernaTheme\fancybox_sprite.png" />
@@ -445,6 +445,7 @@
     <Content Include="Content\modernaTheme\logo.jpg" />
     <Content Include="Content\modernaTheme\overwrite.css" />
     <Content Include="Content\modernaTheme\style.css" />
+    <Content Include="favicon.ico" />
     <Content Include="fonts\bariol-regular.svg" />
     <Content Include="fonts\fontawesome-webfont.svg" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
@@ -454,7 +455,6 @@
     <Content Include="images\default.css" />
     <Content Include="images\flat-avatar.png" />
     <Content Include="images\fotos-facebook.png" />
-    <Content Include="images\imagen-vacia.png" />
     <Content Include="images\loading.gif" />
     <Content Include="images\logo.png" />
     <Content Include="images\noticias\imagen-vacia.png" />
